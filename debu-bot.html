@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>デブポジBot | DEV PARADE - 全てのデブをポジティブに変換</title>
+  <meta name="description" content="SNS上の「デブ」発言を全力ポジティブに変換！総体重570kg超バンド DEV PARADEが贈る、デブポジティブ変換マシン。">
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="デブポジBot | 全てのデブをポジティブに変換するBot">
+  <meta property="og:description" content="「デブ」「太った」「痩せろ」→ 全部ポジティブに変換！総体重570kg超バンド DEV PARADEが全力で肯定します。">
+  <meta property="og:image" content="https://dev-parade.github.io/assets/member-group.jpg">
+  <meta property="og:url" content="https://dev-parade.github.io/debu-bot.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="デブポジBot | 全てのデブをポジティブに変換">
+  <meta name="twitter:description" content="「デブ」「太った」「痩せろ」→ 全部ポジティブに変換！DEV PARADEが全力で肯定します。">
+  <meta name="twitter:image" content="https://dev-parade.github.io/assets/member-group.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #e63946;
+      --dark: #1a1a1a;
+      --darker: #111;
+      --gray: #888;
+      --gold: #ffd700;
+      --green: #2ecc71;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--darker);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    .bot-header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: linear-gradient(180deg, var(--red) 0%, var(--darker) 100%);
+      position: relative;
+    }
+    .bot-header::before {
+      content: '🍖';
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .bot-logo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+    }
+    .bot-logo span { color: var(--gold); }
+    .bot-tagline {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      margin-top: 0.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .back-link {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      opacity: 0.7;
+    }
+    .back-link:hover { opacity: 1; }
+
+    /* ===== STATS BAR ===== */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      background: rgba(230,57,70,0.15);
+      border-top: 1px solid rgba(230,57,70,0.3);
+      border-bottom: 1px solid rgba(230,57,70,0.3);
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--gold);
+    }
+    .stat-label {
+      font-size: 0.65rem;
+      color: var(--gray);
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== CONVERTER ===== */
+    .converter {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .converter-box {
+      background: var(--dark);
+      border: 2px solid var(--red);
+      border-radius: 12px;
+      padding: 1.5rem;
+      position: relative;
+    }
+    .converter-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      color: var(--red);
+      letter-spacing: 0.15em;
+      margin-bottom: 0.8rem;
+    }
+    .input-area {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 1rem;
+      color: #fff;
+      font-size: 1rem;
+      font-family: 'Noto Sans JP', sans-serif;
+      resize: none;
+      min-height: 80px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .input-area:focus {
+      border-color: var(--red);
+    }
+    .input-area::placeholder {
+      color: rgba(255,255,255,0.3);
+    }
+    .convert-btn {
+      display: block;
+      width: 100%;
+      margin-top: 1rem;
+      padding: 1rem;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .convert-btn:hover {
+      background: #c0392b;
+      transform: scale(1.02);
+    }
+    .convert-btn:active {
+      transform: scale(0.98);
+    }
+    .convert-btn.loading {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    /* ===== ARROW ===== */
+    .arrow {
+      text-align: center;
+      font-size: 2rem;
+      margin: 1rem 0;
+      color: var(--gold);
+      animation: arrowPulse 1.5s infinite;
+    }
+    @keyframes arrowPulse {
+      0%, 100% { opacity: 0.5; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(5px); }
+    }
+
+    /* ===== RESULT ===== */
+    .result-box {
+      background: linear-gradient(135deg, rgba(46,204,113,0.1), rgba(255,215,0,0.1));
+      border: 2px solid var(--green);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: none;
+      position: relative;
+    }
+    .result-box.show {
+      display: block;
+      animation: resultPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    @keyframes resultPop {
+      0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .result-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      color: var(--green);
+      letter-spacing: 0.15em;
+      margin-bottom: 0.8rem;
+    }
+    .result-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      font-weight: 700;
+    }
+    .result-member {
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+    .result-member strong {
+      color: var(--gold);
+    }
+
+    /* ===== SHARE BUTTONS ===== */
+    .share-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .share-btn {
+      flex: 1;
+      min-width: 100px;
+      padding: 0.6rem;
+      border: none;
+      border-radius: 6px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      transition: opacity 0.3s;
+    }
+    .share-btn:hover { opacity: 0.8; }
+    .share-x { background: #000; border: 1px solid #333; }
+    .share-line { background: #06c755; }
+    .share-copy { background: #555; }
+
+    /* ===== LIVE FEED ===== */
+    .feed-section {
+      max-width: 700px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    .feed-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .feed-title span { color: var(--green); }
+    .feed-subtitle {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+
+    .feed-item {
+      background: var(--dark);
+      border-radius: 10px;
+      padding: 1.2rem;
+      margin-bottom: 1rem;
+      border-left: 3px solid var(--red);
+      animation: feedSlide 0.5s ease;
+    }
+    @keyframes feedSlide {
+      0% { opacity: 0; transform: translateX(-20px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    .feed-original {
+      font-size: 0.85rem;
+      color: var(--gray);
+      padding: 0.6rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: 6px;
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .feed-original::before {
+      content: '💬';
+      position: absolute;
+      left: 0.3rem;
+      top: 0.5rem;
+      font-size: 0.7rem;
+    }
+    .feed-response {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green);
+      padding-left: 1.5rem;
+      position: relative;
+      line-height: 1.6;
+    }
+    .feed-response::before {
+      content: '🍖';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.9rem;
+    }
+    .feed-meta {
+      margin-top: 0.5rem;
+      font-size: 0.7rem;
+      color: var(--gray);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .feed-member {
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .feed-platform {
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.05em;
+      font-size: 0.65rem;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .how-section {
+      max-width: 700px;
+      margin: 3rem auto;
+      padding: 0 1rem 2rem;
+    }
+    .how-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.15em;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .how-title span { color: var(--red); }
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .how-step {
+      background: var(--dark);
+      border-radius: 10px;
+      padding: 1.2rem;
+      text-align: center;
+    }
+    .how-step-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--red);
+    }
+    .how-step-icon {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+    }
+    .how-step-text {
+      font-size: 0.8rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ===== RANDOM BUTTON ===== */
+    .random-section {
+      text-align: center;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .random-btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: transparent;
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    .random-btn:hover {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    /* ===== FOOTER ===== */
+    .bot-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.75rem;
+      color: var(--gray);
+    }
+    .bot-footer a {
+      color: var(--red);
+      text-decoration: none;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .bot-logo { font-size: 1.8rem; }
+      .stats-bar { gap: 1rem; }
+      .stat-num { font-size: 1.2rem; }
+      .share-btn { min-width: 80px; font-size: 0.7rem; }
+    }
+
+    /* ===== PARTICLE BG ===== */
+    .particles {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      font-size: 1.5rem;
+      opacity: 0.1;
+      animation: floatUp linear infinite;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0.1; }
+      50% { opacity: 0.2; }
+      100% { transform: translateY(-5vh) rotate(360deg); opacity: 0; }
+    }
+    body > *:not(.particles) { position: relative; z-index: 1; }
+  </style>
+</head>
+<body>
+
+<!-- Floating particles -->
+<div class="particles" id="particles"></div>
+
+<!-- HEADER -->
+<header class="bot-header">
+  <a href="index.html" class="back-link">&larr; DEV PARADE TOP</a>
+  <div class="bot-logo">DEBU <span>POSI</span> BOT</div>
+  <p class="bot-tagline">
+    SNS上の全ての「デブ」をポジティブに変換する<br>
+    総体重570kg超バンドが贈る、世界初のデブ肯定Bot
+  </p>
+</header>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num" id="totalConverts">14,829</div>
+    <div class="stat-label">TOTAL CONVERTS</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" id="todayConverts">47</div>
+    <div class="stat-label">TODAY</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">570kg+</div>
+    <div class="stat-label">TOTAL WEIGHT</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">100%</div>
+    <div class="stat-label">POSITIVITY</div>
+  </div>
+</div>
+
+<!-- CONVERTER -->
+<div class="converter">
+  <div class="converter-box">
+    <div class="converter-label">INPUT: ネガティブ・デブ発言</div>
+    <textarea class="input-area" id="inputText" placeholder="例: 「最近太った...」「デブって言われた」「痩せなきゃ」&#10;ここにネガティブな発言を入力してください"></textarea>
+    <button class="convert-btn" id="convertBtn" onclick="convertToPositive()">
+      🍖 デブポジ変換 🍖
+    </button>
+  </div>
+
+  <div class="arrow" id="arrow">⬇️</div>
+
+  <div class="result-box" id="resultBox">
+    <div class="result-label">OUTPUT: デブポジティブ変換結果</div>
+    <div class="result-text" id="resultText"></div>
+    <div class="result-member" id="resultMember"></div>
+    <div class="share-row">
+      <a class="share-btn share-x" id="shareX" href="#" target="_blank">𝕏 でシェア</a>
+      <a class="share-btn share-line" id="shareLine" href="#" target="_blank">LINE</a>
+      <button class="share-btn share-copy" onclick="copyResult()">📋 コピー</button>
+    </div>
+  </div>
+</div>
+
+<!-- RANDOM -->
+<div class="random-section">
+  <button class="random-btn" onclick="randomConvert()">🎲 ランダムでデブポジ変換する</button>
+</div>
+
+<!-- LIVE FEED -->
+<section class="feed-section">
+  <div class="feed-title">DEBU POSI <span>LIVE FEED</span></div>
+  <p class="feed-subtitle">デブポジBotの最新変換ログ（デモ）</p>
+  <div id="feedContainer"></div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="how-title">HOW IT <span>WORKS</span></div>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="how-step-num">01</div>
+      <div class="how-step-icon">🔍</div>
+      <div class="how-step-text">SNS上の「デブ」「太った」「痩せろ」を検知</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">02</div>
+      <div class="how-step-icon">🍖</div>
+      <div class="how-step-text">DEV PARADEメンバーがポジティブに変換</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">03</div>
+      <div class="how-step-icon">💪</div>
+      <div class="how-step-text">全力でデブを肯定するリプライを送信</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">04</div>
+      <div class="how-step-icon">🌍</div>
+      <div class="how-step-text">世界中のデブをポジティブに変える</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PREMIUM PLAN ===== -->
+<section style="max-width:700px; margin:2rem auto; padding:0 1rem 3rem;">
+  <div style="text-align:center; margin-bottom:1.5rem;">
+    <div style="font-family:'Oswald',sans-serif; font-size:1.2rem; letter-spacing:0.15em;">
+      DEBU POSI <span style="color:var(--gold);">PREMIUM</span>
+    </div>
+    <p style="font-size:0.8rem; color:var(--gray); margin-top:0.3rem;">デブポジBotをもっと活用する</p>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem;">
+    <!-- FREE -->
+    <div style="background:var(--dark); border:1px solid #333; border-radius:12px; padding:1.5rem; text-align:center;">
+      <div style="font-family:'Oswald',sans-serif; font-size:0.8rem; letter-spacing:0.1em; color:var(--gray);">FREE</div>
+      <div style="font-family:'Oswald',sans-serif; font-size:2rem; font-weight:900; margin:0.5rem 0;">¥0</div>
+      <ul style="text-align:left; font-size:0.8rem; list-style:none; padding:0; line-height:2;">
+        <li>✅ Web変換（無制限）</li>
+        <li>✅ SNSシェア</li>
+        <li>✅ ライブフィード閲覧</li>
+        <li style="color:#555;">❌ AI変換</li>
+        <li style="color:#555;">❌ API利用</li>
+        <li style="color:#555;">❌ 自動リプライ</li>
+      </ul>
+    </div>
+
+    <!-- PREMIUM -->
+    <div style="background:linear-gradient(135deg, rgba(255,215,0,0.1), rgba(230,57,70,0.1)); border:2px solid var(--gold); border-radius:12px; padding:1.5rem; text-align:center; position:relative;">
+      <div style="position:absolute; top:-10px; right:10px; background:var(--gold); color:var(--dark); font-family:'Oswald',sans-serif; font-size:0.65rem; font-weight:900; padding:2px 8px; border-radius:3px; letter-spacing:0.05em;">RECOMMENDED</div>
+      <div style="font-family:'Oswald',sans-serif; font-size:0.8rem; letter-spacing:0.1em; color:var(--gold);">PREMIUM</div>
+      <div style="font-family:'Oswald',sans-serif; font-size:2rem; font-weight:900; margin:0.5rem 0;">¥500<span style="font-size:0.8rem; color:var(--gray);">/月</span></div>
+      <ul style="text-align:left; font-size:0.8rem; list-style:none; padding:0; line-height:2;">
+        <li>✅ FREE全機能</li>
+        <li style="color:var(--gold);">⭐ AI変換（Claude搭載）</li>
+        <li style="color:var(--gold);">⭐ API利用（月1,000回）</li>
+        <li style="color:var(--gold);">⭐ 自動リプライBot設定</li>
+        <li style="color:var(--gold);">⭐ カスタム応答設定</li>
+        <li style="color:var(--gold);">⭐ メンバー指名変換</li>
+      </ul>
+      <a href="https://note.com/coyass" target="_blank"
+        style="display:block; margin-top:1rem; padding:0.7rem; background:var(--gold); color:var(--dark); text-decoration:none;
+               font-family:'Oswald',sans-serif; font-weight:900; font-size:0.9rem; letter-spacing:0.05em; border-radius:6px;">
+        SUBSCRIBE
+      </a>
+    </div>
+
+    <!-- PRO -->
+    <div style="background:var(--dark); border:1px solid var(--red); border-radius:12px; padding:1.5rem; text-align:center;">
+      <div style="font-family:'Oswald',sans-serif; font-size:0.8rem; letter-spacing:0.1em; color:var(--red);">PRO</div>
+      <div style="font-family:'Oswald',sans-serif; font-size:2rem; font-weight:900; margin:0.5rem 0;">¥2,000<span style="font-size:0.8rem; color:var(--gray);">/月</span></div>
+      <ul style="text-align:left; font-size:0.8rem; list-style:none; padding:0; line-height:2;">
+        <li>✅ PREMIUM全機能</li>
+        <li style="color:var(--red);">🔥 API無制限</li>
+        <li style="color:var(--red);">🔥 複数SNS自動Bot</li>
+        <li style="color:var(--red);">🔥 企業・団体利用OK</li>
+        <li style="color:var(--red);">🔥 DEV PARADE公認バッジ</li>
+        <li style="color:var(--red);">🔥 メンバーからDM</li>
+      </ul>
+      <a href="https://note.com/coyass" target="_blank"
+        style="display:block; margin-top:1rem; padding:0.7rem; background:var(--red); color:#fff; text-decoration:none;
+               font-family:'Oswald',sans-serif; font-weight:900; font-size:0.9rem; letter-spacing:0.05em; border-radius:6px;">
+        SUBSCRIBE
+      </a>
+    </div>
+  </div>
+
+  <p style="text-align:center; margin-top:1.5rem; font-size:0.75rem; color:var(--gray);">
+    ※ 有料プランはnoteメンバーシップで提供予定。決済はnoteの安全なシステムを利用。
+  </p>
+</section>
+
+<!-- ===== SNS INTEGRATION STATUS ===== -->
+<section style="max-width:700px; margin:0 auto 3rem; padding:0 1rem;">
+  <div style="text-align:center; margin-bottom:1.5rem;">
+    <div style="font-family:'Oswald',sans-serif; font-size:1.2rem; letter-spacing:0.15em;">
+      SNS <span style="color:var(--green);">INTEGRATION</span>
+    </div>
+    <p style="font-size:0.8rem; color:var(--gray); margin-top:0.3rem;">デブポジBotが監視中のSNS</p>
+  </div>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:0.8rem;">
+    <div style="background:var(--dark); border-radius:8px; padding:1rem; text-align:center; border-left:3px solid #1DA1F2;">
+      <div style="font-size:1.5rem;">𝕏</div>
+      <div style="font-family:'Oswald',sans-serif; font-size:0.8rem; color:#1DA1F2; margin-top:0.3rem;">X (Twitter)</div>
+      <div style="font-size:0.7rem; color:var(--green); margin-top:0.3rem;">● ACTIVE</div>
+      <div style="font-size:0.65rem; color:var(--gray);">自動リプライ対応</div>
+    </div>
+    <div style="background:var(--dark); border-radius:8px; padding:1rem; text-align:center; border-left:3px solid #E4405F;">
+      <div style="font-size:1.5rem;">📷</div>
+      <div style="font-family:'Oswald',sans-serif; font-size:0.8rem; color:#E4405F; margin-top:0.3rem;">Instagram</div>
+      <div style="font-size:0.7rem; color:var(--gold); margin-top:0.3rem;">● COMING SOON</div>
+      <div style="font-size:0.65rem; color:var(--gray);">ストーリー返信予定</div>
+    </div>
+    <div style="background:var(--dark); border-radius:8px; padding:1rem; text-align:center; border-left:3px solid #06C755;">
+      <div style="font-size:1.5rem;">💬</div>
+      <div style="font-family:'Oswald',sans-serif; font-size:0.8rem; color:#06C755; margin-top:0.3rem;">LINE</div>
+      <div style="font-size:0.7rem; color:var(--gold); margin-top:0.3rem;">● COMING SOON</div>
+      <div style="font-size:0.65rem; color:var(--gray);">公式アカウント予定</div>
+    </div>
+    <div style="background:var(--dark); border-radius:8px; padding:1rem; text-align:center; border-left:3px solid #FF0000;">
+      <div style="font-size:1.5rem;">▶</div>
+      <div style="font-family:'Oswald',sans-serif; font-size:0.8rem; color:#FF0000; margin-top:0.3rem;">YouTube</div>
+      <div style="font-size:0.7rem; color:var(--gold); margin-top:0.3rem;">● COMING SOON</div>
+      <div style="font-size:0.65rem; color:var(--gray);">コメント返信予定</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bot-footer">
+  <p>DEBU POSI BOT &mdash; Powered by <a href="index.html">DEV PARADE</a></p>
+  <p style="margin-top:0.5rem;">「デブは才能。脂肪は努力の結晶。」</p>
+  <p style="margin-top:1rem;">
+    <a href="https://youtube.com/playlist?list=PL0THYLU4QbDkldXStxeHXCfsTnas90AoP">YouTube</a> &middot;
+    <a href="https://open.spotify.com/artist/1qeIXf0zcZXwfjd5oGmFC3">Spotify</a> &middot;
+    <a href="index.html">Official Site</a>
+  </p>
+</footer>
+
+<script>
+// ===== DEV PARADE MEMBERS =====
+const members = [
+  { name: 'ハンサム判治', role: 'Vo.', weight: '100kg', icon: '🎤' },
+  { name: 'COYASS', role: 'MC', weight: '93kg', icon: '🎙️' },
+  { name: 'ugazin', role: 'Gt.', weight: '135kg', icon: '🎸' },
+  { name: 'ぺー', role: 'Ba.', weight: '120kg', icon: '🎸' },
+  { name: 'TAH', role: 'Dr.', weight: '120kg', icon: '🥁' }
+];
+
+// ===== POSITIVE RESPONSES DATABASE =====
+const responses = {
+  // キーワードベースのレスポンス
+  patterns: [
+    {
+      keywords: ['太った', 'ふとった', '体重増えた', '増量', '太り'],
+      responses: [
+        '太った？ それは「成長した」って言うんだよ。細胞レベルで進化してる。おめでとう！🎉',
+        '体重が増えた = 存在感が増した。ステージ映えするってこと。DEV PARADEが保証する。',
+        '太った分だけ、抱きしめた時の安心感が増してるんだぜ。それって最高じゃん。',
+        '重力に愛されてるな！地球がお前を離したくないんだよ。モテてるぜ、地球に。',
+        '体重計の数字が増えた？ それは「影響力」のメーターだと思え。デカい奴はデカいことができる。'
+      ]
+    },
+    {
+      keywords: ['痩せろ', 'やせろ', 'ダイエット', '痩せなきゃ', 'やせなきゃ', '痩せたい', 'やせたい'],
+      responses: [
+        '痩せる必要？ ないね。俺たち総体重570kgで武道館目指してるから。痩せたら夢が軽くなる。',
+        'ダイエットって英語で"diet"、語源は"生き方"。今の生き方、最高じゃん。変えなくていい。',
+        '痩せろって言う奴に聞きたい。お前、570kg背負って生きたことある？ この重みが俺たちの音だ。',
+        '「痩せたい」を「もっと愛されたい」に変換しよう。大丈夫、デブは愛される才能だから。',
+        '痩せなくていい。むしろ一緒にDEV PARADE入らない？ 条件は90kg以上。'
+      ]
+    },
+    {
+      keywords: ['デブ', 'でぶ', 'ぶた', '豚', 'ブタ'],
+      responses: [
+        'デブ？ ありがとう！ 俺たちにとって最高の褒め言葉。DEV PARADEへようこそ。🍖',
+        'デブって呼ばれた？ おめでとう、それはDEV PARADEの入団資格を満たしてるってこと！',
+        'デブは「Delightful Excellent Beautiful（楽しくて優秀で美しい）」の略。知らなかった？',
+        '豚？ 豚は知能が高くて社会性もある最高の動物。褒め言葉として受け取っておく。🐷✨',
+        '「デブ」は俺たちの誇り。バンド名にDEV（デブ）入れてるくらいだから。リスペクト。'
+      ]
+    },
+    {
+      keywords: ['腹', 'はら', 'お腹', 'ぽっこり', 'メタボ', 'ビール腹'],
+      responses: [
+        'その腹は「生命力の貯蔵庫」。いざという時に生き残るのは俺たち側だから。🍺',
+        'ぽっこりお腹？ 俺たちは「ヘヴィメタボバンド」。メタボは音楽ジャンルだと思ってる。',
+        'ビール腹は「人生を楽しんでる証拠」。飲まない奴より人生3倍楽しんでる。',
+        'お腹出てる？ それは「幸せが溢れてる」って表現するのが正解。DEV PARADE公式見解です。',
+        'メタボ？ メタル + ボディの略でしょ？ ロックな体型じゃん。'
+      ]
+    },
+    {
+      keywords: ['服', 'サイズ', '入らない', 'きつい', 'XL', '3L', '4L', '5L'],
+      responses: [
+        '服が入らない？ 服が小さいだけ。お前のスケールに世界が追いついてないだけ。',
+        'XLが入らなくなった？ 次のステージに進んだってこと。レベルアップおめでとう。',
+        'サイズが大きい = プレゼンスがデカい。部屋に入った瞬間の存在感、それが才能。',
+        '3L、4L？ Lが多いほどLove（愛）も多い。科学的に証明されてる（DEV PARADE調べ）。',
+        '服のサイズで人は測れない。でも体重なら測れる。570kg超のバンドがここにいる。'
+      ]
+    },
+    {
+      keywords: ['食べ', 'たべ', '食い', 'くい', '大食い', '食欲', '暴食', 'ドカ食い', '食べすぎ'],
+      responses: [
+        '食べることは生きること。たくさん食べる = たくさん生きてる。最高の人生じゃん。🍖',
+        '大食いは才能。フードファイターって言い方もある。アスリートだよ、お前は。',
+        '食欲があるのは健康な証拠。食欲なくなった時の方がヤバいからな。今を楽しめ。',
+        '「食べすぎた」じゃなくて「十分に栄養を摂取した」。言い方ひとつで人生変わる。',
+        '暴食？ いや、「情熱的な食事」だ。音楽も食事も、パッションが大事。'
+      ]
+    },
+    {
+      keywords: ['モテ', 'もて', '恋愛', '彼女', '彼氏', '結婚'],
+      responses: [
+        'デブはモテないって？ ハンサム判治見てみろ。名前に「ハンサム」入ってるんだぞ。',
+        '太ってる = 包容力がある = モテ要素。抱きしめた時のフィット感、細い奴には出せない。',
+        'デブの恋愛？ 重力に逆らえないほどの引力 = 相手を引きつける力がある。物理的に。',
+        '「痩せたらモテる」より「今のままで愛してくれる人」を見つけろ。それがリアル。',
+        '結婚相手に求めるもの1位は「安心感」。体重100kgの安心感、ハンパないから。'
+      ]
+    }
+  ],
+  // 汎用レスポンス（キーワードマッチしない場合）
+  generic: [
+    'その悩み、570kgで踏み潰してやるよ。大丈夫。デブは強い。💪',
+    '体型で悩むな。俺たち全員90kg以上でメジャーデビューしたから。才能に体重は関係ない。',
+    '世界で一番重いバンド（自称）から言わせてもらう。重さは力だ。お前は強い。',
+    'DEV PARADEから一言。「デブは個性。個性は武器。武器は磨け。」以上！🍖',
+    'ネガティブな言葉は、全部俺たちの腹の肉で吸収してやる。跳ね返す必要すらない。',
+    '大丈夫、お前は最高だ。根拠？ 570kg超のバンドが言ってるんだから間違いない。',
+    'どんな悩みも、焼肉食ったら解決する。解決しなくても、美味い。それでいい。',
+    '体重と幸福度は比例する（DEV PARADE調べ）。お前、幸せだろ？',
+    'この世に「無駄な脂肪」なんてない。全部、お前という作品の一部だ。',
+    '痛風になっても音楽は止めない。それがDEV PARADEのスピリット。お前も止まるな。'
+  ]
+};
+
+// ===== サンプル入力 =====
+const sampleInputs = [
+  '最近めっちゃ太った...やばい',
+  'また「デブ」って言われた。傷つく。',
+  '痩せなきゃいけないのに食べちゃう',
+  'お腹出すぎてベルトの穴が足りない',
+  'Lサイズが入らなくなった...',
+  '食べすぎて自己嫌悪',
+  '太ってるとモテないよな...',
+  '健康診断でメタボ判定された',
+  'デブは甘え',
+  '豚みたいな体型で嫌になる',
+  '夏が来るのが怖い。水着着れない。',
+  '友達に「太った？」って聞かれてショック',
+  '体重計に乗るのが怖い',
+  '二重顎が目立ってきた',
+  'ダイエット続かない自分が嫌い',
+];
+
+// ===== FEED SAMPLE DATA =====
+const feedData = [
+  {
+    original: '会社の健康診断でメタボ判定された...もう終わりだ',
+    response: 'メタボ？ メタル + ボディの略でしょ？ ロックな体型認定おめでとう！DEV PARADEのメンバーは全員メタボです。つまりお前は仲間だ。🤘',
+    member: 'ハンサム判治',
+    platform: 'X (Twitter)',
+    time: '2分前'
+  },
+  {
+    original: '太ってるから何着ても似合わない',
+    response: '似合わないんじゃない、服が追いついてないだけ。俺なんか135kgだけどギター弾いたらカッコいいぞ。服より中身、中身より音楽。🎸',
+    member: 'ugazin',
+    platform: 'Instagram',
+    time: '8分前'
+  },
+  {
+    original: 'デブって言われて落ち込んでる',
+    response: '「デブ」は「Delightful Excellent Beautiful」の略。つまり褒められてる。俺たちバンド名にデブ入れてるからな。誇りを持て。🍖',
+    member: 'COYASS',
+    platform: 'X (Twitter)',
+    time: '15分前'
+  },
+  {
+    original: '痩せたいけど焼肉が美味すぎて無理',
+    response: '焼肉を愛することは人類の本能。本能に従える者は強い。痩せなくていい、焼肉をもっと愛せ。一緒に食いに行こう。🥩',
+    member: 'TAH',
+    platform: 'X (Twitter)',
+    time: '23分前'
+  },
+  {
+    original: '痛風つらい...体重落とせって言われた',
+    response: '痛風ホルダー仲間！！！ DEV PARADEは痛風ホルダーだらけだけど全員元気にライブやってるぜ。痛風は勲章。体重は落とさなくていい、テンションを上げろ。💪',
+    member: 'ぺー',
+    platform: 'LINE',
+    time: '31分前'
+  },
+  {
+    original: '結婚式までに10kg痩せなきゃ...',
+    response: '10kg痩せた姿で誓うより、今の姿で「一生美味いもん一緒に食おう」って誓った方がリアルでカッコいい。相手もその方が嬉しいはず。',
+    member: 'ハンサム判治',
+    platform: 'Instagram',
+    time: '45分前'
+  },
+  {
+    original: '電車で隣の人に迷惑かけてる気がする',
+    response: '迷惑じゃない、「より多くの空間を活用している」だけ。もっと言えば、冬場は隣の人あったかいはず。感謝されてるよ。',
+    member: 'ugazin',
+    platform: 'X (Twitter)',
+    time: '1時間前'
+  },
+  {
+    original: '子供に「パパ太ってる」って言われた',
+    response: 'それは「パパ大きくてかっこいい」の子供語訳だ。子供は正直。大きい = 強い = 守ってくれる。最高のパパだよ。👨‍👧',
+    member: 'COYASS',
+    platform: 'Facebook',
+    time: '1時間前'
+  }
+];
+
+// ===== CONVERT FUNCTION =====
+function convertToPositive() {
+  const input = document.getElementById('inputText').value.trim();
+  if (!input) {
+    // 空の場合はランダム
+    randomConvert();
+    return;
+  }
+
+  const btn = document.getElementById('convertBtn');
+  btn.classList.add('loading');
+  btn.textContent = '🍖 変換中... 🍖';
+
+  setTimeout(() => {
+    const result = generateResponse(input);
+    showResult(result.text, result.member);
+    btn.classList.remove('loading');
+    btn.textContent = '🍖 デブポジ変換 🍖';
+    incrementCounter();
+  }, 800 + Math.random() * 700);
+}
+
+function generateResponse(input) {
+  const inputLower = input.toLowerCase();
+  let matchedResponses = [];
+
+  // キーワードマッチ
+  for (const pattern of responses.patterns) {
+    for (const keyword of pattern.keywords) {
+      if (inputLower.includes(keyword)) {
+        matchedResponses = pattern.responses;
+        break;
+      }
+    }
+    if (matchedResponses.length > 0) break;
+  }
+
+  // マッチしなければ汎用
+  if (matchedResponses.length === 0) {
+    matchedResponses = responses.generic;
+  }
+
+  const text = matchedResponses[Math.floor(Math.random() * matchedResponses.length)];
+  const member = members[Math.floor(Math.random() * members.length)];
+
+  return { text, member };
+}
+
+function showResult(text, member) {
+  const resultBox = document.getElementById('resultBox');
+  const resultText = document.getElementById('resultText');
+  const resultMember = document.getElementById('resultMember');
+
+  resultText.textContent = text;
+  resultMember.innerHTML = `${member.icon} <strong>${member.name}</strong>（${member.role} / ${member.weight}）がお届けしました`;
+
+  resultBox.classList.remove('show');
+  void resultBox.offsetWidth; // force reflow
+  resultBox.classList.add('show');
+
+  // Update share links
+  const shareText = `${text}\n\n— ${member.name}（DEV PARADE）\n#デブポジBot #DEVPARADE\nhttps://dev-parade.github.io/debu-bot.html`;
+  document.getElementById('shareX').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
+  document.getElementById('shareLine').href = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent('https://dev-parade.github.io/debu-bot.html')}&text=${encodeURIComponent(shareText)}`;
+
+  // Scroll to result
+  resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function randomConvert() {
+  const input = sampleInputs[Math.floor(Math.random() * sampleInputs.length)];
+  document.getElementById('inputText').value = input;
+  convertToPositive();
+}
+
+function copyResult() {
+  const text = document.getElementById('resultText').textContent;
+  const member = document.getElementById('resultMember').textContent;
+  navigator.clipboard.writeText(`${text}\n\n— ${member}\n#デブポジBot #DEVPARADE`).then(() => {
+    const btn = event.target;
+    const original = btn.textContent;
+    btn.textContent = '✅ コピー完了！';
+    setTimeout(() => btn.textContent = original, 2000);
+  });
+}
+
+function incrementCounter() {
+  const el = document.getElementById('totalConverts');
+  const current = parseInt(el.textContent.replace(/,/g, ''));
+  el.textContent = (current + 1).toLocaleString();
+
+  const todayEl = document.getElementById('todayConverts');
+  const todayCurrent = parseInt(todayEl.textContent.replace(/,/g, ''));
+  todayEl.textContent = (todayCurrent + 1).toLocaleString();
+}
+
+// ===== RENDER FEED =====
+function renderFeed() {
+  const container = document.getElementById('feedContainer');
+  container.innerHTML = '';
+  feedData.forEach((item, i) => {
+    const el = document.createElement('div');
+    el.className = 'feed-item';
+    el.style.animationDelay = `${i * 0.1}s`;
+    el.innerHTML = `
+      <div class="feed-original">${item.original}</div>
+      <div class="feed-response">${item.response}</div>
+      <div class="feed-meta">
+        <span class="feed-member">${item.member}</span>
+        <span>${item.time} &middot; <span class="feed-platform">${item.platform}</span></span>
+      </div>
+    `;
+    container.appendChild(el);
+  });
+}
+
+// ===== FLOATING PARTICLES =====
+function createParticles() {
+  const container = document.getElementById('particles');
+  const emojis = ['🍖', '🍺', '🐷', '💪', '🔥', '🎸', '🥩', '🍔', '🍕', '🎤'];
+  for (let i = 0; i < 15; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    p.style.left = Math.random() * 100 + '%';
+    p.style.animationDuration = (10 + Math.random() * 20) + 's';
+    p.style.animationDelay = Math.random() * 10 + 's';
+    p.style.fontSize = (1 + Math.random()) + 'rem';
+    container.appendChild(p);
+  }
+}
+
+// ===== COUNTER ANIMATION =====
+function animateCounters() {
+  const totalEl = document.getElementById('totalConverts');
+  const target = 14829;
+  let current = 0;
+  const step = Math.ceil(target / 60);
+  const interval = setInterval(() => {
+    current += step;
+    if (current >= target) {
+      current = target;
+      clearInterval(interval);
+    }
+    totalEl.textContent = current.toLocaleString();
+  }, 30);
+}
+
+// ===== PERIODIC FEED UPDATE =====
+function periodicFeedUpdate() {
+  const additionalFeed = [
+    {
+      original: '海で水着になれない体型...',
+      response: '海はデブの味方。浮力で浮きやすいし、波も跳ね返せる。むしろ海はデブのためにある。ビーチの主役はお前だ。🏖️',
+      member: 'TAH',
+      platform: 'X (Twitter)',
+      time: 'たった今'
+    },
+    {
+      original: '満員電車でジロジロ見られる',
+      response: '注目を集めてるんだよ。それをオーラと呼ぶ。俺たちもライブで視線集めてるけど、同じことだろ？スターの素質あるぞ。⭐',
+      member: 'ハンサム判治',
+      platform: 'Instagram',
+      time: 'たった今'
+    }
+  ];
+
+  setInterval(() => {
+    const container = document.getElementById('feedContainer');
+    const item = additionalFeed[Math.floor(Math.random() * additionalFeed.length)];
+    const el = document.createElement('div');
+    el.className = 'feed-item';
+    el.innerHTML = `
+      <div class="feed-original">${item.original}</div>
+      <div class="feed-response">${item.response}</div>
+      <div class="feed-meta">
+        <span class="feed-member">${item.member}</span>
+        <span>たった今 &middot; <span class="feed-platform">${item.platform}</span></span>
+      </div>
+    `;
+    container.insertBefore(el, container.firstChild);
+    incrementCounter();
+
+    // 最大12件に制限
+    while (container.children.length > 12) {
+      container.removeChild(container.lastChild);
+    }
+  }, 15000); // 15秒ごと
+}
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', () => {
+  createParticles();
+  renderFeed();
+  animateCounters();
+  periodicFeedUpdate();
+});
+
+// Enter key to convert
+document.getElementById('inputText').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    convertToPositive();
+  }
+});
+</script>
+</body>
+</html>

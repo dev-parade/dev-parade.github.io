@@ -1,0 +1,53 @@
+name: DebuPosi Marketing - Multi-Platform Promotion
+
+on:
+  workflow_dispatch:
+    inputs:
+      campaign:
+        description: 'キャンペーン名'
+        required: false
+        default: 'launch'
+  schedule:
+    - cron: '0 3 * * 1,4'  # 月・木 12:00 JST (03:00 UTC) - 週2回投稿
+
+permissions:
+  issues: write
+
+env:
+  X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+  X_API_KEY: ${{ secrets.X_API_KEY }}
+  X_API_SECRET: ${{ secrets.X_API_SECRET }}
+  X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+  X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+
+jobs:
+  marketing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install tweepy
+
+      - name: Post promotional tweets
+        run: python scripts/debu-posi-marketing.py
+        env:
+          CAMPAIGN: ${{ github.event.inputs.campaign || 'scheduled' }}
+
+      - name: Log marketing activity
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f marketing_log.md ]; then
+            DATE=$(date +%Y-%m-%d_%H:%M)
+            gh issue create \
+              --title "📢 [Marketing] デブポジBot告知 (${DATE})" \
+              --body "$(cat marketing_log.md)" \
+              --label "marketing" || true
+          fi

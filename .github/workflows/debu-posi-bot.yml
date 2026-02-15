@@ -1,0 +1,56 @@
+name: DebuPosi Bot - X/Twitter Auto Reply
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'  # 2時間ごとに実行
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'ドライラン（実際にリプライしない）'
+        required: false
+        default: 'false'
+
+permissions:
+  issues: write
+
+env:
+  # X (Twitter) API v2 credentials
+  X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+  X_API_KEY: ${{ secrets.X_API_KEY }}
+  X_API_SECRET: ${{ secrets.X_API_SECRET }}
+  X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+  X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+  # Anthropic API for smart responses
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+jobs:
+  debu-posi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install tweepy anthropic
+
+      - name: Run DebuPosi Bot
+        env:
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+        run: python scripts/debu-posi-bot.py
+
+      - name: Log results to Issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f bot_log.md ]; then
+            DATE=$(date +%Y-%m-%d_%H:%M)
+            gh issue create \
+              --title "🍖 [DebuPosiBot] 実行ログ (${DATE})" \
+              --body "$(cat bot_log.md)" \
+              --label "debu-posi-bot" || true
+          fi
