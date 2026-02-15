@@ -233,7 +233,6 @@ def get_x_client():
         return None
 
     return tweepy.Client(
-        bearer_token=bearer,
         consumer_key=api_key,
         consumer_secret=api_secret,
         access_token=access_token,
