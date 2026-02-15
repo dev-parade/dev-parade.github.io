@@ -258,8 +258,13 @@ def post_promo_tweet(client, campaign):
             tweet_id = result.data["id"]
             print(f"✅ Posted! Tweet ID: {tweet_id}")
             return {"text": tweet_text, "id": tweet_id, "status": "posted"}
+        except tweepy.errors.Forbidden as e:
+            print(f"❌ Failed (403): {e}")
+            print(f"Response: {e.response.text if hasattr(e, 'response') and e.response else 'N/A'}")
+            print(f"API Errors: {e.api_errors if hasattr(e, 'api_errors') else 'N/A'}")
+            return {"text": tweet_text, "id": None, "status": f"failed: {e}"}
         except Exception as e:
-            print(f"❌ Failed: {e}")
+            print(f"❌ Failed: {type(e).__name__}: {e}")
             return {"text": tweet_text, "id": None, "status": f"failed: {e}"}
     else:
         print("⚠️ No X client - dry run")
