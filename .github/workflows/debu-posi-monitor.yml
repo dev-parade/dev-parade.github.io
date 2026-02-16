@@ -1,8 +1,11 @@
-name: PosiDev Monitor - メンション監視 & ポジデブ自動返信
+name: PosiDev Monitor - 無料検索 & メンション監視 & ポジデブ自動返信
 
 on:
   schedule:
-    - cron: '0 */3 * * *'  # 3時間ごとにメンション監視
+    # ピーク時間の30分後に監視（投稿後の反応をチェック）
+    - cron: '0 23 * * *'   # 朝 8:00 JST
+    - cron: '30 3 * * *'   # 昼 12:30 JST
+    - cron: '0 12 * * *'   # 夜 21:00 JST
   workflow_dispatch:
 
 permissions:
@@ -20,29 +23,26 @@ jobs:
           python-version: '3.12'
 
       - name: Install deps
-        run: pip install tweepy
+        run: pip install tweepy requests beautifulsoup4
 
-      - name: Monitor mentions & auto-reply
+      - name: Search & auto-reply (Free method)
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
-        run: python scripts/debu-posi-monitor.py
+        run: python scripts/debu-posi-search-free.py
 
-      - name: Create Issue with report
+      - name: Create Issue report
         if: always()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -f monitor_issue.md ]; then
-            DATE=$(date +%Y-%m-%d_%H:%M)
+          if [ -f search_report.md ]; then
+            DATE=$(date +%Y-%m-%d_%H%M)
             gh issue create \
-              --title "🍖 [ポジデブ変換] ${DATE}" \
-              --body "$(cat monitor_issue.md)" \
-              --label "debu-posi-reply" || \
-            gh issue create \
-              --title "🍖 [ポジデブ変換] ${DATE}" \
-              --body "$(cat monitor_issue.md)"
+              --title "🍖 [ポジデブ返信] ${DATE}" \
+              --body "$(cat search_report.md)" \
+              --label "debu-posi-reply" || true
           fi

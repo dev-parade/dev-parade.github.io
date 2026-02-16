@@ -489,12 +489,30 @@ TWEETS = {
 
 
 def select_daily_tweet():
-    """日付ベースでツイートを選択（同じ日は同じツイート、日が変われば別のツイート）"""
+    """日付+時間帯ベースでツイートを選択（1日3回、全て別のツイート）"""
     jst = timezone(timedelta(hours=9))
-    today = datetime.now(jst).strftime("%Y-%m-%d")
-    # 日付からハッシュを生成して、テンプレートのインデックスに変換
-    seed = int(hashlib.md5(today.encode()).hexdigest(), 16)
-    index = seed % len(DAILY_TWEETS)
+    now = datetime.now(jst)
+    today = now.strftime("%Y-%m-%d")
+    hour = now.hour
+    n = len(DAILY_TWEETS)
+
+    # 日付のハッシュで基準インデックスを決定
+    day_seed = int(hashlib.md5(today.encode()).hexdigest(), 16)
+    base = day_seed % n
+
+    # 時間帯ごとにオフセットを加算（必ず3つとも別になる）
+    if hour < 10:
+        slot = "morning"
+        offset = 0
+    elif hour < 15:
+        slot = "noon"
+        offset = n // 3        # 1/3ずらす
+    else:
+        slot = "evening"
+        offset = (n * 2) // 3  # 2/3ずらす
+
+    index = (base + offset) % n
+    print(f"Time slot: {slot} (index: {index}/{n})")
     return DAILY_TWEETS[index]
 
 

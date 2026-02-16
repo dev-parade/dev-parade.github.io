@@ -1,4 +1,4 @@
-name: PosiDev Daily Tweet - 毎日ポジデブ自動投稿
+name: PosiDev Daily Tweet - 1日3回ポジデブ自動投稿
 
 on:
   workflow_dispatch:
@@ -8,7 +8,10 @@ on:
         required: false
         default: 'scheduled'
   schedule:
-    - cron: '0 3 * * *'  # 毎日 12:00 JST に自動投稿
+    # X閲覧ピーク時間に1日3回投稿（JST）
+    - cron: '30 22 * * *'  # 朝 7:30 JST（通勤ラッシュ）
+    - cron: '0 3 * * *'    # 昼 12:00 JST（ランチタイム）
+    - cron: '30 11 * * *'  # 夜 20:30 JST（ゴールデンタイム）
 
 permissions:
   issues: write
@@ -27,7 +30,7 @@ jobs:
       - name: Install deps
         run: pip install tweepy
 
-      - name: Generate and auto-post daily tweet
+      - name: Generate and auto-post tweet
         env:
           CAMPAIGN: ${{ github.event.inputs.campaign || 'scheduled' }}
           X_API_KEY: ${{ secrets.X_API_KEY }}
@@ -36,17 +39,14 @@ jobs:
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
         run: python scripts/debu-posi-tweet-generator.py
 
-      - name: Create Issue with tweet
+      - name: Create Issue log
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ -f tweet_issue.md ]; then
-            DATE=$(date +%Y-%m-%d)
+            DATE=$(date +%Y-%m-%d_%H%M)
             gh issue create \
               --title "🍖 [ポジデブ日報] ${DATE}" \
               --body "$(cat tweet_issue.md)" \
-              --label "tweet-ready" || \
-            gh issue create \
-              --title "🍖 [ポジデブ日報] ${DATE}" \
-              --body "$(cat tweet_issue.md)"
+              --label "tweet-ready" || true
           fi
