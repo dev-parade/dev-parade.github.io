@@ -449,6 +449,198 @@ DEV PARADEメンバーの回答:
 DEV PARADEの仲間。🍖
 
 #ポジデブBot #ポジデブチャレンジ #DEVPARADE""",
+
+    # ----- エンゲージメント特化（RT・いいね狙い） -----
+    f"""これRTして。
+
+「デブ」って悩んでる人に届けたい。
+
+太ってるのは恥ずかしいことじゃない。
+俺たち5人で570kg。
+全員メジャーデビュー。
+NARUTOのED歌った。
+
+体重は、才能。🍖
+
+{SITE_URL}
+#ポジデブBot #DEVPARADE #拡散希望""",
+
+    f"""いいねした人、全員ポジデブ認定します🍖
+
+条件:
+✅ 自分の体が好き → ポジデブ
+✅ 自分の体が嫌い → 好きになれるようにする。ポジデブ
+✅ どっちでもいい → それもポジデブ
+
+全員合格。おめでとう🎉
+
+#ポジデブBot #DEVPARADE""",
+
+    f"""💪 デブの才能ランキング 💪
+
+1位: 冬でも暖かい（自家発電）
+2位: ハグの包容力が異次元
+3位: 食レポの説得力
+4位: 重心が低くて安定感抜群
+5位: 存在するだけで場が和む
+
+異論は認めます。
+でも覆りません。🍖
+
+#ポジデブBot #DEVPARADE""",
+
+    f"""フォローすると起きること:
+
+🍖 1日3回ポジデブが届く
+🍖 体型の悩みが軽くなる
+🍖 焼肉が食べたくなる
+🍖 DEV PARADEのことが気になり始める
+🍖 痛風が怖くなくなる
+
+副作用: 体重は増えます。
+でも幸福度も増えます。
+
+#ポジデブBot #DEVPARADE""",
+
+    f"""「デブ」をポジティブに変換できる
+世界で唯一のBot作りました。
+
+入力: ネガティブな体型の悩み
+出力: 570kg超バンドからの全力肯定
+
+既に変換された人、感想をリプで🍖
+
+{BOT_URL}
+#ポジデブBot #DEVPARADE""",
+
+    # ----- 海外向け / English -----
+    f"""A band where EVERY member weighs over 90kg.
+Total: 570kg+.
+All had major label deals.
+Sang NARUTO's ending theme.
+
+We broke up because a member got thin.
+Reunited because everyone got fat again.
+
+This is DEV PARADE. 🍖
+
+{SITE_URL}
+#DEVPARADE #BodyPositive""",
+
+    f"""Body positivity isn't just words for us.
+It's 570kg of proof.
+
+DEV PARADE - 5 members, all 90kg+
+Every one of us proud.
+
+Your body is not a problem to solve.
+It's a story to celebrate. 🍖
+
+{SITE_URL}
+#BodyPositive #DEVPARADE""",
+
+    f"""POV: You're a 570kg band and
+your guitarist weighs 135kg.
+
+His fingers are thicker than guitar strings.
+His melodies? Delicate as a butterfly.
+
+Weight and talent are not enemies.
+They're partners. 🍖
+
+#DEVPARADE #BodyPositive""",
+
+    f"""THREAD: Why being fat is actually a superpower
+
+1. Winter? You're a walking heater.
+2. Hugs? Undefeated.
+3. Food reviews? Maximum credibility.
+4. Gravity? Loves you more.
+5. Presence? Undeniable.
+
+570kg band DEV PARADE approves. 🍖
+
+#BodyPositive #DEVPARADE""",
+
+    # ----- バイラル狙い（議論・共感） -----
+    f"""正直に言います。
+
+「デブは不健康」は半分嘘。
+
+痩せてても不健康な人はいる。
+太ってても健康な人はいる。
+
+体型＝健康じゃない。
+
+俺たちDEV PARADE、
+5人で570kg。
+全員現役ミュージシャン。🍖
+
+#ポジデブBot #DEVPARADE""",
+
+    f"""日本で一番体重が重いバンドは
+たぶん俺たち。
+
+5人で570kg。
+
+でも日本で一番
+「デブでよかった」と思ってるバンドも
+たぶん俺たち。🍖
+
+#DEVPARADE #デブパレード""",
+
+    f"""「太ってるのにバンドやってるの？」
+
+って10年前に言われた。
+
+今:
+・メジャーデビュー済み
+・NARUTOのED歌った
+・HEY!HEY!HEY!出た
+・SUMMER SONIC出た
+
+太ってるから、やってるんだよ。🍖
+
+#DEVPARADE #バッチコイ""",
+
+    # ----- 数字・データ系（信頼性UP） -----
+    f"""【DEV PARADE データ】
+
+結成: 2000年代
+メンバー: 5人
+合計体重: 570kg超
+全員痛風: Yes
+メジャーデビュー: 全員経験あり
+代表曲: バッチコイ!!（NARUTO ED）
+解散理由: メンバーが痩せた
+復活理由: 全員太り直した
+
+全部事実。🍖
+
+{SITE_URL}
+#DEVPARADE""",
+
+    # ----- 時事ネタ対応テンプレ -----
+    f"""月曜の朝、体重計に乗るな。
+
+なぜなら週末は幸福度MAXだったはず。
+幸福の結果を数字で測るな。
+
+それより「今週も生きてる」ことを祝え。
+おめでとう。🍖
+
+#ポジデブBot #DEVPARADE #月曜日""",
+
+    f"""今日も570kgのバンドが
+あなたを全力で肯定します。
+
+太ってていい。
+痩せててもいい。
+どんな体型でもいい。
+
+ただし、焼肉は食え。🍖
+
+#ポジデブBot #DEVPARADE""",
 ]
 
 # ===== ランチ / コラボ用 =====

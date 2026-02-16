@@ -1,0 +1,118 @@
+name: Mobile Command - iPhoneから指示実行
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  process-command:
+    # 「mobile-command」ラベルが付いたIssueのみ処理
+    if: contains(github.event.issue.labels.*.name, 'mobile-command')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install tweepy
+
+      - name: Parse command
+        id: parse
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          echo "title=$ISSUE_TITLE" >> $GITHUB_OUTPUT
+          # コマンドをタイトルから判定
+          if echo "$ISSUE_TITLE" | grep -qi "tweet"; then
+            echo "command=tweet" >> $GITHUB_OUTPUT
+          elif echo "$ISSUE_TITLE" | grep -qi "growth"; then
+            echo "command=growth" >> $GITHUB_OUTPUT
+          elif echo "$ISSUE_TITLE" | grep -qi "monitor"; then
+            echo "command=monitor" >> $GITHUB_OUTPUT
+          elif echo "$ISSUE_TITLE" | grep -qi "status"; then
+            echo "command=status" >> $GITHUB_OUTPUT
+          else
+            echo "command=tweet" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Execute - Tweet
+        if: steps.parse.outputs.command == 'tweet'
+        env:
+          CAMPAIGN: scheduled
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+        run: python scripts/debu-posi-tweet-generator.py
+
+      - name: Execute - Custom Tweet from Issue body
+        if: steps.parse.outputs.command == 'tweet' && github.event.issue.body != ''
+        env:
+          CUSTOM_TWEET: ${{ github.event.issue.body }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+        run: |
+          python3 -c "
+          import os, tweepy
+          text = os.environ.get('CUSTOM_TWEET', '').strip()
+          if not text or text.startswith('_No'):
+              print('No custom tweet text, using auto-generated')
+              exit(0)
+          client = tweepy.Client(
+              consumer_key=os.environ['X_API_KEY'],
+              consumer_secret=os.environ['X_API_SECRET'],
+              access_token=os.environ['X_ACCESS_TOKEN'],
+              access_token_secret=os.environ['X_ACCESS_SECRET'],
+          )
+          result = client.create_tweet(text=text)
+          print(f'Custom tweet posted! ID: {result.data[\"id\"]}')
+          "
+
+      - name: Execute - Monitor
+        if: steps.parse.outputs.command == 'monitor'
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+        run: python scripts/debu-posi-search-free.py
+
+      - name: Execute - Growth
+        if: steps.parse.outputs.command == 'growth'
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+        run: python scripts/follower-growth.py
+
+      - name: Report result
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          RESULT=""
+          if [ -f tweet_issue.md ]; then
+            RESULT=$(cat tweet_issue.md)
+          elif [ -f search_report.md ]; then
+            RESULT=$(cat search_report.md)
+          elif [ -f growth_report.md ]; then
+            RESULT=$(cat growth_report.md)
+          else
+            RESULT="✅ コマンド実行完了"
+          fi
+          gh issue comment "$ISSUE_NUMBER" --body "$RESULT"
+          gh issue close "$ISSUE_NUMBER"

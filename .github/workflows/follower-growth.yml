@@ -1,0 +1,46 @@
+name: DEV PARADE X Growth Engine - フォロワー増加自動化
+
+on:
+  schedule:
+    # 1日1回、夜22:00 JST（13:00 UTC）に実行
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  growth:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install tweepy
+
+      - name: Run Growth Engine
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+        run: python scripts/follower-growth.py
+
+      - name: Create Growth Report Issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f growth_report.md ]; then
+            DATE=$(date +%Y-%m-%d)
+            gh issue create \
+              --title "📈 [Growth Report] ${DATE}" \
+              --body "$(cat growth_report.md)" \
+              --label "growth-report" || true
+          fi
