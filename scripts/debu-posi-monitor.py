@@ -291,12 +291,12 @@ def monitor_search(client):
                 if len(found_tweets) >= 15:
                     break
 
-        except tweepy.errors.Forbidden:
-            print(f"   ⚠️ 検索API 403 → Freeプランでは利用不可。メンション監視に切替。")
+        except (tweepy.errors.Forbidden, tweepy.errors.Unauthorized):
+            print(f"   ⚠️ 検索API 401/403 → Freeプランでは利用不可。メンション監視に切替。")
             return None  # Noneを返して呼び出し元でメンション監視にフォールバック
         except Exception as e:
             print(f"   検索エラー: {e}")
-            continue
+            return None  # その他エラーもメンション監視にフォールバック
 
         if len(found_tweets) >= 15:
             break
