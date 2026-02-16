@@ -1,4 +1,4 @@
-name: PosiDev Marketing - Auto Tweet Generator
+name: PosiDev Daily Tweet - 毎日ポジデブ自動投稿
 
 on:
   workflow_dispatch:
@@ -8,13 +8,13 @@ on:
         required: false
         default: 'scheduled'
   schedule:
-    - cron: '0 3 * * 1,4'  # 月・木 12:00 JST - 週2回自動生成
+    - cron: '0 3 * * *'  # 毎日 12:00 JST に自動投稿
 
 permissions:
   issues: write
 
 jobs:
-  generate-tweet:
+  daily-tweet:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,7 +27,7 @@ jobs:
       - name: Install deps
         run: pip install tweepy
 
-      - name: Generate and auto-post tweet
+      - name: Generate and auto-post daily tweet
         env:
           CAMPAIGN: ${{ github.event.inputs.campaign || 'scheduled' }}
           X_API_KEY: ${{ secrets.X_API_KEY }}
@@ -43,10 +43,10 @@ jobs:
           if [ -f tweet_issue.md ]; then
             DATE=$(date +%Y-%m-%d)
             gh issue create \
-              --title "🍖 [デブポジツイート] ${DATE}" \
+              --title "🍖 [ポジデブ日報] ${DATE}" \
               --body "$(cat tweet_issue.md)" \
               --label "tweet-ready" || \
             gh issue create \
-              --title "🍖 [デブポジツイート] ${DATE}" \
+              --title "🍖 [ポジデブ日報] ${DATE}" \
               --body "$(cat tweet_issue.md)"
           fi

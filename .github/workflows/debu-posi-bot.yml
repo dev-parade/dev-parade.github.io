@@ -1,30 +1,22 @@
-name: PosiDev Bot - X/Twitter Auto Reply
+name: PosiDev Bot - Combined Daily Post & Monitor
+
+# このワークフローは debu-posi-marketing.yml (毎日投稿) と
+# debu-posi-monitor.yml (メンション監視) に統合されました。
+# 個別に実行する場合はこちらを使用。
 
 on:
-  schedule:
-    - cron: '0 */2 * * *'  # 2時間ごとに実行
   workflow_dispatch:
     inputs:
-      dry_run:
-        description: 'ドライラン（実際にリプライしない）'
+      mode:
+        description: 'モード (tweet / monitor / both)'
         required: false
-        default: 'false'
+        default: 'both'
 
 permissions:
   issues: write
 
-env:
-  # X (Twitter) API v2 credentials
-  X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
-  X_API_KEY: ${{ secrets.X_API_KEY }}
-  X_API_SECRET: ${{ secrets.X_API_SECRET }}
-  X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-  X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
-  # Anthropic API for smart responses
-  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-
 jobs:
-  debu-posi:
+  posideb:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,23 +26,24 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
-        run: pip install tweepy anthropic
+      - name: Install deps
+        run: pip install tweepy
 
-      - name: Run PosiDev Bot
+      - name: Post daily tweet
+        if: ${{ github.event.inputs.mode == 'tweet' || github.event.inputs.mode == 'both' }}
         env:
-          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
-        run: python scripts/debu-posi-bot.py
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+        run: python scripts/debu-posi-tweet-generator.py
 
-      - name: Log results to Issue
-        if: always()
+      - name: Monitor & auto-reply
+        if: ${{ github.event.inputs.mode == 'monitor' || github.event.inputs.mode == 'both' }}
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          if [ -f bot_log.md ]; then
-            DATE=$(date +%Y-%m-%d_%H:%M)
-            gh issue create \
-              --title "🍖 [PosiDevBot] 実行ログ (${DATE})" \
-              --body "$(cat bot_log.md)" \
-              --label "debu-posi-bot" || true
-          fi
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+        run: python scripts/debu-posi-monitor.py
