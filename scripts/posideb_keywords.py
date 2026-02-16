@@ -215,6 +215,56 @@ KEYWORDS_JA = {
         "ストレス食いは自己防衛。賢い体の反応だ。責めるな🍖 #ポジデブ",
     ],
 
+    # ----- 痩せすぎ心配系（痩せた人にもポジデブ） -----
+    "痩せた": [
+        "痩せた？ 心配してるぞ。ちゃんと食ってるか？ 焼肉おごるから連絡くれ🍖 by DEV PARADE #ポジデブ",
+        "痩せたって聞いて飛んできた。DEV PARADEが全力で肉を届けたい🍖 #ポジデブ",
+    ],
+    "痩せすぎ": [
+        "痩せすぎは心配。体は大事にしてくれ。一緒に焼肉行こう🍖 by DEV PARADE #ポジデブ",
+        "痩せすぎるな。お前が元気でいることが一番大事🍖 #ポジデブ",
+    ],
+    "やせた": [
+        "やせた？ 無理してないか？ 健康が第一。DEV PARADEが心配してるぞ🍖 #ポジデブ",
+    ],
+    "ガリガリ": [
+        "ガリガリも心配になる。ちゃんと食べて元気でいてくれ。肉送るぞ🍖 #ポジデブ",
+        "ガリガリだろうがデブだろうが、お前は最高。でも食べてくれ🍖 #ポジデブ",
+    ],
+    "がりがり": [
+        "がりがりはDEV PARADE的に心配。栄養摂ってるか？ 体大事にしろ🍖 #ポジデブ",
+    ],
+    "食べてない": [
+        "食べてない？ それは心配だ。体が資本。まず食え。話はそれからだ🍖 by DEV PARADE #ポジデブ",
+    ],
+    "食べれない": [
+        "食べれない時は無理しなくていい。でもいつでも一緒に食べに行くぞ🍖 #ポジデブ",
+    ],
+    "拒食": [
+        "辛いな。一人で抱え込まないで。DEV PARADEは570kgの愛であなたの味方🍖 #ポジデブ",
+    ],
+    "過食": [
+        "辛い時は食で心を満たすこともある。自分を責めないで🍖 by DEV PARADE #ポジデブ",
+    ],
+    "摂食障害": [
+        "一人で戦わなくていい。専門家の力も借りて。DEV PARADEはいつでもあなたの味方🍖 #ポジデブ",
+    ],
+    "骨と皮": [
+        "体は大事にしてくれ。健康が全て。焼肉で栄養つけよう🍖 by DEV PARADE #ポジデブ",
+    ],
+    "体重減った": [
+        "体重減った？ 意図的じゃないなら心配だ。体調どう？ 健康第一🍖 #ポジデブ",
+    ],
+    "痩せろって": [
+        "「痩せろ」って言う奴より「そのままでいい」って言う俺たちを信じろ🍖 #ポジデブ",
+    ],
+    "病気になる": [
+        "体型で病気を語るな。健康は体型じゃ決まらない。定期検診は大事🍖 #ポジデブ",
+    ],
+    "不健康": [
+        "見た目で健康を判断するな。太ってても健康、痩せてても不健康もある。自分の体を愛そう🍖 #ポジデブ",
+    ],
+
     # ----- 食文化 -----
     "大盛り": [
         "大盛りは正義。遠慮なくいけ🍖 #ポジデブ",
@@ -359,6 +409,30 @@ KEYWORDS_EN = {
     "size zero": [
         "Size zero? Zero fun. Go big or go home. DEV PARADE went BIG 🍖 #BodyPositive",
     ],
+    "too skinny": [
+        "Too skinny? Take care of yourself. Health comes first. DEV PARADE cares 🍖 #BodyPositive",
+    ],
+    "underweight": [
+        "Underweight? Please eat well and take care. Your health matters most 🍖 #BodyPositive",
+    ],
+    "anorexia": [
+        "You're not alone. Please reach out for help. DEV PARADE sends 570kg of love 🍖 #BodyPositive",
+    ],
+    "eating disorder": [
+        "Eating disorders are real and valid. Please seek help. We support you 🍖 #BodyPositive",
+    ],
+    "not eating": [
+        "Not eating? Please take care of yourself. Your body needs fuel. We care 🍖 #BodyPositive",
+    ],
+    "binge eating": [
+        "Don't blame yourself. Food is comfort sometimes. Be gentle with yourself 🍖 #BodyPositive",
+    ],
+    "lost too much weight": [
+        "Lost too much weight? Please check in with a doctor. Your health is everything 🍖 #BodyPositive",
+    ],
+    "skin and bones": [
+        "Every body deserves nourishment and love. Please eat and take care 🍖 #BodyPositive",
+    ],
 }
 
 # ===== Google検索用クエリ =====
@@ -381,6 +455,12 @@ GOOGLE_QUERIES_EN = [
     'site:x.com "called me fat" OR "fat ugly"',
     'site:x.com "need to lose weight" OR "overweight"',
     'site:x.com "body positive" OR "plus size" "love"',
+    'site:x.com "eating disorder" OR "anorexia" OR "too skinny"',
+]
+
+GOOGLE_QUERIES_JA_SKINNY = [
+    'site:x.com "痩せすぎ" OR "ガリガリ" ("心配" OR "大丈夫")',
+    'site:x.com "食べてない" OR "食べれない" ("辛い" OR "心配")',
 ]
 
 # 全キーワード統合
@@ -388,7 +468,7 @@ ALL_KEYWORDS = {}
 ALL_KEYWORDS.update(KEYWORDS_JA)
 ALL_KEYWORDS.update(KEYWORDS_EN)
 
-ALL_GOOGLE_QUERIES = GOOGLE_QUERIES_JA + GOOGLE_QUERIES_EN
+ALL_GOOGLE_QUERIES = GOOGLE_QUERIES_JA + GOOGLE_QUERIES_EN + GOOGLE_QUERIES_JA_SKINNY
 
 
 def select_response(text):
