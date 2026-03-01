@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEV PARADE | 歌詞 / LYRICS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #111; color: #fff; font-family: 'Noto Sans JP', sans-serif; min-height: 100vh; }
+    header { background: #000; border-bottom: 3px solid #d32f2f; padding: 18px 24px; display: flex; align-items: center; gap: 16px; position: sticky; top: 0; z-index: 100; }
+    .logo-text { font-family: 'Oswald', sans-serif; font-size: 1.7rem; font-weight: 700; color: #d32f2f; letter-spacing: 0.05em; text-transform: uppercase; }
+    .logo-sub { font-size: 0.72rem; color: #888; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'Oswald', sans-serif; }
+    .hero { background: linear-gradient(180deg,#1a0000 0%,#111 100%); padding: 44px 24px 32px; text-align: center; border-bottom: 1px solid #333; }
+    .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2rem,8vw,3.8rem); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .hero h1 span { color: #d32f2f; }
+    .hero p { margin-top: 8px; color: #888; font-size: 0.88rem; letter-spacing: 0.08em; }
+    .badge { display: inline-block; margin-top: 14px; background: #d32f2f; color: #fff; font-family: 'Oswald', sans-serif; font-size: 0.72rem; letter-spacing: 0.12em; padding: 4px 14px; border-radius: 2px; text-transform: uppercase; }
+    main { max-width: 740px; margin: 0 auto; padding: 32px 16px 80px; }
+    .section-label { font-family: 'Oswald', sans-serif; font-size: 0.72rem; color: #d32f2f; letter-spacing: 0.2em; text-transform: uppercase; margin: 28px 0 12px; border-left: 3px solid #d32f2f; padding-left: 10px; }
+    .song-card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 4px; margin-bottom: 10px; overflow: hidden; transition: border-color 0.2s; }
+    .song-card:hover { border-color: #555; }
+    .song-card.open { border-color: #d32f2f; }
+    .song-header { display: flex; align-items: center; gap: 14px; padding: 15px 18px; cursor: pointer; user-select: none; }
+    .song-num { font-family: 'Oswald', sans-serif; font-size: 1.3rem; font-weight: 700; color: #d32f2f; min-width: 34px; text-align: center; }
+    .song-info { flex: 1; }
+    .song-title { font-size: 1rem; font-weight: 700; letter-spacing: 0.02em; }
+    .song-meta { font-size: 0.72rem; color: #888; margin-top: 2px; font-family: 'Oswald', sans-serif; letter-spacing: 0.06em; }
+    .tag { display: inline-block; background: #d32f2f22; color: #d32f2f; font-size: 0.62rem; padding: 2px 7px; border-radius: 2px; margin-left: 7px; font-family: 'Oswald', sans-serif; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid #d32f2f44; vertical-align: middle; }
+    .arrow { color: #555; font-size: 1rem; transition: transform 0.25s, color 0.2s; line-height: 1; }
+    .song-card.open .arrow { transform: rotate(180deg); color: #d32f2f; }
+    .lyrics-body { display: none; padding: 0 18px 22px 66px; border-top: 1px solid #222; }
+    .song-card.open .lyrics-body { display: block; }
+    .lyrics-text { font-size: 0.93rem; line-height: 2; color: #ccc; white-space: pre-wrap; padding-top: 18px; }
+    .hook { color: #fff; font-weight: 700; }
+    .singles-section { margin-top: 36px; }
+    .stream-bar { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 18px 14px 66px; border-top: 1px solid #222; background: #161616; }
+    .stream-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 20px; font-size: 0.72rem; font-family: 'Oswald', sans-serif; letter-spacing: 0.08em; text-decoration: none; text-transform: uppercase; transition: opacity 0.2s; font-weight: 700; }
+    .stream-btn:hover { opacity: 0.8; }
+    .stream-btn.all { background: #d32f2f; color: #fff; }
+    footer { text-align: center; padding: 24px; color: #444; font-size: 0.72rem; font-family: 'Oswald', sans-serif; letter-spacing: 0.1em; border-top: 1px solid #222; margin-top: 20px; }
+    footer a { color: #d32f2f; text-decoration: none; }
+    .back-to-top { position: fixed; bottom: 22px; right: 22px; background: #d32f2f; color: #fff; width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; cursor: pointer; box-shadow: 0 4px 12px rgba(211,47,47,0.4); text-decoration: none; }
+  </style>
+</head>
+<body>
+<header>
+  <div>
+    <div class="logo-text">DEV PARADE</div>
+    <div class="logo-sub">デブパレード — Official Lyrics</div>
+  </div>
+</header>
+<div class="hero">
+  <h1>LYRICS / <span>歌詞</span></h1>
+  <p>LEGENDARY HEAVY METABO BAND — 2026 REUNION</p>
+  <div class="badge">Official Lyrics Page</div>
+</div>
+<main>
+  <div class="section-label">1st Full Album — 2026</div>
+  <!-- 01 -->
+  <div class="song-card" onclick="toggle(this)">
+    <div class="song-header">
+      <div class="song-num">01</div>
+      <div class="song-info"><div class="song-title">100CAN</div><div class="song-meta">1st Full Album Track 01</div></div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="lyrics-body"><div class="lyrics-text">大きな体で小さな心　ギャップ萌え　モテモテ人妻　から子供
+プーさん体型　球体じゃんね
+ガチャポンって松ちゃんが言うてはりますね
+一貫の終わり？百貫の始まり
+６パック　から１パック　逆ライザップ
+３段腹　２段腹　１段腹が自慢さ　わがままボディー　わんぱく体格
+
+あきらかに　負け戦だとしても
+友よ闘え　明日の為に
+
+<span class="hook">１００CAN！いつでもDIVE! ×３
+１００CAN！どこでもDIVE! ×３
+１００CAN！笑ってへDIVE! ×３
+１００CAN！あなたへDIVE!</span>
+
+Do You remember? CHeck My Body!
+いつだって傷つくの平気
+ハート様か牛宝　ゴムゴムの風船
+育ち環境　関係なく結果だしたやつが正義
+芸術　ベーシック　世の中景気悪いけど
+肉、ケーキ食っても経費　もうええでしょう
+フェティッシュでプリミティブでポジティブな肥満師
+尿酸値　高いけど超ダンディ
+
+乾いた風に掻き消されても
+最後の声だけは取り戻せ！
+
+あきらかに　負け戦だとしても
+友よ闘え明日の為に！
+
+<span class="hook">１００CAN！いつでもDIVE! ×３
+１００CAN！どこでもDIVE! ×３
+１００CAN！笑ってへDIVE! ×３
+１００CAN！あなたへDIVE!</span>
+
+マイペースでも前進
+瞳の奥みなぎる闘志
+未来は何百通り
+つなげよう俺らのストーリー100CAN</div></div>
+  </div>
+  <!-- 02 -->
+  <div class="song-card" onclick="toggle(this)">
+    <div class="song-header">
+      <div class="song-num">02</div>
+      <div class="song-info"><div class="song-title">自転車</div><div class="song-meta">1st Full Album Track 02</div></div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="lyrics-body"><div class="lyrics-text">自転車に初めて乗れた日
+どこまでも飛べる気がした
+初めて君としゃべれた日
+どこまでも飛べる気がした
+
+空がこんなに青い訳は
+どこまでも空っぽだから
+漕いで漕いで漕いで漕いで恋をして
+シャカリキに走り続けた
+
+夜に肥えて行くのさ　ラーメンとか夜食で
+キツく閉めて容赦無く　どんどん下がる　サドル　ケツ
+空気ぬけパンクしやすい　体重による残念　ずっと。
+自重が自由うばう地球　万有引力発見　ニュートン
+電動　アシストが現状　ベスト　こいでこいで　腹が
+膝に当たってると　邪魔ですよ、わかってるよ
+LUUPですら１００キロ　制限体重　食ったら乗るな
+豚かポークか　俺たち　スポーク折れがち
+
+自転車に初めて乗れた日
+どこまでも飛べる気がした
+初めて波に乗れた日
+地球に背中押された気がした
+
+君の涙が青い訳は
+あの海が真っ青だから
+漕いで漕いで漕いで漕いで恋をして
+我武者羅に走り続けた
+
+最初乗ったチャリは確か店の売れ残り
+ばあちゃんち　自転車屋a.k.a中澤輪店
+腹出して　はなたらしてた俺に　ただ優しい目
+補助輪はずし伝ってくれたおじさんも死んで
+気がつけばこっちが手伝う側　２児のパパ
+でも気持ちはあの時のまま 君となら
+恐竜公園も平和島もチャリで行ってケンカした
+そんな日がいつかまた来るといいな。
+
+自転車に初めて乗れた日
+どこまでも飛べる気がした
+初めて君としゃべれた日
+どこまでも飛べる気がした</div></div>
+  </div>
+  <!-- 03 -->
+  <div class="song-card" onclick="toggle(this)">
+    <div class="song-header">
+      <div class="song-num">03</div>
+      <div class="song-info"><div class="song-title">パルフェ</div><div class="song-meta">1st Full Album Track 03</div></div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="lyrics-body"><div class="lyrics-text">きみが僕にくれたのは甘い想い出
+悲しみの手前のカラフルな気持ち
+とろけそうな甘い甘いきみの果てに
+空のグラスを見つめて一人ため息
+
+瞳を　閉じれば　今でも
+
+浮かぶキミの顔　思いは昨日以上
+スイートにBurning LOVE!
+また今日もハイになる
+僕はSCREAMした！
+大好き一心不乱 なんだこの期待感
+
+<span class="hook">カラフルなパルフェ</span>
+
+最高さ震える脂肪細胞が　内臓が喜ぶ魅力は異常さ
+説明しよう機能作用は　血糖値爆上がり意識朦朧
+また妄想　ジョジョに奇妙な体重増加
+インスリンを感じながら韻踏み強化
+デブは甘え？バカめ
+おもいっきり甘えていいんだぜ
+
+モノクロな夢見てたあの頃
+きみと出会えて　僕は僕になれたのさ
+
+きみが僕にくれたのは甘い想い出
+悲しみの手前のカラフルな気持ち
+
+君の夢を見たよ
+
+とろける君の肌　忘れはしないさ
+甘い甘いひと時　一体今は何処へ？
+一期一会だなんて　馬鹿な事言わないで
+なのにこの焦燥感
+大好きなパルフェ
+
+ある事　無い事　ネット投稿で一喜一憂　お前にFAT YOU
+何がフェイクで　何がリアルか　AIより愛　マニュアルなしさ
+インスタグラムより100キログラム TIKTOK よりビーフとポーク
+チキンは脱却　器用貧乏　リッチな生き方　ROCKでHIPHOP
+
+モノクロな夢見てたあの頃
+きみと出会えて　僕は僕になれたのさ
+
+モノクロな夢見てたあの頃
+きみと出会えて　僕は僕になれた
+
+きみが僕にくれたのは甘い想い出
+悲しみの手前のカラフルな気持ち
+とろけそうな甘い甘いきみの果てに
+空のグラスを見つめて一人ため息
+
+瞳を　閉じれば　今でも
+
+浮かぶキミの顔　思いは昨日以上
+スイートにBurning LOVE!
+また今日もハイになる
+僕はSCREAMした！
+大好き一心不乱 なんだこの期待感
+
+<span class="hook">カラフルなパルフェ</span></div></div>
+  </div>
+  <!-- 04 -->
+  <div class="song-card" onclick="toggle(this)">
+    <div class="song-header">
+      <div class="song-num">04</div>
+      <div class="song-info"><div class="song-title">うっちゃりFUNK</div><div class="song-meta">1st Full Album Track 04</div></div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="lyrics-body"><div class="lyrics-text">GOOD MORNING EVERYBODY
+No！ファットモーニング！デブりボディ！
+Welcome to the FUNKY WORLD！
+この豊満な世界へようこそ
+お太り様ですか？
+ある意味サイズ的にお二人様分
+No Meat! No Life!
+おなかにつまった夢と希望と愛
+
+やったー！めしだー！FAT YOU! BABY!
+デブだデブだと噂に聞いたが実際見たらこれほどとは
+母1人子肥り　かあさん、ありGETS YOU
+これはうっかり　はたまたうっちゃり
+ぐったりしないでBring The Noise Come On!
+
+<span class="hook">DEVうっちゃりFUNK
+うっちゃりファンキーダイジェスト
+うっちゃり、うっちゃれ、カモン！
+うっちゃりしちゃってアイムソーリー
+うっちゃれ！うっちゃれ！</span>
+
+おなかぺこぺこさ！　お腹と背中がくっつくぞ
+何かくれないか？　瞬殺　となりの晩ご飯
+満たされたお腹は　心も満たされI'm So FAT
+あとは眠るだけ　Kuccha-Ne Kuccha-Ne WOW!
+やったー！寝るぞー！GOOD NIGHT BABY!
+また始まる毎日毎日　積み重ねる重みを感じて
+母1人子肥り　かあさん、ありGETS YOU
+学校じゃ教えてくれない１００点より上の取り方
+This Is Funk! PUT YOUR HANDS UP
+
+<span class="hook">DEVうっちゃりFUNK
+うっちゃりファンキーダイジェスト
+うっちゃり、うっちゃれ、カモン！
+うっちゃりしちゃってアイムソーリー
+うっちゃれ！うっちゃれ！</span>
+
+冬なのに半袖　冬なのに半ズボン　冬なのにサンダル
+夏はまだ終わらない！
+
+<span class="hook">DEVうっちゃりFUNK
+うっちゃりファンキーダイジェスト
+うっちゃり、うっちゃれ、カモン！
+うっちゃりしちゃってアイムソーリー
+うっちゃれ！うっちゃれ！</span></div></div>
+  </div>
+  <!-- 05 -->
+  <div class="song-card" onclick="toggle(this)">
+    <div class="song-header">
+      <div class="song-num">05</div>
+      <div class="song-info"><div class="song-title">何年経っても万年FAT お前らにゃ一生わかんねえや</div><div class="song-meta">1st Full Album Track 05</div></div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="lyrics-body"><div class="lyrics-text"><span class="hook">何年経っても万年FAT
+お前らにゃ一生わかんねえや</span>
+
+（なんでかっていうと、それはね）
+生まれた時から仕組まれた遺伝子
+北京原人だった頃よりも以前に
+決まっちまった今の体型さ
+（なんでかっていうとそれはね）
+
+つまりは運命　全てが偶然でなく
+必然　THIS ISディスティニー
+何と言えど100（ハンドレッド）
+何度でも
+
+KEEP ON FAT KEEP ON FAT
+探すのも大変だぜこの一張羅
+KEEP ON FAT KEEP ON FAT
+だからこそ
+
+そのまま吸収される効率がいい
+喰ってすぐ寝ると超効くらしい
+すくすく育って大きくなり
+（だけど、わかってもらえねえ）
+
+まだ食べたい　まだ飲みたい
+もう眠たい、、、lalala
+お前らにゃあ一生わかんねえや！！
+
+<span class="hook">何年経っても万年FAT
+お前らにゃ一生わかんねえや</span>（repeat）
+
+(なんでかって言うとそれはね)
+
+WHAT A FAT!で他を圧倒
+三度四度五度でもEAT
+食っては悔いて悔いては食って
+
+吸収速度が早いからすぐ食欲湧く　理性なんかすでに無く
+リーガルとかイリーガル
+というか、ジーザス
+
+１００の大台ある事が
+マストボーダー
+さ、太ろおうか
+ギャルもそんなうちらに声援を
+
+モテモテMORE THAN
+ジュンイチイシダ
+肥満は文化
+数字に意味があるからこそ宝物
+忘れちゃう嫌な事
+
+まだ食べたい　まだ飲みたい　もう眠たい　まだ眠たい
+お前らにゃあ一生わかんねえや！！
+
+<span class="hook">何年経っても万年FAT
+お前らにゃ一生わかんねえや</span>（repeat）</div></div>
+  </div>
+  <!-- 06 -->
+  <div class="song-card" onclick="toggle(this)">
+    <div class="song-header">
+      <div class="song-num">06</div>
+      <div class="song-info"><div class="song-title">夏の終わりに</div><div class="song-meta">1st Full Album Track 06</div></div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="lyrics-body"><div class="lyrics-text">夏の終わりのリズムが
+また僕を惑わせた
+違う夢みてるけど、
+今でもあなたが好きです
+
+またきちまったこんなSEASON
+去年と同じ　どんなに忘れようとして
+記憶を溶かしたって駄目。
+なんでかって、君みたいな女に
+出会うチャンスはもう無しって
+考えた方が都合がいい
+確か、友達の紹介で飲んだ日
+一目惚れで棒立ちになって
+俺は即座に 次の日に交際申し込み
+自分の無謀さに気がついた時には
+結果オーライ？THAT'S WHY?
+
+Today is Sunday　毎晩話した携帯
+Next day is Monday　もう既に圏外
+もてあましてるフラストレーション
+もう出来ん弁解
+切れちまったブレイカー
+演じられたライヤーガール
+理由（ワケ）も見つけれず
+曖昧なサティスファイ
+思い出す熱帯夜
+もてあましてるフラストレーション
+目を閉じても眠れない枕だって濡らした
+
+夏の終わりのリズムが
+また僕を惑わせた
+同じ夢じゃないけど
+今でもあなたが好きです
+
+いいかげん愛想がつきた自分の馬鹿さに
+目も見ずに「ふざけんな」って言った
+自分の過ち 目に涙ためて
+唇噛み締めた貴女（あなた）に
+「ありがとう」の一言も言えぬ
+忘却の彼方に葬れる訳が無い
+思い出は記憶に絡まり
+二人の歯車すら空回り 噛み合ず
+戦い　無益な争いが生んだ結果
+全てが儚い 今や二人でいた
+瞬間　瞬間　全てが宝に
+
+忘れかけたラブソング
+そう、あの時の
+いまさらのサンキュー
+伝えたい
+もてあましてるフラストレーション
+別々のマイウェイ　歩く二人へ
+アンニュイなサマーデイ
+あの夏は暑くて
+憧れのシルエット
+俺は比較的丸くて
+もてあましてるフラストレーション
+心も丸くなった今なら伝えれる
+
+夏の終わりのリズムが
+また僕を惑わせた
+違う夢見てるけど、
+今でもあなたが好きです
+
+夏の終わりのメロディー
+君にはもう届かない
+違う明日が来るけど
+それでもあなたが好きです
+
+LALALALA
+
+今でも　あなたが　好きです</div></div>
+  </div>
+  <!-- 07 -->
+  <div class="song-card" onclick="toggle(this)">
+    <div class="song-header">
+      <div class="song-num">07</div>
+      <div class="song-info"><div class="song-title">ハッピー乱デブー</div><div class="song-meta">1st Full Album Track 07</div></div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="lyrics-body"><div class="lyrics-text">アワナビーユアマン
+イチャイチャオーナイロング
+神様キスミー
+アイワナゲッチュー
+ゲッチューゲッチュー
+
+期待に胸ふくらむ PARTY
+ラウンジでビュッフェスタイルEVERYBODY
+食べ放題飲み放題デブリボディ
+横目で気になるSEXY BODY
+困る目のやり場　君の足は
+エロかしら　限度なしだ　手伸ばした
+見てる有名デブ俺のこと　当然のこと
+抱きつかれる　腹に　愛愛愛
+
+<span class="hook">HAPPY！rendezvous！
+君とアヴァンチュール
+気分はI WANT YOU</span>
+
+アワナホージュータイト
+チョメチョメオーナイロング
+遊び半分さ
+百発百中ゲッチュー
+ゲッチューゲッチュー
+
+キラキラジュエリー光るフロアー
+照らすミラーボール　俺　体型がミートボール
+柔軟な視点で　プーさん体型
+ハニーハント乗りたい？チューなんかして
+トランポリンみたいお腹で跳ねる？
+ピグレットより俺のティガーが出せる
+乱れるデブ　消しちゃうさ元彼
+とりま　飲みに行く？　バーモントカレー
+
+<span class="hook">HAPPY！rendezvous！
+君とアヴァンチュール
+気分はI WANT YOU</span>（repeat）
+
+狂おしいほどアイラブユー
+いつの間にかのフォーリンラブ
+宙ぶらりなアイラブユー
+食べれないほどアイニージュー
+
+<span class="hook">HAPPY！rendezvous！
+君とアヴァンチュール
+気分はI WANT YOU</span>（repeat）</div></div>
+  </div>
+  <!-- 08 -->
+  <div class="song-card" onclick="toggle(this)">
+    <div class="song-header">
+      <div class="song-num">08</div>
+      <div class="song-info"><div class="song-title">ダブルベッド</div><div class="song-meta">1st Full Album Track 08</div></div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="lyrics-body"><div class="lyrics-text"><span class="hook">ダブルベッドなのに
+ひとりぼっちなのさ
+キミと眠るための
+ダブルベッドなのに</span>
+
+キミが隣に眠らないから
+ボクは体をふくらませた
+
+寝る前にONE CALL
+毎日ちゃんと
+今日あった事でいつもの談笑
+携帯で声きけず切なくて
+横に君がいないと寂しくて
+ついつい手が出るコーラとポテチ
+気持ち満たすのはこんな物でいい
+出来るなら君を暖めたいよ
+36.5℃（ろくどごぶ）なハートウォームな体温
+
+<span class="hook">ダブルベッドなのに
+一人でいっぱいなのさ
+君と眠れないよ
+ダブルベッドなのに</span>
+
+君が隣に眠らないから
+僕の体は膨らんだのさ
+
+今日は記念日　この日だけは
+どの店がいいか？相当調べた
+プレゼントもそう、
+暴走しかけた俺は
+君にそっと言われた
+「二人でいれるのがSo Precious Time」
+そういう時間が素敵なんだ
+もっと君を抱きしめたいから
+出来るかな？やっぱデッカいなら
+俺は描いたさ大きな夢
+でも君はもう横にいなくて
+二人で暖かかったこの布団
+一人でいたら世界はモノクロ
+ダブルじゃまだちょっと
+肌寒いかな
+体重もダメージもまだ軽いから
+君がいなくて俺はふくらんだ
+君への想いがまたふくらんだ
+
+キミが隣に眠らないから
+ボクは体をふくらませた
+
+ダブルベッドなのにひとりぼっちなのさ</div></div>
+  </div>
+  <!-- 09 -->
+  <div class="song-card" onclick="toggle(this)">
+    <div class="song-header">
+      <div class="song-num">09</div>
+      <div class="song-info"><div class="song-title">メシ食わせろ</div><div class="song-meta">1st Full Album Track 09</div></div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="lyrics-body"><div class="lyrics-text">間は全く自分だけの空腹
+埋めるために騒つく残酷ファーストテイク
+
+生きる為に食べてなくて
+食べる為に生きてる
+お腹へったらデンジャラス
+メシ残しは天罰
+
+お前の存在を全くないものには
+俺にだって神にだって絶対出来やしねえ
+
+元々違う価値観　（デブ）
+ご馳走の前で大胆（DEV）
+良く噛んだりしない
+喉越し楽しむ
+とてもジューシー
+
+<span class="hook">メシを喰わせろ
+腹が減ったぞ
+メシを喰わせろ
+痩せちまうだろ</span>
+
+人間は全く自分だけの空腹
+埋めるため騒つく残虐アウトテイク
+
+冗談抜き ハングリー
+やっぱ欲しい炭水
+化物　一口でパクリ と
+食べて　スーパーサイズミー
+
+<span class="hook">メシを喰わせろ
+腹が減ったぞ
+メシを喰わせろ
+痩せちまうだろ</span>
+
+腹減らす
+俺怒る
+
+<span class="hook">メシを喰わせろ
+腹が減ったぞ
+メシを喰わせろ
+痩せちまうだろ</span></div></div>
+  </div>
+  <!-- 10 -->
+  <div class="song-card" onclick="toggle(this)">
+    <div class="song-header">
+      <div class="song-num">10</div>
+      <div class="song-info"><div class="song-title">タチアガレ</div><div class="song-meta">1st Full Album Track 10</div></div>
+      <div class="arrow">▼</div>
+    </div>
+    <div class="lyrics-body"><div class="lyrics-text">僕たちはこんな広い世界の中で
+偶然だけど必然的にこんな近くに暮らしてんだろ
+痩せているとか太ってるとか肌の色とか関係ないさ
+一人一人が手をつないで生きていけばいつかきっと…
+
+比較なんかしたくない　涙なんか見たくない
+でも出る杭みんな打ってて仕方なかった
+歩調合わす事で自分の度胸の無さ
+臆病さをひた隠しにして嘘の自分を着飾るしか
+方法知らないの　でも言わないと
+君の弱さ　他人（ひと）の個性
+受け入れるのが真の強さだってさ
+飾らない君の素顔で　さあ手を取って
+
+<span class="hook">タチアガレ　コブシ挙げて
+YOU&Iずっと友達だろ
+タチアガレ　涙拭いて
+いつまでも俺らずっと仲間だろ?</span>
+
+メディアじゃ「ニート」だ
+「格差」だ「10代のMURDER」
+そんな事ばっか流れる ただ、ただ.
+どうやってBe Ambitiousって感じさ
+でも何かわかんないけれどきっと青春は短時間
+
+僕たちはこんな広い宇宙の中で
+偶然だけど必然的にこんな近くに生まれてきたんだろう
+
+<span class="hook">タチアガレ　手をつないで
+YOU&Iずっと友達だろ
+タチアガレ　空見上げて
+いつまでも俺らずっと仲間だろ?</span>
+
+きっと君の言葉には力があるんだ
+励ましたりなぐさめたり
+やる気出させギュっと掴み
+逆に傷つけ、哀しませ、苦しめ
+そうやって強がる所をすぐ見せ
+涙は涙の連鎖を生んで　でも
+笑顔も笑顔の連鎖を生んで
+忘れんな俺らいつも当事者
+LOVE or HATE　必要なのはどっちか?
+
+タチアガレ　空見上げて
+前向いてその一歩踏み出せば
+タチアガレ　コブシ挙げて
+それがきっとCHAIN HEART
+解き放つさ
+
+<span class="hook">タチアガレ　手をつないで
+YOU&Iずっと友達だろ
+タチアガレ　大好きだよ
+いつまでも俺らずっと仲間だろ?</span></div></div>
+  </div>
+
+  <!-- SINGLES -->
+  <div class="singles-section">
+    <div class="section-label">Singles / シングル</div>
+    <!-- 2nd SINGLE -->
+    <div style="border:1px solid #333;border-radius:6px;margin-bottom:16px;overflow:hidden;">
+      <div style="padding:10px 18px;background:#1e1e1e;font-family:'Oswald',sans-serif;font-size:0.7rem;color:#888;letter-spacing:0.15em;text-transform:uppercase;">
+        2nd Single — 2009.03.11 &nbsp;|&nbsp; DefSTAR Records (DFCL-1539)
+        <span style="color:#d32f2f;margin-left:10px;">テレビ東京系アニメ「NARUTO-ナルト-疾風伝」第8期EDテーマ</span>
+      </div>
+      <!-- バッチコイ!!! -->
+      <div class="song-card" onclick="toggle(this)" style="border:none;border-radius:0;margin-bottom:0;border-bottom:1px solid #222;">
+        <div class="song-header">
+          <div class="song-num">S2-A</div>
+          <div class="song-info"><div class="song-title">バッチコイ!!!<span class="tag">NARUTO ED</span></div><div class="song-meta">作詞: ハンサム判治・COYASS・ugazin / 編曲: ugazin</div></div>
+          <div class="arrow">▼</div>
+        </div>
+        <div class="stream-bar"><a class="stream-btn all" href="https://smer.lnk.to/Bacchikoi" target="_blank" rel="noopener">🎵 今すぐ聴く</a></div>
+        <div class="lyrics-body"><div class="lyrics-text">オーマイガッ！オーマイガッ！ 昨日の失敗でくじけたって
+ゴッツアンデス！ゴッツアンデス！ おニューの服にソースが跳ねて　ワオ
+ドンマイ　ドンマイ　沈んだままじゃ　涙のMy Eyez
+どんなにハングリーでアングリーでもドンブリ食ってダンシング！
+俺らいつまでも仲間だろブラザー！
+たとえ逆風、強風、嵐が吹いてもバッチコーイ　カモン!
+離れてても同じ空の下で
+さぁ笑って　踏ん張って　LET'S DO IT! DO IT! DO IT! DO IT!
+
+<span class="hook">バッチコイバチコイベイベー たとえ朝が来なくたってイエイイエイ
+バッチコイバチコイベイベー 君とともに夢を見るぜイエイイエイ
+NANANANANA NANANANANA</span>
+
+オーマイガッ！オーマイガッ！ 俺は困難が来てもオーライ
+ガッテンダー！ガッテンダー！ 気がつけばチャック全開 ワオ
+バッチリ決めたい俺　ON&ON　恋してMASTER　当然　飛んで行こう
+かたじけ無い位　俺はスーパーナイス
+おにぎりくれる奴だいたい友達
+伝えたいSomething　バッチリ来いMY　MEN！
+Hey！WHAT'S　U　GONNA　DO！？
+お菓子もらうイコール恋の始まり
+I LOVE YOU ! I HOLD YOU!
+I WANT YOU! WANT YOU! WANT YOU! WANT YOU!
+
+<span class="hook">バッチコイバチコイベイベー 全ての武器をお箸にするぜイエイイエイ
+バッチコイバチコイベイベー 俺はラーメン食えばいつでもイエイイエイ
+NANANANANA NANANANANA</span>
+
+Do U Luv Me?
+
+牛丼でドンクライ  スパゲッチュでゲッチュー
+ロースはお野菜　飲みきりカレーライス
+お寿司はデザート  お寿司はデザート
+お寿司はデザート
+
+<span class="hook">バッチコイバッチコイベイベー たとえ朝が来なくたってイエイイエイ
+バッチコイバチコイベイベー 君とともに夢を見るぜイエイイエイ
+
+バッチコイバチコイベイベー 何が何でもあーでもこーでも諦めるなイエイイエイ
+バッチコイバチコイベイベー どんな夜も朝はくるぜイエイイエイ
+
+NANANANANA
+NANANANANA</span></div></div>
+      </div>
+      <!-- GODS N' DEATH -->
+      <div class="song-card" onclick="toggle(this)" style="border:none;border-radius:0;margin-bottom:0;">
+        <div class="song-header">
+          <div class="song-num">S2-B</div>
+          <div class="song-info"><div class="song-title">GODS N' DEATH</div><div class="song-meta">2nd Single — カップリング曲</div></div>
+          <div class="arrow">▼</div>
+        </div>
+        <div class="stream-bar"><a class="stream-btn all" href="https://smer.lnk.to/GODS_N_DEATH" target="_blank" rel="noopener">🎵 今すぐ聴く</a></div>
+        <div class="lyrics-body"><div class="lyrics-text" style="color:#666;font-style:italic;">※ 歌詞準備中</div></div>
+      </div>
+    </div>
+    <!-- 1st SINGLE -->
+    <div style="border:1px solid #333;border-radius:6px;margin-bottom:16px;overflow:hidden;">
+      <div style="padding:10px 18px;background:#1e1e1e;font-family:'Oswald',sans-serif;font-size:0.7rem;color:#888;letter-spacing:0.15em;text-transform:uppercase;">
+        1st Single — 2008.06.25 &nbsp;|&nbsp; DefSTAR Records (DFCL-1478) &nbsp;|&nbsp; Major Debut
+        <span style="color:#d32f2f;margin-left:10px;">「cosmic mind」映画「ギララの逆襲」主題歌・第65回ヴェネツィア国際映画祭出品作</span>
+      </div>
+      <!-- Body&Soul -->
+      <div class="song-card" onclick="toggle(this)" style="border:none;border-radius:0;margin-bottom:0;border-bottom:1px solid #222;">
+        <div class="song-header">
+          <div class="song-num">S1-A</div>
+          <div class="song-info"><div class="song-title">Body&amp;Soul<span class="tag" style="background:#33333344;color:#888;border-color:#444;">SPEEDカバー</span></div><div class="song-meta">パラダイス山元参加 — ストリーミング未配信</div></div>
+          <div class="arrow">▼</div>
+        </div>
+        <div class="lyrics-body"><div class="lyrics-text">BODY &amp; SOUL
+欲しいものは　いつもあふれているから
+立ち止まってる　暇はないよね
+刺激がもっと欲しい
+
+Bad Day から Lucky Day めぐってくるものさ
+心も体も Shape Up して Make Up したプライド捨てたら
+きっと明日は輝けそうだね
+
+甘い恋のかけひきは 言葉だけじゃ足りないから
+痛い事とか恐がらないで もっと奥まで行こうよ いっしょに…
+
+<span class="hook">Body &amp; Soul　太陽浴びて
+Body &amp; Soul　踊り出そうよ
+同じ Step の毎日じゃ
+生きてる事さえ忘れちゃう… それじゃ張りがない!</span>
+
+Body &amp; Soul　全部脱いじゃえば
+Body &amp; Soul　勇気を出して
+空を抱きしめて 風を受け止めて
+この手でつかもう! 誰も止められない　Body &amp; Soul
+
+Hot な Soul 強気で Go! 平凡な毎日じゃつまんない!
+ドキドキするような快感と Chance を今すぐ Get したい!
+きっと明日はいい事あるはず　Yeah, Yeah, Yeah, Yeah!
+
+ほんの少し世の中が わかってきたこの頃は
+傷つくことも増えてくけど 最後は自分に負けたくない
+
+Body &amp; Soul　太陽浴びて
+Body &amp; Soul　探しに行こうよ
+奪われたものは　取り返さなくちゃ
+アタシらしくいられなきゃ 意味がない!
+
+Body &amp; Soul　もっと激しく
+Body &amp; Soul　抑えきれない
+両手を広げて 大地駆けぬけて
+新しい夜明け 今抱きしめるよ　Body &amp; Soul
+
+今日も出逢い求めて 街へくり出そう
+今は誰にも縛られたくない!
+
+（くり返し）
+
+Body &amp; Soul　全部脱いじゃえば
+Body &amp; Soul　勇気を出して
+両手を広げて 大地駆けぬけて
+空を抱きしめて 風を受け止めて
+虹を突き抜けて 世界抱きとめて
+夢も願いも 愛も止められない　Body &amp; Soul</div></div>
+      </div>
+      <!-- cosmic mind -->
+      <div class="song-card" onclick="toggle(this)" style="border:none;border-radius:0;margin-bottom:0;border-bottom:1px solid #222;">
+        <div class="song-header">
+          <div class="song-num">S1-B</div>
+          <div class="song-info"><div class="song-title">cosmic mind</div><div class="song-meta">映画「ギララの逆襲/洞爺湖サミット危機一発」主題歌</div></div>
+          <div class="arrow">▼</div>
+        </div>
+        <div class="stream-bar"><a class="stream-btn all" href="https://smer.lnk.to/cosmic_mind" target="_blank" rel="noopener">🎵 今すぐ聴く</a></div>
+        <div class="lyrics-body"><div class="lyrics-text" style="color:#666;font-style:italic;">※ 歌詞準備中</div></div>
+      </div>
+      <!-- ME☆TA☆BO -->
+      <div class="song-card" onclick="toggle(this)" style="border:none;border-radius:0;margin-bottom:0;">
+        <div class="song-header">
+          <div class="song-num">S1-C</div>
+          <div class="song-info"><div class="song-title">ME☆TA☆BO〜俺たちミートボール〜</div><div class="song-meta">1st Single — カップリング曲</div></div>
+          <div class="arrow">▼</div>
+        </div>
+        <div class="stream-bar"><a class="stream-btn all" href="https://smer.lnk.to/MeTaBo-Oretachi_Meatball-" target="_blank" rel="noopener">🎵 今すぐ聴く</a></div>
+        <div class="lyrics-body"><div class="lyrics-text" style="color:#666;font-style:italic;">※ 歌詞準備中</div></div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  <p><a href="https://dev-parade.github.io">DEV PARADE Official Website</a></p>
+  <p style="margin-top:8px;">© 2026 DEV PARADE All Rights Reserved.</p>
+</footer>
+<a class="back-to-top" href="#" title="トップへ">↑</a>
+<script>
+  function toggle(card) { card.classList.toggle('open'); }
+</script>
+</body>
+</html>
