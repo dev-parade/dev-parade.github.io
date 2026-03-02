@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /lyrics/
 
 Sitemap: https://dev-parade.github.io/sitemap.xml
