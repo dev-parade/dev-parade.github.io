@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DEV PARADE | デブパレード 公式サイト - 15年ぶりの復活</title>
-  <meta name="description" content="メンバー全員90kg超のヘヴィメタボバンド DEV PARADE（デブパレード）15年ぶりの復活！元DefSTAR Records、NARUTOエンディングテーマ「バッチコイ!!!」でお馴染み。">
+  <meta name="description"
+    content="メンバー全員90kg超のヘヴィメタボバンド DEV PARADE（デブパレード）15年ぶりの復活！元DefSTAR Records、NARUTOエンディングテーマ「バッチコイ!!!」でお馴染み。">
   <!-- OGP: Facebook / LINE -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="DEV PARADE | メンバー全員90kg超ヘヴィメタボバンド 15年ぶり復活">
-  <meta property="og:description" content="NARUTOエンディング「バッチコイ!!!」のデブパレードが15年ぶりに復活！メンバー全員90kg以上＆痛風ホルダー。2026.02.06 再結成ワンマン開催。">
+  <meta property="og:description"
+    content="NARUTOエンディング「バッチコイ!!!」のデブパレードが15年ぶりに復活！メンバー全員90kg以上＆痛風ホルダー。2026.02.06 再結成ワンマン開催。">
   <meta property="og:image" content="https://dev-parade.github.io/assets/member-group.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -58,7 +61,9 @@
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@400;600;700&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --red: #E31E24;
@@ -70,7 +75,11 @@
       --card-bg: #151515;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Noto Sans JP', sans-serif;
@@ -81,114 +90,199 @@
 
     /* ===== NAV ===== */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      background: rgba(10,10,10,0.92);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 2px solid var(--red);
       transition: transform 0.3s;
     }
+
     nav .nav-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 0.6rem 1.5rem;
     }
-    nav .nav-logo { height: 40px; mix-blend-mode: screen; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); }
-    nav ul {
-      list-style: none; display: flex; gap: 1.8rem;
+
+    nav .nav-logo {
+      height: 40px;
+      mix-blend-mode: screen;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
     }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+    }
+
     nav ul li a {
-      color: var(--white); text-decoration: none;
-      font-family: 'Oswald', sans-serif; font-size: 0.95rem;
-      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       transition: color 0.2s;
     }
-    nav ul li a:hover { color: var(--red); }
-    .hamburger {
-      display: none; background: none; border: none; cursor: pointer;
-      flex-direction: column; gap: 5px;
+
+    nav ul li a:hover {
+      color: var(--red);
     }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+
     .hamburger span {
-      display: block; width: 28px; height: 3px; background: var(--white);
+      display: block;
+      width: 28px;
+      height: 3px;
+      background: var(--white);
       transition: 0.3s;
     }
 
     /* ===== HERO ===== */
     .hero {
-      position: relative; height: 100vh; min-height: 600px;
-      display: flex; align-items: center; justify-content: center;
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
     }
+
     .hero-bg {
-      position: absolute; inset: 0;
+      position: absolute;
+      inset: 0;
       background: url('assets/live-wide.jpg') center center / cover no-repeat;
     }
+
     .hero-bg::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(10,10,10,0.5) 0%,
-        rgba(10,10,10,0.3) 40%,
-        rgba(10,10,10,0.7) 80%,
-        rgba(10,10,10,1) 100%
-      );
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+          rgba(10, 10, 10, 0.5) 0%,
+          rgba(10, 10, 10, 0.3) 40%,
+          rgba(10, 10, 10, 0.7) 80%,
+          rgba(10, 10, 10, 1) 100%);
     }
+
     .hero-content {
-      position: relative; z-index: 2; text-align: center;
+      position: relative;
+      z-index: 2;
+      text-align: center;
       padding: 0 1rem;
     }
+
     .hero-logo-img {
-      max-width: min(500px, 80vw); height: auto;
+      max-width: min(500px, 80vw);
+      height: auto;
       mix-blend-mode: screen;
-      filter: drop-shadow(0 0 30px rgba(227,30,36,0.6)) drop-shadow(0 8px 20px rgba(0,0,0,0.7)) drop-shadow(0 0 60px rgba(227,30,36,0.3));
+      filter: drop-shadow(0 0 30px rgba(227, 30, 36, 0.6)) drop-shadow(0 8px 20px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 60px rgba(227, 30, 36, 0.3));
       animation: logoFloat 4s ease-in-out infinite;
     }
+
     @keyframes logoFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
+
     .hero-tagline {
       font-family: 'Oswald', sans-serif;
       font-size: clamp(1rem, 3vw, 1.6rem);
-      letter-spacing: 0.3em; text-transform: uppercase;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
       color: var(--yellow);
       margin-top: 1.5rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
     }
+
     .hero-sub {
       font-size: clamp(0.85rem, 2vw, 1.1rem);
-      color: rgba(255,255,255,0.7);
+      color: rgba(255, 255, 255, 0.7);
       margin-top: 0.8rem;
       letter-spacing: 0.1em;
     }
+
     .hero-reunion {
-      display: inline-block; margin-top: 2rem;
+      display: inline-block;
+      margin-top: 2rem;
       padding: 0.8rem 2.5rem;
       background: var(--red);
-      color: #fff; font-family: 'Oswald', sans-serif;
-      font-size: 1.1rem; letter-spacing: 0.15em;
-      text-decoration: none; text-transform: uppercase;
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+      text-transform: uppercase;
       border: 2px solid transparent;
       transition: all 0.3s;
     }
+
     .hero-reunion:hover {
-      background: transparent; border-color: var(--red); color: var(--red);
+      background: transparent;
+      border-color: var(--red);
+      color: var(--red);
     }
+
     .scroll-indicator {
-      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
-      z-index: 2; animation: bounce 2s infinite;
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      animation: bounce 2s infinite;
     }
+
     .scroll-indicator span {
-      display: block; width: 24px; height: 24px;
-      border-right: 2px solid var(--red); border-bottom: 2px solid var(--red);
+      display: block;
+      width: 24px;
+      height: 24px;
+      border-right: 2px solid var(--red);
+      border-bottom: 2px solid var(--red);
       transform: rotate(45deg);
     }
+
     @keyframes bounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(12px); }
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(12px);
+      }
     }
 
     /* ===== SECTION BASE ===== */
-    section { padding: 5rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+    section {
+      padding: 5rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
     .section-title {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(2.2rem, 6vw, 3.5rem);
@@ -196,10 +290,16 @@
       text-align: center;
       margin-bottom: 0.3rem;
     }
-    .section-title span { color: var(--red); }
+
+    .section-title span {
+      color: var(--red);
+    }
+
     .section-sub {
-      text-align: center; color: var(--gray);
-      font-size: 0.85rem; letter-spacing: 0.15em;
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
       margin-bottom: 3rem;
     }
 
@@ -211,59 +311,87 @@
       position: relative;
       overflow: hidden;
     }
+
     .reunion-banner::before {
-      content: '復活'; position: absolute;
-      font-size: 15rem; font-weight: 900;
-      color: rgba(255,255,255,0.04);
-      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      content: '復活';
+      position: absolute;
+      font-size: 15rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.04);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       white-space: nowrap;
     }
+
     .reunion-banner h2 {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(2rem, 5vw, 3.5rem);
       letter-spacing: 0.1em;
       position: relative;
     }
+
     .reunion-banner p {
-      font-size: 1.1rem; margin-top: 1rem;
-      position: relative; max-width: 700px; margin-left: auto; margin-right: auto;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      position: relative;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
       line-height: 1.8;
     }
+
     .reunion-year {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(4rem, 10vw, 8rem);
       color: var(--yellow);
-      line-height: 1; position: relative;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      line-height: 1;
+      position: relative;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     }
 
     /* ===== ABOUT ===== */
     .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
       align-items: center;
     }
+
     .about-img {
-      width: 100%; border-radius: 4px;
+      width: 100%;
+      border-radius: 4px;
       border: 2px solid #222;
     }
+
     .about-text p {
-      line-height: 1.9; font-size: 0.95rem;
-      color: rgba(255,255,255,0.85);
+      line-height: 1.9;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.85);
       margin-bottom: 1rem;
     }
+
     .about-stats {
-      display: flex; gap: 2rem; margin-top: 2rem;
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
     }
+
     .about-stat {
       text-align: center;
     }
+
     .about-stat .num {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.5rem; color: var(--red);
+      font-size: 2.5rem;
+      color: var(--red);
     }
+
     .about-stat .label {
-      font-size: 0.75rem; color: var(--gray);
-      letter-spacing: 0.1em; text-transform: uppercase;
+      font-size: 0.75rem;
+      color: var(--gray);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     /* ===== MEMBERS ===== */
@@ -272,6 +400,7 @@
       grid-template-columns: repeat(5, 1fr);
       gap: 1.5rem;
     }
+
     .member-card {
       background: var(--card-bg);
       border: 1px solid #222;
@@ -279,61 +408,101 @@
       transition: transform 0.3s, border-color 0.3s;
       position: relative;
     }
+
     .member-card:hover {
       transform: translateY(-5px);
       border-color: var(--red);
     }
+
     .member-card.new-member::after {
       content: 'NEW';
-      position: absolute; top: 10px; right: 10px;
-      background: var(--red); color: #fff;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--red);
+      color: #fff;
       font-family: 'Oswald', sans-serif;
-      font-size: 0.7rem; padding: 2px 8px;
+      font-size: 0.7rem;
+      padding: 2px 8px;
       letter-spacing: 0.1em;
     }
+
     .member-img {
-      width: 100%; aspect-ratio: 3/4; object-fit: cover;
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
       filter: grayscale(20%);
       transition: filter 0.3s;
     }
-    .member-card:hover .member-img { filter: grayscale(0%); }
-    .member-info { padding: 1rem; }
+
+    .member-card:hover .member-img {
+      filter: grayscale(0%);
+    }
+
+    .member-info {
+      padding: 1rem;
+    }
+
     .member-part {
       font-family: 'Oswald', sans-serif;
-      font-size: 0.7rem; color: var(--red);
-      letter-spacing: 0.15em; text-transform: uppercase;
+      font-size: 0.7rem;
+      color: var(--red);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
     }
+
     .member-name {
-      font-size: 1.1rem; font-weight: 900;
+      font-size: 1.1rem;
+      font-weight: 900;
       margin: 0.3rem 0;
     }
+
     .member-name-en {
       font-family: 'Oswald', sans-serif;
-      font-size: 0.75rem; color: var(--gray);
-      letter-spacing: 0.1em; text-transform: uppercase;
+      font-size: 0.75rem;
+      color: var(--gray);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
+
     .member-weight {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.3rem; color: var(--yellow);
+      font-size: 1.3rem;
+      color: var(--yellow);
       margin-top: 0.5rem;
     }
+
     .member-acts {
-      font-size: 0.7rem; color: var(--gray);
-      margin-top: 0.4rem; line-height: 1.5;
+      font-size: 0.7rem;
+      color: var(--gray);
+      margin-top: 0.4rem;
+      line-height: 1.5;
     }
+
     .member-sns {
-      display: flex; gap: 0.5rem; margin-top: 0.6rem;
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
     }
+
     .member-sns a {
-      color: var(--gray); font-size: 0.75rem;
-      text-decoration: none; transition: color 0.2s;
+      color: var(--gray);
+      font-size: 0.75rem;
+      text-decoration: none;
+      transition: color 0.2s;
     }
-    .member-sns a:hover { color: var(--red); }
+
+    .member-sns a:hover {
+      color: var(--red);
+    }
 
     /* ===== DISCOGRAPHY ===== */
     .disco-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
     }
+
     .disco-card {
       background: var(--card-bg);
       border: 1px solid #222;
@@ -342,154 +511,255 @@
       overflow: hidden;
       transition: border-color 0.3s;
     }
-    .disco-card:hover { border-color: var(--red); }
+
+    .disco-card:hover {
+      border-color: var(--red);
+    }
+
     .disco-card .year {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 0.85rem; color: var(--red);
+      font-size: 0.85rem;
+      color: var(--red);
       letter-spacing: 0.15em;
     }
+
     .disco-card h3 {
-      font-size: 1.3rem; font-weight: 900;
+      font-size: 1.3rem;
+      font-weight: 900;
       margin: 0.5rem 0;
     }
+
     .disco-card .label {
-      font-size: 0.75rem; color: var(--gray);
+      font-size: 0.75rem;
+      color: var(--gray);
       letter-spacing: 0.08em;
     }
+
     .disco-card .tieup {
-      display: inline-block; margin-top: 0.8rem;
-      background: rgba(227,30,36,0.15);
-      border: 1px solid rgba(227,30,36,0.3);
-      color: var(--red); font-size: 0.75rem;
-      padding: 0.3rem 0.8rem; letter-spacing: 0.05em;
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: rgba(227, 30, 36, 0.15);
+      border: 1px solid rgba(227, 30, 36, 0.3);
+      color: var(--red);
+      font-size: 0.75rem;
+      padding: 0.3rem 0.8rem;
+      letter-spacing: 0.05em;
     }
+
     .disco-card .tracks {
-      margin-top: 1rem; font-size: 0.85rem;
-      color: rgba(255,255,255,0.7); line-height: 1.8;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
     }
+
     .disco-new {
       grid-column: 1 / -1;
       background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
       border: 2px solid var(--red);
-      text-align: center; padding: 3rem;
+      text-align: center;
+      padding: 3rem;
     }
+
     .disco-new h3 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem; letter-spacing: 0.1em;
+      font-size: 2rem;
+      letter-spacing: 0.1em;
     }
+
     .disco-new .coming {
-      color: var(--yellow); font-family: 'Oswald', sans-serif;
-      font-size: 1.2rem; letter-spacing: 0.2em; margin-top: 0.5rem;
+      color: var(--yellow);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      margin-top: 0.5rem;
     }
 
     /* ===== LIVE ===== */
-    .live-list { display: flex; flex-direction: column; gap: 2rem; }
+    .live-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
     .live-card {
-      display: grid; grid-template-columns: 140px 1fr;
+      display: grid;
+      grid-template-columns: 140px 1fr;
       background: var(--card-bg);
       border: 1px solid #222;
       overflow: hidden;
       transition: border-color 0.3s;
     }
-    .live-card:hover { border-color: var(--red); }
+
+    .live-card:hover {
+      border-color: var(--red);
+    }
+
     .live-date {
       background: var(--red);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       padding: 1.5rem;
     }
+
     .live-date .year {
       font-family: 'Oswald', sans-serif;
-      font-size: 0.8rem; letter-spacing: 0.15em; opacity: 0.8;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      opacity: 0.8;
     }
+
     .live-date .day {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.5rem; line-height: 1;
+      font-size: 2.5rem;
+      line-height: 1;
     }
+
     .live-date .month {
       font-family: 'Oswald', sans-serif;
-      font-size: 1rem; letter-spacing: 0.1em;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
     }
+
     .live-date .dow {
-      font-size: 0.75rem; opacity: 0.7; margin-top: 0.2rem;
+      font-size: 0.75rem;
+      opacity: 0.7;
+      margin-top: 0.2rem;
     }
-    .live-info { padding: 1.5rem; }
-    .live-info h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+
+    .live-info {
+      padding: 1.5rem;
+    }
+
+    .live-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
     .live-info .venue {
-      color: var(--gray); font-size: 0.85rem;
+      color: var(--gray);
+      font-size: 0.85rem;
     }
+
     .live-info .badge {
-      display: inline-block; margin-top: 0.6rem;
+      display: inline-block;
+      margin-top: 0.6rem;
       font-family: 'Oswald', sans-serif;
-      font-size: 0.7rem; letter-spacing: 0.15em;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       padding: 0.2rem 0.6rem;
     }
-    .badge-soldout { background: #333; color: var(--gray); }
-    .badge-upcoming { background: var(--yellow); color: #000; }
+
+    .badge-soldout {
+      background: #333;
+      color: var(--gray);
+    }
+
+    .badge-upcoming {
+      background: var(--yellow);
+      color: #000;
+    }
 
     /* ===== HISTORY ===== */
     .timeline {
       position: relative;
       padding-left: 3rem;
     }
+
     .timeline::before {
-      content: ''; position: absolute;
-      left: 12px; top: 0; bottom: 0;
-      width: 2px; background: #333;
+      content: '';
+      position: absolute;
+      left: 12px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #333;
     }
+
     .timeline-item {
-      position: relative; margin-bottom: 2.5rem;
+      position: relative;
+      margin-bottom: 2.5rem;
     }
+
     .timeline-item::before {
-      content: ''; position: absolute;
-      left: -3rem; top: 6px;
-      width: 12px; height: 12px;
-      background: var(--red); border-radius: 50%;
+      content: '';
+      position: absolute;
+      left: -3rem;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      background: var(--red);
+      border-radius: 50%;
       border: 2px solid var(--black);
     }
+
     .timeline-item.highlight::before {
       background: var(--yellow);
       box-shadow: 0 0 10px var(--yellow);
     }
+
     .timeline-year {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.3rem; color: var(--red);
+      font-size: 1.3rem;
+      color: var(--red);
       letter-spacing: 0.08em;
     }
-    .timeline-item.highlight .timeline-year { color: var(--yellow); }
+
+    .timeline-item.highlight .timeline-year {
+      color: var(--yellow);
+    }
+
     .timeline-text {
-      font-size: 0.9rem; color: rgba(255,255,255,0.8);
-      line-height: 1.7; margin-top: 0.3rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
+      margin-top: 0.3rem;
     }
 
     /* ===== LINKS ===== */
     .links-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
     }
+
     .link-card {
-      display: flex; align-items: center; gap: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
       background: var(--card-bg);
       border: 1px solid #222;
       padding: 1.2rem 1.5rem;
-      text-decoration: none; color: var(--white);
+      text-decoration: none;
+      color: var(--white);
       transition: all 0.3s;
     }
+
     .link-card:hover {
       border-color: var(--red);
       transform: translateX(5px);
     }
+
     .link-icon {
-      font-size: 1.5rem; min-width: 40px; text-align: center;
+      font-size: 1.5rem;
+      min-width: 40px;
+      text-align: center;
     }
+
     .link-label {
       font-family: 'Oswald', sans-serif;
-      font-size: 0.9rem; letter-spacing: 0.08em;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
+
     .link-desc {
-      font-size: 0.75rem; color: var(--gray); margin-top: 0.2rem;
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-top: 0.2rem;
     }
 
     /* ===== FOOTER ===== */
@@ -498,873 +768,1112 @@
       padding: 3rem 1.5rem;
       text-align: center;
     }
-    footer .footer-logo { height: 60px; margin-bottom: 1rem; mix-blend-mode: screen; filter: drop-shadow(0 2px 8px rgba(227,30,36,0.4)); }
-    footer p {
-      font-size: 0.75rem; color: var(--gray);
-      letter-spacing: 0.05em; line-height: 1.8;
+
+    footer .footer-logo {
+      height: 60px;
+      margin-bottom: 1rem;
+      mix-blend-mode: screen;
+      filter: drop-shadow(0 2px 8px rgba(227, 30, 36, 0.4));
     }
-    footer a { color: var(--gray); text-decoration: none; }
-    footer a:hover { color: var(--red); }
+
+    footer p {
+      font-size: 0.75rem;
+      color: var(--gray);
+      letter-spacing: 0.05em;
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: var(--gray);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--red);
+    }
 
     /* ===== SCROLL REVEAL ===== */
     .reveal {
-      opacity: 0; transform: translateY(30px);
+      opacity: 0;
+      transform: translateY(30px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
+
     .reveal.visible {
-      opacity: 1; transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
-      .members-grid { grid-template-columns: repeat(3, 1fr); }
-      .about-grid { grid-template-columns: 1fr; }
-      .disco-grid { grid-template-columns: 1fr; }
-      nav ul { display: none; }
-      .hamburger { display: flex; }
+      .members-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .disco-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
       nav ul.open {
-        display: flex; flex-direction: column;
-        position: absolute; top: 100%; left: 0; right: 0;
-        background: rgba(10,10,10,0.98);
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 10, 0.98);
         padding: 1.5rem;
         border-bottom: 2px solid var(--red);
       }
     }
+
     /* ===== GOODS ===== */
     .goods-showcase {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
       align-items: center;
     }
+
     .goods-img {
-      width: 100%; border-radius: 4px; border: 1px solid #222;
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid #222;
     }
-    .goods-info h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 0.5rem; }
+
+    .goods-info h3 {
+      font-size: 1.3rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+    }
+
     .goods-colors {
-      display: flex; gap: 0.5rem; margin: 1rem 0;
+      display: flex;
+      gap: 0.5rem;
+      margin: 1rem 0;
     }
+
     .goods-colors span {
-      width: 28px; height: 28px; border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
       border: 2px solid #333;
     }
+
     .goods-badge {
       display: inline-block;
-      background: var(--yellow); color: #000;
+      background: var(--yellow);
+      color: #000;
       font-family: 'Oswald', sans-serif;
-      font-size: 0.75rem; padding: 0.3rem 0.8rem;
-      letter-spacing: 0.1em; text-transform: uppercase;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
+
     /* ===== VIDEO RESPONSIVE ===== */
     .video-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
     }
+
     .video-wrap {
-      position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #111;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      background: #111;
     }
+
     .video-wrap iframe {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     /* ===== SHARE BUTTONS ===== */
     .share-bar {
-      position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
-      display: flex; justify-content: center; gap: 0;
-      background: rgba(10,10,10,0.95);
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      background: rgba(10, 10, 10, 0.95);
       backdrop-filter: blur(10px);
       border-top: 2px solid var(--red);
       padding: 0.5rem 0;
       transform: translateY(100%);
       transition: transform 0.4s ease;
     }
-    .share-bar.visible { transform: translateY(0); }
+
+    .share-bar.visible {
+      transform: translateY(0);
+    }
+
     .share-btn {
-      display: flex; align-items: center; gap: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
       padding: 0.6rem 1.2rem;
       font-family: 'Oswald', sans-serif;
-      font-size: 0.8rem; letter-spacing: 0.08em;
-      text-decoration: none; color: #fff;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      color: #fff;
       transition: opacity 0.2s;
-      border: none; cursor: pointer;
+      border: none;
+      cursor: pointer;
       background: none;
     }
-    .share-btn:hover { opacity: 0.7; }
-    .share-btn svg { width: 20px; height: 20px; fill: currentColor; }
-    .share-btn.x-btn { color: #fff; }
-    .share-btn.line-btn { color: #06C755; }
-    .share-btn.fb-btn { color: #1877F2; }
-    .share-btn.copy-btn { color: var(--yellow); }
+
+    .share-btn:hover {
+      opacity: 0.7;
+    }
+
+    .share-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .share-btn.x-btn {
+      color: #fff;
+    }
+
+    .share-btn.line-btn {
+      color: #06C755;
+    }
+
+    .share-btn.fb-btn {
+      color: #1877F2;
+    }
+
+    .share-btn.copy-btn {
+      color: var(--yellow);
+    }
 
     /* ===== VIRAL CATCHCOPY BANNER ===== */
     .viral-banner {
-      text-align: center; padding: 2rem 1rem;
+      text-align: center;
+      padding: 2rem 1rem;
       background: linear-gradient(135deg, #111, #0a0a0a);
-      border-top: 1px solid #222; border-bottom: 1px solid #222;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
     }
+
     .viral-banner .catch {
       font-family: 'Noto Sans JP', sans-serif;
-      font-weight: 900; font-size: clamp(1.2rem, 4vw, 2rem);
+      font-weight: 900;
+      font-size: clamp(1.2rem, 4vw, 2rem);
       line-height: 1.8;
     }
-    .viral-banner .catch .em { color: var(--red); }
-    .viral-banner .catch .yellow { color: var(--yellow); }
+
+    .viral-banner .catch .em {
+      color: var(--red);
+    }
+
+    .viral-banner .catch .yellow {
+      color: var(--yellow);
+    }
+
     .viral-banner .share-prompt {
-      margin-top: 1rem; font-size: 0.8rem; color: var(--gray);
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--gray);
       letter-spacing: 0.1em;
     }
 
     @media (max-width: 600px) {
-      .members-grid { grid-template-columns: repeat(2, 1fr); }
-      .live-card { grid-template-columns: 100px 1fr; }
-      .about-stats { flex-wrap: wrap; }
-      .video-grid { grid-template-columns: 1fr; }
-      .goods-showcase { grid-template-columns: 1fr; }
-      section { padding: 3rem 1rem; }
+      .members-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .live-card {
+        grid-template-columns: 100px 1fr;
+      }
+
+      .about-stats {
+        flex-wrap: wrap;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .goods-showcase {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 3rem 1rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- ===== NAV ===== -->
-<nav>
-  <div class="nav-inner">
-    <img src="assets/logo.png" alt="DEV PARADE" class="nav-logo">
-    <ul id="navMenu">
-      <li><a href="#about">About</a></li>
-      <li><a href="#members">Members</a></li>
-      <li><a href="#live">Live</a></li>
-      <li><a href="#video">Video</a></li>
-      <li><a href="#discography">Discography</a></li>
-      <li><a href="#history">History</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#goods">Goods</a></li>
-      <li><a href="debu-bot.html" style="color:#ffd700;">🍖 PosiDevBot</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#links">Links</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <img src="assets/logo.png" alt="DEV PARADE" class="hero-logo-img">
-    <p class="hero-tagline">Heavy Metabo Band is Back.</p>
-    <p class="hero-sub">全員90kg超 &mdash; 伝説のヘヴィメタボバンド、15年ぶりの復活</p>
-    <a href="#live" class="hero-reunion">LIVE INFO &rarr;</a>
-  </div>
-  <div class="scroll-indicator"><span></span></div>
-</section>
-
-<!-- ===== REUNION BANNER ===== -->
-<div class="reunion-banner">
-  <div class="reunion-year">2026</div>
-  <h2>15年ぶりの奇跡の復活</h2>
-  <p>2011年「メンバーが痩せてしまった」という理由で解散したDEV PARADEが、<br>
-  2026年2月6日、ついに再結成。初のフルアルバムも制作中。</p>
-</div>
-
-<!-- ===== VIRAL CATCHCOPY ===== -->
-<div class="viral-banner">
-  <div class="catch">
-    <span class="em">メンバー全員90kg超</span>、全員<span class="yellow">痛風ホルダー</span>。<br>
-    <span class="em">NARUTO</span>エンディングバンドが<span class="yellow">15年ぶり</span>に帰ってきた。<br>
-    デブじゃなきゃ入れない。<span class="em">90kg以上</span>限定バンド。
-  </div>
-  <div class="share-prompt">#デブパレード #DEVPARADE #バッチコイ で拡散お願いします</div>
-</div>
-
-<!-- ===== ABOUT ===== -->
-<section id="about">
-  <h2 class="section-title reveal">ABOUT <span>DEV PARADE</span></h2>
-  <p class="section-sub reveal">デブパレードとは</p>
-  <div class="about-grid">
-    <img src="assets/member-group.jpg" alt="DEV PARADE" class="about-img reveal">
-    <div class="about-text reveal">
-      <p>DEV PARADE（デブパレード）は、2006年にギタリストugazinが「体重100kg以上のミュージシャン」を緊急招集して結成された日本のロックバンド。バンド名はDef Leppard（デフ・レパード）のパロディ。自称「ヘヴィメタボバンド」。復活後のメンバー条件は<strong>90kg以上</strong>に改定。</p>
-      <p>2008年、ソニー・ミュージック傘下のDefSTAR Recordsから「メジャー・デブー」。NARUTOエンディングテーマ「バッチコイ!!!」、SUMMER SONIC出演、「HEY!HEY!HEY!」出演など精力的に活動。</p>
-      <p>2011年、「メンバーが痩せてメタボを名乗れなくなった」という前代未聞の理由で解散。「普通（サイズ）の男の子に戻ります」と宣言。</p>
-      <p>そして2026年2月6日 &mdash; 15年の沈黙を破り、奇跡の再結成。新メンバーに"ぺー"を迎え、新たなDEV PARADEが動き出す。</p>
-      <div class="about-stats">
-        <div class="about-stat">
-          <div class="num">5<span style="font-size:1.2rem">人</span></div>
-          <div class="label">All 90kg+</div>
-        </div>
-        <div class="about-stat">
-          <div class="num">15</div>
-          <div class="label">Years Apart</div>
-        </div>
-        <div class="about-stat">
-          <div class="num">2026</div>
-          <div class="label">Reunion</div>
-        </div>
-      </div>
+  <!-- ===== NAV ===== -->
+  <nav>
+    <div class="nav-inner">
+      <img src="assets/logo.png" alt="DEV PARADE" class="nav-logo">
+      <ul id="navMenu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#members">Members</a></li>
+        <li><a href="#live">Live</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#discography">Discography</a></li>
+        <li><a href="#history">History</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#goods">Goods</a></li>
+        <li><a href="debu-bot.html" style="color:#ffd700;">🍖 PosiDevBot</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#links">Links</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- ===== MEMBERS ===== -->
-<section id="members">
-  <h2 class="section-title reveal">THE <span>MEMBERS</span></h2>
-  <p class="section-sub reveal">メンバー紹介</p>
-  <div class="members-grid">
-
-    <div class="member-card reveal">
-      <img src="assets/member-hanzi.jpg" alt="ハンサム判治" class="member-img">
-      <div class="member-info">
-        <div class="member-part">Vocal / Leader</div>
-        <div class="member-name">ハンサム判治</div>
-        <div class="member-name-en">Handsome Hanzi</div>
-        <div class="member-acts">ハンサム兄弟 / HANZI BAND</div>
-        <div class="member-sns">
-          <a href="https://x.com/han363" target="_blank">X</a>
-          <a href="https://www.instagram.com/hanzi/" target="_blank">Instagram</a>
-          <a href="https://www.threads.net/@hanzi" target="_blank">Threads</a>
-          <a href="https://www.han363.com/hanzi/" target="_blank">Web</a>
-        </div>
-      </div>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <img src="assets/logo.png" alt="DEV PARADE" class="hero-logo-img">
+      <p class="hero-tagline">Heavy Metabo Band is Back.</p>
+      <p class="hero-sub">全員90kg超 &mdash; 伝説のヘヴィメタボバンド、15年ぶりの復活</p>
+      <a href="#live" class="hero-reunion">LIVE INFO &rarr;</a>
     </div>
+    <div class="scroll-indicator"><span></span></div>
+  </section>
 
-    <div class="member-card reveal">
-      <img src="assets/member-coyass.jpg" alt="COYASS" class="member-img">
-      <div class="member-info">
-        <div class="member-part">MC</div>
-        <div class="member-name">COYASS</div>
-        <div class="member-name-en">Dr.COYASS - D.D.S. Ph.D.</div>
-        <div class="member-acts">MIC BANDITZ / E.P.O / 洪水 / Malignant Co.<br>歯科医師・歯学博士<br><span style="color:var(--red); font-size:0.65rem;">痛風ホルダー</span></div>
-        <div class="member-sns">
-          <a href="https://x.com/coyass" target="_blank">X</a>
-          <a href="https://www.instagram.com/dr.coyass/" target="_blank">Instagram</a>
-          <a href="https://drcoyass.github.io" target="_blank">Official HP</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="member-card reveal">
-      <img src="assets/member-ugazin.jpg" alt="ugazin" class="member-img">
-      <div class="member-info">
-        <div class="member-part">Guitar / Songwriter</div>
-        <div class="member-name">ugazin</div>
-        <div class="member-name-en">Ugazin</div>
-        <div class="member-acts">MONG HANG / 14"fourteen"<br>バンド発起人<br><span style="color:var(--red); font-size:0.65rem;">痛風ホルダー</span></div>
-        <div class="member-sns">
-          <a href="https://x.com/ugazin" target="_blank">X</a>
-          <a href="https://www.instagram.com/ugazin/" target="_blank">Instagram</a>
-          <a href="https://ugazin.com" target="_blank">Web</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="member-card new-member reveal">
-      <img src="assets/member-bass.jpg" alt="ぺー" class="member-img">
-      <div class="member-info">
-        <div class="member-part">Bass</div>
-        <div class="member-name">ぺー</div>
-        <div class="member-name-en">Pe</div>
-        <div class="member-acts">TAPE ME WONDER / Vanityyyy<br>ex.BRANCO<br>2026年〜新メンバー<br><span style="color:var(--red); font-size:0.65rem;">痛風ホルダー</span></div>
-        <div class="member-sns">
-          <a href="https://x.com/tapemewonder" target="_blank">X (TMW)</a>
-          <a href="https://www.hookyrecords.com/tape-me-wonder" target="_blank">Hooky Records</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="member-card reveal">
-      <img src="assets/member-tah.jpg" alt="TAH" class="member-img">
-      <div class="member-info">
-        <div class="member-part">Drums</div>
-        <div class="member-name">TAH</div>
-        <div class="member-name-en">Tah</div>
-        <div class="member-acts">元GQ06 / lolMusika<br>元初代リーダー（最重量）<br><span style="color:var(--red); font-size:0.65rem;">痛風ホルダー</span></div>
-        <div class="member-sns">
-          <a href="https://x.com/lolMusika" target="_blank">X (lolMusika)</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===== LIVE ===== -->
-<section id="live">
-  <h2 class="section-title reveal">LIVE <span>SCHEDULE</span></h2>
-  <p class="section-sub reveal">ライブ情報</p>
-  <div class="live-list">
-
-    <div class="live-card reveal">
-      <div class="live-date">
-        <div class="year">2026</div>
-        <div class="day">02.06</div>
-        <div class="month">FEB</div>
-        <div class="dow">FRI</div>
-      </div>
-      <div class="live-info">
-        <h3>ハッピー乱デブー 2026 〜再結成記念ワンマン〜</h3>
-        <div class="venue">下北沢 Club Que</div>
-        <span class="badge badge-soldout">SOLD OUT</span>
-      </div>
-    </div>
-
-    <div class="live-card reveal">
-      <div class="live-date" style="background: var(--yellow); color: #000;">
-        <div class="year" style="color:#000;">2026</div>
-        <div class="day">05.09</div>
-        <div class="month">MAY</div>
-        <div class="dow">SAT</div>
-      </div>
-      <div class="live-info">
-        <h3>DEV PARADE GRAND FESTIVAL</h3>
-        <div class="venue">国立代々木体育館</div>
-        <span class="badge badge-upcoming">UPCOMING</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===== VIDEO ===== -->
-<section id="video">
-  <h2 class="section-title reveal">MUSIC <span>VIDEO</span></h2>
-  <p class="section-sub reveal">公式ミュージックビデオ</p>
-  <div class="video-grid reveal">
-    <div>
-      <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/Y5ZNUwub_OQ" title="デブパレード - バッチコイ!!! MV"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div style="margin-top:0.8rem;">
-        <div style="font-family:'Oswald',sans-serif; font-size:0.75rem; color:var(--red); letter-spacing:0.1em;">NARUTO -ナルト- 疾風伝 ED THEME</div>
-        <div style="font-weight:900; margin-top:0.2rem;">バッチコイ!!!</div>
-        <div style="font-size:0.8rem; color:var(--gray);">2nd Single (2009) &mdash; Official Music Video</div>
-      </div>
-    </div>
-    <div>
-      <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/SVTMKC2_iOg" title="デブパレード - Body&Soul MV"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div style="margin-top:0.8rem;">
-        <div style="font-family:'Oswald',sans-serif; font-size:0.75rem; color:var(--red); letter-spacing:0.1em;">MAJOR DEBUT</div>
-        <div style="font-weight:900; margin-top:0.2rem;">Body&Soul</div>
-        <div style="font-size:0.8rem; color:var(--gray);">1st Single (2008) &mdash; SPEED Cover</div>
-      </div>
-    </div>
+  <!-- ===== REUNION BANNER ===== -->
+  <div class="reunion-banner">
+    <div class="reunion-year">2026</div>
+    <h2>15年ぶりの奇跡の復活</h2>
+    <p>2011年「メンバーが痩せてしまった」という理由で解散したDEV PARADEが、<br>
+      2026年2月6日、ついに再結成。初のフルアルバムも制作中。</p>
   </div>
 
-  <!-- 再結成後の動画プレイリスト -->
-  <div style="margin-top:3rem;" class="reveal">
-    <h3 style="font-family:'Oswald',sans-serif; font-size:1.2rem; letter-spacing:0.15em; text-align:center; margin-bottom:0.5rem;">
-      <span style="color:var(--red);">REUNION</span> PLAYLIST
-    </h3>
-    <p style="text-align:center; font-size:0.85rem; color:var(--gray); margin-bottom:1.5rem;">再結成後の動画をまとめた再生リスト</p>
-    <div style="max-width:720px; margin:0 auto;">
-      <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/videoseries?list=PL0THYLU4QbDkldXStxeHXCfsTnas90AoP" title="DEV PARADE 再結成プレイリスト"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen loading="lazy"></iframe>
+  <!-- ===== VIRAL CATCHCOPY ===== -->
+  <div class="viral-banner">
+    <div class="catch">
+      <span class="em">メンバー全員90kg超</span>、全員<span class="yellow">痛風ホルダー</span>。<br>
+      <span class="em">NARUTO</span>エンディングバンドが<span class="yellow">15年ぶり</span>に帰ってきた。<br>
+      デブじゃなきゃ入れない。<span class="em">90kg以上</span>限定バンド。
+    </div>
+    <div class="share-prompt">#デブパレード #DEVPARADE #バッチコイ で拡散お願いします</div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <h2 class="section-title reveal">ABOUT <span>DEV PARADE</span></h2>
+    <p class="section-sub reveal">デブパレードとは</p>
+    <div class="about-grid">
+      <img src="assets/member-group.jpg" alt="DEV PARADE" class="about-img reveal">
+      <div class="about-text reveal">
+        <p>DEV PARADE（デブパレード）は、2006年にギタリストugazinが「体重100kg以上のミュージシャン」を緊急招集して結成された日本のロックバンド。バンド名はDef
+          Leppard（デフ・レパード）のパロディ。自称「ヘヴィメタボバンド」。復活後のメンバー条件は<strong>90kg以上</strong>に改定。</p>
+        <p>2008年、ソニー・ミュージック傘下のDefSTAR Recordsから「メジャー・デブー」。NARUTOエンディングテーマ「バッチコイ!!!」、SUMMER
+          SONIC出演、「HEY!HEY!HEY!」出演など精力的に活動。</p>
+        <p>2011年、「メンバーが痩せてメタボを名乗れなくなった」という前代未聞の理由で解散。「普通（サイズ）の男の子に戻ります」と宣言。</p>
+        <p>そして2026年2月6日 &mdash; 15年の沈黙を破り、奇跡の再結成。新メンバーに"ぺー"を迎え、新たなDEV PARADEが動き出す。</p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="num">5<span style="font-size:1.2rem">人</span></div>
+            <div class="label">All 90kg+</div>
+          </div>
+          <div class="about-stat">
+            <div class="num">15</div>
+            <div class="label">Years Apart</div>
+          </div>
+          <div class="about-stat">
+            <div class="num">2026</div>
+            <div class="label">Reunion</div>
+          </div>
+        </div>
       </div>
     </div>
-    <div style="text-align:center; margin-top:1rem;">
-      <a href="https://youtube.com/playlist?list=PL0THYLU4QbDkldXStxeHXCfsTnas90AoP" target="_blank"
-        style="display:inline-block; padding:0.6rem 1.5rem; background:var(--red); color:#fff; text-decoration:none; font-family:'Oswald',sans-serif; font-size:0.85rem; letter-spacing:0.1em; border-radius:2px;">
-        YouTubeで再生リストを見る &rarr;
+  </section>
+
+  <!-- ===== MEMBERS ===== -->
+  <section id="members">
+    <h2 class="section-title reveal">THE <span>MEMBERS</span></h2>
+    <p class="section-sub reveal">メンバー紹介</p>
+    <div class="members-grid">
+
+      <div class="member-card reveal">
+        <img src="assets/member-hanzi.jpg" alt="ハンサム判治" class="member-img">
+        <div class="member-info">
+          <div class="member-part">Vocal / Leader</div>
+          <div class="member-name">ハンサム判治</div>
+          <div class="member-name-en">Handsome Hanzi</div>
+          <div class="member-acts">ハンサム兄弟 / HANZI BAND</div>
+          <div class="member-sns">
+            <a href="https://x.com/han363" target="_blank">X</a>
+            <a href="https://www.instagram.com/hanzi/" target="_blank">Instagram</a>
+            <a href="https://www.threads.net/@hanzi" target="_blank">Threads</a>
+            <a href="https://www.han363.com/hanzi/" target="_blank">Web</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="member-card reveal">
+        <img src="assets/member-coyass.jpg" alt="COYASS" class="member-img">
+        <div class="member-info">
+          <div class="member-part">MC</div>
+          <div class="member-name">COYASS</div>
+          <div class="member-name-en">Dr.COYASS - D.D.S. Ph.D.</div>
+          <div class="member-acts">MIC BANDITZ / E.P.O / 洪水 / Malignant Co.<br>歯科医師・歯学博士<br><span
+              style="color:var(--red); font-size:0.65rem;">痛風ホルダー</span></div>
+          <div class="member-sns">
+            <a href="https://x.com/coyass" target="_blank">X</a>
+            <a href="https://www.instagram.com/dr.coyass/" target="_blank">Instagram</a>
+            <a href="https://drcoyass.github.io" target="_blank">Official HP</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="member-card reveal">
+        <img src="assets/member-ugazin.jpg" alt="ugazin" class="member-img">
+        <div class="member-info">
+          <div class="member-part">Guitar / Songwriter</div>
+          <div class="member-name">ugazin</div>
+          <div class="member-name-en">Ugazin</div>
+          <div class="member-acts">MONG HANG / 14"fourteen"<br>バンド発起人<br><span
+              style="color:var(--red); font-size:0.65rem;">痛風ホルダー</span></div>
+          <div class="member-sns">
+            <a href="https://x.com/ugazin" target="_blank">X</a>
+            <a href="https://www.instagram.com/ugazin/" target="_blank">Instagram</a>
+            <a href="https://ugazin.com" target="_blank">Web</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="member-card new-member reveal">
+        <img src="assets/member-bass.jpg" alt="ぺー" class="member-img">
+        <div class="member-info">
+          <div class="member-part">Bass</div>
+          <div class="member-name">ぺー</div>
+          <div class="member-name-en">Pe</div>
+          <div class="member-acts">TAPE ME WONDER / Vanityyyy<br>ex.BRANCO<br>2026年〜新メンバー<br><span
+              style="color:var(--red); font-size:0.65rem;">痛風ホルダー</span></div>
+          <div class="member-sns">
+            <a href="https://x.com/tapemewonder" target="_blank">X (TMW)</a>
+            <a href="https://www.hookyrecords.com/tape-me-wonder" target="_blank">Hooky Records</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="member-card reveal">
+        <img src="assets/member-tah.jpg" alt="TAH" class="member-img">
+        <div class="member-info">
+          <div class="member-part">Drums</div>
+          <div class="member-name">TAH</div>
+          <div class="member-name-en">Tah</div>
+          <div class="member-acts">元GQ06 / lolMusika<br>元初代リーダー（最重量）<br><span
+              style="color:var(--red); font-size:0.65rem;">痛風ホルダー</span></div>
+          <div class="member-sns">
+            <a href="https://x.com/lolMusika" target="_blank">X (lolMusika)</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== LIVE ===== -->
+  <section id="live">
+    <h2 class="section-title reveal">LIVE <span>SCHEDULE</span></h2>
+    <p class="section-sub reveal">ライブ情報</p>
+    <div class="live-list">
+
+      <div class="live-card reveal">
+        <div class="live-date">
+          <div class="year">2026</div>
+          <div class="day">02.06</div>
+          <div class="month">FEB</div>
+          <div class="dow">FRI</div>
+        </div>
+        <div class="live-info">
+          <h3>ハッピー乱デブー 2026 〜再結成記念ワンマン〜</h3>
+          <div class="venue">下北沢 Club Que</div>
+          <span class="badge badge-soldout">SOLD OUT</span>
+        </div>
+      </div>
+
+      <div class="live-card reveal">
+        <div class="live-date" style="background: var(--yellow); color: #000;">
+          <div class="year" style="color:#000;">2026</div>
+          <div class="day">05.09</div>
+          <div class="month">MAY</div>
+          <div class="dow">SAT</div>
+        </div>
+        <div class="live-info">
+          <h3>DEV PARADE GRAND FESTIVAL</h3>
+          <div class="venue">国立代々木体育館</div>
+          <span class="badge badge-upcoming">UPCOMING</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== VIDEO ===== -->
+  <section id="video">
+    <h2 class="section-title reveal">MUSIC <span>VIDEO</span></h2>
+    <p class="section-sub reveal">公式ミュージックビデオ</p>
+    <div class="video-grid reveal">
+      <div>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/Y5ZNUwub_OQ" title="デブパレード - バッチコイ!!! MV"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div style="margin-top:0.8rem;">
+          <div style="font-family:'Oswald',sans-serif; font-size:0.75rem; color:var(--red); letter-spacing:0.1em;">
+            NARUTO -ナルト- 疾風伝 ED THEME</div>
+          <div style="font-weight:900; margin-top:0.2rem;">バッチコイ!!!</div>
+          <div style="font-size:0.8rem; color:var(--gray);">2nd Single (2009) &mdash; Official Music Video</div>
+        </div>
+      </div>
+      <div>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/SVTMKC2_iOg" title="デブパレード - Body&Soul MV"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div style="margin-top:0.8rem;">
+          <div style="font-family:'Oswald',sans-serif; font-size:0.75rem; color:var(--red); letter-spacing:0.1em;">MAJOR
+            DEBUT</div>
+          <div style="font-weight:900; margin-top:0.2rem;">Body&Soul</div>
+          <div style="font-size:0.8rem; color:var(--gray);">1st Single (2008) &mdash; SPEED Cover</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 再結成後の動画プレイリスト -->
+    <div style="margin-top:3rem;" class="reveal">
+      <h3
+        style="font-family:'Oswald',sans-serif; font-size:1.2rem; letter-spacing:0.15em; text-align:center; margin-bottom:0.5rem;">
+        <span style="color:var(--red);">REUNION</span> PLAYLIST
+      </h3>
+      <p style="text-align:center; font-size:0.85rem; color:var(--gray); margin-bottom:1.5rem;">再結成後の動画をまとめた再生リスト</p>
+      <div style="max-width:720px; margin:0 auto;">
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/videoseries?list=PL0THYLU4QbDkldXStxeHXCfsTnas90AoP"
+            title="DEV PARADE 再結成プレイリスト"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:1rem;">
+        <a href="https://youtube.com/playlist?list=PL0THYLU4QbDkldXStxeHXCfsTnas90AoP" target="_blank"
+          style="display:inline-block; padding:0.6rem 1.5rem; background:var(--red); color:#fff; text-decoration:none; font-family:'Oswald',sans-serif; font-size:0.85rem; letter-spacing:0.1em; border-radius:2px;">
+          YouTubeで再生リストを見る &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DISCOGRAPHY ===== -->
+  <section id="discography">
+    <h2 class="section-title reveal">DISCO<span>GRAPHY</span></h2>
+    <p class="section-sub reveal">作品 &mdash; 全オリジナル音源サブスク解禁中</p>
+
+    <!-- Streaming Links -->
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2.5rem;" class="reveal">
+      <a href="https://open.spotify.com/artist/5D8hajVfwrC1C83bwvdP5q" target="_blank" style="display:inline-block; padding:0.5rem 1.5rem; background:#1DB954; color:#fff;
+              font-family:'Oswald',sans-serif; font-size:0.85rem; letter-spacing:0.1em;
+              text-decoration:none; transition:opacity 0.3s;" onmouseover="this.style.opacity='0.8'"
+        onmouseout="this.style.opacity='1'">
+        Spotify
+      </a>
+      <a href="https://music.apple.com/jp/artist/%E3%83%87%E3%83%96%E3%83%91%E3%83%AC%E3%83%BC%E3%83%89/304692523"
+        target="_blank" style="display:inline-block; padding:0.5rem 1.5rem; background:linear-gradient(135deg,#FA243C,#A534BE); color:#fff;
+              font-family:'Oswald',sans-serif; font-size:0.85rem; letter-spacing:0.1em;
+              text-decoration:none; transition:opacity 0.3s;" onmouseover="this.style.opacity='0.8'"
+        onmouseout="this.style.opacity='1'">
+        Apple Music
+      </a>
+      <a href="https://youtube.com/channel/UCS3Dn8BXf_OSP_h69qg_8Kg" target="_blank" style="display:inline-block; padding:0.5rem 1.5rem; background:#FF0000; color:#fff;
+              font-family:'Oswald',sans-serif; font-size:0.85rem; letter-spacing:0.1em;
+              text-decoration:none; transition:opacity 0.3s;" onmouseover="this.style.opacity='0.8'"
+        onmouseout="this.style.opacity='1'">
+        YouTube Music
+      </a>
+      <a href="https://www.amazon.co.jp/music/player/artists/B001NZMB9W" target="_blank" style="display:inline-block; padding:0.5rem 1.5rem; background:#00A8E1; color:#fff;
+              font-family:'Oswald',sans-serif; font-size:0.85rem; letter-spacing:0.1em;
+              text-decoration:none; transition:opacity 0.3s;" onmouseover="this.style.opacity='0.8'"
+        onmouseout="this.style.opacity='1'">
+        Amazon Music
       </a>
     </div>
-  </div>
-</section>
 
-<!-- ===== DISCOGRAPHY ===== -->
-<section id="discography">
-  <h2 class="section-title reveal">DISCO<span>GRAPHY</span></h2>
-  <p class="section-sub reveal">作品 &mdash; 全オリジナル音源サブスク解禁中</p>
+    <div class="disco-grid">
 
-  <!-- Streaming Links -->
-  <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2.5rem;" class="reveal">
-    <a href="https://open.spotify.com/artist/5D8hajVfwrC1C83bwvdP5q" target="_blank"
-       style="display:inline-block; padding:0.5rem 1.5rem; background:#1DB954; color:#fff;
-              font-family:'Oswald',sans-serif; font-size:0.85rem; letter-spacing:0.1em;
-              text-decoration:none; transition:opacity 0.3s;"
-       onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
-      Spotify
-    </a>
-    <a href="https://music.apple.com/jp/artist/%E3%83%87%E3%83%96%E3%83%91%E3%83%AC%E3%83%BC%E3%83%89/304692523" target="_blank"
-       style="display:inline-block; padding:0.5rem 1.5rem; background:linear-gradient(135deg,#FA243C,#A534BE); color:#fff;
-              font-family:'Oswald',sans-serif; font-size:0.85rem; letter-spacing:0.1em;
-              text-decoration:none; transition:opacity 0.3s;"
-       onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
-      Apple Music
-    </a>
-    <a href="https://youtube.com/channel/UCS3Dn8BXf_OSP_h69qg_8Kg" target="_blank"
-       style="display:inline-block; padding:0.5rem 1.5rem; background:#FF0000; color:#fff;
-              font-family:'Oswald',sans-serif; font-size:0.85rem; letter-spacing:0.1em;
-              text-decoration:none; transition:opacity 0.3s;"
-       onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
-      YouTube Music
-    </a>
-    <a href="https://www.amazon.co.jp/music/player/artists/B001NZMB9W" target="_blank"
-       style="display:inline-block; padding:0.5rem 1.5rem; background:#00A8E1; color:#fff;
-              font-family:'Oswald',sans-serif; font-size:0.85rem; letter-spacing:0.1em;
-              text-decoration:none; transition:opacity 0.3s;"
-       onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
-      Amazon Music
-    </a>
-  </div>
-
-  <div class="disco-grid">
-
-    <!-- NEW ALBUM -->
-    <div class="disco-new reveal">
-      <div class="year" style="color: var(--yellow);">2026 &mdash; 1st Full Album</div>
-      <h3>NEW ALBUM</h3>
-      <div class="coming">COMING SOON</div>
-      <p style="color: var(--gray); margin-top: 0.5rem; font-size: 0.9rem;">
-        15年越しの初フルアルバム &mdash; 現在制作中
-      </p>
-    </div>
-
-    <!-- 2nd Single -->
-    <div class="disco-card reveal">
-      <div class="year">2009.03.11 &mdash; 2nd Single</div>
-      <h3>バッチコイ!!!</h3>
-      <div class="label">DefSTAR Records (DFCL-1539)</div>
-      <div class="tieup">テレビ東京系アニメ「NARUTO -ナルト- 疾風伝」第8期EDテーマ</div>
-      <div class="tracks">
-        1. バッチコイ!!! &mdash; <a href="https://smer.lnk.to/Bacchikoi" target="_blank" style="color:var(--red);">▶ 聴く</a><br>
-        2. GODS N' DEATH &mdash; <a href="https://smer.lnk.to/GODS_N_DEATH" target="_blank" style="color:var(--red);">▶ 聴く</a><br>
-        作詞: ハンサム判治・COYASS・ugazin / 編曲: ugazin
+      <!-- NEW ALBUM -->
+      <div class="disco-new reveal">
+        <div class="year" style="color: var(--yellow);">2026 &mdash; 1st Full Album</div>
+        <h3>NEW ALBUM</h3>
+        <div class="coming">COMING SOON</div>
+        <p style="color: var(--gray); margin-top: 0.5rem; font-size: 0.9rem;">
+          15年越しの初フルアルバム &mdash; 現在制作中
+        </p>
       </div>
-    </div>
 
-    <!-- 1st Single -->
-    <div class="disco-card reveal">
-      <div class="year">2008.06.25 &mdash; 1st Single</div>
-      <h3>Body&Soul / cosmic mind</h3>
-      <div class="label">DefSTAR Records (DFCL-1478)</div>
-      <div class="tieup">「cosmic mind」映画「ギララの逆襲/洞爺湖サミット危機一発」主題歌<br>（第65回ヴェネツィア国際映画祭出品作）</div>
-      <div class="tracks">
-        1. Body&Soul（SPEEDカバー / パラダイス山元参加）<br>
-        2. cosmic mind &mdash; <a href="https://smer.lnk.to/cosmic_mind" target="_blank" style="color:var(--red);">▶ 聴く</a><br>
-        3. ME☆TA☆BO〜俺たちミートボール〜 &mdash; <a href="https://smer.lnk.to/MeTaBo-Oretachi_Meatball-" target="_blank" style="color:var(--red);">▶ 聴く</a>
-      </div>
-    </div>
-
-    <!-- Indies -->
-    <div class="disco-card reveal">
-      <div class="year">PRE-DEBUT &mdash; Indies CD</div>
-      <h3>脂肪遊戯</h3>
-      <div class="label">Self Release（メジャーデビュー前レア音源）</div>
-      <div class="tracks">
-        ※現在入手困難
-      </div>
-    </div>
-
-    <!-- DVD -->
-    <div class="disco-card reveal">
-      <div class="year">2007.11.21 &mdash; DVD</div>
-      <h3>ちゃんこdeちゃんこ 〜in両国〜</h3>
-      <div class="label">DVD</div>
-      <div class="tracks">
-        2007年7月 両国FOURVALLEYにて開催された<br>
-        女性限定ワンマンライブの映像作品
-      </div>
-    </div>
-
-    <!-- Compilation: 赤塚不二夫トリビュート -->
-    <div class="disco-card reveal">
-      <div class="year">2008.09.24 &mdash; Compilation</div>
-      <h3>赤塚不二夫トリビュート<br>〜四十一才の春だから〜</h3>
-      <div class="label">DefSTAR Records (DFCL-1490)</div>
-      <div class="tieup">「天才バカボン（レコード・サイズ）」で参加<br>CR天才バカボン メインテーマ</div>
-      <div class="tracks">
-        赤塚不二夫を愛するアーティストが集結した<br>
-        豪華トリビュートアルバム
-      </div>
-    </div>
-
-    <!-- Compilation: BEST HIT NARUTO -->
-    <div class="disco-card reveal">
-      <div class="year">2010.07.14 &mdash; Compilation</div>
-      <h3>BEST HIT NARUTO</h3>
-      <div class="label">Sony Music (通常盤 / DVD付限定盤)</div>
-      <div class="tieup">「バッチコイ!!!」(#10) 収録</div>
-      <div class="tracks">
-        NARUTO -ナルト- 疾風伝<br>
-        2008年春〜2010年春のテーマソング集
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===== HISTORY ===== -->
-<section id="history">
-  <h2 class="section-title reveal">HISTO<span>RY</span></h2>
-  <p class="section-sub reveal">バンドの歴史</p>
-  <div class="timeline">
-    <div class="timeline-item reveal">
-      <div class="timeline-year">2006</div>
-      <div class="timeline-text">ugazinがインターネットで「体重100kg以上のミュージシャン」を緊急招集。バンド結成。</div>
-    </div>
-    <div class="timeline-item reveal">
-      <div class="timeline-year">2007</div>
-      <div class="timeline-text">ライブ活動開始。メンバー全員90kg超の圧倒的存在感で話題に。</div>
-    </div>
-    <div class="timeline-item reveal">
-      <div class="timeline-year">2008.06</div>
-      <div class="timeline-text">DefSTAR Records（ソニー）から「メジャー・デブー」。1stシングル「Body&Soul / cosmic mind」発売。</div>
-    </div>
-    <div class="timeline-item reveal">
-      <div class="timeline-year">2008.07</div>
-      <div class="timeline-text">フジテレビ「HEY!HEY!HEY! MUSIC CHAMP」出演。</div>
-    </div>
-    <div class="timeline-item reveal">
-      <div class="timeline-year">2008.08</div>
-      <div class="timeline-text">SUMMER SONIC 2008 大阪エンタメステージ出演。</div>
-    </div>
-    <div class="timeline-item reveal">
-      <div class="timeline-year">2009.03</div>
-      <div class="timeline-text">2ndシングル「バッチコイ!!!」発売。NARUTO -ナルト- 疾風伝 EDテーマに採用。</div>
-    </div>
-    <div class="timeline-item reveal">
-      <div class="timeline-year">2011.02</div>
-      <div class="timeline-text">解散。「メンバーが痩せてメタボを名乗れなくなった」「普通（サイズ）の男の子に戻ります」</div>
-    </div>
-    <div class="timeline-item reveal">
-      <div class="timeline-year">2025.11</div>
-      <div class="timeline-text">ugazin主催ライブ（下北沢Club Que）にシークレットアクトとして15年ぶりにステージへ。</div>
-    </div>
-    <div class="timeline-item highlight reveal">
-      <div class="timeline-year">2026.02.06</div>
-      <div class="timeline-text">15年ぶりの再結成を正式発表！新メンバー"ぺー"を迎え、下北沢Club Queでワンマンライブ開催。初のフルアルバム制作中であることも発表。</div>
-    </div>
-    <div class="timeline-item highlight reveal">
-      <div class="timeline-year">2026.05.09</div>
-      <div class="timeline-text">国立代々木体育館でのグランドフェスティバル開催予定。</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PHOTO GALLERY ===== -->
-<section id="gallery">
-  <h2 class="section-title reveal">LIVE <span>GALLERY</span></h2>
-  <p class="section-sub reveal">2026.02.06 復活ワンマン @ 下北沢 Club Que</p>
-  <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:0.5rem;" class="reveal">
-    <img src="assets/live-action1.jpg" alt="DEV PARADE Live" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-    <img src="assets/live-hanzi2.jpg" alt="ハンサム判治 Live" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-    <img src="assets/live-duo.jpg" alt="ハンサム判治 & COYASS" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-    <img src="assets/live-ugazin2.jpg" alt="ugazin Live" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-    <img src="assets/live-coyass2.jpg" alt="COYASS Live" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-    <img src="assets/live-front.jpg" alt="DEV PARADE Live Front" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-    <img src="assets/live-stage2.jpg" alt="DEV PARADE Stage" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-    <img src="assets/live-wide.jpg" alt="DEV PARADE Wide" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-  </div>
-</section>
-
-<!-- ===== GOODS ===== -->
-<section id="goods">
-  <h2 class="section-title reveal">OFFICIAL <span>GOODS</span></h2>
-  <p class="section-sub reveal">デ物販 &mdash; ライブ会場限定販売</p>
-  <div class="goods-showcase reveal">
-    <div>
-      <img src="assets/goods-banner.jpg" alt="DEV PARADE Goods" class="goods-img">
-    </div>
-    <div class="goods-info">
-      <span class="goods-badge">LIVE VENUE ONLY</span>
-      <h3 style="margin-top:1rem;">「全ての武器をお箸に」Tシャツ</h3>
-      <p style="color:var(--gray); font-size:0.9rem; margin:0.5rem 0; line-height:1.7;">
-        フロント: DEV PARADEロゴ<br>
-        バック: 「全ての武器をお箸に」DEV PARADE
-      </p>
-      <div style="display:flex; gap:1.5rem; margin:1rem 0; align-items:baseline;">
-        <div>
-          <div style="font-family:'Oswald',sans-serif; font-size:0.7rem; color:var(--gray); letter-spacing:0.1em;">SIZE</div>
-          <div style="font-weight:900; font-size:1.1rem;">M / XL / XXXL</div>
-        </div>
-        <div>
-          <div style="font-family:'Oswald',sans-serif; font-size:0.7rem; color:var(--gray); letter-spacing:0.1em;">PRICE</div>
-          <div style="font-weight:900; font-size:1.1rem; color:var(--yellow);">¥4,000<span style="font-size:0.75rem; color:var(--gray);">（税込）</span></div>
+      <!-- 2nd Single -->
+      <div class="disco-card reveal">
+        <div class="year">2009.03.11 &mdash; 2nd Single</div>
+        <h3>バッチコイ!!!</h3>
+        <div class="label">DefSTAR Records (DFCL-1539)</div>
+        <div class="tieup">テレビ東京系アニメ「NARUTO -ナルト- 疾風伝」第8期EDテーマ</div>
+        <div class="tracks">
+          1. バッチコイ!!! &mdash; <a href="https://smer.lnk.to/Bacchikoi" target="_blank" style="color:var(--red);">▶
+            聴く</a><br>
+          2. GODS N' DEATH &mdash; <a href="https://smer.lnk.to/GODS_N_DEATH" target="_blank"
+            style="color:var(--red);">▶ 聴く</a><br>
+          作詞: ハンサム判治・COYASS・ugazin / 編曲: ugazin
         </div>
       </div>
-      <div style="display:flex; gap:1rem; margin-top:1.5rem;">
-        <img src="assets/tshirt-design.png" alt="Tシャツデザイン" style="width:48%; border:1px solid #222; border-radius:4px;">
-        <img src="assets/tshirt-real.jpg" alt="Tシャツ実物" style="width:48%; border:1px solid #222; border-radius:4px;">
-      </div>
-    </div>
-  </div>
-  <!-- Sticker -->
-  <div style="margin-top:3rem; text-align:center;" class="reveal">
-    <div style="display:inline-block; background:var(--card-bg); border:1px solid #222; padding:2rem 3rem;">
-      <span class="goods-badge">LIVE VENUE ONLY</span>
-      <h3 style="margin-top:1rem; font-size:1.2rem; font-weight:900;">DEV PARADE ステッカー</h3>
-      <div style="margin-top:0.8rem;">
-        <div style="font-family:'Oswald',sans-serif; font-size:0.7rem; color:var(--gray); letter-spacing:0.1em;">PRICE</div>
-        <div style="font-weight:900; font-size:1.1rem; color:var(--yellow);">¥500<span style="font-size:0.75rem; color:var(--gray);">（税込）</span></div>
-      </div>
-    </div>
-  </div>
-  <div style="text-align:center; margin-top:2rem;" class="reveal">
-    <img src="assets/flyer-meat.jpg" alt="DEV PARADE 極厚リブステージ用" style="max-width:350px; width:100%; border:1px solid #222; border-radius:4px;">
-    <p style="color:var(--gray); font-size:0.8rem; margin-top:0.5rem;">※ライブ会場のみでの販売です</p>
-  </div>
-</section>
 
-<!-- ===== POSI DEV BOT BANNER ===== -->
-<section style="padding:2rem 1rem; text-align:center; background:linear-gradient(135deg, rgba(230,57,70,0.15), rgba(255,215,0,0.1)); border-top:2px solid var(--red); border-bottom:2px solid var(--red);">
-  <div class="reveal">
-    <div style="font-size:3rem; margin-bottom:0.5rem;">🍖</div>
-    <h2 style="font-family:'Oswald',sans-serif; font-size:1.8rem; font-weight:900; letter-spacing:0.05em;">
-      DEV <span style="color:var(--gold);">POSI</span> BOT
-    </h2>
-    <p style="color:var(--gray); margin:0.5rem auto; max-width:500px; font-size:0.9rem;">
-      SNS上の全ての「デブ」をポジティブに変換！<br>
-      メンバー全員90kg超バンドが贈る、世界初のデブ肯定Bot
-    </p>
-    <a href="debu-bot.html"
-       style="display:inline-block; margin-top:1rem; padding:0.8rem 2.5rem; background:var(--red); color:#fff;
+      <!-- 1st Single -->
+      <div class="disco-card reveal">
+        <div class="year">2008.06.25 &mdash; 1st Single</div>
+        <h3>Body&Soul / cosmic mind</h3>
+        <div class="label">DefSTAR Records (DFCL-1478)</div>
+        <div class="tieup">「cosmic mind」映画「ギララの逆襲/洞爺湖サミット危機一発」主題歌<br>（第65回ヴェネツィア国際映画祭出品作）</div>
+        <div class="tracks">
+          1. Body&Soul（SPEEDカバー / パラダイス山元参加）<br>
+          2. cosmic mind &mdash; <a href="https://smer.lnk.to/cosmic_mind" target="_blank" style="color:var(--red);">▶
+            聴く</a><br>
+          3. ME☆TA☆BO〜俺たちミートボール〜 &mdash; <a href="https://smer.lnk.to/MeTaBo-Oretachi_Meatball-" target="_blank"
+            style="color:var(--red);">▶ 聴く</a>
+        </div>
+      </div>
+
+      <!-- Indies -->
+      <div class="disco-card reveal">
+        <div class="year">PRE-DEBUT &mdash; Indies CD</div>
+        <h3>脂肪遊戯</h3>
+        <div class="label">Self Release（メジャーデビュー前レア音源）</div>
+        <div class="tracks">
+          ※現在入手困難
+        </div>
+      </div>
+
+      <!-- DVD -->
+      <div class="disco-card reveal">
+        <div class="year">2007.11.21 &mdash; DVD</div>
+        <h3>ちゃんこdeちゃんこ 〜in両国〜</h3>
+        <div class="label">DVD</div>
+        <div class="tracks">
+          2007年7月 両国FOURVALLEYにて開催された<br>
+          女性限定ワンマンライブの映像作品
+        </div>
+      </div>
+
+      <!-- Compilation: 赤塚不二夫トリビュート -->
+      <div class="disco-card reveal">
+        <div class="year">2008.09.24 &mdash; Compilation</div>
+        <h3>赤塚不二夫トリビュート<br>〜四十一才の春だから〜</h3>
+        <div class="label">DefSTAR Records (DFCL-1490)</div>
+        <div class="tieup">「天才バカボン（レコード・サイズ）」で参加<br>CR天才バカボン メインテーマ</div>
+        <div class="tracks">
+          赤塚不二夫を愛するアーティストが集結した<br>
+          豪華トリビュートアルバム
+        </div>
+      </div>
+
+      <!-- Compilation: BEST HIT NARUTO -->
+      <div class="disco-card reveal">
+        <div class="year">2010.07.14 &mdash; Compilation</div>
+        <h3>BEST HIT NARUTO</h3>
+        <div class="label">Sony Music (通常盤 / DVD付限定盤)</div>
+        <div class="tieup">「バッチコイ!!!」(#10) 収録</div>
+        <div class="tracks">
+          NARUTO -ナルト- 疾風伝<br>
+          2008年春〜2010年春のテーマソング集
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== HISTORY ===== -->
+  <section id="history">
+    <h2 class="section-title reveal">HISTO<span>RY</span></h2>
+    <p class="section-sub reveal">バンドの歴史</p>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-year">2006</div>
+        <div class="timeline-text">ugazinがインターネットで「体重100kg以上のミュージシャン」を緊急招集。バンド結成。</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-year">2007</div>
+        <div class="timeline-text">ライブ活動開始。メンバー全員90kg超の圧倒的存在感で話題に。</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-year">2008.06</div>
+        <div class="timeline-text">DefSTAR Records（ソニー）から「メジャー・デブー」。1stシングル「Body&Soul / cosmic mind」発売。</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-year">2008.07</div>
+        <div class="timeline-text">フジテレビ「HEY!HEY!HEY! MUSIC CHAMP」出演。</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-year">2008.08</div>
+        <div class="timeline-text">SUMMER SONIC 2008 大阪エンタメステージ出演。</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-year">2009.03</div>
+        <div class="timeline-text">2ndシングル「バッチコイ!!!」発売。NARUTO -ナルト- 疾風伝 EDテーマに採用。</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-year">2011.02</div>
+        <div class="timeline-text">解散。「メンバーが痩せてメタボを名乗れなくなった」「普通（サイズ）の男の子に戻ります」</div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-year">2025.11</div>
+        <div class="timeline-text">ugazin主催ライブ（下北沢Club Que）にシークレットアクトとして15年ぶりにステージへ。</div>
+      </div>
+      <div class="timeline-item highlight reveal">
+        <div class="timeline-year">2026.02.06</div>
+        <div class="timeline-text">15年ぶりの再結成を正式発表！新メンバー"ぺー"を迎え、下北沢Club Queでワンマンライブ開催。初のフルアルバム制作中であることも発表。</div>
+      </div>
+      <div class="timeline-item highlight reveal">
+        <div class="timeline-year">2026.05.09</div>
+        <div class="timeline-text">国立代々木体育館でのグランドフェスティバル開催予定。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PHOTO GALLERY ===== -->
+  <section id="gallery">
+    <h2 class="section-title reveal">LIVE <span>GALLERY</span></h2>
+    <p class="section-sub reveal">2026.02.06 復活ワンマン @ 下北沢 Club Que</p>
+    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:0.5rem;" class="reveal">
+      <img src="assets/live-action1.jpg" alt="DEV PARADE Live"
+        style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;"
+        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
+      <img src="assets/live-hanzi2.jpg" alt="ハンサム判治 Live"
+        style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;"
+        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
+      <img src="assets/live-duo.jpg" alt="ハンサム判治 & COYASS"
+        style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;"
+        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
+      <img src="assets/live-ugazin2.jpg" alt="ugazin Live"
+        style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;"
+        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
+      <img src="assets/live-coyass2.jpg" alt="COYASS Live"
+        style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;"
+        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
+      <img src="assets/live-front.jpg" alt="DEV PARADE Live Front"
+        style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;"
+        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
+      <img src="assets/live-stage2.jpg" alt="DEV PARADE Stage"
+        style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;"
+        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
+      <img src="assets/live-wide.jpg" alt="DEV PARADE Wide"
+        style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;"
+        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
+    </div>
+  </section>
+
+  <!-- ===== GOODS ===== -->
+  <section id="goods">
+    <h2 class="section-title reveal">OFFICIAL <span>GOODS</span></h2>
+    <p class="section-sub reveal">デ物販 &mdash; ライブ会場限定販売</p>
+    <div class="goods-showcase reveal">
+      <div>
+        <img src="assets/goods-banner.jpg" alt="DEV PARADE Goods" class="goods-img">
+      </div>
+      <div class="goods-info">
+        <span class="goods-badge">LIVE VENUE ONLY</span>
+        <h3 style="margin-top:1rem;">「全ての武器をお箸に」Tシャツ</h3>
+        <p style="color:var(--gray); font-size:0.9rem; margin:0.5rem 0; line-height:1.7;">
+          フロント: DEV PARADEロゴ<br>
+          バック: 「全ての武器をお箸に」DEV PARADE
+        </p>
+        <div style="display:flex; gap:1.5rem; margin:1rem 0; align-items:baseline;">
+          <div>
+            <div style="font-family:'Oswald',sans-serif; font-size:0.7rem; color:var(--gray); letter-spacing:0.1em;">
+              SIZE</div>
+            <div style="font-weight:900; font-size:1.1rem;">M / XL / XXXL</div>
+          </div>
+          <div>
+            <div style="font-family:'Oswald',sans-serif; font-size:0.7rem; color:var(--gray); letter-spacing:0.1em;">
+              PRICE</div>
+            <div style="font-weight:900; font-size:1.1rem; color:var(--yellow);">¥4,000<span
+                style="font-size:0.75rem; color:var(--gray);">（税込）</span></div>
+          </div>
+        </div>
+        <div style="display:flex; gap:1rem; margin-top:1.5rem;">
+          <img src="assets/tshirt-design.png" alt="Tシャツデザイン"
+            style="width:48%; border:1px solid #222; border-radius:4px;">
+          <img src="assets/tshirt-real.jpg" alt="Tシャツ実物" style="width:48%; border:1px solid #222; border-radius:4px;">
+        </div>
+      </div>
+    </div>
+    <!-- Sticker -->
+    <div style="margin-top:3rem; text-align:center;" class="reveal">
+      <div style="display:inline-block; background:var(--card-bg); border:1px solid #222; padding:2rem 3rem;">
+        <span class="goods-badge">LIVE VENUE ONLY</span>
+        <h3 style="margin-top:1rem; font-size:1.2rem; font-weight:900;">DEV PARADE ステッカー</h3>
+        <div style="margin-top:0.8rem;">
+          <div style="font-family:'Oswald',sans-serif; font-size:0.7rem; color:var(--gray); letter-spacing:0.1em;">PRICE
+          </div>
+          <div style="font-weight:900; font-size:1.1rem; color:var(--yellow);">¥500<span
+              style="font-size:0.75rem; color:var(--gray);">（税込）</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;" class="reveal">
+      <img src="assets/flyer-meat.jpg" alt="DEV PARADE 極厚リブステージ用"
+        style="max-width:350px; width:100%; border:1px solid #222; border-radius:4px;">
+      <p style="color:var(--gray); font-size:0.8rem; margin-top:0.5rem;">※ライブ会場のみでの販売です</p>
+    </div>
+  </section>
+
+  <!-- ===== POSI DEV BOT BANNER ===== -->
+  <section
+    style="padding:2rem 1rem; text-align:center; background:linear-gradient(135deg, rgba(230,57,70,0.15), rgba(255,215,0,0.1)); border-top:2px solid var(--red); border-bottom:2px solid var(--red);">
+    <div class="reveal">
+      <div style="font-size:3rem; margin-bottom:0.5rem;">🍖</div>
+      <h2 style="font-family:'Oswald',sans-serif; font-size:1.8rem; font-weight:900; letter-spacing:0.05em;">
+        DEV <span style="color:var(--gold);">POSI</span> BOT
+      </h2>
+      <p style="color:var(--gray); margin:0.5rem auto; max-width:500px; font-size:0.9rem;">
+        SNS上の全ての「デブ」をポジティブに変換！<br>
+        メンバー全員90kg超バンドが贈る、世界初のデブ肯定Bot
+      </p>
+      <a href="debu-bot.html" style="display:inline-block; margin-top:1rem; padding:0.8rem 2.5rem; background:var(--red); color:#fff;
               font-family:'Oswald',sans-serif; font-size:1rem; font-weight:900; letter-spacing:0.1em;
               text-decoration:none; border-radius:4px; transition:all 0.3s;"
-       onmouseover="this.style.background='#c0392b'" onmouseout="this.style.background='var(--red)'">
-      ポジデブ変換する &rarr;
-    </a>
-  </div>
-</section>
-
-<!-- ===== NEWS (Facebook Feed) ===== -->
-<section id="news">
-  <h2 class="section-title reveal"><span>NEWS</span></h2>
-  <p class="section-sub reveal">最新情報 &mdash; Facebook公式ページより</p>
-  <div style="display:flex; justify-content:center;" class="reveal">
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous"
-      src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v21.0"></script>
-    <div class="fb-page"
-      data-href="https://www.facebook.com/DevParadeOfficial/"
-      data-tabs="timeline"
-      data-width="500"
-      data-height="700"
-      data-small-header="false"
-      data-adapt-container-width="true"
-      data-hide-cover="false"
-      data-show-facepile="true">
-      <blockquote cite="https://www.facebook.com/DevParadeOfficial/" class="fb-xfbml-parse-ignore">
-        <a href="https://www.facebook.com/DevParadeOfficial/">DEV PARADE Official</a>
-      </blockquote>
+        onmouseover="this.style.background='#c0392b'" onmouseout="this.style.background='var(--red)'">
+        ポジデブ変換する &rarr;
+      </a>
     </div>
-  </div>
-  <div style="text-align:center; margin-top:2rem;" class="reveal">
-    <a href="https://www.facebook.com/DevParadeOfficial/"
-       target="_blank"
-       style="display:inline-block; padding:0.7rem 2rem; background:#1877F2; color:#fff;
+  </section>
+
+  <!-- ===== GENSPARK AI AGENT ===== -->
+  <section id="genspark-ai">
+    <div class="genspark-container">
+      <div class="genspark-image reveal">
+        <img src="assets/genspark-posidev-agent-promo.png" alt="PosiDev AI Agent by GenSpark">
+        <div
+          style="position:absolute; top:-20px; right:-20px; background:var(--yellow); color:#000; padding:1rem; font-family:'Oswald',sans-serif; font-weight:900; transform:rotate(5deg); box-shadow:0 10px 20px rgba(0,0,0,0.1);">
+          POWERED BY<br>GENSPARK
+        </div>
+      </div>
+      <div class="genspark-content reveal">
+        <span class="genspark-badge">OFFICIAL AI AGENT</span>
+        <h2 class="genspark-title">PosiDev <span>AI</span></h2>
+        <p class="genspark-desc">
+          GenSparkの最新テクノロジーが、DEV PARADEの「全人類ポジデブ化計画」を加速させる。
+          あなたのネガティブな発言を、AIが瞬時に肉厚なポジティブエネルギーへと変換。
+        </p>
+        <div class="genspark-features">
+          <div class="feature-item">
+            <div class="feature-icon">🥩</div>
+            <div class="feature-text">
+              <h4>Meat-Oriented Analysis</h4>
+              <p>全ての概念をお肉と脂身の視点から多角的に解析します。</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">⚡</div>
+            <div class="feature-text">
+              <h4>Hyper-Positive Output</h4>
+              <p>15年分のデブパワーを凝縮した超ポジティブ回答を出力。</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🛡️</div>
+            <div class="feature-text">
+              <h4>Tsu-foo Guard</h4>
+              <p>痛風の痛みさえもエンターテインメントへと昇華する防御力。</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🤝</div>
+            <div class="feature-text">
+              <h4>GenSpark Space</h4>
+              <p>特設Spaceと連動し、リアルタイムな活動をサポート。</p>
+            </div>
+          </div>
+        </div>
+        <a href="https://efickwil.gensparkspace.com/" target="_blank" class="genspark-btn">
+          AIエージェントに相談する &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWS (Facebook Feed) ===== -->
+  <section id="news">
+    <h2 class="section-title reveal"><span>NEWS</span></h2>
+    <p class="section-sub reveal">最新情報 &mdash; Facebook公式ページより</p>
+    <div style="display:flex; justify-content:center;" class="reveal">
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v21.0"></script>
+      <div class="fb-page" data-href="https://www.facebook.com/DevParadeOfficial/" data-tabs="timeline" data-width="500"
+        data-height="700" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
+        data-show-facepile="true">
+        <blockquote cite="https://www.facebook.com/DevParadeOfficial/" class="fb-xfbml-parse-ignore">
+          <a href="https://www.facebook.com/DevParadeOfficial/">DEV PARADE Official</a>
+        </blockquote>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;" class="reveal">
+      <a href="https://www.facebook.com/DevParadeOfficial/" target="_blank" style="display:inline-block; padding:0.7rem 2rem; background:#1877F2; color:#fff;
               font-family:'Oswald',sans-serif; font-size:0.95rem; letter-spacing:0.1em;
               text-decoration:none; text-transform:uppercase; transition:opacity 0.3s;"
-       onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
-      Follow on Facebook &rarr;
+        onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+        Follow on Facebook &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== LINKS ===== -->
+  <section id="links">
+    <h2 class="section-title reveal"><span>LINKS</span></h2>
+    <p class="section-sub reveal">関連リンク</p>
+    <div class="links-grid">
+      <a href="https://www.sonymusic.co.jp/artist/devparade/" target="_blank" class="link-card reveal">
+        <div class="link-icon">🎵</div>
+        <div>
+          <div class="link-label">Sony Music Official</div>
+          <div class="link-desc">旧公式サイト（DefSTAR Records時代）</div>
+        </div>
+      </a>
+      <a href="https://music.apple.com/jp/artist/%E3%83%87%E3%83%96%E3%83%91%E3%83%AC%E3%83%BC%E3%83%89/304692523"
+        target="_blank" class="link-card reveal">
+        <div class="link-icon">🍎</div>
+        <div>
+          <div class="link-label">Apple Music</div>
+          <div class="link-desc">DEV PARADEの楽曲をストリーミング</div>
+        </div>
+      </a>
+      <a href="https://youtube.com/channel/UCS3Dn8BXf_OSP_h69qg_8Kg" target="_blank" class="link-card reveal"
+        style="border-color: #FF0000;">
+        <div class="link-icon">🎵</div>
+        <div>
+          <div class="link-label">YouTube Music</div>
+          <div class="link-desc">DEV PARADE 公式YouTube Musicチャンネル</div>
+        </div>
+      </a>
+      <a href="https://www.amazon.co.jp/music/player/artists/B001NZMB9W" target="_blank" class="link-card reveal"
+        style="border-color: #00A8E1;">
+        <div class="link-icon">🎶</div>
+        <div>
+          <div class="link-label">Amazon Music</div>
+          <div class="link-desc">DEV PARADEの楽曲をストリーミング</div>
+        </div>
+      </a>
+      <a href="https://www.last.fm/music/DEV+PARADE" target="_blank" class="link-card reveal">
+        <div class="link-icon">📻</div>
+        <div>
+          <div class="link-label">Last.fm</div>
+          <div class="link-desc">アーティストページ</div>
+        </div>
+      </a>
+      <a href="https://natalie.mu/music/artist/1474" target="_blank" class="link-card reveal">
+        <div class="link-icon">📰</div>
+        <div>
+          <div class="link-label">音楽ナタリー</div>
+          <div class="link-desc">ニュース・記事</div>
+        </div>
+      </a>
+      <a href="https://x.com/dev_parade" target="_blank" class="link-card reveal" style="border-color: #000;">
+        <div class="link-icon">𝕏</div>
+        <div>
+          <div class="link-label">X (Twitter) Official</div>
+          <div class="link-desc">DEV PARADE 公式Xアカウント</div>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/dev.parade/" target="_blank" class="link-card reveal"
+        style="border-color: #E4405F;">
+        <div class="link-icon">📸</div>
+        <div>
+          <div class="link-label">Instagram Official</div>
+          <div class="link-desc">DEV PARADE 公式Instagram（海外向け / English）</div>
+        </div>
+      </a>
+      <a href="https://www.tiktok.com/@handsomehanzi" target="_blank" class="link-card reveal"
+        style="border-color: #00f2ea;">
+        <div class="link-icon">🎬</div>
+        <div>
+          <div class="link-label">TikTok</div>
+          <div class="link-desc">ハンサム判治 / DEV PARADE ネタ</div>
+        </div>
+      </a>
+      <a href="https://www.facebook.com/DevParadeOfficial/" target="_blank" class="link-card reveal"
+        style="border-color: #1877F2;">
+        <div class="link-icon">📘</div>
+        <div>
+          <div class="link-label">Facebook Official</div>
+          <div class="link-desc">DEV PARADE 公式Facebookページ</div>
+        </div>
+      </a>
+      <a href="https://www.han363.com/band/%E3%83%87%E3%83%96%E3%83%91%E3%83%AC%E3%83%BC%E3%83%89/" target="_blank"
+        class="link-card reveal">
+        <div class="link-icon">🎤</div>
+        <div>
+          <div class="link-label">ハンサムレコーズ</div>
+          <div class="link-desc">DEV PARADEページ</div>
+        </div>
+      </a>
+      <a href="https://tower.jp/artist/496015" target="_blank" class="link-card reveal">
+        <div class="link-icon">🏬</div>
+        <div>
+          <div class="link-label">TOWER RECORDS</div>
+          <div class="link-desc">ディスコグラフィー</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FIXED SHARE BAR ===== -->
+  <div class="share-bar" id="shareBar">
+    <a class="share-btn x-btn" id="shareX" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+      SHARE
     </a>
+    <a class="share-btn line-btn" id="shareLINE" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+      </svg>
+      LINE
+    </a>
+    <a class="share-btn fb-btn" id="shareFB" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+      </svg>
+      FB
+    </a>
+    <button class="share-btn copy-btn" id="copyURL">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+      </svg>
+      URL
+    </button>
   </div>
-</section>
 
-<!-- ===== LINKS ===== -->
-<section id="links">
-  <h2 class="section-title reveal"><span>LINKS</span></h2>
-  <p class="section-sub reveal">関連リンク</p>
-  <div class="links-grid">
-    <a href="https://www.sonymusic.co.jp/artist/devparade/" target="_blank" class="link-card reveal">
-      <div class="link-icon">🎵</div>
-      <div>
-        <div class="link-label">Sony Music Official</div>
-        <div class="link-desc">旧公式サイト（DefSTAR Records時代）</div>
-      </div>
-    </a>
-    <a href="https://music.apple.com/jp/artist/%E3%83%87%E3%83%96%E3%83%91%E3%83%AC%E3%83%BC%E3%83%89/304692523" target="_blank" class="link-card reveal">
-      <div class="link-icon">🍎</div>
-      <div>
-        <div class="link-label">Apple Music</div>
-        <div class="link-desc">DEV PARADEの楽曲をストリーミング</div>
-      </div>
-    </a>
-    <a href="https://youtube.com/channel/UCS3Dn8BXf_OSP_h69qg_8Kg" target="_blank" class="link-card reveal" style="border-color: #FF0000;">
-      <div class="link-icon">🎵</div>
-      <div>
-        <div class="link-label">YouTube Music</div>
-        <div class="link-desc">DEV PARADE 公式YouTube Musicチャンネル</div>
-      </div>
-    </a>
-    <a href="https://www.amazon.co.jp/music/player/artists/B001NZMB9W" target="_blank" class="link-card reveal" style="border-color: #00A8E1;">
-      <div class="link-icon">🎶</div>
-      <div>
-        <div class="link-label">Amazon Music</div>
-        <div class="link-desc">DEV PARADEの楽曲をストリーミング</div>
-      </div>
-    </a>
-    <a href="https://www.last.fm/music/DEV+PARADE" target="_blank" class="link-card reveal">
-      <div class="link-icon">📻</div>
-      <div>
-        <div class="link-label">Last.fm</div>
-        <div class="link-desc">アーティストページ</div>
-      </div>
-    </a>
-    <a href="https://natalie.mu/music/artist/1474" target="_blank" class="link-card reveal">
-      <div class="link-icon">📰</div>
-      <div>
-        <div class="link-label">音楽ナタリー</div>
-        <div class="link-desc">ニュース・記事</div>
-      </div>
-    </a>
-    <a href="https://x.com/dev_parade" target="_blank" class="link-card reveal" style="border-color: #000;">
-      <div class="link-icon">𝕏</div>
-      <div>
-        <div class="link-label">X (Twitter) Official</div>
-        <div class="link-desc">DEV PARADE 公式Xアカウント</div>
-      </div>
-    </a>
-    <a href="https://www.instagram.com/dev.parade/" target="_blank" class="link-card reveal" style="border-color: #E4405F;">
-      <div class="link-icon">📸</div>
-      <div>
-        <div class="link-label">Instagram Official</div>
-        <div class="link-desc">DEV PARADE 公式Instagram（海外向け / English）</div>
-      </div>
-    </a>
-    <a href="https://www.tiktok.com/@handsomehanzi" target="_blank" class="link-card reveal" style="border-color: #00f2ea;">
-      <div class="link-icon">🎬</div>
-      <div>
-        <div class="link-label">TikTok</div>
-        <div class="link-desc">ハンサム判治 / DEV PARADE ネタ</div>
-      </div>
-    </a>
-    <a href="https://www.facebook.com/DevParadeOfficial/" target="_blank" class="link-card reveal" style="border-color: #1877F2;">
-      <div class="link-icon">📘</div>
-      <div>
-        <div class="link-label">Facebook Official</div>
-        <div class="link-desc">DEV PARADE 公式Facebookページ</div>
-      </div>
-    </a>
-    <a href="https://www.han363.com/band/%E3%83%87%E3%83%96%E3%83%91%E3%83%AC%E3%83%BC%E3%83%89/" target="_blank" class="link-card reveal">
-      <div class="link-icon">🎤</div>
-      <div>
-        <div class="link-label">ハンサムレコーズ</div>
-        <div class="link-desc">DEV PARADEページ</div>
-      </div>
-    </a>
-    <a href="https://tower.jp/artist/496015" target="_blank" class="link-card reveal">
-      <div class="link-icon">🏬</div>
-      <div>
-        <div class="link-label">TOWER RECORDS</div>
-        <div class="link-desc">ディスコグラフィー</div>
-      </div>
-    </a>
-  </div>
-</section>
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <img src="assets/logo.png" alt="DEV PARADE" class="footer-logo">
+    <p>
+      DEV PARADE (デブパレード) &copy; 2026<br><br>
+      <a href="https://www.sonymusic.co.jp/artist/devparade/" target="_blank">旧公式サイト (Sony Music)</a>
+    </p>
+  </footer>
 
-<!-- ===== FIXED SHARE BAR ===== -->
-<div class="share-bar" id="shareBar">
-  <a class="share-btn x-btn" id="shareX" href="#" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-    SHARE
-  </a>
-  <a class="share-btn line-btn" id="shareLINE" href="#" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-    LINE
-  </a>
-  <a class="share-btn fb-btn" id="shareFB" href="#" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-    FB
-  </a>
-  <button class="share-btn copy-btn" id="copyURL">
-    <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-    URL
-  </button>
-</div>
+  <script>
+    // Hamburger menu
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navMenu').classList.toggle('open');
+    });
 
-<!-- ===== FOOTER ===== -->
-<footer>
-  <img src="assets/logo.png" alt="DEV PARADE" class="footer-logo">
-  <p>
-    DEV PARADE (デブパレード) &copy; 2026<br><br>
-    <a href="https://www.sonymusic.co.jp/artist/devparade/" target="_blank">旧公式サイト (Sony Music)</a>
-  </p>
-</footer>
+    // Close menu on link click
+    document.querySelectorAll('#navMenu a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('navMenu').classList.remove('open');
+      });
+    });
 
-<script>
-// Hamburger menu
-document.getElementById('hamburger').addEventListener('click', () => {
-  document.getElementById('navMenu').classList.toggle('open');
-});
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
 
-// Close menu on link click
-document.querySelectorAll('#navMenu a').forEach(a => {
-  a.addEventListener('click', () => {
-    document.getElementById('navMenu').classList.remove('open');
-  });
-});
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1 });
+    // Nav hide on scroll down, show on scroll up + Share bar
+    let lastScroll = 0;
+    const shareBar = document.getElementById('shareBar');
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      const current = window.scrollY;
+      if (current > lastScroll && current > 100) {
+        nav.style.transform = 'translateY(-100%)';
+      } else {
+        nav.style.transform = 'translateY(0)';
+      }
+      // Show share bar after scrolling past hero
+      if (current > 400) {
+        shareBar.classList.add('visible');
+      } else {
+        shareBar.classList.remove('visible');
+      }
+      lastScroll = current;
+    });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // Share buttons
+    const siteURL = 'https://dev-parade.github.io/';
+    const shareText = 'メンバー全員90kg超、全員痛風ホルダー。NARUTOエンディングバンド「デブパレード」が15年ぶりに復活！デブじゃなきゃ入れない90kg以上限定バンド。\n@dev_parade\n#デブパレード #DEVPARADE #バッチコイ';
 
-// Nav hide on scroll down, show on scroll up + Share bar
-let lastScroll = 0;
-const shareBar = document.getElementById('shareBar');
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('nav');
-  const current = window.scrollY;
-  if (current > lastScroll && current > 100) {
-    nav.style.transform = 'translateY(-100%)';
-  } else {
-    nav.style.transform = 'translateY(0)';
-  }
-  // Show share bar after scrolling past hero
-  if (current > 400) {
-    shareBar.classList.add('visible');
-  } else {
-    shareBar.classList.remove('visible');
-  }
-  lastScroll = current;
-});
+    document.getElementById('shareX').href =
+      'https://x.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(siteURL);
 
-// Share buttons
-const siteURL = 'https://dev-parade.github.io/';
-const shareText = 'メンバー全員90kg超、全員痛風ホルダー。NARUTOエンディングバンド「デブパレード」が15年ぶりに復活！デブじゃなきゃ入れない90kg以上限定バンド。\n@dev_parade\n#デブパレード #DEVPARADE #バッチコイ';
+    document.getElementById('shareLINE').href =
+      'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(siteURL);
 
-document.getElementById('shareX').href =
-  'https://x.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(siteURL);
+    document.getElementById('shareFB').href =
+      'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(siteURL);
 
-document.getElementById('shareLINE').href =
-  'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(siteURL);
-
-document.getElementById('shareFB').href =
-  'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(siteURL);
-
-document.getElementById('copyURL').addEventListener('click', () => {
-  navigator.clipboard.writeText(siteURL + '\n' + shareText).then(() => {
-    const btn = document.getElementById('copyURL');
-    const orig = btn.innerHTML;
-    btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> COPIED!';
-    setTimeout(() => { btn.innerHTML = orig; }, 2000);
-  });
-});
-</script>
+    document.getElementById('copyURL').addEventListener('click', () => {
+      navigator.clipboard.writeText(siteURL + '\n' + shareText).then(() => {
+        const btn = document.getElementById('copyURL');
+        const orig = btn.innerHTML;
+        btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> COPIED!';
+        setTimeout(() => { btn.innerHTML = orig; }, 2000);
+      });
+    });
+  </script>
 
 </body>
+
 </html>
