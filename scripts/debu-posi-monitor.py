@@ -27,7 +27,7 @@ API_SECRET = os.environ.get("X_API_SECRET")
 ACCESS_TOKEN = os.environ.get("X_ACCESS_TOKEN")
 ACCESS_SECRET = os.environ.get("X_ACCESS_SECRET")
 BEARER_TOKEN = os.environ.get("X_BEARER_TOKEN")
-LAST_ID_FILE = "last_monitor_id.txt"
+LAST_ID_FILE = "data/last_monitor_id.txt"
 
 MEMBERS = [
     {"name": "ハンサム判治", "role": "Vo./Leader", "weight": "90kg超"},

@@ -27,7 +27,7 @@ ACCESS_TOKEN = os.environ.get("X_ACCESS_TOKEN")
 ACCESS_SECRET = os.environ.get("X_ACCESS_SECRET")
 BEARER_TOKEN = os.environ.get("X_BEARER_TOKEN")
 
-GROWTH_LOG = "growth_log.json"
+GROWTH_LOG = "data/growth_log.json"
 
 # フォロー対象のキーワード（これらに言及してるユーザーに関わる）
 TARGET_KEYWORDS = [

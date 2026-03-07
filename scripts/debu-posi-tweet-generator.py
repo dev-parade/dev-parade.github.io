@@ -19,10 +19,28 @@ except ImportError:
     tweepy = None
 
 CAMPAIGN = os.environ.get("CAMPAIGN", "scheduled")
+
+# X API Credentials
 API_KEY = os.environ.get("X_API_KEY")
 API_SECRET = os.environ.get("X_API_SECRET")
 ACCESS_TOKEN = os.environ.get("X_ACCESS_TOKEN")
 ACCESS_SECRET = os.environ.get("X_ACCESS_SECRET")
+
+# Check credentials and log missing ones
+def check_credentials():
+    missing = []
+    if not API_KEY: missing.append("X_API_KEY")
+    if not API_SECRET: missing.append("X_API_SECRET")
+    if not ACCESS_TOKEN: missing.append("X_ACCESS_TOKEN")
+    if not ACCESS_SECRET: missing.append("X_ACCESS_SECRET")
+    
+    if missing:
+        print(f"⚠️ [WARNING] Missing X API Credentials: {', '.join(missing)}")
+        print("Automatic posting will be skipped. Please check GitHub Secrets.")
+        return False
+    return True
+
+AUTO_POST_ENABLED = check_credentials()
 BOT_URL = "https://dev-parade.github.io/debu-bot.html"
 SITE_URL = "https://dev-parade.github.io/"
 IG_URL = "https://www.instagram.com/dev.parade/"
@@ -1830,6 +1848,59 @@ TWEETS = {
 POSTED_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "posted_tweets.json")
 
 
+def get_dynamic_hashtags():
+    """曜日や時間帯に応じた動的ハッシュタグを生成"""
+    now = datetime.now(timezone(timedelta(hours=9)))
+    hour = now.hour
+    weekday = now.weekday()  # 0:月, 6:日
+
+    tags = []
+
+    # --- 時間帯別 ---
+    if 5 <= hour < 10:
+        tags.extend(["#おは戦", "#Morning", "#朝活"])
+    elif 11 <= hour < 14:
+        tags.extend(["#ランチ", "#お腹ペコリン部"])
+    elif 17 <= hour < 21:
+        tags.extend(["#夕食", "#晩ご飯"])
+    elif 21 <= hour <= 23 or 0 <= hour < 3:
+        tags.extend(["#夜食", "#深夜の飯テロ"])
+
+    # --- 曜日別 ---
+    if weekday == 0:  # 月
+        tags.append("#月曜日")
+    elif weekday == 4:  # 金
+        tags.append("#金曜日")
+        if 21 <= hour <= 23:
+            tags.append("#金曜ロードショー")
+    elif weekday in [5, 6]:  # 土日
+        tags.append("#休日")
+
+    return tags
+
+
+def enhance_tweet_with_mechanics(text):
+    """インプレッション増加のための仕組み（ハッシュタグ、CTA）を付与"""
+    enhanced = text.strip()
+
+    # 1. 動的ハッシュタグの追加
+    dynamic_tags = get_dynamic_hashtags()
+    for tag in dynamic_tags:
+        if tag not in enhanced:
+            enhanced += f" {tag}"
+
+    # 2. リプライ誘導（CTA）の追加（確率で付与）
+    if "？" not in enhanced and "教えて" not in enhanced and random.random() < 0.3:
+        cta_list = [
+            "\n\n共感したらリプで教えて！🍖",
+            "\n\nあなたの「デブあるある」もリプで募集中！🍖",
+            "\n\nこの意見、どう思う？リプ待ってるぜ！🍖"
+        ]
+        enhanced += random.choice(cta_list)
+
+    return enhanced
+
+
 def tweet_hash(text):
     """ツイートのハッシュ値を生成（重複チェック用）"""
     return hashlib.md5(text.strip().encode()).hexdigest()[:12]
@@ -1988,7 +2059,16 @@ def mark_as_posted(tweet_data):
 
 def auto_post(tweet_text):
     """X APIで自動投稿"""
-    if not tweepy or not all([API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_SECRET]):
+    if not tweepy:
+        print("⚠️ [DEBUG] tweepy is not imported. Skipping auto-post.")
+        return None
+    if not all([API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_SECRET]):
+        missing = []
+        if not API_KEY: missing.append("API_KEY")
+        if not API_SECRET: missing.append("API_SECRET")
+        if not ACCESS_TOKEN: missing.append("ACCESS_TOKEN")
+        if not ACCESS_SECRET: missing.append("ACCESS_SECRET")
+        print(f"⚠️ [DEBUG] Missing credentials in auto_post: {', '.join(missing)}")
         return None
     try:
         client = tweepy.Client(
@@ -2016,6 +2096,11 @@ def main():
         selected = {"text": tweet_text, "hash": tweet_hash(tweet_text), "score": 0}
 
     print(f"\nCampaign: {CAMPAIGN}")
+
+    # インプレッション増加のための仕組みを適用
+    if CAMPAIGN == "scheduled":
+        tweet_text = enhance_tweet_with_mechanics(tweet_text)
+
     print(f"Tweet ({len(tweet_text)} chars):")
     print(tweet_text)
 
@@ -2034,7 +2119,7 @@ def main():
     # Issue用Markdown
     now = datetime.now(timezone(timedelta(hours=9))).strftime("%Y-%m-%d %H:%M JST")
     status = "✅ 自動投稿済み" if auto_posted else "📋 手動投稿待ち"
-    tweet_link = f"https://twitter.com/dev_parade/status/{tweet_id}" if tweet_id else ""
+    tweet_link = f"https://x.com/i/status/{tweet_id}" if tweet_id else ""
 
     data = load_posted()
     posted_count = len(data.get("posted", []))
@@ -2048,7 +2133,7 @@ def main():
 **ステータス:** {status}
 **品質スコア:** {selected['score']}/100
 **投稿進捗:** {posted_count}/{total_count}（サイクル{cycle}）
-{"**投稿リンク:** " + tweet_link if tweet_link else ""}
+{"**投稿リンク:** [" + tweet_link + "]( " + tweet_link + ")" if tweet_link else ""}
 
 ---
 
@@ -2060,7 +2145,7 @@ def main():
 
 ---
 
-{"✅ 自動投稿完了！" if auto_posted else "### 👇 ワンクリックで投稿 👇"}
+{"✅ 自動投稿完了！ 直接リンクで表示を確認してください: " + tweet_link if auto_posted else "### 👇 ワンクリックで投稿 👇"}
 
 ---
 🍖 Smart PosiDev Tweet by DEV PARADE
@@ -2070,6 +2155,8 @@ def main():
         f.write(issue_md)
 
     print(f"\nIntent URL: {intent_url}")
+    if tweet_link:
+        print(f"✅ Tweet URL: {tweet_link}")
     print("✅ Issue markdown generated!")
 
 

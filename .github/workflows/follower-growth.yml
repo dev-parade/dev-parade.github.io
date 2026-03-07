@@ -8,6 +8,7 @@ on:
 
 permissions:
   issues: write
+  contents: write
 
 jobs:
   growth:
@@ -31,6 +32,14 @@ jobs:
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
         run: python scripts/follower-growth.py
+
+      - name: Commit and Push state changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/*.json || true
+          git commit -m "🤖 [skip ci] Update PosiDev growth logs" || echo "No changes to commit"
+          git push
 
       - name: Create Growth Report Issue
         if: always()

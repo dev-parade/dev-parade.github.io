@@ -14,6 +14,7 @@ on:
 
 permissions:
   issues: write
+  contents: write
 
 jobs:
   posideb:
@@ -33,17 +34,25 @@ jobs:
         if: ${{ github.event.inputs.mode == 'tweet' || github.event.inputs.mode == 'both' }}
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_API_SECRET: ${{ secrets.X_API_KEY_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
         run: python scripts/debu-posi-tweet-generator.py
 
       - name: Monitor & auto-reply
         if: ${{ github.event.inputs.mode == 'monitor' || github.event.inputs.mode == 'both' }}
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_API_SECRET: ${{ secrets.X_API_KEY_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
         run: python scripts/debu-posi-monitor.py
+
+      - name: Commit and Push state changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/*.json data/*.txt || true
+          git commit -m "🤖 [skip ci] Update PosiDev bot state" || echo "No changes to commit"
+          git push

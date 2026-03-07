@@ -40,8 +40,8 @@ ACCESS_TOKEN = os.environ.get("X_ACCESS_TOKEN")
 ACCESS_SECRET = os.environ.get("X_ACCESS_SECRET")
 BEARER_TOKEN = os.environ.get("X_BEARER_TOKEN")
 
-FOUND_IDS_FILE = "replied_tweet_ids.json"
-LAST_MENTION_ID_FILE = "last_monitor_id.txt"
+FOUND_IDS_FILE = "data/replied_tweet_ids.json"
+LAST_MENTION_ID_FILE = "data/last_monitor_id.txt"
 
 MEMBERS = [
     {"name": "ハンサム判治", "role": "Vo./Leader", "weight": "90kg超"},
@@ -373,8 +373,10 @@ def generate_report(results, sent_count, time_label, now):
         for i, r in enumerate(results, 1):
             emoji = "✅" if r["status"] == "sent" else "❌"
             source = {"google": "Google検索", "mention": "メンション"}.get(r.get("source"), "不明")
+            tweet_url = f"https://x.com/i/status/{r['id']}"
             lines.append(f"### #{i} {emoji} [{source}]")
             lines.append(f"**@{r['username']}**: {r['text'][:150]}")
+            lines.append(f"**[直接リンク]({tweet_url})**")
             lines.append(f"")
             lines.append(f"**ポジデブ返信** ({r['member']['name']} {r['member']['role']}):")
             lines.append(f"> {r['response']}")

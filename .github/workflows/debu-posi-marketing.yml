@@ -16,6 +16,7 @@ on:
 
 permissions:
   issues: write
+  contents: write
 
 jobs:
   daily-tweet:
@@ -35,10 +36,18 @@ jobs:
         env:
           CAMPAIGN: ${{ github.event.inputs.campaign || 'scheduled' }}
           X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_API_SECRET: ${{ secrets.X_API_KEY_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
         run: python scripts/debu-posi-tweet-generator.py
+
+      - name: Commit and Push state changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/*.json data/*.txt || true
+          git commit -m "🤖 [skip ci] Update PosiDev state" || echo "No changes to commit"
+          git push
 
       - name: Create Issue log
         env:
