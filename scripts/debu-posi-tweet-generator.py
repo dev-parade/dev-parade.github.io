@@ -13,6 +13,15 @@ import hashlib
 import urllib.parse
 from datetime import datetime, timezone, timedelta
 
+# =================================================================
+# 📢 BOT CONTENT POLICY (ハルシネーション防止策)
+# -----------------------------------------------------------------
+# 1. 歴史的事実（結成経緯、解散理由等）は Wikipedia やネット記事を
+#    鵜呑みにせず、必ずメンバー（ユーザー）提供の情報を使用すること。
+# 2. AIによる「もっともらしい嘘（逸話の捏造）」は厳禁。
+# 3. 迷った場合は、公式HP (index.html) の内容を正とする。
+# =================================================================
+
 try:
     import tweepy
 except ImportError:
@@ -2083,12 +2092,43 @@ def auto_post(tweet_text):
         return tweet_id
     except Exception as e:
         print(f"❌ Auto-post failed: {e}")
+        # Fallback: generate intent URL for manual posting
+        intent_url = f"https://twitter.com/intent/tweet?text={urllib.parse.quote(tweet_text)}"
+        print(f"手動で投稿する場合は以下のURLをブラウザで開いてください: {intent_url}")
         return None
+
+
+def is_hallucination_suspected(text):
+    """
+    ハルシネーション（嘘の逸話）の疑いがあるツイートを検知するガードレール。
+    特にバンドの結成経緯や歴史に関する具体的な主張をチェック。
+    """
+    suspicious_keywords = [
+        "ネットで募集", "インターネットで募集", "結成理由", "結成当初", 
+        "解散理由", "入団テスト", "逸話", "事実まとめ"
+    ]
+    # これらのキーワードが含まれていても、公式HP(index.html)にある内容は許可されるべきだが、
+    # 自動ボットとしては安全側に倒して警告または除外を検討する。
+    for kw in suspicious_keywords:
+        if kw in text:
+            return True
+    return False
 
 
 def main():
     if CAMPAIGN == "scheduled":
-        selected = select_smart_tweet()
+        # ハルシネーションの疑いがないものを選ぶまで最大10回試行
+        selected = None
+        for _ in range(10):
+            selected = select_smart_tweet()
+            if not is_hallucination_suspected(selected["text"]):
+                break
+            print(f"⚠️ [GUARDRAIL] Hallucination suspected in tweet, retrying...: {selected['text'][:30]}...")
+        else:
+            # 10回失敗しても選ぶ（デッドロック防止）
+            if not selected:
+                selected = select_smart_tweet()
+        
         tweet_text = selected["text"]
     else:
         tweets = TWEETS.get(CAMPAIGN, DAILY_TWEETS)
