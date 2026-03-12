@@ -1,0 +1,367 @@
+{
+  "a": [
+    {
+      "word": "あかちゃん",
+      "description": "その丸みを帯びた体型は、メンバーのそれに近いと言われている。",
+      "is_update": false
+    },
+    {
+      "word": "脂身",
+      "description": "本来ニクの一番美味い部分、またはメンバーの体の約３０％を占めている部分。",
+      "is_update": false
+    },
+    {
+      "word": "美味い / 美味しい",
+      "description": "極上の褒め言葉。メンバーにこれを言えばすべてが解決する魔法の言葉。",
+      "is_update": false
+    },
+    {
+      "word": "イチゴ食べたいんじゃない練乳食べたいんだ",
+      "description": "TAHが放った一言。カオス。本質を見抜いている。",
+      "is_update": false
+    },
+    {
+      "word": "インド",
+      "description": "カレー好きのメンバーにとって憧れの地（＝聖地）。",
+      "is_update": false
+    },
+    {
+      "word": "ugazin",
+      "description": "105kg ギター。デブパレードの発起人。比較的痩せて見える事から、痩せデブと呼ばれるが、一般的には重戦車。",
+      "is_update": false
+    },
+    {
+      "word": "うまい棒",
+      "description": "デブパレードのライブで時折、客席に降り注ぐ福音。",
+      "is_update": false
+    },
+    {
+      "word": "牛になりたい",
+      "description": "胃が４つあり、反芻して食べたものを再度食べる様をTAHが羨んでつぶやいた一言。",
+      "is_update": false
+    },
+    {
+      "word": "うどん",
+      "description": "「肉だけじゃない」というデブの多様性を証明する、出汁の効いた炭水化物。",
+      "is_update": false
+    },
+    {
+      "word": "ウガンダ先輩",
+      "description": "「カレーは飲み物」と最初に言った伝説の人物。フルリスペクト。",
+      "is_update": false
+    },
+    {
+      "word": "エリート",
+      "description": "100kg以上の体重を持つ、選ばれし戦士達の総称。2026年は「DX（デラックス）エリート」へと進化。UPDATE",
+      "is_update": true
+    },
+    {
+      "word": "「おい！デブ」",
+      "description": "これを言うとメンバー全員が振り向くので、必ず「黄色のデブ」「白いデブ」などのように、色（カラー）を指定する必要がある。",
+      "is_update": false
+    },
+    {
+      "word": "「おなかすいた」",
+      "description": "メンバーが不機嫌な状態。アイドルとは思えないほどの獰猛な状態なので近づくべからず。",
+      "is_update": false
+    },
+    {
+      "word": "大盛り",
+      "description": "デブにとっての「並盛り」。義務であり、嗜み。",
+      "is_update": false
+    },
+    {
+      "word": "オン・ザ・ライス",
+      "description": "全てのオカズを最も美味しく頂くための黄金の作法。米という宇宙にオカズを置くこと。",
+      "is_update": false
+    },
+    {
+      "word": "おかわり",
+      "description": "食事が無限に湧き出すファンタスティックな魔法の言葉。ライブではアンコールの意味でも使用される。",
+      "is_update": false
+    },
+    {
+      "word": "AI",
+      "description": "Abura Intake（アブラ・インテイク）。脂を効率よく摂取する知能性能。デブはAIを使いこなす。UPDATE",
+      "is_update": true
+    }
+  ],
+  "ka": [
+    {
+      "word": "回転寿司",
+      "description": "メンバー全員が一列になると、隣の人にネタが回らない（物理的パレオ封鎖）。",
+      "is_update": false
+    },
+    {
+      "word": "ガリ",
+      "description": "100kg以下の人間の総称。または寿司の付け合せ。",
+      "is_update": false
+    },
+    {
+      "word": "カルビ",
+      "description": "最高。デブにとってのビジュアル系。",
+      "is_update": false
+    },
+    {
+      "word": "可愛カワイさ余って肉さ１００倍",
+      "description": "愛が深いほど、すべてが美味しそうな肉に見えてくる究極の精神状態。",
+      "is_update": false
+    },
+    {
+      "word": "カレー",
+      "description": "ドリンク。喉越しを楽しむ飲み物。熟成される前に胃袋へと消える。",
+      "is_update": false
+    },
+    {
+      "word": "カロリー",
+      "description": "「美味さ」を表す世界基準の数値。高ければ高いほど評価も高い。",
+      "is_update": false
+    },
+    {
+      "word": "カロリーオフ",
+      "description": "21世紀最大のミステリー。メンバーの間では「都市伝説」とされている。",
+      "is_update": false
+    },
+    {
+      "word": "我慢",
+      "description": "宇宙に存在しない概念。あるいは最も短い間に忘れること。",
+      "is_update": false
+    },
+    {
+      "word": "機能停止",
+      "description": "空腹、あるいは満腹のために一切の動きが止まった神聖な状態。",
+      "is_update": false
+    },
+    {
+      "word": "キター！",
+      "description": "織田裕二のモノマネではなく、注文した食事が卓上に届いた時の歓喜の叫び。",
+      "is_update": false
+    },
+    {
+      "word": "餃子（ギョウザ）",
+      "description": "肉・炭水化物、そして稀に野菜を含んだ、デブリシャスな完全栄養食。",
+      "is_update": false
+    },
+    {
+      "word": "クビ",
+      "description": "100kgを下回る、あるいは二重あごがなくなると、クビ（首が見える）としてクビ（解雇）になる。",
+      "is_update": false
+    },
+    {
+      "word": "血糖値",
+      "description": "これが下がると不機嫌になり、これが上がると眠くなる。メンバーの生命活動の心電図。",
+      "is_update": false
+    },
+    {
+      "word": "健康診断",
+      "description": "デブにとっての「決戦（負け戦）」。通知表ではなく戦報。",
+      "is_update": false
+    },
+    {
+      "word": "クラウド",
+      "description": "Crowd Lunching（クラウド・ランチング）。大勢で囲む食卓のこと。または「食らい人（クラウド）」の集い。",
+      "is_update": true
+    },
+    {
+      "word": "ギガ",
+      "description": "単位。1,000メガ、あるいは「ギガ盛り」の略。15年前は「メガ」だったが、2026年はギガが標準。",
+      "is_update": true
+    },
+    {
+      "word": "GPU",
+      "description": "Grated Pork Unit（おろし豚ユニット）。または「Garlic Pork Universal（ニンニク豚の普遍性）」。高度な脂演算処理能力を持つ。",
+      "is_update": true
+    }
+  ],
+  "sa": [
+    {
+      "word": "試合",
+      "description": "食事のこと。真剣勝負であり、感謝を忘れない。",
+      "is_update": false
+    },
+    {
+      "word": "幸せ",
+      "description": "満腹のこと。煩悩が消滅し、世界が平和に見える状態。",
+      "is_update": false
+    },
+    {
+      "word": "幸せパンチ",
+      "description": "COYASSの拳。圧倒的な脂肪層により、殴られても全く痛くなく、むしろ癒やされる。",
+      "is_update": false
+    },
+    {
+      "word": "しゃぶしゃぶ",
+      "description": "ヘルシーだと勘違いさせて大量の肉を摂取させる魔法の調理法。",
+      "is_update": false
+    },
+    {
+      "word": "脂肪",
+      "description": "メンバーが冬でも半袖でいられる「天然のゴールドクロス」。友達。",
+      "is_update": false
+    },
+    {
+      "word": "スィーツ",
+      "description": "別腹。塩分の後に必須な「中和剤」。",
+      "is_update": false
+    },
+    {
+      "word": "寿司",
+      "description": "デザート扱い。一口でいけるので回転効率が良い。",
+      "is_update": false
+    },
+    {
+      "word": "DX",
+      "description": "Delicious Xtra（デリシャス・エクストラ）。デジタル化より先に「大盛り化」で人生を豊かにする。",
+      "is_update": true
+    },
+    {
+      "word": "サーバー",
+      "description": "食事を配膳（サーブ）する人への最大級の敬意。またはセルフサービスの「サーバー」。",
+      "is_update": true
+    }
+  ],
+  "ta": [
+    {
+      "word": "TAH",
+      "description": "146kg ドラム。その圧倒的な重量で大地を揺らす「動けるデブ」。",
+      "is_update": false
+    },
+    {
+      "word": "食べ放題",
+      "description": "デブの「実家」。あるいは「修行場」。",
+      "is_update": false
+    },
+    {
+      "word": "炭水化物",
+      "description": "人を幸せにする「白い悪魔」。脳のガソリン。",
+      "is_update": false
+    },
+    {
+      "word": "痛風",
+      "description": "大人の勲章。贅沢の証明書。",
+      "is_update": false
+    },
+    {
+      "word": "タイパ",
+      "description": "大量・多食パフォーマンスの略。2026年版のコンセプト。",
+      "is_update": true
+    },
+    {
+      "word": "デブリシャス",
+      "description": "Delicious（美味い）を越えた、デブ的に最高な状態を表す最上級の形容詞。",
+      "is_update": true
+    }
+  ],
+  "na": [
+    {
+      "word": "鍋",
+      "description": "メンバーが囲むと具材が5秒で消える「消滅のコロシアム」。",
+      "is_update": false
+    },
+    {
+      "word": "肉は嘘つかない",
+      "description": "一切の裏切りがない絶対的な信頼関係。名言。",
+      "is_update": false
+    },
+    {
+      "word": "肉欲",
+      "description": "肉を求める、抗いようのない本能的な強い欲望。",
+      "is_update": false
+    }
+  ],
+  "ha": [
+    {
+      "word": "ハンサム判治",
+      "description": "110kg ボーカル。とにかくハンサム。デブ界のアイコン。",
+      "is_update": false
+    },
+    {
+      "word": "歯学博士",
+      "description": "COYASSの称号。「噛み砕いて吸収する」ための最高権威。",
+      "is_update": true
+    },
+    {
+      "word": "プロンプト",
+      "description": "お店での究極の注文指示（例：「ヤサイマシマシ油」。",
+      "is_update": true
+    },
+    {
+      "word": "Ｐ－デブ",
+      "description": "ポジティブなデブ。世界を明るくする存在。",
+      "is_update": false
+    },
+    {
+      "word": "ぺー",
+      "description": "2026年からの新ベース。痛風ホルダーのニューホープ。",
+      "is_update": true
+    },
+    {
+      "word": "ブロックチェーン",
+      "description": "Burokku-Chain（ブロック・チェーン）。ブロック肉が連鎖して胃袋に消えていく様子。",
+      "is_update": true
+    }
+  ],
+  "ma": [
+    {
+      "word": "マヨネーズ",
+      "description": "万能の聖水。基本はボトルキープ。",
+      "is_update": false
+    },
+    {
+      "word": "水",
+      "description": "飲んでも太ると言われるが、メンバーにとっては「ゼロカロリーへの免罪符」。",
+      "is_update": false
+    },
+    {
+      "word": "メタボジャンプ",
+      "description": "ライブの名物。局地的な震度3を記録するパフォーマンス。",
+      "is_update": false
+    },
+    {
+      "word": "メタバース",
+      "description": "Metabo-Verse（メタボ・バース）。全てのデブが肯定される宇宙。DEV PARADEが構築を目指す新境地。",
+      "is_update": true
+    }
+  ],
+  "ya": [
+    {
+      "word": "焼き肉",
+      "description": "全デブの共通言語であり、最も神聖な儀式。",
+      "is_update": false
+    },
+    {
+      "word": "野菜",
+      "description": "（読み：ゴミ）または（読み：ニクを包むための緩衝材）。",
+      "is_update": false
+    }
+  ],
+  "ra": [
+    {
+      "word": "力士",
+      "description": "エリートの頂点。リスペクト。",
+      "is_update": false
+    },
+    {
+      "word": "リバウンド",
+      "description": "リバウンドを制する者は、デブの世界を制す。成長のエンジン。",
+      "is_update": false
+    },
+    {
+      "word": "LLM",
+      "description": "Large Lunch Menu（ラージ・ランチ・メニュー）。大規模な昼飯メニュー。2026年のデブはこれを学習（摂取）し続ける。",
+      "is_update": true
+    }
+  ],
+  "wa": [
+    {
+      "word": "和牛",
+      "description": "最高級の誉れ。メンバーが最もシンパシーを感じる対象。",
+      "is_update": false
+    },
+    {
+      "word": "ワールドスタンダード",
+      "description": "デブパレードの規格外なスケールを示す言葉。",
+      "is_update": false
+    }
+  ]
+}
