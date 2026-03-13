@@ -1754,35 +1754,66 @@
     </div>
   </section>
 
-  <!-- ===== NEWS (Facebook Feed) ===== -->
+  <!-- ===== NEWS (SNS Feeds) ===== -->
   <section id="news">
     <h2 class="section-title reveal"><span>NEWS</span></h2>
-    <p class="section-sub reveal">最新情報 &mdash; Facebook公式ページより</p>
-    <div style="display:flex; justify-content:center;" class="reveal">
-      <div id="fb-root"></div>
-      <script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v21.0"></script>
-      <div class="fb-page" data-href="https://www.facebook.com/DevParadeOfficial/" data-tabs="timeline" data-width="500"
-        data-height="700" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
-        data-show-facepile="true">
-        <blockquote cite="https://www.facebook.com/DevParadeOfficial/" class="fb-xfbml-parse-ignore">
-          <a href="https://www.facebook.com/DevParadeOfficial/">DEV PARADE Official</a>
-        </blockquote>
+    <p class="section-sub reveal">最新情報 &mdash; 公式SNSより</p>
+    
+    <div class="news-container reveal" style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; align-items:flex-start;">
+      
+      <!-- Facebook Column -->
+      <div class="news-column" style="flex:1; min-width:300px; max-width:400px; background:var(--card-bg); border:1px solid #222; border-radius:8px; overflow:hidden;">
+        <div style="background:#1877F2; color:#fff; padding:0.8rem; font-family:'Oswald', sans-serif; font-size:0.9rem; text-align:center; letter-spacing:0.1em;">
+          FACEBOOK
+        </div>
+        <div style="padding:1rem; display:flex; justify-content:center;">
+          <div id="fb-root"></div>
+          <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v21.0"></script>
+          <div class="fb-page" data-href="https://www.facebook.com/DevParadeOfficial/" data-tabs="timeline" data-width="380"
+            data-height="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false"
+            data-show-facepile="false">
+            <blockquote cite="https://www.facebook.com/DevParadeOfficial/" class="fb-xfbml-parse-ignore">
+              <a href="https://www.facebook.com/DevParadeOfficial/">DEV PARADE Official</a>
+            </blockquote>
+          </div>
+        </div>
       </div>
-    </div>
-    <div style="text-align:center; margin-top:2rem; display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;" class="reveal">
-      <a href="https://www.facebook.com/DevParadeOfficial/" target="_blank" rel="noopener" style="display:inline-block; padding:0.7rem 2rem; background:#1877F2; color:#fff;
-              font-family:'Oswald',sans-serif; font-size:0.95rem; letter-spacing:0.1em;
-              text-decoration:none; text-transform:uppercase; transition:opacity 0.3s;"
-        onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
-        Follow on Facebook &rarr;
-      </a>
-      <a href="https://www.instagram.com/dev.parade/" target="_blank" rel="noopener" style="display:inline-block; padding:0.7rem 2rem; background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); color:#fff;
-              font-family:'Oswald',sans-serif; font-size:0.95rem; letter-spacing:0.1em;
-              text-decoration:none; text-transform:uppercase; transition:opacity 0.3s;"
-        onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
-        Follow on Instagram &rarr;
-      </a>
+
+      <!-- X (Twitter) Column -->
+      <div class="news-column" style="flex:1; min-width:300px; max-width:400px; background:var(--card-bg); border:1px solid #222; border-radius:8px; overflow:hidden;">
+        <div style="background:#000; color:#fff; padding:0.8rem; font-family:'Oswald', sans-serif; font-size:0.9rem; text-align:center; letter-spacing:0.1em; border-bottom:1px solid #333;">
+          X (TWITTER)
+        </div>
+        <div style="padding:1rem; height:500px; overflow-y:auto;">
+          <a class="twitter-timeline" data-height="480" data-theme="dark" href="https://twitter.com/dev_parade?ref_src=twsrc%5Etfw">Tweets by dev_parade</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+
+      <!-- Instagram Column -->
+      <div class="news-column" style="flex:1; min-width:300px; max-width:400px; background:var(--card-bg); border:1px solid #222; border-radius:8px; overflow:hidden;">
+        <div style="background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); color:#fff; padding:0.8rem; font-family:'Oswald', sans-serif; font-size:0.9rem; text-align:center; letter-spacing:0.1em;">
+          INSTAGRAM
+        </div>
+        <div style="padding:2rem; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:500px;">
+          <div style="font-size:3rem; margin-bottom:1rem;">📸</div>
+          <p style="font-size:0.9rem; color:var(--gray); margin-bottom:2rem; line-height:1.6;">
+            公式Instagramでは最新のライブ写真やオフショットを公開中！
+          </p>
+          <a href="https://www.instagram.com/dev.parade/" target="_blank" rel="noopener" style="display:inline-block; padding:1rem 2.5rem; background:linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color:#fff;
+                  font-family:'Oswald',sans-serif; font-size:1rem; letter-spacing:0.15em;
+                  text-decoration:none; text-transform:uppercase; border-radius:30px; transition:transform 0.3s;"
+            onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            View on Instagram &rarr;
+          </a>
+          <div style="margin-top:2rem; display:grid; grid-template-columns:repeat(3, 1fr); gap:5px; width:100%;">
+            <div style="aspect-ratio:1/1; background:#333; border-radius:4px;"></div>
+            <div style="aspect-ratio:1/1; background:#333; border-radius:4px;"></div>
+            <div style="aspect-ratio:1/1; background:#333; border-radius:4px;"></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
