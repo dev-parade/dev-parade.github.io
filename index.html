@@ -1057,28 +1057,12 @@
       fill: currentColor;
     }
 
-    .share-btn.x-btn {
-      color: #fff;
-    }
-
-    .share-btn.line-btn {
-      color: #06C755;
-    }
-
-    /* line-btn の代わりに ig-btn を追加 */
+/* 各SNSボタンのカラー設定 */
     .share-btn.x-btn { color: #fff; }
-    .share-btn.ig-btn { color: #E4405F; } /* Instagramカラー */
+    .share-btn.ig-btn { color: #E4405F; } /* Instagramピンク */
     .share-btn.fb-btn { color: #1877F2; }
     .share-btn.copy-btn { color: var(--yellow); }
-
-    .share-btn.fb-btn {
-      color: #1877F2;
-    }
-
-    .share-btn.copy-btn {
-      color: var(--yellow);
-    }
-
+    
     /* ===== VIRAL CATCHCOPY BANNER ===== */
     .viral-banner {
       text-align: center;
@@ -1918,7 +1902,7 @@
   <button class="share-btn copy-btn" id="copyURL">
     <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
     URL
-  </a>
+  </button>
 </div>
   
   <!-- ===== FOOTER ===== -->
@@ -2057,12 +2041,15 @@
       lastScroll = current;
     });
 
-    // Share buttons
-
+// URLコピー機能（必要なデータを内包した最新版）
     document.getElementById('copyURL').addEventListener('click', () => {
+      const siteURL = 'https://devparade.jp/';
+      const shareText = 'メンバー全員90kg超、全員痛風ホルダー。NARUTOエンディングバンド「デブパレード」が15年ぶりに復活！';
+      
       navigator.clipboard.writeText(siteURL + '\n' + shareText).then(() => {
         const btn = document.getElementById('copyURL');
         const orig = btn.innerHTML;
+        // 成功時にアイコンをチェックマークに変える演出
         btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> COPIED!';
         setTimeout(() => { btn.innerHTML = orig; }, 2000);
       });
