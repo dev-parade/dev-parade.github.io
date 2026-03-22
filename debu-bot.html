@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ポジデブBot | DEV PARADE - 全てのデブをポジティブに変換</title>
-  <meta name="description" content="SNS上の「デブ」発言を全力ポジティブに変換！メンバー全員90kg超バンド DEV PARADEが贈る、ポジデブティブ変換マシン。">
+  <title>FAT GPT | DEV PARADE - 全てのデブをポジティブに変換</title>
+  <meta name="description" content="SNS上の「デブ」発言を全力ポジティブに変換！次世代AIエンジン『FAT GPT』搭載。メンバー全員90kg超バンド DEV PARADEが贈る、ポジデブティブ変換マシン。">
   <!-- OGP -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="ポジデブBot | 全てのデブをポジティブに変換するBot">
-  <meta property="og:description" content="「デブ」「太った」「痩せろ」→ 全部ポジティブに変換！メンバー全員90kg超バンド DEV PARADEが全力で肯定します。">
+  <meta property="og:title" content="FAT GPT | 全てのデブをポジティブに変換する次世代AI">
+  <meta property="og:description" content="「デブ」「太った」「痩せろ」→ 全部ポジティブに変換！『FAT GPT』が全力で肯定します。">
   <meta property="og:image" content="https://dev-parade.github.io/assets/member-group.jpg">
   <meta property="og:url" content="https://dev-parade.github.io/debu-bot.html">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ポジデブBot | 全てのデブをポジティブに変換">
-  <meta name="twitter:description" content="「デブ」「太った」「痩せろ」→ 全部ポジティブに変換！DEV PARADEが全力で肯定します。">
+  <meta name="twitter:title" content="FAT GPT | 全てのデブをポジティブに変換">
+  <meta name="twitter:description" content="「デブ」「太った」「痩せろ」→ 全部ポジティブに変換！次世代AI『FAT GPT』が全力で肯定します。">
   <meta name="twitter:image" content="https://dev-parade.github.io/assets/member-group.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
@@ -173,9 +173,30 @@
     .convert-btn:active {
       transform: scale(0.98);
     }
-    .convert-btn.loading {
-      pointer-events: none;
-      opacity: 0.7;
+    /* ===== MODE SWITCH ===== */
+    .mode-switch {
+      display: flex;
+      margin-bottom: 1.5rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 0.3rem;
+    }
+    .mode-btn {
+      flex: 1;
+      padding: 0.6rem;
+      border: none;
+      background: transparent;
+      color: var(--gray);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+    .mode-btn.active {
+      background: var(--red);
+      color: #fff;
     }
 
     /* ===== ARROW ===== */
@@ -427,26 +448,74 @@
       .share-btn { min-width: 80px; font-size: 0.7rem; }
     }
 
-    /* ===== PARTICLE BG ===== */
-    .particles {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
+    /* ===== EVIDENCE BOX ===== */
+    .evidence-box {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: rgba(255,215,0,0.1);
+      border-left: 4px solid var(--gold);
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.6;
+      display: none;
     }
-    .particle {
-      position: absolute;
-      font-size: 1.5rem;
-      opacity: 0.1;
-      animation: floatUp linear infinite;
+    .evidence-box strong {
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.5rem;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
-    @keyframes floatUp {
-      0% { transform: translateY(100vh) rotate(0deg); opacity: 0.1; }
-      50% { opacity: 0.2; }
-      100% { transform: translateY(-5vh) rotate(360deg); opacity: 0; }
+
+    /* ===== SNS INTEGRATION ===== */
+    .sns-section {
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      padding: 0 1rem;
     }
-    body > *:not(.particles) { position: relative; z-index: 1; }
+    .sns-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .sns-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.15em;
+    }
+    .sns-title span { color: var(--green); }
+    .sns-subtitle {
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin-top: 0.3rem;
+    }
+    .sns-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.8rem;
+    }
+    .sns-card {
+      background: var(--dark);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      border-left: 3px solid var(--gray);
+      transition: transform 0.3s;
+    }
+    .sns-card:hover { transform: translateY(-3px); }
+    .sns-card.x { border-left-color: #1DA1F2; }
+    .sns-card.ig { border-left-color: #E4405F; }
+    .sns-card.line { border-left-color: #06C755; }
+    .sns-card.yt { border-left-color: #FF0000; }
+    .sns-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .sns-name { font-family: 'Oswald', sans-serif; font-size: 0.8rem; margin-bottom: 0.3rem; }
+    .sns-status { font-size: 0.7rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .sns-status.active { color: var(--green); }
+    .sns-status.soon { color: var(--gold); }
+    .sns-desc { font-size: 0.65rem; color: var(--gray); }
+
+    .ig-link { cursor: pointer; text-decoration: none; color: inherit; }
   </style>
 </head>
 <body>
@@ -457,10 +526,10 @@
 <!-- HEADER -->
 <header class="bot-header">
   <a href="index.html" class="back-link">&larr; DEV PARADE TOP</a>
-  <div class="bot-logo">DEV <span>POSI</span> BOT</div>
+  <div class="bot-logo">FAT <span>GP</span>T</div>
   <p class="bot-tagline">
-    SNS上の全ての「デブ」をポジティブに変換する<br>
-    メンバー全員90kg超バンドが贈る、世界初のデブ肯定Bot
+    Powered by Fat Generative Positivity Transformer<br>
+    SNS上の全ての「デブ」をポジティブに変換する次世代AIエンジン
   </p>
 </header>
 
@@ -487,18 +556,26 @@
 <!-- CONVERTER -->
 <div class="converter">
   <div class="converter-box">
-    <div class="converter-label">INPUT: ネガティブ・デブ発言</div>
+    <div class="mode-switch">
+      <button class="mode-btn active" id="modeConvert" onclick="setMode('convert')">FAT GPT (変換モード)</button>
+      <button class="mode-btn" id="modeAsk" onclick="setMode('ask')">FAT GPT (お悩み相談モード)</button>
+    </div>
+    <div id="inputLabel" class="converter-label">INPUT: ネガティブ・デブ発言</div>
     <textarea class="input-area" id="inputText" placeholder="例: 「最近太った...」「デブって言われた」「痩せなきゃ」&#10;ここにネガティブな発言を入力してください"></textarea>
-    <button class="convert-btn" id="convertBtn" onclick="convertToPositive()">
-      🍖 ポジデブ変換 🍖
+    <button class="convert-btn" id="convertBtn" onclick="processInput()">
+      🍖 ポジデブ変換を実行 🍖
     </button>
   </div>
 
   <div class="arrow" id="arrow">⬇️</div>
 
   <div class="result-box" id="resultBox">
-    <div class="result-label">OUTPUT: ポジデブティブ変換結果</div>
+    <div id="resultLabel" class="result-label">OUTPUT: ポジデブティブ変換結果</div>
     <div class="result-text" id="resultText"></div>
+    <div id="evidenceBox" class="evidence-box">
+      <strong>📊 エビデンスに基づいたFAT分析:</strong>
+      <span id="evidenceText"></span>
+    </div>
     <div class="result-member" id="resultMember"></div>
     <div class="share-row">
       <a class="share-btn share-x" id="shareX" href="#" target="_blank">𝕏 でシェア</a>
@@ -548,39 +625,38 @@
 </section>
 
 <!-- ===== SNS INTEGRATION STATUS ===== -->
-<section style="max-width:700px; margin:0 auto 3rem; padding:0 1rem;">
-  <div style="text-align:center; margin-bottom:1.5rem;">
-    <div style="font-family:'Oswald',sans-serif; font-size:1.2rem; letter-spacing:0.15em;">
-      SNS <span style="color:var(--green);">INTEGRATION</span>
-    </div>
-    <p style="font-size:0.8rem; color:var(--gray); margin-top:0.3rem;">ポジデブBotが監視中のSNS</p>
+<section class="sns-section">
+  <div class="sns-header">
+    <div class="sns-title">SNS <span>INTEGRATION</span></div>
+    <p class="sns-subtitle">ポジデブBotが監視中のSNS</p>
   </div>
-  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:0.8rem;">
-    <div style="background:var(--dark); border-radius:8px; padding:1rem; text-align:center; border-left:3px solid #1DA1F2;">
-      <div style="font-size:1.5rem;">𝕏</div>
-      <div style="font-family:'Oswald',sans-serif; font-size:0.8rem; color:#1DA1F2; margin-top:0.3rem;">X (Twitter)</div>
-      <div style="font-size:0.7rem; color:var(--green); margin-top:0.3rem;">● ACTIVE</div>
-      <div style="font-size:0.65rem; color:var(--gray);">自動リプライ対応</div>
+  <div class="sns-grid">
+    <div class="sns-card x">
+      <div class="sns-icon">𝕏</div>
+      <div class="sns-name" style="color:#1DA1F2;">X (Twitter)</div>
+      <div class="sns-status active">● ACTIVE</div>
+      <div class="sns-desc">自動リプライ対応</div>
     </div>
-    <a href="https://www.instagram.com/dev.parade/" target="_blank" rel="noopener" style="display:block; text-decoration:none; color:inherit;">
-      <div style="background:var(--dark); border-radius:8px; padding:1rem; text-align:center; border-left:3px solid #E4405F; cursor:pointer;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='var(--dark)'">
-        <div style="font-size:1.5rem;">📷</div>
-        <div style="font-family:'Oswald',sans-serif; font-size:0.8rem; color:#E4405F; margin-top:0.3rem;">Instagram</div>
-        <div style="font-size:0.7rem; color:var(--green); margin-top:0.3rem;">● OFFICIAL ACCOUNT</div>
-        <div style="font-size:0.65rem; color:var(--gray);">公式アカウント運用中</div>
+    <a href="https://www.instagram.com/dev.parade/" target="_blank" rel="noopener" class="ig-link">
+      <div class="sns-card ig">
+        <div class="sns-icon">📷</div>
+        <div class="sns-name" style="color:#E4405F;">Instagram</div>
+        <div class="sns-status active">● OFFICIAL</div>
+        <div class="sns-desc">公式アカウント運用中</div>
       </div>
     </a>
-    <div style="background:var(--dark); border-radius:8px; padding:1rem; text-align:center; border-left:3px solid #06C755;">
-      <div style="font-size:1.5rem;">💬</div>
-      <div style="font-family:'Oswald',sans-serif; font-size:0.8rem; color:#06C755; margin-top:0.3rem;">LINE</div>
-      <div style="font-size:0.7rem; color:var(--gold); margin-top:0.3rem;">● COMING SOON</div>
-      <div style="font-size:0.65rem; color:var(--gray);">公式アカウント予定</div>
+    <div class="sns-card line">
+      <div class="sns-icon">💬</div>
+      <div class="sns-name" style="color:#06C755;">LINE</div>
+      <div class="sns-name">LINE</div>
+      <div class="sns-status soon">● COMING SOON</div>
+      <div class="sns-desc">公式アカウント予定</div>
     </div>
-    <div style="background:var(--dark); border-radius:8px; padding:1rem; text-align:center; border-left:3px solid #FF0000;">
-      <div style="font-size:1.5rem;">▶</div>
-      <div style="font-family:'Oswald',sans-serif; font-size:0.8rem; color:#FF0000; margin-top:0.3rem;">YouTube</div>
-      <div style="font-size:0.7rem; color:var(--gold); margin-top:0.3rem;">● COMING SOON</div>
-      <div style="font-size:0.65rem; color:var(--gray);">コメント返信予定</div>
+    <div class="sns-card yt">
+      <div class="sns-icon">▶</div>
+      <div class="sns-name">YouTube</div>
+      <div class="sns-status soon">● COMING SOON</div>
+      <div class="sns-desc">コメント返信予定</div>
     </div>
   </div>
 </section>
@@ -588,8 +664,8 @@
 <!-- FOOTER -->
 <footer class="bot-footer">
   <p>POSI DEV BOT &mdash; Powered by <a href="index.html">DEV PARADE</a></p>
-  <p style="margin-top:0.5rem;">「デブは才能。脂肪は努力の結晶。」</p>
-  <p style="margin-top:1rem;">
+  <p>「デブは才能。脂肪は努力の結晶。」</p>
+  <p>
     <a href="https://x.com/dev_parade" target="_blank" rel="noopener">X</a> &middot;
     <a href="https://www.instagram.com/dev.parade/" target="_blank" rel="noopener">Instagram</a> &middot;
     <a href="https://www.tiktok.com/@handsomehanzi" target="_blank" rel="noopener">TikTok</a> &middot;
@@ -634,43 +710,31 @@ const responses = {
       ]
     },
     {
-      keywords: ['デブ', 'でぶ', 'ぶた', '豚', 'ブタ'],
+      keywords: ['デブ', 'でぶ', 'ぶた', '豚', 'ブタ', '猪'],
       responses: [
         'デブ？ ありがとう！ 俺たちにとって最高の褒め言葉。DEV PARADEへようこそ。🍖',
-        'デブって呼ばれた？ おめでとう、それはDEV PARADEの入団資格を満たしてるってこと！',
-        'デブは「Delightful Excellent Beautiful（楽しくて優秀で美しい）」の略。知らなかった？',
+        '「デブ」は「Delightful Excellent Beautiful」の略。つまり褒められてるんだよ。誇りを持て。',
+        '愛よりも、脂肪。デブ上等！ 夜露死苦（ヨロシク）ならぬ「肥露死苦（ヒロシク）」の精神で行こうぜ。',
         '豚？ 豚は知能が高くて社会性もある最高の動物。褒め言葉として受け取っておく。🐷✨',
-        '「デブ」は俺たちの誇り。バンド名にDEV（デブ）入れてるくらいだから。リスペクト。'
+        '「デブ」は個性であり、武器。その武器、DEV PARADEが最高に磨いてやるよ。'
       ]
     },
     {
-      keywords: ['腹', 'はら', 'お腹', 'ぽっこり', 'メタボ', 'ビール腹'],
+      keywords: ['地面師', '肥満師', '不適切', '不適切にも'],
       responses: [
-        'その腹は「生命力の貯蔵庫」。いざという時に生き残るのは俺たち側だから。🍺',
-        'ぽっこりお腹？ 俺たちは「ヘヴィメタボバンド」。メタボは音楽ジャンルだと思ってる。',
-        'ビール腹は「人生を楽しんでる証拠」。飲まない奴より人生3倍楽しんでる。',
-        'お腹出てる？ それは「幸せが溢れてる」って表現するのが正解。DEV PARADE公式見解です。',
-        'メタボ？ メタル + ボディの略でしょ？ ロックな体型じゃん。'
+        '地面師？ いや「肥満師」だな。地面ではなく、胃袋の空き容量をハッキングして肉を勝ち取るプロ集団だ。',
+        '「もう食えません」…そんな言葉、俺たちの辞書にはない。「肥満師」として最後まで完食するのが流儀。',
+        '不適切？ いや、深夜のドカ食いこそがデブ流の時間超越だ。昭和の食欲、令和の脂肪。',
+        '不適切にも肉を食う。コンプラ無視してカロリー摂取するのが俺たちのロックンロールだ。🎸'
       ]
     },
     {
-      keywords: ['服', 'サイズ', '入らない', 'きつい', 'XL', '3L', '4L', '5L'],
+      keywords: ['GPT', 'AI', '人工知能', 'GPT', 'fatgpt'],
       responses: [
-        '服が入らない？ 服が小さいだけ。お前のスケールに世界が追いついてないだけ。',
-        'XLが入らなくなった？ 次のステージに進んだってこと。レベルアップおめでとう。',
-        'サイズが大きい = プレゼンスがデカい。部屋に入った瞬間の存在感、それが才能。',
-        '3L、4L？ Lが多いほどLove（愛）も多い。科学的に証明されてる（DEV PARADE調べ）。',
-        '服のサイズで人は測れない。でも体重なら測れる。全員90kg超のバンドがここにいる。'
-      ]
-    },
-    {
-      keywords: ['食べ', 'たべ', '食い', 'くい', '大食い', '食欲', '暴食', 'ドカ食い', '食べすぎ'],
-      responses: [
-        '食べることは生きること。たくさん食べる = たくさん生きてる。最高の人生じゃん。🍖',
-        '大食いは才能。フードファイターって言い方もある。アスリートだよ、お前は。',
-        '食欲があるのは健康な証拠。食欲なくなった時の方がヤバいからな。今を楽しめ。',
-        '「食べすぎた」じゃなくて「十分に栄養を摂取した」。言い方ひとつで人生変わる。',
-        '暴食？ いや、「情熱的な食事」だ。音楽も食事も、パッションが大事。'
+        'GPT-4よりFAT GPT。このシステムは、お前のネガティブを脂肪へと変換する最新鋭の大盛りモデルだ。',
+        'プロンプトに「ヤサイマシマシ油」って入れるのが俺たちのプロンプトエンジニアリングだ。',
+        '「FAT GPT」はGPT-4なんて目じゃない。お前のネガティブを全て脂肪へと変換する次世代大盛りAIだ。',
+        'AI（Abura Intake = 脂質摂取）なら任せろ。効率よくエネルギーを吸収するアルゴリズムを搭載してる。'
       ]
     },
     {
@@ -684,127 +748,149 @@ const responses = {
       ]
     }
   ],
+  // エビデンスデータベース（FAT GPT用）
+  evidence: [
+    {
+      keywords: ['魅力', 'モテ', '引力', '運', 'カリスマ', '存在感'],
+      analysis: '万有引力の法則によれば、質量が大きい（重い）ほど引力も大きくなります。つまり、体重が増えるほど周囲を惹きつける「カリスマ性」が物理的に向上しているという科学的エビデンスです。'
+    },
+    {
+      keywords: ['健康', 'バッテリー', '震災', 'サバイバル', '生存', '電池'],
+      analysis: '体脂肪は1kgあたり約7,200kcalのクリーンエネルギーを蓄えた最高級バッテリーです。これは将来の食糧危機やサバイバル環境において圧倒的に延命できる「エリート生存権」の証明です。'
+    },
+    {
+      keywords: ['守', '防護', '安全', 'クッション', '衝撃', '怪我'],
+      analysis: '腹部や背中の脂肪層は、内臓を守るための「天然のエアバッグ（防護用アーマー）」として機能します。物理的な衝撃から中枢を守る進化的装備を完備しているといえます。'
+    },
+    {
+      keywords: ['冬', '熱', '効率', 'エコ', '温暖化', '暖房'],
+      analysis: '体積に対する表面積の割合（比表面積）が小さいため、効率的に体温を保持できます。自身の熱を無駄に逃がさない「高断熱・高気密ボディ」であり、周囲の人を温める「持続可能な暖房器具」としての社会貢献度も高いです。'
+    },
+    {
+      keywords: ['金', '経済', '店', '売上', '社会', '貢献'],
+      analysis: '高カロリーな食事を継続的に摂取できる財力と、それを支える外食産業への投資は、地域経済を循環させる「経済的リーダー」の証です。貴方の食事は、誰かの給料になっています。'
+    }
+  ],
   // 汎用レスポンス（キーワードマッチしない場合）
   generic: [
     'その悩み、メンバー全員90kg超で踏み潰してやるよ。大丈夫。デブは強い。💪',
     '体型で悩むな。俺たち全員90kg以上でメジャーデビューしたから。才能に体重は関係ない。',
     '世界で一番重いバンド（自称）から言わせてもらう。重さは力だ。お前は強い。',
-    'DEV PARADEから一言。「デブは個性。個性は武器。武器は磨け。」以上！🍖',
-    'ネガティブな言葉は、全部俺たちの腹の肉で吸収してやる。跳ね返す必要すらない。',
-    '大丈夫、お前は最高だ。根拠？ 全員90kg超のバンドが言ってるんだから間違いない。',
-    'どんな悩みも、焼肉食ったら解決する。解決しなくても、美味い。それでいい。',
-    '体重と幸福度は比例する（DEV PARADE調べ）。お前、幸せだろ？',
-    'この世に「無駄な脂肪」なんてない。全部、お前という作品の一部だ。',
-    '痛風になっても音楽は止めない。それがDEV PARADEのスピリット。お前も止まるな。'
+    '焼肉食えば大抵のことは解決する。解決しなくても、肉は美味い。それでいい。'
   ]
 };
 
 // ===== サンプル入力 =====
 const sampleInputs = [
   '最近めっちゃ太った...やばい',
-  'また「デブ」って言われた。傷つく。',
+  'また「デブ」って言われた。',
   '痩せなきゃいけないのに食べちゃう',
-  'お腹出すぎてベルトの穴が足りない',
-  'Lサイズが入らなくなった...',
-  '食べすぎて自己嫌悪',
-  '太ってるとモテないよな...',
   '健康診断でメタボ判定された',
-  'デブは甘え',
-  '豚みたいな体型で嫌になる',
-  '夏が来るのが怖い。水着着れない。',
-  '友達に「太った？」って聞かれてショック',
-  '体重計に乗るのが怖い',
-  '二重顎が目立ってきた',
-  'ダイエット続かない自分が嫌い',
+  'ダイエット続かない自分が嫌い'
 ];
 
 // ===== FEED SAMPLE DATA =====
 const feedData = [
-  {
-    original: '会社の健康診断でメタボ判定された...もう終わりだ',
-    response: 'メタボ？ メタル + ボディの略でしょ？ ロックな体型認定おめでとう！DEV PARADEのメンバーは全員メタボです。つまりお前は仲間だ。🤘',
-    member: 'ハンサム判治',
-    platform: 'X (Twitter)',
-    time: '2分前'
-  },
-  {
-    original: '太ってるから何着ても似合わない',
-    response: '似合わないんじゃない、服が追いついてないだけ。俺なんか135kgだけどギター弾いたらカッコいいぞ。服より中身、中身より音楽。🎸',
-    member: 'ugazin',
-    platform: 'Instagram',
-    time: '8分前'
-  },
-  {
-    original: 'デブって言われて落ち込んでる',
-    response: '「デブ」は「Delightful Excellent Beautiful」の略。つまり褒められてる。俺たちバンド名にデブ入れてるからな。誇りを持て。🍖',
-    member: 'COYASS',
-    platform: 'X (Twitter)',
-    time: '15分前'
-  },
-  {
-    original: '痩せたいけど焼肉が美味すぎて無理',
-    response: '焼肉を愛することは人類の本能。本能に従える者は強い。痩せなくていい、焼肉をもっと愛せ。一緒に食いに行こう。🥩',
-    member: 'TAH',
-    platform: 'X (Twitter)',
-    time: '23分前'
-  },
-  {
-    original: '痛風つらい...体重落とせって言われた',
-    response: '痛風ホルダー仲間！！！ DEV PARADEは痛風ホルダーだらけだけど全員元気にライブやってるぜ。痛風は勲章。体重は落とさなくていい、テンションを上げろ。💪',
-    member: 'ぺー',
-    platform: 'LINE',
-    time: '31分前'
-  },
-  {
-    original: '結婚式までに10kg痩せなきゃ...',
-    response: '10kg痩せた姿で誓うより、今の姿で「一生美味いもん一緒に食おう」って誓った方がリアルでカッコいい。相手もその方が嬉しいはず。',
-    member: 'ハンサム判治',
-    platform: 'Instagram',
-    time: '45分前'
-  },
-  {
-    original: '電車で隣の人に迷惑かけてる気がする',
-    response: '迷惑じゃない、「より多くの空間を活用している」だけ。もっと言えば、冬場は隣の人あったかいはず。感謝されてるよ。',
-    member: 'ugazin',
-    platform: 'X (Twitter)',
-    time: '1時間前'
-  },
-  {
-    original: '子供に「パパ太ってる」って言われた',
-    response: 'それは「パパ大きくてかっこいい」の子供語訳だ。子供は正直。大きい = 強い = 守ってくれる。最高のパパだよ。👨‍👧',
-    member: 'COYASS',
-    platform: 'Facebook',
-    time: '1時間前'
-  }
+  { original: '会社の健康診断でメタボ判定された...もう終わりだ', response: 'メタボ？ メタル + ボディの略でしょ？ ロックな体型認定おめでとう！DEV PARADEのメンバーは全員メタボです。つまりお前は仲間だ。🤘', member: 'ハンサム判治', platform: 'X (Twitter)', time: '2分前' },
+  { original: '太ってるから何着ても似合わない', response: '似合わないんじゃない、服が追いついてないだけ。俺なんか135kgだけどギター弾いたらカッコいいぞ。服より中身、中身より音楽。🎸', member: 'ugazin', platform: 'Instagram', time: '8分前' },
+  { original: 'デブって言われて落ち込んでる', response: '「デブ」は「Delightful Excellent Beautiful」の略。つまり褒められてる。俺たちバンド名にデブ入れてるからな。誇りを持て。🍖', member: 'COYASS', platform: 'X (Twitter)', time: '15分前' }
 ];
 
-// ===== CONVERT FUNCTION =====
-function convertToPositive() {
+// ===== UI STATE =====
+let currentMode = 'convert';
+
+function setMode(mode) {
+  currentMode = mode;
+  const labels = {
+    convert: {
+      input: 'INPUT: ネガティブ・デブ発言',
+      placeholder: '例: 「最近太った...」「デブって言われた」「痩せなきゃ」&#10;ここにネガティブな発言を入力してください',
+      btn: '🍖 ポジデブ変換を実行 🍖',
+      result: 'OUTPUT: ポジデブティブ変換結果'
+    },
+    ask: {
+      input: 'PROMPT: FAT GPTへの質問・相談',
+      placeholder: '例: 「なぜデブは最強なのですか？」「これ以上太っても大丈夫？」&#10;FATな疑問を投げかけてください。',
+      btn: '🧠 FAT GPTで思考（エビデンスベース） 🧠',
+      result: 'REPLY: FAT GPTによるエビデンス回答'
+    }
+  };
+  
+  document.getElementById('modeConvert').classList.toggle('active', mode === 'convert');
+  document.getElementById('modeAsk').classList.toggle('active', mode === 'ask');
+  document.getElementById('inputLabel').textContent = labels[mode].input;
+  document.getElementById('inputText').placeholder = labels[mode].placeholder;
+  document.getElementById('convertBtn').textContent = labels[mode].btn;
+  document.getElementById('resultLabel').textContent = labels[mode].result;
+  
+  document.getElementById('resultBox').classList.remove('show');
+}
+
+function processInput() {
   const input = document.getElementById('inputText').value.trim();
   if (!input) {
-    // 空の場合はランダム
-    randomConvert();
+    if (currentMode === 'convert') randomConvert();
+    else showResult('何か質問を入力してください。', members[1]);
     return;
   }
 
   const btn = document.getElementById('convertBtn');
   btn.classList.add('loading');
-  btn.textContent = '🍖 変換中... 🍖';
+  btn.textContent = currentMode === 'convert' ? '🍖 変換中... 🍖' : '🧠 思考中... 🧠';
 
   setTimeout(() => {
-    const result = generateResponse(input);
+    let result;
+    if (currentMode === 'convert') {
+      result = generateResponse(input);
+      document.getElementById('evidenceBox').style.display = 'none';
+    } else {
+      result = generateFatGPTAnswer(input);
+    }
+    
     showResult(result.text, result.member);
     btn.classList.remove('loading');
-    btn.textContent = '🍖 ポジデブ変換 🍖';
+    btn.textContent = currentMode === 'convert' ? '🍖 ポジデブ変換を実行 🍖' : '🧠 FAT GPTで思考（エビデンスベース） 🧠';
     incrementCounter();
-  }, 800 + Math.random() * 700);
+  }, 1000 + Math.random() * 1000);
 }
+
+function generateFatGPTAnswer(input) {
+  const member = members[Math.floor(Math.random() * members.length)];
+  let analysis = '貴方の問いは宇宙の真理（デブ）に近づいています。';
+  
+  for (const item of responses.evidence) {
+    if (item.keywords.some(k => input.includes(k))) {
+      analysis = item.analysis;
+      break;
+    }
+  }
+  
+  if (analysis.includes('宇宙の真理')) { // Fallback if no specific keyword matched
+    analysis = responses.evidence[Math.floor(Math.random() * responses.evidence.length)].analysis;
+  }
+
+  document.getElementById('evidenceText').textContent = analysis;
+  document.getElementById('evidenceBox').style.display = 'block';
+
+  const gptAnswers = [
+    `それは素晴らしい視点ですね。現代科学の観点からも、貴方の体型は「完全体」に近づいていると言わざるを得ません。`,
+    `その質問、待ってました。世の中の常識（痩せ）に囚われず、本質（脂肪）を見ようとする姿勢、非常にインテリジェンスを感じます。`,
+    `FAT GPTの演算結果により「全く問題ない」という結論が出ました。むしろ、もっと自分の可能性（体重）を信じて良いでしょう。`,
+    `エビデンスに基づけば、貴方の悩みは「悩み」ではなく「進化の過程」であると断定できます。`
+  ];
+
+  return {
+    text: gptAnswers[Math.floor(Math.random() * gptAnswers.length)],
+    member: member
+  };
+}
+
+function convertToPositive() { processInput(); }
 
 function generateResponse(input) {
   const inputLower = input.toLowerCase();
   let matchedResponses = [];
 
-  // キーワードマッチ
   for (const pattern of responses.patterns) {
     for (const keyword of pattern.keywords) {
       if (inputLower.includes(keyword)) {
@@ -815,7 +901,6 @@ function generateResponse(input) {
     if (matchedResponses.length > 0) break;
   }
 
-  // マッチしなければ汎用
   if (matchedResponses.length === 0) {
     matchedResponses = responses.generic;
   }
@@ -835,28 +920,26 @@ function showResult(text, member) {
   resultMember.innerHTML = `${member.icon} <strong>${member.name}</strong>（${member.role} / ${member.weight}）がお届けしました`;
 
   resultBox.classList.remove('show');
-  void resultBox.offsetWidth; // force reflow
+  void resultBox.offsetWidth;
   resultBox.classList.add('show');
 
-  // Update share links
-  const shareText = `${text}\n\n— ${member.name}（DEV PARADE）\n@dev_parade\n#ポジデブBot #DEVPARADE\nhttps://dev-parade.github.io/debu-bot.html`;
+  const shareText = `${text}\n\n— ${member.name}（DEV PARADE）\n@dev_parade\n#FATGPT #DEVPARADE\nhttps://dev-parade.github.io/debu-bot.html`;
   document.getElementById('shareX').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
   document.getElementById('shareLine').href = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent('https://dev-parade.github.io/debu-bot.html')}&text=${encodeURIComponent(shareText)}`;
 
-  // Scroll to result
   resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 function randomConvert() {
   const input = sampleInputs[Math.floor(Math.random() * sampleInputs.length)];
   document.getElementById('inputText').value = input;
-  convertToPositive();
+  processInput();
 }
 
 function copyResult() {
   const text = document.getElementById('resultText').textContent;
   const member = document.getElementById('resultMember').textContent;
-  navigator.clipboard.writeText(`${text}\n\n— ${member}\n@dev_parade\n#ポジデブBot #DEVPARADE`).then(() => {
+  navigator.clipboard.writeText(`${text}\n\n— ${member}\n@dev_parade\n#FATGPT #DEVPARADE`).then(() => {
     const btn = event.target;
     const original = btn.textContent;
     btn.textContent = '✅ コピー完了！';
@@ -874,7 +957,6 @@ function incrementCounter() {
   todayEl.textContent = (todayCurrent + 1).toLocaleString();
 }
 
-// ===== RENDER FEED =====
 function renderFeed() {
   const container = document.getElementById('feedContainer');
   container.innerHTML = '';
@@ -894,7 +976,6 @@ function renderFeed() {
   });
 }
 
-// ===== FLOATING PARTICLES =====
 function createParticles() {
   const container = document.getElementById('particles');
   const emojis = ['🍖', '🍺', '🐷', '💪', '🔥', '🎸', '🥩', '🍔', '🍕', '🎤'];
@@ -910,7 +991,6 @@ function createParticles() {
   }
 }
 
-// ===== COUNTER ANIMATION =====
 function animateCounters() {
   const totalEl = document.getElementById('totalConverts');
   const target = 14829;
@@ -926,7 +1006,6 @@ function animateCounters() {
   }, 30);
 }
 
-// ===== PERIODIC FEED UPDATE =====
 function periodicFeedUpdate() {
   const additionalFeed = [
     {
@@ -961,14 +1040,12 @@ function periodicFeedUpdate() {
     container.insertBefore(el, container.firstChild);
     incrementCounter();
 
-    // 最大12件に制限
     while (container.children.length > 12) {
       container.removeChild(container.lastChild);
     }
-  }, 15000); // 15秒ごと
+  }, 15000);
 }
 
-// ===== INIT =====
 document.addEventListener('DOMContentLoaded', () => {
   createParticles();
   renderFeed();
@@ -976,11 +1053,10 @@ document.addEventListener('DOMContentLoaded', () => {
   periodicFeedUpdate();
 });
 
-// Enter key to convert
 document.getElementById('inputText').addEventListener('keydown', (e) => {
   if (e.key === 'Enter' && !e.shiftKey) {
     e.preventDefault();
-    convertToPositive();
+    processInput();
   }
 });
 </script>

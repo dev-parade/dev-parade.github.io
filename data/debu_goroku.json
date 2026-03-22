@@ -84,6 +84,11 @@
       "word": "AI",
       "description": "Abura Intake（アブラ・インテイク）。脂を効率よく摂取する知能性能。デブはAIを使いこなす。UPDATE",
       "is_update": true
+    },
+    {
+      "word": "うっちゃりFUNK",
+      "description": "冬なのに半袖、冬なのにサンダル。ハラペコだぴょん！という謎のファンク・グルーヴ曲。",
+      "is_update": true
     }
   ],
   "ka": [
@@ -169,12 +174,17 @@
     },
     {
       "word": "COYASS（コヤス）",
-      "description": "93kg MC。その名の通り、自らを「肥やす」ことで成長し続けるポジデブ。歯学博士としての知識を活かし、肉を確実に噛み砕いて吸収するスペシャリスト。",
+      "description": "90kg MC。その名の通り、自らを「肥やす」ことで成長し続けるポジデブ。歯学博士としての知識を活かし、肉を確実に噛み砕いて吸収するスペシャリスト。",
       "is_update": true
     },
     {
       "word": "肥やす",
       "description": "身体だけでなく、心と人生を豊かにする究極のポジデブ・アクション。COYASSの語源。",
+      "is_update": true
+    },
+    {
+      "word": "GODS N' DEATH",
+      "description": "神の恵み（満腹）か死神の罠（空腹）かを問う、究極の二択ファイトクラブ。迷ったら「おかわり」で解決。",
       "is_update": true
     }
   ],
@@ -228,6 +238,11 @@
       "word": "GPU",
       "description": "Grated Pork Unit（おろし豚ユニット）。または「Garlic Pork Universal（ニンニク豚の普遍性）」。高度な脂演算処理能力を持つ。",
       "is_update": true
+    },
+    {
+      "word": "サウナ",
+      "description": "汗と一緒にカロリーも流れると信じているが、実際はサウナ後のビールでプラスマイナス（むしろプラス）になる神聖な場所。",
+      "is_update": true
     }
   ],
   "ta": [
@@ -264,6 +279,21 @@
     {
       "word": "デブ上等",
       "description": "ラブ上等のオマージュ。愛よりも重い『脂肪』を背負って生きる覚悟の表明。夜露死苦（ヨロシク）ならぬ『肥露死苦（ヒロシク）』の精神。",
+      "is_update": true
+    },
+    {
+      "word": "ダイエット",
+      "description": "「明日から本気出す」の同義語。毎年1月1日に宣言されるが、1月2日には正月太りで有耶無耶になる。",
+      "is_update": true
+    },
+    {
+      "word": "ダブルベッド",
+      "description": "ダブルベッドなのに一人でいっぱいになってしまう悲哀と、君がいないから体を膨らませたという言い訳の歌。",
+      "is_update": true
+    },
+    {
+      "word": "タチアガレ",
+      "description": "腹は出てるが心は錦。涙を拭いて拳と箸を突き上げる、魂のメッセージ。",
       "is_update": true
     }
   ],
@@ -302,12 +332,17 @@
       "word": "飲み物",
       "description": "カレー、麻婆豆腐、ハンバーグなど、固形物に見えるもの全てを指す。噛む時間はロス。",
       "is_update": true
+    },
+    {
+      "word": "何年経っても万年FAT",
+      "description": "生まれた時から仕組まれた遺伝子への完全なる降伏宣言。「お前らにゃあ一生わかんねえや！」",
+      "is_update": true
     }
   ],
   "ha": [
     {
       "word": "ハンサム判治",
-      "description": "110kg ボーカル。とにかくハンサム。デブ界のアイコン。",
+      "description": "120kg ボーカル。とにかくハンサム。デブ界のアイコン。",
       "is_update": false
     },
     {
@@ -326,8 +361,8 @@
       "is_update": false
     },
     {
-      "word": "FAT GPT / FAT GPTwo",
-      "description": "Fat Generative Positivity Transformer。ネガティブな『デブ発言』をポジティブに変換する、DEV PARADE独自の次世代AIエンジン。Version 2（GPTwo）では『脂肪をさらに（wo）』という隠しコマンドも搭載されている。",
+      "word": "FAT GPT",
+      "description": "Fat Generative Positivity Transformer。ネガティブな『デブ発言』をポジティブに変換する、DEV PARADE独自の次世代AIエンジン。Version 2（GPT）ではポジティブでファットな回答をしてくれる。",
       "is_update": true
     },
     {
@@ -348,6 +383,41 @@
     {
       "word": "不適切にも肉を食う",
       "description": "コンプラを無視して深夜に高カロリーを摂取する、デブ流の時間超越。昭和の食欲、令和の脂肪。ミュージカル風に肉を焼く。",
+      "is_update": true
+    },
+    {
+      "word": "バイキング",
+      "description": "採算度外視で挑む戦場（たたかいのば）。店員の「時間です」という言葉が唯一の敗北宣言。",
+      "is_update": true
+    },
+    {
+      "word": "バッチコイ!!!",
+      "description": "俺たちの代表曲。どんな逆風、強風、嵐が吹いても、すべての武器をお箸に変えて迎え撃つポジデブ賛歌。",
+      "is_update": true
+    },
+    {
+      "word": "ハッピー乱デブー",
+      "description": "君とのアヴァンチュールを夢見る名曲。ミートボール体型による柔軟な視点で、ディズニーより弾むトランポリンなお腹を提供。",
+      "is_update": true
+    },
+    {
+      "word": "100CAN",
+      "description": "『100CAN DIVE』のテーマ。100キロ（百貫）の大台のこと。一貫の終わりが百貫の始まり。",
+      "is_update": true
+    },
+    {
+      "word": "万有引力",
+      "description": "自転車に乗るとサドルが容赦なく下がる現象。ニュートンも青ざめるデブパレード的物理学。",
+      "is_update": true
+    },
+    {
+      "word": "逆ライザップ",
+      "description": "6パックから1パックに意図的に作り上げる、極めて高度で反逆的なボディメイク手法。",
+      "is_update": true
+    },
+    {
+      "word": "パルフェ",
+      "description": "インスリンを感じながら韻を踏み強化する、病的なまでに甘いラブソング（スイーツソング）。",
       "is_update": true
     }
   ],
@@ -385,6 +455,21 @@
     {
       "word": "飯テロ",
       "description": "深夜の時間帯に投下される画像爆弾。我々にとってはただの「夜食のメニュー表」である。",
+      "is_update": true
+    },
+    {
+      "word": "マシマシ",
+      "description": "これさえ言えば何でも許される魔法の呪文。野菜マシマシはカロリーゼロ理論の筆頭。",
+      "is_update": true
+    },
+    {
+      "word": "ME★TA★BO〜俺たちミートボール〜",
+      "description": "デブパレードの魂。罪だけ憎んで人は肉まんだろう？という世紀のパンチラインを生み出した。",
+      "is_update": true
+    },
+    {
+      "word": "メシを喰わせろ！",
+      "description": "理性を失った我々の叫び。腹が減っては戦はできん、なんて嘘。これが怒りの唯一の原因。",
       "is_update": true
     }
   ],
