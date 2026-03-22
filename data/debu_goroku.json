@@ -168,11 +168,6 @@
       "is_update": true
     },
     {
-      "word": "GPU",
-      "description": "Grated Pork Unit（おろし豚ユニット）。または「Garlic Pork Universal（ニンニク豚の普遍性）」。高度な脂演算処理能力を持つ。",
-      "is_update": true
-    },
-    {
       "word": "COYASS（コヤス）",
       "description": "93kg MC。その名の通り、自らを「肥やす」ことで成長し続けるポジデブ。歯学博士としての知識を活かし、肉を確実に噛み砕いて吸収するスペシャリスト。",
       "is_update": true
@@ -228,6 +223,11 @@
       "word": "サーバー",
       "description": "食事を配膳（サーブ）する人への最大級の敬意。またはセルフサービスの「サーバー」。",
       "is_update": true
+    },
+    {
+      "word": "GPU",
+      "description": "Grated Pork Unit（おろし豚ユニット）。または「Garlic Pork Universal（ニンニク豚の普遍性）」。高度な脂演算処理能力を持つ。",
+      "is_update": true
     }
   ],
   "ta": [
@@ -282,6 +282,26 @@
       "word": "肉欲",
       "description": "肉を求める、抗いようのない本能的な強い欲望。",
       "is_update": false
+    },
+    {
+      "word": "二重あご",
+      "description": "富と幸福の象徴。あるいは進化の過程で獲得した、衝撃吸収用の予備バンパー。",
+      "is_update": true
+    },
+    {
+      "word": "ニク（肉）",
+      "description": "全人類を一つにする平和の使者。毎食欠かすことのできない我々のメインヒロイン。",
+      "is_update": true
+    },
+    {
+      "word": "眠気",
+      "description": "血糖値が最高潮に達したことを知らせる身体からのファンファーレ。",
+      "is_update": true
+    },
+    {
+      "word": "飲み物",
+      "description": "カレー、麻婆豆腐、ハンバーグなど、固形物に見えるもの全てを指す。噛む時間はロス。",
+      "is_update": true
     }
   ],
   "ha": [
@@ -351,6 +371,21 @@
       "word": "メタバース",
       "description": "Metabo-Verse（メタボ・バース）。全てのデブが肯定される宇宙。DEV PARADEが構築を目指す新境地。",
       "is_update": true
+    },
+    {
+      "word": "満腹中枢",
+      "description": "デブパレードのメンバーには標準搭載されていない、あるいは遠い昔に物理破壊されたリミッター。",
+      "is_update": true
+    },
+    {
+      "word": "無重力",
+      "description": "体重100kgを超えた時にのみ感じることができる、お腹の脂肪が勝手に浮いているような感覚。",
+      "is_update": true
+    },
+    {
+      "word": "飯テロ",
+      "description": "深夜の時間帯に投下される画像爆弾。我々にとってはただの「夜食のメニュー表」である。",
+      "is_update": true
     }
   ],
   "ya": [
@@ -363,6 +398,21 @@
       "word": "野菜",
       "description": "（読み：ゴミ）または（読み：ニクを包むための緩衝材）。",
       "is_update": false
+    },
+    {
+      "word": "夜食",
+      "description": "1日の締めくくりに行われる、自分への甘すぎるご褒美。これを食べないと1日がリセットされない。",
+      "is_update": true
+    },
+    {
+      "word": "痩せる",
+      "description": "辞書には載っているが、現実世界では観測されない未確認現象。または明日の自分への責任転嫁。",
+      "is_update": true
+    },
+    {
+      "word": "やっちまった",
+      "description": "深夜2時のラーメン大盛り完食後に発せられる、歓喜とほんの少しの反省が入り混じった魔法の言葉。",
+      "is_update": true
     }
   ],
   "ra": [
@@ -380,6 +430,21 @@
       "word": "LLM",
       "description": "Large Lunch Menu（ラージ・ランチ・メニュー）。大規模な昼飯メニュー。2026年のデブはこれを学習（摂取）し続ける。",
       "is_update": true
+    },
+    {
+      "word": "ラーメン",
+      "description": "スープ（水分）、麺（炭水化物）、チャーシュー（タンパク質）からなる完全食。基本は1日3杯から。",
+      "is_update": true
+    },
+    {
+      "word": "ライス",
+      "description": "どんなおかずでも優しく受け止める白いキャンバス。おかずが無くても、ライスでライスが食える。",
+      "is_update": true
+    },
+    {
+      "word": "ロース",
+      "description": "カルビの相棒。脂と赤身の黄金比を誇る、デブにとってのアイドル的部位。",
+      "is_update": true
     }
   ],
   "wa": [
@@ -392,6 +457,21 @@
       "word": "ワールドスタンダード",
       "description": "デブパレードの規格外なスケールを示す言葉。",
       "is_update": false
+    },
+    {
+      "word": "割り勘",
+      "description": "デブが圧倒的に勝利を収めるゲーム。一般的な食事会では最も経済的効果を発揮するシステム。",
+      "is_update": true
+    },
+    {
+      "word": "わんこそば",
+      "description": "自分の限界を知るためのスポーツ。100杯からがウォームアップ。",
+      "is_update": true
+    },
+    {
+      "word": "輪ゴム",
+      "description": "かつてズボンのボタンの代わりに使われた伝説のアイテム。現在は弾け飛ぶため非推奨。",
+      "is_update": true
     }
   ]
 }
