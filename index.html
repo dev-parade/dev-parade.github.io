@@ -1135,10 +1135,11 @@
         <li><a href="#live">Live</a></li>
         <li><a href="#video">Video</a></li>
         <li><a href="#discography">Discography</a></li>
+        <li><a href="lyrics/index.html">Lyrics</a></li>
         <li><a href="#history">History</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#goods">Goods</a></li>
-        <li><a href="debu-bot.html" style="color:#ffd700;">🍖 PosiDevBot</a></li>
+        <li><a href="debu-bot.html" style="color:#ffd700;">🍖 FAT GPTwo</a></li>
         <li><a href="#news">News</a></li>
         <li><a href="#links">Links</a></li>
       </ul>
@@ -1457,9 +1458,14 @@
         <div class="year" style="color: var(--yellow);">2026 &mdash; 1st Full Album</div>
         <h3>NEW ALBUM</h3>
         <div class="coming">COMING SOON</div>
-        <p style="color: var(--gray); margin-top: 0.5rem; font-size: 0.9rem;">
+        <p style="color: var(--gray); margin-top: 0.5rem; font-size: 0.9rem; margin-bottom: 1.5rem;">
           15年越しの初フルアルバム &mdash; 現在制作中
         </p>
+        <a href="lyrics/index.html" style="display:inline-block; padding:0.6rem 1.8rem; border:1px solid var(--yellow); color:var(--yellow); text-decoration:none; font-family:'Oswald',sans-serif; font-size:0.85rem; letter-spacing:0.1em; transition:all 0.3s; text-transform:uppercase;"
+           onmouseover="this.style.background='var(--yellow)'; this.style.color='#000';"
+           onmouseout="this.style.background='transparent'; this.style.color='var(--yellow)';">
+          View Album Lyrics (Preview)
+        </a>
       </div>
 
       <!-- 2nd Single -->
@@ -1966,7 +1972,7 @@
     async function loadGoroku() {
       const container = document.getElementById('goroku-dynamic-container');
       try {
-        const response = await fetch('data/debu_goroku.json');
+        const response = await fetch('data/debu_goroku.json?v=' + new Date().getTime());
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
         
