@@ -171,6 +171,16 @@
       "word": "GPU",
       "description": "Grated Pork Unit（おろし豚ユニット）。または「Garlic Pork Universal（ニンニク豚の普遍性）」。高度な脂演算処理能力を持つ。",
       "is_update": true
+    },
+    {
+      "word": "COYASS（コヤス）",
+      "description": "93kg MC。その名の通り、自らを「肥やす」ことで成長し続けるポジデブ。歯学博士としての知識を活かし、肉を確実に噛み砕いて吸収するスペシャリスト。",
+      "is_update": true
+    },
+    {
+      "word": "肥やす",
+      "description": "身体だけでなく、心と人生を豊かにする究極のポジデブ・アクション。COYASSの語源。",
+      "is_update": true
     }
   ],
   "sa": [
@@ -250,6 +260,11 @@
       "word": "デブリシャス",
       "description": "Delicious（美味い）を越えた、デブ的に最高な状態を表す最上級の形容詞。",
       "is_update": true
+    },
+    {
+      "word": "デブ上等",
+      "description": "ラブ上等のオマージュ。愛よりも重い『脂肪』を背負って生きる覚悟の表明。夜露死苦（ヨロシク）ならぬ『肥露死苦（ヒロシク）』の精神。",
+      "is_update": true
     }
   ],
   "na": [
@@ -291,6 +306,11 @@
       "is_update": false
     },
     {
+      "word": "FAT GPT / FAT GPTwo",
+      "description": "Fat Generative Positivity Transformer。ネガティブな『デブ発言』をポジティブに変換する、DEV PARADE独自の次世代AIエンジン。Version 2（GPTwo）では『脂肪をさらに（wo）』という隠しコマンドも搭載されている。",
+      "is_update": true
+    },
+    {
       "word": "ぺー",
       "description": "2026年からの新ベース。痛風ホルダーのニューホープ。",
       "is_update": true
@@ -298,6 +318,16 @@
     {
       "word": "ブロックチェーン",
       "description": "Burokku-Chain（ブロック・チェーン）。ブロック肉が連鎖して胃袋に消えていく様子。",
+      "is_update": true
+    },
+    {
+      "word": "肥満師たち",
+      "description": "地面師たちのオマージュ。地面ではなく、胃袋の空き容量を交渉（ハッキング）してでも食らいつくプロ集団。ターゲットは常に熟成肉。",
+      "is_update": true
+    },
+    {
+      "word": "不適切にも肉を食う",
+      "description": "コンプラを無視して深夜に高カロリーを摂取する、デブ流の時間超越。昭和の食欲、令和の脂肪。ミュージカル風に肉を焼く。",
       "is_update": true
     }
   ],
