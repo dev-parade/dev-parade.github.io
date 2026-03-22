@@ -267,6 +267,11 @@
       gap: 8px;
     }
 
+    /* drcoyass.github.io経由のみ表示 */
+    .demo-only {
+      display: none;
+    }
+
     .demo-icon {
       width: 18px;
       height: 18px;
@@ -413,7 +418,7 @@
           <div class="song-meta">1st Full Album Track 01</div>
         </div>
       </div>
-      <div class="stream-bar">
+      <div class="stream-bar demo-only">
         <a class="stream-btn demo" href="https://on.soundcloud.com/j1noHG1GjdyFiHtHsg" target="_blank" rel="noopener"><span class="demo-icon"></span>Demo (SoundCloud)</a>
       </div>
     </div>
@@ -427,7 +432,7 @@
           <div class="song-meta">1st Full Album Track 02</div>
         </div>
       </div>
-      <div class="stream-bar">
+      <div class="stream-bar demo-only">
         <a class="stream-btn demo" href="https://on.soundcloud.com/j1noHG1GjdyFiHtHsg" target="_blank" rel="noopener"><span class="demo-icon"></span>Demo (SoundCloud)</a>
       </div>
     </div>
@@ -441,7 +446,7 @@
           <div class="song-meta">1st Full Album Track 03</div>
         </div>
       </div>
-      <div class="stream-bar">
+      <div class="stream-bar demo-only">
         <a class="stream-btn demo" href="https://on.soundcloud.com/j1noHG1GjdyFiHtHsg" target="_blank" rel="noopener"><span class="demo-icon"></span>Demo (SoundCloud)</a>
       </div>
     </div>
@@ -455,7 +460,7 @@
           <div class="song-meta">1st Full Album Track 04</div>
         </div>
       </div>
-      <div class="stream-bar">
+      <div class="stream-bar demo-only">
         <a class="stream-btn demo" href="https://on.soundcloud.com/j1noHG1GjdyFiHtHsg" target="_blank" rel="noopener"><span class="demo-icon"></span>Demo (SoundCloud)</a>
       </div>
     </div>
@@ -469,7 +474,7 @@
           <div class="song-meta">1st Full Album Track 05</div>
         </div>
       </div>
-      <div class="stream-bar">
+      <div class="stream-bar demo-only">
         <a class="stream-btn demo" href="https://on.soundcloud.com/j1noHG1GjdyFiHtHsg" target="_blank" rel="noopener"><span class="demo-icon"></span>Demo (SoundCloud)</a>
       </div>
     </div>
@@ -483,7 +488,7 @@
           <div class="song-meta">1st Full Album Track 06</div>
         </div>
       </div>
-      <div class="stream-bar">
+      <div class="stream-bar demo-only">
         <a class="stream-btn demo" href="https://on.soundcloud.com/j1noHG1GjdyFiHtHsg" target="_blank" rel="noopener"><span class="demo-icon"></span>Demo (SoundCloud)</a>
       </div>
     </div>
@@ -497,7 +502,7 @@
           <div class="song-meta">1st Full Album Track 07</div>
         </div>
       </div>
-      <div class="stream-bar">
+      <div class="stream-bar demo-only">
         <a class="stream-btn demo" href="https://on.soundcloud.com/j1noHG1GjdyFiHtHsg" target="_blank" rel="noopener"><span class="demo-icon"></span>Demo (SoundCloud)</a>
       </div>
     </div>
@@ -511,7 +516,7 @@
           <div class="song-meta">1st Full Album Track 08</div>
         </div>
       </div>
-      <div class="stream-bar">
+      <div class="stream-bar demo-only">
         <a class="stream-btn demo" href="https://on.soundcloud.com/j1noHG1GjdyFiHtHsg" target="_blank" rel="noopener"><span class="demo-icon"></span>Demo (SoundCloud)</a>
       </div>
     </div>
@@ -525,7 +530,7 @@
           <div class="song-meta">1st Full Album Track 09</div>
         </div>
       </div>
-      <div class="stream-bar">
+      <div class="stream-bar demo-only">
         <a class="stream-btn demo" href="https://on.soundcloud.com/j1noHG1GjdyFiHtHsg" target="_blank" rel="noopener"><span class="demo-icon"></span>Demo (SoundCloud)</a>
       </div>
     </div>
@@ -539,7 +544,7 @@
           <div class="song-meta">1st Full Album Track 10</div>
         </div>
       </div>
-      <div class="stream-bar">
+      <div class="stream-bar demo-only">
         <a class="stream-btn demo" href="https://on.soundcloud.com/j1noHG1GjdyFiHtHsg" target="_blank" rel="noopener"><span class="demo-icon"></span>Demo (SoundCloud)</a>
       </div>
     </div>
@@ -893,6 +898,13 @@
 
   <script>
     function toggle(card) { card.classList.toggle('open'); }
+
+    // drcoyass.github.io経由のアクセス時のみDemoボタンを表示
+    if (window.location.hostname === 'drcoyass.github.io') {
+      document.querySelectorAll('.demo-only').forEach(function(el) {
+        el.style.display = 'flex';
+      });
+    }
   </script>
 </body>
 
