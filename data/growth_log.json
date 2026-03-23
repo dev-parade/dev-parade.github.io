@@ -49,8 +49,18 @@
       "date": "2026-03-22 22:47",
       "followers": 0,
       "liked": 0
+    },
+    {
+      "date": "2026-03-23 23:16",
+      "followers": 44,
+      "liked": 0
     }
   ],
   "liked_users": [],
-  "followers_history": []
+  "followers_history": [
+    {
+      "date": "2026-03-23 23:16",
+      "count": 44
+    }
+  ]
 }
