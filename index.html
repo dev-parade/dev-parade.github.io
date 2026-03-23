@@ -1129,9 +1129,9 @@
   <nav>
     <div class="nav-inner">
       <img src="assets/logo.png" alt="DEV PARADE" class="nav-logo">
-      <ul id="navMenu">
-        <li><a href="#about">About</a></li>
-        <li><a href="#members">Members</a></li>
+      <div class="lang-selector" style="margin-left: 1rem; margin-right: 1rem; display: flex; gap: 0.5rem;"><select onchange="setLanguage(this.value)" style="background: #000; color: #fff; border: 1px solid #d32f2f; padding: 2px 5px; font-size: 0.75rem; border-radius: 4px; cursor: pointer;"><option value="ja">JP</option><option value="en">EN</option><option value="es">ES</option><option value="cn">CN</option></select></div><ul id="navMenu">
+        <li><a href="#about" data-i18n="nav-about">About</a></li>
+        <li><a href="#members" data-i18n="nav-members">Members</a></li>
         <li><a href="#goroku">DEV 語録 <span style="font-size:0.6rem; opacity:0.6;">(Quotes)</span></a></li>
         <li><a href="#live">Live</a></li>
         <li><a href="#video">Video</a></li>
@@ -1158,7 +1158,7 @@
       <img src="assets/logo.png" alt="DEV PARADE" class="hero-logo-img">
       <p class="hero-tagline">Heavy Metabo Band is Back.</p>
       <div style="font-family:'Oswald', sans-serif; font-size:0.9rem; color:var(--red); letter-spacing:0.2em; margin-bottom:1rem; text-transform:uppercase;">NARUTO: Shippuden ED "Bacchikoi!!!" Band</div>
-      <p class="hero-sub">全員90kg超 &mdash; 伝説のヘヴィメタボバンド、15年ぶりの復活</p>
+      <p class="hero-sub" data-i18n="hero-sub">全員90kg超 &mdash; 伝説のヘヴィメタボバンド、15年ぶりの復活</p>
       <a href="#live" class="hero-reunion">LIVE INFO &rarr;</a>
     </div>
     <div class="scroll-indicator"><span></span></div>
@@ -1213,8 +1213,8 @@
 
   <!-- ===== ABOUT ===== -->
   <section id="about">
-    <h2 class="section-title reveal">ABOUT <span>DEV PARADE</span></h2>
-    <p class="section-sub reveal">デブパレードとは</p>
+    <h2 class="section-title reveal" data-i18n="about-title">ABOUT <span>DEV PARADE</span></h2>
+    <p class="section-sub reveal" data-i18n="about-sub">デブパレードとは</p>
     <div class="about-grid">
       <img src="assets/member-group.jpg" alt="DEV PARADE" class="about-img reveal">
       <div class="about-text reveal">
@@ -1244,8 +1244,8 @@
 
   <!-- ===== MEMBERS ===== -->
   <section id="members">
-    <h2 class="section-title reveal">THE <span>MEMBERS</span></h2>
-    <p class="section-sub reveal">メンバー紹介</p>
+    <h2 class="section-title reveal" data-i18n="members-title">THE <span>MEMBERS</span></h2>
+    <p class="section-sub reveal" data-i18n="members-sub">メンバー紹介</p>
     <div class="members-grid">
 
       <div class="member-card reveal">
@@ -1329,8 +1329,8 @@
 
   <!-- ===== DEV GOROKU ===== -->
   <section id="goroku">
-    <h2 class="section-title reveal">DEV <span>語録</span></h2>
-    <p class="section-sub reveal">デブ語録 &mdash; 伝統と革新のメタボリズム</p>
+    <h2 class="section-title reveal" data-i18n="goroku-title">DEV <span>語録</span></h2>
+    <p class="section-sub reveal" data-i18n="goroku-sub">デブ語録 &mdash; 伝統と革新のメタボリズム</p>
 
     <!-- Tab Buttons -->
     <div class="goroku-tabs reveal">
@@ -1357,7 +1357,7 @@
   <!-- ===== LIVE ===== -->
   <section id="live">
     <h2 class="section-title reveal">LIVE <span>SCHEDULE</span></h2>
-    <p class="section-sub reveal">ライブ情報</p>
+    <p class="section-sub reveal" data-i18n="live-sub">ライブ情報</p>
     <div class="live-list">
 
       <div class="live-card reveal">
@@ -1395,7 +1395,7 @@
   <!-- ===== VIDEO ===== -->
   <section id="video">
     <h2 class="section-title reveal">MUSIC <span>VIDEO</span></h2>
-    <p class="section-sub reveal">公式ミュージックビデオ</p>
+    <p class="section-sub reveal" data-i18n="video-sub">公式ミュージックビデオ</p>
     <div class="video-grid reveal">
       <div>
         <div class="video-wrap">
@@ -2123,6 +2123,89 @@
     });
   </script>
 
+
+<script>
+const translations = {
+  'ja': {
+    'nav-about': 'About',
+    'nav-members': 'Members',
+    'hero-sub': '全員90kg超 — 伝説のヘヴィメタボバンド、15年ぶりの復活',
+    'about-title': 'ABOUT <span>DEV PARADE</span>',
+    'about-sub': 'デブパレードとは',
+    'members-title': 'THE <span>MEMBERS</span>',
+    'members-sub': 'メンバー紹介',
+    'goroku-title': 'DEV <span>語録</span>',
+    'goroku-sub': 'デブ語録 — 伝統と革新のメタボリズム',
+    'live-title': 'LIVE <span>SCHEDULE</span>',
+    'live-sub': 'ライブ情報',
+    'video-title': 'MUSIC <span>VIDEO</span>',
+    'video-sub': '公式ミュージックビデオ'
+  },
+  'en': {
+    'nav-about': 'About',
+    'nav-members': 'Members',
+    'hero-sub': 'All members 90kg+ — Legendary METABO band reunion after 15 years',
+    'about-title': 'ABOUT <span>DEV PARADE</span>',
+    'about-sub': 'What is DEV PARADE?',
+    'members-title': 'THE <span>MEMBERS</span>',
+    'members-sub': 'Member Profile',
+    'goroku-title': 'DEV <span>QUOTES</span>',
+    'goroku-sub': 'DEV QUOTES — Metabolism of Tradition & Innovation',
+    'live-title': 'LIVE <span>SCHEDULE</span>',
+    'live-sub': 'Live Information',
+    'video-title': 'MUSIC <span>VIDEO</span>',
+    'video-sub': 'Official Music Videos'
+  },
+  'es': {
+    'nav-about': 'Acerca de',
+    'nav-members': 'Miembros',
+    'hero-sub': 'Todos 90kg+ — Reunión legendaria de la banda METABO tras 15 años',
+    'about-title': 'SOBRE <span>DEV PARADE</span>',
+    'about-sub': '¿Qué es DEV PARADE?',
+    'members-title': 'LOS <span>MIEMBROS</span>',
+    'members-sub': 'Perfil de Miembros',
+    'goroku-title': 'DEV <span>PROVERBIOS</span>',
+    'goroku-sub': 'PROVERBIOS DEV — Metabolismo de Tradición e Innovación',
+    'live-title': 'PRÓXIMOS <span>VIVOS</span>',
+    'live-sub': 'Información en Vivo',
+    'video-title': 'VIDEO <span>MUSICAL</span>',
+    'video-sub': 'Videos Musicales Oficiales'
+  },
+  'cn': {
+    'nav-about': '关于',
+    'nav-members': '成员',
+    'hero-sub': '全员90kg以上 — 传说级重金代谢乐队15年后再结成',
+    'about-title': '关于 <span>DEV PARADE</span>',
+    'about-sub': '什么是 DEV PARADE？',
+    'members-title': '成员 <span>MEMBERS</span>',
+    'members-sub': '成员介绍',
+    'goroku-title': 'DEV <span>语录</span>',
+    'goroku-sub': 'DEV 语录 — 传统与创新的新陈代谢',
+    'live-title': '现场 <span>演出</span>',
+    'live-sub': '演出信息',
+    'video-title': '音乐 <span>录影带</span>',
+    'video-sub': '官方音乐视频'
+  }
+};
+
+function setLanguage(lang) {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
+  localStorage.setItem('devLanguage', lang);
+}
+
+// Check saved language
+const savedLang = localStorage.getItem('devLanguage');
+if (savedLang) {
+  setLanguage(savedLang);
+  const selector = document.querySelector('.lang-selector select');
+  if (selector) selector.value = savedLang;
+}
+</script>
 </body>
 
 </html>
