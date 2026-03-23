@@ -217,8 +217,7 @@ EXTRA_TWEETS_2 = [
     "デブの節約術:サイズ変わらないから1着ずっと着れる。エコ。🍖 #DEVPARADE",
     "名言「やせ我慢するくらいなら太って正直に生きろ」— DEV PARADE(今作った)🍖 #DEVPARADE",
 
-    # ===== 🎪 ARABAKI & 再結成 =====
-    "ARABAKIでDEV PARADE見たら「かっこいいデブだ」って言ってくれ。「デブだ」だけでもいい。🍖 #DEVPARADE #ARABAKI",
+    # ===== 🎪 再結成 =====
     "DEV PARADE再結成条件「90kg以上」。演奏力じゃなく体重計で選ぶ。体重計=オーディション。🍖 #DEVPARADE",
     "ライブT→普通:S/M/L/XL。DEV PARADE:L/XL/XXL/3XL。需要と供給。🍖 #DEVPARADE",
     "DEV PARADE解散理由「メンバーが痩せた」。シリアスなのかギャグなのか。最高。🍖 #DEVPARADE",
@@ -247,9 +246,6 @@ EXTRA_TWEETS_2 = [
     "体型で馬鹿にされたら「DEV PARADEって知ってる？全員90kg超でNARUTOのED歌った」って言え。使っていいよ。🍖 #DEVPARADE",
 
     # ===== 💎 ワンライナー =====
-    "デブは丸い。地球も丸い。俺たちは地球と同じ形。🍖 #DEVPARADE",
-    "食べることは生きること。俺たちは全力で生きてる。🍖 #DEVPARADE",
-    "デブであることを隠す必要はない。90kgは隠せない。🍖 #DEVPARADE",
     "太ってるから遅い？丁寧に生きてるだけ。🍖 #ポジデブBot #DEVPARADE",
     "太ってる人のハグは世界一気持ちいい。証拠:俺。🍖 #DEVPARADE",
     "デブに不可能はない。ただ走るのだけは苦手。🍖 #DEVPARADE",
@@ -259,10 +255,7 @@ EXTRA_TWEETS_2 = [
     "ダイエットの敵は食欲。食欲の味方はDEV PARADE。🍖 #DEVPARADE",
     "太って後悔した日:0日。太って良かった日:毎日。🍖 #ポジデブBot #DEVPARADE",
     "「理想の体型」は誰が決めた？俺は自分で決める。「今が理想」。🍖 #DEVPARADE",
-    "夢の重さは体重じゃ測れない。でも体重計は毎日壊す。🍖 #DEVPARADE",
     "100kg超えると椅子が敵、エレベーターが味方、焼肉屋が教会に見える。🍖 #DEVPARADE",
-    "結成時570kg、NARUTO ED、HEY!HEY!HEY!、SUMMER SONIC、再結成、ARABAKI。全部デブがやった。🍖 #DEVPARADE",
-    "デブの笑顔は周りの温度を2度上げる。物理的に。🍖 #DEVPARADE",
     "人生、軽く生きるな。重く生きろ。🍖 #DEVPARADE",
     "「太い」=「器が大きい」=「人間ができてる」。Q.E.D.🍖 #DEVPARADE",
     "体重より言葉の重みで勝負しろ。俺たちはどっちも重い。🍖 #DEVPARADE",

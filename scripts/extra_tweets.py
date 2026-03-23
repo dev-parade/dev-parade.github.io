@@ -550,27 +550,6 @@ DEV PARADE、2026年再結成。
 
 #DEVPARADE #デブパレード""",
 
-    f"""【緊急】
-DEV PARADEがARABAKI ROCK FEST.26に出演決定。
-
-フェスの重量制限が
-心配されている。
-
-ステージ、大丈夫？🍖
-
-#DEVPARADE #ARABAKI""",
-
-    f"""【ARABAKI ROCK FEST.26】
-
-DEV PARADE出演決定！
-
-他のバンドがリハで音を確認する中、
-俺たちはステージの耐荷重を確認する。
-
-プロ意識が違う。🍖
-
-#DEVPARADE #ARABAKI""",
-
     # ===== 🎯 バズ狙い短文シリーズ =====
     f"""デブの汗は
 努力の証。🍖
@@ -936,17 +915,8 @@ XXL → フィット
 
 #DEVPARADE""",
 
-    f"""結成時合計570kg、
-メジャーデビュー、
-NARUTOのED、
-HEY!HEY!HEY!出演、
-SUMMER SONIC出演、
-15年ぶりの再結成、
-ARABAKI出演決定。
-
-全部デブがやった。🍖
-
-#DEVPARADE""",
+    "結成時570kg、NARUTO ED、HEY!HEY!HEY!、SUMMER SONIC、再結成。全部デブがやった。🍖 #DEVPARADE",
+"",
 
     f"""太って後悔した日: 0日
 太って良かった日: 毎日
@@ -975,18 +945,7 @@ ARABAKI出演決定。
 #DEVPARADE #デブパレード""",
 
     # ===== 🎪 イベント告知風 =====
-    f"""ARABAKI ROCK FEST.26で
-DEV PARADEを見たら
-
-「デブだ」じゃなくて
-「かっこいいデブだ」って
-言ってくれ。
-
-…やっぱ「デブだ」でもいい。
-存在に気づいてくれるだけで嬉しい。🍖
-
-#DEVPARADE #ARABAKI""",
-
+    # ===== 🎸 演奏・ライブ哲学 =====
     f"""ライブTシャツのサイズ展開:
 
 普通のバンド: S/M/L/XL

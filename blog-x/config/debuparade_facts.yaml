@@ -39,7 +39,7 @@ members:
     role: "Guitar"
     weight_2008: "105kg"
     current_weight: "不明（非公開）"
-    notes: ""
+    notes: "バンドの発起人。メンバーは元々知り合いや紹介で集まっており、ネットでの募集は一切行っていない。"
 
   - name: "ぺー"
     role: "Bass"
@@ -59,9 +59,7 @@ ex_members:
     weight_2008: "103kg"
     notes: ""
 
-upcoming_events:
-  - event: "ARABAKI ROCK FEST.26"
-    status: "出演予定"
+upcoming_events: []
 
 # --- ツイート生成ルール ---
 rules:

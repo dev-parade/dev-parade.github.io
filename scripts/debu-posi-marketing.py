@@ -235,10 +235,37 @@ def get_x_client():
     )
 
 
+def is_hallucination_suspected(text):
+    """
+    ツイート内容に捏造（ハルシネーション）の疑いがあるかチェック。
+    """
+    suspicious_keywords = [
+        "ネットで募集", "インターネットで募集", "結成理由", "結成当初", 
+        "アラバキ", "ARABAKI", "出演決定", "応募した", "募集した",
+        "解散理由", "入団テスト", "逸話", "事実まとめ",
+        "弟子募集中", "メンバー募集", "新メンバー"
+    ]
+    for kw in suspicious_keywords:
+        if kw in text:
+            return True
+    return False
+
+
 def post_promo_tweet(client, campaign):
     """告知ツイートを投稿"""
     tweets = PROMO_TWEETS.get(campaign, PROMO_TWEETS["scheduled"])
+    
+    # ハルシネーションチェックを行いつつツイートを選択
     tweet_text = random.choice(tweets)
+    if is_hallucination_suspected(tweet_text):
+        print(f"⚠️ [GUARDRAIL] Hallucination suspected in template: {tweet_text[:30]}...")
+        # テンプレートに問題がある場合は別の候補を探す
+        safe_tweets = [t for t in tweets if not is_hallucination_suspected(t)]
+        if safe_tweets:
+            tweet_text = random.choice(safe_tweets)
+        else:
+            print("❌ No safe tweets found in this campaign. Aborting.")
+            return {"text": tweet_text, "id": None, "status": "aborted (hallucination)"}
 
     print(f"Campaign: {campaign}")
     print(f"Tweet ({len(tweet_text)} chars):")

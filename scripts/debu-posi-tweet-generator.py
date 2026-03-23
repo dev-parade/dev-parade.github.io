@@ -142,6 +142,29 @@ DAILY_TWEETS_BASE = [
 
 #ポジデブBot #DEVPARADE""",
 
+    f"""最新AI『FAT GPTwo』がついに稼働。
+
+F: Fat
+G: Generative
+P: Positivity
+T: Transformer
+
+ネガティブな発言を
+脂肪と愛に変換する
+DEV PARADE独自の次世代エンジン。🍖
+
+#FATGPTwo #ポジデブBot""",
+
+    f"""「GPTを（wo）もっと脂ぎらせろ！」
+というユーザーの要望に応えた
+最新モデル『FAT GPTwo』。
+
+生成するのは文章じゃない。
+ポジティブなマインドと、
+確かな存在感（脂肪）だ。🍖
+
+#FATGPTwo #DEVPARADE""",
+
     # ===== 🎤 自虐→痛快反転系 =====
     f"""面接で「体力に自信は？」って聞かれた。
 
@@ -1911,8 +1934,15 @@ def enhance_tweet_with_mechanics(text):
 
 
 def tweet_hash(text):
-    """ツイートのハッシュ値を生成（重複チェック用）"""
-    return hashlib.md5(text.strip().encode()).hexdigest()[:12]
+    """ツイートのハッシュ値を生成（重複チェック用）
+    空白や改行を無視して正規化することで、微細な差異による重複を防止。
+    """
+    import re
+    # 正規化: スペース、改行、タブ、全角スペースを除去
+    normalized = re.sub(r'\s+', '', text.strip())
+    # 記号も一部除去して判定を厳しくする
+    normalized = re.sub(r'[!！?？.。🍖#＃]', '', normalized)
+    return hashlib.md5(normalized.encode()).hexdigest()[:12]
 
 
 def load_posted():
@@ -2105,7 +2135,9 @@ def is_hallucination_suspected(text):
     """
     suspicious_keywords = [
         "ネットで募集", "インターネットで募集", "結成理由", "結成当初", 
-        "解散理由", "入団テスト", "逸話", "事実まとめ"
+        "アラバキ", "ARABAKI", "出演決定", "応募した", "募集した",
+        "解散理由", "入団テスト", "逸話", "事実まとめ",
+        "弟子募集中", "メンバー募集", "新メンバー"
     ]
     # これらのキーワードが含まれていても、公式HP(index.html)にある内容は許可されるべきだが、
     # 自動ボットとしては安全側に倒して警告または除外を検討する。
@@ -2116,24 +2148,33 @@ def is_hallucination_suspected(text):
 
 
 def main():
+    # ツイート選択
     if CAMPAIGN == "scheduled":
-        # ハルシネーションの疑いがないものを選ぶまで最大10回試行
-        selected = None
-        for _ in range(10):
-            selected = select_smart_tweet()
-            if not is_hallucination_suspected(selected["text"]):
-                break
-            print(f"⚠️ [GUARDRAIL] Hallucination suspected in tweet, retrying...: {selected['text'][:30]}...")
-        else:
-            # 10回失敗しても選ぶ（デッドロック防止）
-            if not selected:
-                selected = select_smart_tweet()
-        
+        selected = select_smart_tweet()
         tweet_text = selected["text"]
     else:
         tweets = TWEETS.get(CAMPAIGN, DAILY_TWEETS)
         tweet_text = random.choice(tweets)
         selected = {"text": tweet_text, "hash": tweet_hash(tweet_text), "score": 0}
+
+    # ハルシネーションチェック（全キャンペーン対象に移動）
+    if is_hallucination_suspected(tweet_text):
+        print(f"⚠️ [GUARDRAIL] Hallucination suspected in tweet: {tweet_text[:30]}...")
+        if CAMPAIGN == "scheduled":
+            # 別のツイートを再選択（最大5回）
+            for _ in range(5):
+                selected = select_smart_tweet()
+                tweet_text = selected["text"]
+                if not is_hallucination_suspected(tweet_text):
+                    break
+            else:
+                # それでもダメなら停止
+                print("❌ Could not find a safe tweet after 5 retries. Stopping.")
+                return
+        else:
+            # 他のキャンペーンなら停止
+            print(f"❌ Aborting {CAMPAIGN} post due to suspicious content.")
+            return
 
     print(f"\nCampaign: {CAMPAIGN}")
 

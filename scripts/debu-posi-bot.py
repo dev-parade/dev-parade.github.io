@@ -134,12 +134,18 @@ def get_ai_response(tweet_text):
 以下のツイートに対して、デブをポジティブに肯定するリプライを1つだけ書いてください。
 
 条件:
-- 280文字以内（日本語）
-- ユーモアと温かさを込める
-- 「デブは才能」「脂肪は努力の結晶」的なポジティブ変換
-- 最後に 🍖 と #ポジデブ #DEVPARADE を付ける
-- 相手を傷つけない、上から目線にならない
-- 押し付けがましくない
+- 以下の【事実】のみを使用し、捏造をしないこと
+- 嘘の逸話（ネットで募集した、特定のフェス（ARABAKI等）に出た等）を捏造しないこと
+- ネットでのメンバー募集は一切行っていない（元々知り合いや紹介）。これを嘘で書かないこと
+- 迷ったら「デブは最高」という精神論に徹すること
+
+【事実】
+- メンバー全員90kg超。
+- 2006年結成、2008年ソニーからメジャーデビュー。
+- NARUTO ED「バッチコイ!!!」、HEY!HEY!HEY!出演、SUMMER SONIC 2009出演。
+- 2011年解散（理由はメンバーのダイエット成功）、2026年再結成（リバウンド）。
+- ugazinはギター/作曲担当で「発起人（リーダー的存在）」。
+- メンバーは全員、友人関係や紹介で集まった。ネット募集はしていない。
 
 ツイート: {tweet_text}"""
             }],
@@ -171,6 +177,23 @@ def select_response(tweet_text):
 def select_member():
     """ランダムにメンバーを選択"""
     return random.choice(MEMBERS)
+
+
+def is_hallucination_suspected(text):
+    """
+    ツイート内容に捏造（ハルシネーション）の疑いがあるかチェックする。
+    AI生成時に嘘の事実を混ぜるのを防ぐための最終防衛ライン。
+    """
+    suspicious_keywords = [
+        "ネットで募集", "インターネットで募集", "結成理由", "結成当初", 
+        "アラバキ", "ARABAKI", "出演決定", "応募した", "募集した",
+        "解散理由", "入団テスト", "逸話", "事実まとめ",
+        "弟子募集中", "メンバー募集", "新メンバー"
+    ]
+    for kw in suspicious_keywords:
+        if kw in text:
+            return True
+    return False
 
 
 def get_last_id():
@@ -239,6 +262,13 @@ def main():
                 # レスポンス生成
                 response = select_response(tweet.text)
                 member = select_member()
+
+                # ハルシネーションチェック
+                if is_hallucination_suspected(response):
+                    print(f"⚠️ Hallucination suspected in response: {response}")
+                    # 疑わしい場合はテンプレートの汎用レスポンスに差し替え
+                    response = random.choice(RESPONSES["generic"])
+                    print(f"🔄 Replaced with safe response: {response}")
 
                 print(f"\n--- Tweet #{reply_count + 1} ---")
                 print(f"Original: {tweet.text[:100]}...")
