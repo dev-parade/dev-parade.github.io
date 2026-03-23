@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="DEV PARADE | メンバー全員90kg超ヘヴィメタボバンド 15年ぶり復活">
   <meta property="og:description"
-    content="NARUTOエンディング「バッチコイ!!!」のデブパレードが15年ぶりに復活！メンバー全員90kg以上＆痛風ホルダー。2026.02.06 再結成ワンマン開催。">
+    content="NARUTOエンディング「バッチコイ!!!」のデブパレードが15年ぶりに復活！メンバー全員90kg以上＆<span data-i18n="member-gout">痛風ホルダー</span>。2026.02.06 再結成ワンマン開催。">
   <meta property="og:image" content="https://devparade.jp/assets/member-group.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -21,7 +21,7 @@
   <!-- OGP: X (Twitter) Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="DEV PARADE | メンバー全員90kg超ヘヴィメタボバンド 15年ぶり復活">
-  <meta name="twitter:description" content="NARUTOエンディング「バッチコイ!!!」のデブパレードが15年ぶりに復活！メンバー全員90kg以上＆痛風ホルダー。">
+  <meta name="twitter:description" content="NARUTOエンディング「バッチコイ!!!」のデブパレードが15年ぶりに復活！メンバー全員90kg以上＆<span data-i18n="member-gout">痛風ホルダー</span>。">
   <meta name="twitter:image" content="https://devparade.jp/assets/member-group.jpg">
   <meta name="twitter:site" content="@dev_parade">
   <!-- SEO -->
@@ -1132,18 +1132,18 @@
       <div class="lang-selector" style="margin-left: 1rem; margin-right: 1rem; display: flex; gap: 0.5rem;"><select onchange="setLanguage(this.value)" style="background: #000; color: #fff; border: 1px solid #d32f2f; padding: 2px 5px; font-size: 0.75rem; border-radius: 4px; cursor: pointer;"><option value="ja">JP</option><option value="en">EN</option><option value="es">ES</option><option value="cn">CN</option></select></div><ul id="navMenu">
         <li><a href="#about" data-i18n="nav-about">About</a></li>
         <li><a href="#members" data-i18n="nav-members">Members</a></li>
-        <li><a href="#goroku">DEV 語録 <span style="font-size:0.6rem; opacity:0.6;">(Quotes)</span></a></li>
-        <li><a href="#live">Live</a></li>
-        <li><a href="#video">Video</a></li>
-        <li><a href="#discography">Discography</a></li>
-        <li><a href="lyrics/index.html">Lyrics</a></li>
-        <li><a href="#history">History</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#goods">Goods</a></li>
+        <li><a href="#goroku" data-i18n="nav-goroku">DEV 語録 <span style="font-size:0.6rem; opacity:0.6;">(Quotes)</span></a></li>
+        <li><a href="#live" data-i18n="nav-live">Live</a></li>
+        <li><a href="#video" data-i18n="nav-video">Video</a></li>
+        <li><a href="#discography" data-i18n="nav-discography">Discography</a></li>
+        <li><a href="lyrics/index.html" data-i18n="nav-lyrics">Lyrics</a></li>
+        <li><a href="#history" data-i18n="nav-history">History</a></li>
+        <li><a href="#gallery" data-i18n="nav-gallery">Gallery</a></li>
+        <li><a href="#goods" data-i18n="nav-goods">Goods</a></li>
         <li><a href="debu-bot.html" style="color:#ffd700;">🍖 FAT GPT <span style="font-size:0.6rem; opacity:0.8;">(AI)</span></a></li>
         <li><a href="#global" style="color:var(--red); font-weight:bold;">WORLD 🌍</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#links">Links</a></li>
+        <li><a href="#news" data-i18n="nav-news">News</a></li>
+        <li><a href="#links" data-i18n="nav-links">Links</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -1175,7 +1175,7 @@
   <!-- ===== VIRAL CATCHCOPY ===== -->
   <div class="viral-banner">
     <div class="catch">
-      <span class="em">メンバー全員90kg超</span>、全員<span class="yellow">痛風ホルダー</span>。<br>
+      <span class="em">メンバー全員90kg超</span>、全員<span class="yellow"><span data-i18n="member-gout">痛風ホルダー</span></span>。<br>
       <span class="em">NARUTO</span>エンディングバンドが<span class="yellow">15年ぶり</span>に帰ってきた。<br>
       デブじゃなきゃ入れない。<span class="em">90kg以上</span>限定バンド。
     </div>
@@ -1251,7 +1251,7 @@
       <div class="member-card reveal">
         <img src="assets/member-hanzi.jpg" alt="ハンサム判治" class="member-img">
         <div class="member-info">
-          <div class="member-part">Vocal / Leader</div>
+          <div class="member-part" data-i18n="member-vocal">Vocal / Leader</div>
           <div class="member-name">ハンサム判治</div>
           <div class="member-name-en">Handsome Hanzi</div>
           <div class="member-acts">ハンサム兄弟 / HANZI BAND</div>
@@ -1266,11 +1266,11 @@
       <div class="member-card reveal">
         <img src="assets/member-coyass.jpg" alt="COYASS" class="member-img">
         <div class="member-info">
-          <div class="member-part">MC</div>
+          <div class="member-part" data-i18n="member-mc">MC</div>
           <div class="member-name">COYASS</div>
           <div class="member-name-en">Dr.COYASS - D.D.S. Ph.D.</div>
-          <div class="member-acts">MIC BANDITZ / E.P.O / 洪水 / Malignant Co.<br>歯科医師・歯学博士<br><span
-              style="color:var(--red); font-size:0.65rem;">痛風ホルダー</span></div>
+          <div class="member-acts">MIC BANDITZ / E.P.O / 洪水 / Malignant Co.<br><span data-i18n="member-coyass-job">歯科医師・歯学博士</span><br><span
+              style="color:var(--red); font-size:0.65rem;"><span data-i18n="member-gout">痛風ホルダー</span></span></div>
           <div class="member-sns">
             <a href="https://x.com/coyass" target="_blank">X</a>
             <a href="https://www.instagram.com/dr.coyass/" target="_blank" rel="noopener">Instagram</a>
@@ -1282,11 +1282,11 @@
       <div class="member-card reveal">
         <img src="assets/member-ugazin.jpg" alt="ugazin" class="member-img">
         <div class="member-info">
-          <div class="member-part">Guitar / Songwriter</div>
+          <div class="member-part" data-i18n="member-guitar">Guitar / Songwriter</div>
           <div class="member-name">ugazin</div>
           <div class="member-name-en">Ugazin</div>
           <div class="member-acts">コロバ・ミルク・バー <br>ex.MONG HANG / ex.渡瀬マキ<br>バンド発起人<br><span
-              style="color:var(--red); font-size:0.65rem;">痛風ホルダー</span></div>
+              style="color:var(--red); font-size:0.65rem;"><span data-i18n="member-gout">痛風ホルダー</span></span></div>
           <div class="member-sns">
             <a href="https://x.com/ugazin" target="_blank">X</a>
             <a href="https://www.instagram.com/ugazin/" target="_blank" rel="noopener">Instagram</a>
@@ -1298,11 +1298,11 @@
       <div class="member-card new-member reveal">
         <img src="assets/member-bass.jpg" alt="ぺー" class="member-img">
         <div class="member-info">
-          <div class="member-part">Bass</div>
+          <div class="member-part" data-i18n="member-bass">Bass</div>
           <div class="member-name">ぺー</div>
           <div class="member-name-en">Pe</div>
-          <div class="member-acts">TAPE ME WONDER / Vanityyyy<br>ex.BRANCO<br>2026年〜新メンバー<br><span
-              style="color:var(--red); font-size:0.65rem;">痛風ホルダー</span></div>
+          <div class="member-acts">TAPE ME WONDER / Vanityyyy<br>ex.BRANCO<br><span data-i18n="member-new">2026年〜新メンバー</span><br><span
+              style="color:var(--red); font-size:0.65rem;"><span data-i18n="member-gout">痛風ホルダー</span></span></div>
           <div class="member-sns">
             <a href="https://x.com/tapemewonder" target="_blank" rel="noopener">X (TMW)</a>
             <a href="https://www.hookyrecords.com/tape-me-wonder" target="_blank" rel="noopener">Hooky Records</a>
@@ -1313,11 +1313,11 @@
       <div class="member-card reveal">
         <img src="assets/member-tah.jpg" alt="TAH" class="member-img">
         <div class="member-info">
-          <div class="member-part">Drums</div>
+          <div class="member-part" data-i18n="member-drums">Drums</div>
           <div class="member-name">TAH</div>
           <div class="member-name-en">Tah</div>
-          <div class="member-acts">元GQ06 / lolMusika<br>元初代リーダー（最重量）<br><span
-              style="color:var(--red); font-size:0.65rem;">痛風ホルダー</span></div>
+          <div class="member-acts">元GQ06 / lolMusika<br><span data-i18n="member-tah-desc">元初代リーダー（最重量）</span><br><span
+              style="color:var(--red); font-size:0.65rem;"><span data-i18n="member-gout">痛風ホルダー</span></span></div>
           <div class="member-sns">
             <a href="https://x.com/lolMusika" target="_blank" rel="noopener">X (lolMusika)</a>
           </div>
@@ -1334,16 +1334,16 @@
 
     <!-- Tab Buttons -->
     <div class="goroku-tabs reveal">
-      <button class="goroku-tab-btn active" onclick="openGoroku(event, 'row-a')">あ行</button>
-      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-ka')">か行</button>
-      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-sa')">さ行</button>
-      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-ta')">た行</button>
-      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-na')">な行</button>
-      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-ha')">は行</button>
-      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-ma')">ま行</button>
-      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-ya')">や行</button>
-      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-ra')">ら行</button>
-      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-wa')">わ行</button>
+      <button class="goroku-tab-btn active" onclick="openGoroku(event, 'row-a')"><span data-i18n="category-a">あ行</span></button>
+      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-ka')"><span data-i18n="category-ka">か行</span></button>
+      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-sa')"><span data-i18n="category-sa">さ行</span></button>
+      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-ta')"><span data-i18n="category-ta">た行</span></button>
+      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-na')"><span data-i18n="category-na">な行</span></button>
+      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-ha')"><span data-i18n="category-ha">は行</span></button>
+      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-ma')"><span data-i18n="category-ma">ま行</span></button>
+      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-ya')"><span data-i18n="category-ya">や行</span></button>
+      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-ra')"><span data-i18n="category-ra">ら行</span></button>
+      <button class="goroku-tab-btn" onclick="openGoroku(event, 'row-wa')"><span data-i18n="category-wa">わ行</span></button>
     </div>
 
     <!-- Dynamic Goroku Content -->
@@ -1370,7 +1370,7 @@
         <div class="live-info">
           <h3>ハッピー乱デブー 2026 〜再結成記念ワンマン〜</h3>
           <div class="venue">下北沢 Club Que</div>
-          <span class="badge badge-soldout">SOLD OUT</span>
+          <span class="badge badge-soldout" data-i18n="soldout">SOLD OUT</span>
         </div>
       </div>
 
@@ -1384,7 +1384,7 @@
         <div class="live-info">
           <h3>DEV PARADE GRAND FESTIVAL</h3>
           <div class="venue">国立代々木体育館</div>
-          <span class="badge badge-upcoming">UPCOMING</span>
+          <span class="badge badge-upcoming" data-i18n="upcoming">UPCOMING</span>
         </div>
       </div>
 
@@ -1585,43 +1585,43 @@
     <div class="timeline">
       <div class="timeline-item reveal">
         <div class="timeline-year">2006</div>
-        <div class="timeline-text">ugazinが腕利きのデブミュージシャン（音楽仲間）に声をかけ、総体重570kgの重量級バンドを結成。</div>
+        <div class="timeline-text" data-i18n="history-2006">ugazinが腕利きのデブミュージシャン（音楽仲間）に声をかけ、総体重570kgの重量級バンドを結成。</div>
       </div>
       <div class="timeline-item reveal">
         <div class="timeline-year">2007</div>
-        <div class="timeline-text">ライブ活動開始。メンバー全員90kg超の圧倒的存在感で話題に。</div>
+        <div class="timeline-text" data-i18n="history-2007">ライブ活動開始。メンバー全員90kg超の圧倒的存在感で話題に。</div>
       </div>
       <div class="timeline-item reveal">
         <div class="timeline-year">2008.06</div>
-        <div class="timeline-text">DefSTAR Records（ソニー）から「メジャー・デブー」。1stシングル「Body&Soul / cosmic mind」発売。</div>
+        <div class="timeline-text" data-i18n="history-2008-06">DefSTAR Records（ソニー）から「メジャー・デブー」。1stシングル「Body&Soul / cosmic mind」発売。</div>
       </div>
       <div class="timeline-item reveal">
         <div class="timeline-year">2008.07</div>
-        <div class="timeline-text">フジテレビ「HEY!HEY!HEY! MUSIC CHAMP」出演。</div>
+        <div class="timeline-text" data-i18n="history-2008-07">フジテレビ「HEY!HEY!HEY! MUSIC CHAMP」出演。</div>
       </div>
       <div class="timeline-item reveal">
         <div class="timeline-year">2008.08</div>
-        <div class="timeline-text">SUMMER SONIC 2008 大阪エンタメステージ出演。</div>
+        <div class="timeline-text" data-i18n="history-2008-08">SUMMER SONIC 2008 大阪エンタメステージ出演。</div>
       </div>
       <div class="timeline-item reveal">
         <div class="timeline-year">2009.03</div>
-        <div class="timeline-text">2ndシングル「バッチコイ!!!」発売。NARUTO -ナルト- 疾風伝 EDテーマに採用。</div>
+        <div class="timeline-text" data-i18n="history-2009-03">2ndシングル「バッチコイ!!!」発売。NARUTO -ナルト- 疾風伝 EDテーマに採用。</div>
       </div>
       <div class="timeline-item reveal">
         <div class="timeline-year">2011.02</div>
-        <div class="timeline-text">解散。「メンバーが痩せてメタボを名乗れなくなった」「普通（サイズ）の男の子に戻ります」</div>
+        <div class="timeline-text" data-i18n="history-2011-02">解散。「メンバーが痩せてメタボを名乗れなくなった」「普通（サイズ）の男の子に戻ります」</div>
       </div>
       <div class="timeline-item reveal">
         <div class="timeline-year">2025.11</div>
-        <div class="timeline-text">ugazin主催ライブ（下北沢Club Que）にシークレットアクトとして15年ぶりにステージへ。</div>
+        <div class="timeline-text" data-i18n="history-2025-11">ugazin主催ライブ（下北沢Club Que）にシークレットアクトとして15年ぶりにステージへ。</div>
       </div>
       <div class="timeline-item highlight reveal">
         <div class="timeline-year">2026.02.06</div>
-        <div class="timeline-text">15年ぶりの再結成を正式発表！新メンバー"ぺー"を迎え、下北沢Club Queでワンマンライブ開催。初のフルアルバム制作中であることも発表。</div>
+        <div class="timeline-text" data-i18n="history-2026-02">15年ぶりの再結成を正式発表！新メンバー"ぺー"を迎え、下北沢Club Queでワンマンライブ開催。初のフルアルバム制作中であることも発表。</div>
       </div>
       <div class="timeline-item highlight reveal">
         <div class="timeline-year">2026.05.09</div>
-        <div class="timeline-text">国立代々木体育館でのグランドフェスティバル開催予定。</div>
+        <div class="timeline-text" data-i18n="history-2026-05">国立代々木体育館でのグランドフェスティバル開催予定。</div>
       </div>
     </div>
   </section>
@@ -2111,7 +2111,7 @@
 // URLコピー機能（必要なデータを内包した最新版）
     document.getElementById('copyURL').addEventListener('click', () => {
       const siteURL = 'https://devparade.jp/';
-      const shareText = 'メンバー全員90kg超、全員痛風ホルダー。NARUTOエンディングバンド「デブパレード」が15年ぶりに復活！';
+      const shareText = 'メンバー全員90kg超、全員<span data-i18n="member-gout">痛風ホルダー</span>。NARUTOエンディングバンド「デブパレード」が15年ぶりに復活！';
       
       navigator.clipboard.writeText(siteURL + '\n' + shareText).then(() => {
         const btn = document.getElementById('copyURL');
@@ -2126,65 +2126,237 @@
 
 <script>
 const translations = {
-  'ja': {
-    'nav-about': 'About',
-    'nav-members': 'Members',
-    'hero-sub': '全員90kg超 — 伝説のヘヴィメタボバンド、15年ぶりの復活',
-    'about-title': 'ABOUT <span>DEV PARADE</span>',
-    'about-sub': 'デブパレードとは',
-    'members-title': 'THE <span>MEMBERS</span>',
-    'members-sub': 'メンバー紹介',
-    'goroku-title': 'DEV <span>語録</span>',
-    'goroku-sub': 'デブ語録 — 伝統と革新のメタボリズム',
-    'live-title': 'LIVE <span>SCHEDULE</span>',
-    'live-sub': 'ライブ情報',
-    'video-title': 'MUSIC <span>VIDEO</span>',
-    'video-sub': '公式ミュージックビデオ'
+  "ja": {
+    "nav-about": "About",
+    "nav-members": "Members",
+    "nav-goroku": "DEV 語録 <span style=\"font-size:0.6rem; opacity:0.6;\">(Quotes)</span>",
+    "nav-live": "Live",
+    "nav-video": "Video",
+    "nav-discography": "Discography",
+    "nav-lyrics": "Lyrics",
+    "nav-history": "History",
+    "nav-gallery": "Gallery",
+    "nav-goods": "Goods",
+    "nav-news": "News",
+    "nav-links": "Links",
+    "hero-sub": "全員90kg超 — 伝説のヘヴィメタボバンド、15年ぶりの復活",
+    "about-title": "ABOUT <span>DEV PARADE</span>",
+    "about-sub": "デブパレードとは",
+    "members-title": "THE <span>MEMBERS</span>",
+    "members-sub": "メンバー紹介",
+    "goroku-title": "DEV <span>語録</span>",
+    "goroku-sub": "デブ語録 — 伝統と革新のメタボリズム",
+    "live-title": "LIVE <span>SCHEDULE</span>",
+    "live-sub": "ライブ情報",
+    "video-title": "MUSIC <span>VIDEO</span>",
+    "video-sub": "公式ミュージックビデオ",
+    "member-vocal": "Vocal / Leader",
+    "member-mc": "MC",
+    "member-guitar": "Guitar / Songwriter",
+    "member-bass": "Bass",
+    "member-drums": "Drums",
+    "member-gout": "痛風ホルダー",
+    "member-coyass-job": "歯科医師・歯学博士",
+    "member-new": "2026年〜新メンバー",
+    "member-tah-desc": "元初代リーダー（最重量）",
+    "category-a": "あ行",
+    "category-ka": "か行",
+    "category-sa": "さ行",
+    "category-ta": "た行",
+    "category-na": "な行",
+    "category-ha": "は行",
+    "category-ma": "ま行",
+    "category-ya": "や行",
+    "category-ra": "ら行",
+    "category-wa": "わ行",
+    "soldout": "SOLD OUT",
+    "upcoming": "UPCOMING",
+    "history-title": "HISTO<span>RY</span>",
+    "history-sub": "バンドの歴史",
+    "history-2006": "ugazinが腕利きのデブミュージシャン（音楽仲間）に声をかけ、総体重570kgの重量級バンドを結成。",
+    "history-2007": "ライブ活動開始。メンバー全員90kg超の圧倒的存在感で話題に。",
+    "history-2008-06": "DefSTAR Records（ソニー）から「メジャー・デブー」。1stシングル「Body&Soul / cosmic mind」発売。",
+    "history-2008-07": "フジテレビ「HEY!HEY!HEY! MUSIC CHAMP」出演。",
+    "history-2008-08": "SUMMER SONIC 2008 大阪エンタメステージ出演。",
+    "history-2009-03": "2ndシングル「バッチコイ!!!」発売。NARUTO -ナルト- 疾風伝 EDテーマに採用。",
+    "history-2011-02": "解散。「メンバーが痩せてメタボを名乗れなくなった」「普通（サイズ）の男の子に戻ります」",
+    "history-2025-11": "ugazin主催ライブ（下北沢Club Que）にシークレットアクトとして15年ぶりにステージへ。",
+    "history-2026-02": "15年ぶりの再結成を正式発表！新メンバー\"ぺー\"を迎え、下北沢Club Queでワンマンライブ開催。初のフルアルバム制作中であることも発表。",
+    "history-2026-05": "国立代々木体育館でのグランドフェスティバル開催予定。"
   },
-  'en': {
-    'nav-about': 'About',
-    'nav-members': 'Members',
-    'hero-sub': 'All members 90kg+ — Legendary METABO band reunion after 15 years',
-    'about-title': 'ABOUT <span>DEV PARADE</span>',
-    'about-sub': 'What is DEV PARADE?',
-    'members-title': 'THE <span>MEMBERS</span>',
-    'members-sub': 'Member Profile',
-    'goroku-title': 'DEV <span>QUOTES</span>',
-    'goroku-sub': 'DEV QUOTES — Metabolism of Tradition & Innovation',
-    'live-title': 'LIVE <span>SCHEDULE</span>',
-    'live-sub': 'Live Information',
-    'video-title': 'MUSIC <span>VIDEO</span>',
-    'video-sub': 'Official Music Videos'
+  "en": {
+    "nav-about": "About",
+    "nav-members": "Members",
+    "nav-goroku": "Quotes",
+    "nav-live": "Live",
+    "nav-video": "Video",
+    "nav-discography": "Discography",
+    "nav-lyrics": "Lyrics",
+    "nav-history": "History",
+    "nav-gallery": "Gallery",
+    "nav-goods": "Goods",
+    "nav-news": "News",
+    "nav-links": "Links",
+    "hero-sub": "All 90kg+ — Legendary METABO band reunion after 15 years",
+    "about-title": "ABOUT <span>DEV PARADE</span>",
+    "about-sub": "About the band",
+    "members-title": "THE <span>MEMBERS</span>",
+    "members-sub": "Profiles",
+    "goroku-title": "DEV <span>QUOTES</span>",
+    "goroku-sub": "DEV QUOTES — Metabolism is Power",
+    "live-title": "LIVE <span>SCHEDULE</span>",
+    "live-sub": "Upcoming Lives",
+    "video-title": "MUSIC <span>VIDEO</span>",
+    "video-sub": "Official Music Videos",
+    "member-vocal": "Vocal / Leader",
+    "member-mc": "MC / Rapper",
+    "member-guitar": "Guitar / Producer",
+    "member-bass": "Bass",
+    "member-drums": "Drums",
+    "member-gout": "Gout Holder",
+    "member-coyass-job": "Dentist / Ph.D.",
+    "member-new": "New Member (from 2026)",
+    "member-tah-desc": "Former 1st Leader (Heaviest)",
+    "category-a": "Row A",
+    "category-ka": "Row K",
+    "category-sa": "Row S",
+    "category-ta": "Row T",
+    "category-na": "Row N",
+    "category-ha": "Row H",
+    "category-ma": "Row M",
+    "category-ya": "Row Y",
+    "category-ra": "Row R",
+    "category-wa": "Row W",
+    "soldout": "SOLD OUT",
+    "upcoming": "UPCOMING",
+    "history-title": "HISTO<span>RY</span>",
+    "history-sub": "Band History",
+    "history-2006": "ugazin formed a heavy 570kg band with skilled oversized musicians.",
+    "history-2007": "Started live shows. Gained fame with all members over 90kg.",
+    "history-2008-06": "Major debut from DefSTAR Records (Sony). Released \"Body&Soul\".",
+    "history-2008-07": "Appeared on \"HEY!HEY!HEY! MUSIC CHAMP\".",
+    "history-2008-08": "Performed at SUMMER SONIC 2008 Osaka Stage.",
+    "history-2009-03": "Released \"Bacchikoi!!!\". NARUTO Shippuden ED theme.",
+    "history-2011-02": "Disbanded. \"Members lost weight and quit Metabo.\"",
+    "history-2025-11": "Secret reunion stage at ugazin's live event after 15 years.",
+    "history-2026-02": "Official reunion! One-man live with Pe. 1st Album in progress.",
+    "history-2026-05": "Grand Festival at Yoyogi National Gymnasium."
   },
-  'es': {
-    'nav-about': 'Acerca de',
-    'nav-members': 'Miembros',
-    'hero-sub': 'Todos 90kg+ — Reunión legendaria de la banda METABO tras 15 años',
-    'about-title': 'SOBRE <span>DEV PARADE</span>',
-    'about-sub': '¿Qué es DEV PARADE?',
-    'members-title': 'LOS <span>MIEMBROS</span>',
-    'members-sub': 'Perfil de Miembros',
-    'goroku-title': 'DEV <span>PROVERBIOS</span>',
-    'goroku-sub': 'PROVERBIOS DEV — Metabolismo de Tradición e Innovación',
-    'live-title': 'PRÓXIMOS <span>VIVOS</span>',
-    'live-sub': 'Información en Vivo',
-    'video-title': 'VIDEO <span>MUSICAL</span>',
-    'video-sub': 'Videos Musicales Oficiales'
+  "es": {
+    "nav-about": "Sobre",
+    "nav-members": "Miembros",
+    "nav-goroku": "Proverbios",
+    "nav-live": "Vivo",
+    "nav-video": "Video",
+    "nav-discography": "Discografía",
+    "nav-lyrics": "Letras",
+    "nav-history": "Historia",
+    "nav-gallery": "Galería",
+    "nav-goods": "Bienes",
+    "nav-news": "Noticias",
+    "nav-links": "Enlaces",
+    "hero-sub": "Todos 90kg+ — La legendaria banda METABO se reúne",
+    "about-title": "SOBRE <span>DEV PARADE</span>",
+    "about-sub": "Historia de la banda",
+    "members-title": "LOS <span>MIEMBROS</span>",
+    "members-sub": "Perfiles",
+    "goroku-title": "DEV <span>PROVERBIOS</span>",
+    "goroku-sub": "PROVERBIOS DEV — El metabolismo lo es todo",
+    "live-title": "PRÓXIMOS <span>VIVOS</span>",
+    "live-sub": "Calendario en Vivo",
+    "video-title": "VIDEO <span>MUSICAL</span>",
+    "video-sub": "Videos Musicales Oficiales",
+    "member-vocal": "Vocal / Líder",
+    "member-mc": "MC / Rapero",
+    "member-guitar": "Guitarra / Productor",
+    "member-bass": "Bajo",
+    "member-drums": "Batería",
+    "member-gout": "Titular de Gota",
+    "member-coyass-job": "Dentista / Doctorado",
+    "member-new": "Nuevo Miembro (2026)",
+    "member-tah-desc": "Ex Líder Principal (Más Pesado)",
+    "category-a": "Fila A",
+    "category-ka": "Fila K",
+    "category-sa": "Fila S",
+    "category-ta": "Fila T",
+    "category-na": "Fila N",
+    "category-ha": "Fila H",
+    "category-ma": "Fila M",
+    "category-ya": "Fila Y",
+    "category-ra": "Fila R",
+    "category-wa": "Fila W",
+    "soldout": "AGOTADO",
+    "upcoming": "PRÓXIMO",
+    "history-title": "HISTO<span>RIA</span>",
+    "history-sub": "Historia de la banda",
+    "history-2006": "ugazin formó una banda de 570kg con músicos de gran tamaño.",
+    "history-2007": "Comenzaron espectáculos en vivo. Fama con miembros de 90kg+.",
+    "history-2008-06": "Debut major de DefSTAR Records (Sony). Lanzamiento de \"Body&Soul\".",
+    "history-2008-07": "Aparición en \"HEY!HEY!HEY! MUSIC CHAMP\".",
+    "history-2008-08": "Actuación en SUMMER SONIC 2008 Osaka Stage.",
+    "history-2009-03": "Lanzamiento de \"Bacchikoi!!!\". Tema de NARUTO Shippuden.",
+    "history-2011-02": "Disuelto. \"Los miembros perdieron peso y dejaron Metabo.\"",
+    "history-2025-11": "Reunión secreta en el concierto de ugazin después de 15 años.",
+    "history-2026-02": "¡Reunión oficial! Concierto con Pe. 1er álbum en progreso.",
+    "history-2026-05": "Gran Festival en el Gimnasio Nacional Yoyogi."
   },
-  'cn': {
-    'nav-about': '关于',
-    'nav-members': '成员',
-    'hero-sub': '全员90kg以上 — 传说级重金代谢乐队15年后再结成',
-    'about-title': '关于 <span>DEV PARADE</span>',
-    'about-sub': '什么是 DEV PARADE？',
-    'members-title': '成员 <span>MEMBERS</span>',
-    'members-sub': '成员介绍',
-    'goroku-title': 'DEV <span>语录</span>',
-    'goroku-sub': 'DEV 语录 — 传统与创新的新陈代谢',
-    'live-title': '现场 <span>演出</span>',
-    'live-sub': '演出信息',
-    'video-title': '音乐 <span>录影带</span>',
-    'video-sub': '官方音乐视频'
+  "cn": {
+    "nav-about": "关于",
+    "nav-members": "成员",
+    "nav-goroku": "语录",
+    "nav-live": "现场",
+    "nav-video": "视频",
+    "nav-discography": "作品",
+    "nav-lyrics": "歌词",
+    "nav-history": "历史",
+    "nav-gallery": "图库",
+    "nav-goods": "周边",
+    "nav-news": "新闻",
+    "nav-links": "链接",
+    "hero-sub": "全员90kg以上 — 传说级重金代谢乐队15年后再结成",
+    "about-title": "关于 <span>DEV PARADE</span>",
+    "about-sub": "乐队介绍",
+    "members-title": "成员 <span>MEMBERS</span>",
+    "members-sub": "个人档案",
+    "goroku-title": "DEV <span>语录</span>",
+    "goroku-sub": "DEV 语录 — 新陈代谢即是力量",
+    "live-title": "现场 <span>演出</span>",
+    "live-sub": "演出日程",
+    "video-title": "音乐 <span>录影带</span>",
+    "video-sub": "官方音乐视频",
+    "member-vocal": "主唱 / 队长",
+    "member-mc": "MC / 说唱",
+    "member-guitar": "吉他 / 制作人",
+    "member-bass": "贝斯",
+    "member-drums": "鼓手",
+    "member-gout": "痛风持有者",
+    "member-coyass-job": "牙科医生 / 博士",
+    "member-new": "新成员 (2026年起)",
+    "member-tah-desc": "前代队长 (最重量级)",
+    "category-a": "A 行",
+    "category-ka": "K 行",
+    "category-sa": "S 行",
+    "category-ta": "T 行",
+    "category-na": "N 行",
+    "category-ha": "H 行",
+    "category-ma": "M 行",
+    "category-ya": "Y 行",
+    "category-ra": "R 行",
+    "category-wa": "W 行",
+    "soldout": "售罄",
+    "upcoming": "即将到来",
+    "history-title": "历<span>史</span>",
+    "history-sub": "乐队历史",
+    "history-2006": "ugazin 与技艺精湛的超大型音乐家组成了总重 570kg 的乐队。",
+    "history-2007": "开始现场演出。全员 90kg+ 的存在感成为话题。",
+    "history-2008-06": "DefSTAR Records (Sony) 出道。发行《Body&Soul》。",
+    "history-2008-07": "出演富士电视台《HEY!HEY!HEY! MUSIC CHAMP》。",
+    "history-2008-08": "SUMMER SONIC 2008 大阪站演出。",
+    "history-2009-03": "发行《Bacchikoi!!!》。《火影忍者疾风传》片尾曲。",
+    "history-2011-02": "解散。“成员变瘦了，不能再叫代谢了。”",
+    "history-2025-11": "15年后在 ugazin 的演唱会上秘密复出。",
+    "history-2026-02": "正式宣布复出！与新成员 Pe 举行个演。发行首张专辑。",
+    "history-2026-05": "代代木国立体育馆举行大祭。"
   }
 };
 
@@ -2205,7 +2377,6 @@ if (savedLang) {
   const selector = document.querySelector('.lang-selector select');
   if (selector) selector.value = savedLang;
 }
-</script>
-</body>
+</script>\n</body>
 
 </html>
