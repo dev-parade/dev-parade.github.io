@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """追加ツイート145個 - 歌詞深掘り＋新ネタ"""
 
-SITE_URL = "https://dev-parade.github.io/"
-BOT_URL = "https://dev-parade.github.io/debu-bot.html"
+SITE_URL = "https://devparade.jp/"
+BOT_URL = "https://devparade.jp/debu-bot.html"
 
 EXTRA_TWEETS = [
     # ===== 🎤 歌詞クロスオーバー =====

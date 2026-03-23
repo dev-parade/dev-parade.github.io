@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /lyrics/
 
-Sitemap: https://dev-parade.github.io/sitemap.xml
+Sitemap: https://devparade.jp/sitemap.xml

@@ -18,8 +18,8 @@ except ImportError:
     sys.exit(1)
 
 CAMPAIGN = os.environ.get("CAMPAIGN", "scheduled")
-BOT_URL = "https://dev-parade.github.io/debu-bot.html"
-SITE_URL = "https://dev-parade.github.io/"
+BOT_URL = "https://devparade.jp/debu-bot.html"
+SITE_URL = "https://devparade.jp/"
 YOUTUBE_URL = "https://youtube.com/playlist?list=PL0THYLU4QbDkldXStxeHXCfsTnas90AoP"
 
 # ===== 告知ツイートのバリエーション =====

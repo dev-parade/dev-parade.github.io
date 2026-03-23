@@ -50,8 +50,8 @@ def check_credentials():
     return True
 
 AUTO_POST_ENABLED = check_credentials()
-BOT_URL = "https://dev-parade.github.io/debu-bot.html"
-SITE_URL = "https://dev-parade.github.io/"
+BOT_URL = "https://devparade.jp/debu-bot.html"
+SITE_URL = "https://devparade.jp/"
 IG_URL = "https://www.instagram.com/dev.parade/"
 
 # ===== 追加ツイートの読み込み =====
