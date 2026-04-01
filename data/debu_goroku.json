@@ -295,6 +295,11 @@
       "word": "タチアガレ",
       "description": "腹は出てるが心は錦。涙を拭いて拳と箸を突き上げる、魂のメッセージ。",
       "is_update": true
+    },
+    {
+      "word": "DX",
+      "description": "Delicious Transformation（デリシャス・トランスフォーメーション）。大盛り化によって人生を劇的にアップデートする次世代の国家戦略。UPDATE",
+      "is_update": true
     }
   ],
   "na": [
@@ -418,6 +423,16 @@
     {
       "word": "パルフェ",
       "description": "インスリンを感じながら韻を踏み強化する、病的なまでに甘いラブソング（スイーツソング）。",
+      "is_update": true
+    },
+    {
+      "word": "PDP",
+      "description": "Posi-Dev Philosophy（ポジデブ哲学）。いじめを光の速さで肯定に変換し、自らの肉体を聖域化する究極のマインドセット。UPDATE",
+      "is_update": true
+    },
+    {
+      "word": "FAT BIBLE",
+      "description": "脂肪聖書。この世の全てのデブが救われるための黄金の教典。「第1章：汝、おかわりを恐れることなかれ」UPDATE",
       "is_update": true
     }
   ],
@@ -556,6 +571,16 @@
     {
       "word": "輪ゴム",
       "description": "かつてズボンのボタンの代わりに使われた伝説のアイテム。現在は弾け飛ぶため非推奨。",
+      "is_update": true
+    },
+    {
+      "word": "ワンサイズ",
+      "description": "「ワンサイズ上げてください」は、自分へのご褒美であり、成長の証。世界を1インチ広くするための魔法。UPDATE",
+      "is_update": true
+    },
+    {
+      "word": "惑星級デブ",
+      "description": "引力が強すぎて、周囲の人や幸福を勝手に惹きつけてしまう、FAT GPTにおける最高ランクの称号。UPDATE",
       "is_update": true
     }
   ]

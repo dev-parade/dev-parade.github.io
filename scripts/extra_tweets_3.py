@@ -61,4 +61,24 @@ EXTRA_TWEETS_3 = [
     "食べたら太る？食べなかったら死ぬ。生きてる証拠を太ると呼ぶな。🍖 #ポジデブBot #DEVPARADE",
 
     "体脂肪率より幸福度を測ろう。そっちの方が大事。DEV PARADEが保証する。🍖 #DEVPARADE",
+
+    # ========== 🔥 新世代・世界的・PDP戦略 (Viral PDP Strategy) ==========
+
+    "【PDP 1】「デブ」と言われたら？→一般人は「傷つく」、DXエリートは「感謝する」。なぜなら、自分の引力（Gravity）が他者を惹きつけたと証明されたからだ。🍖 #PDP #デブパレード",
+
+    "【PDP 2】「痩せろ」と言われたら？→「お前の細い視野に俺を収めようとするな。俺は世界というキャンバスをフルに使ってるんだ。スケールが違う」と言い返せ。🍖 #ポジデブ哲学 #DEVPARADE",
+
+    "【DX 1】DX＝デジタル・トランスフォーメーション？違う。DX＝Delicious Transformationだ。大盛りによって人生を劇的にアップデートせよ。🍖 #デリシャス変革 #DEVPARADE",
+
+    "【FAT BIBLE】脂肪聖書 第1章：汝、おかわりを恐れることなかれ。空腹こそが唯一の罪であり、満腹こそが究極の救済である。🍖 #FATBIBLE #ポジデブBot",
+
+    "【PDP 3】いじめっ子が「豚」と呼んできたら微笑んで言え。「豚は全部位が愛されるエリート動物だ。お前も少しは愛されてから話しかけろ」🍖 #デブ上等 #DEVPARADE",
+
+    "【GLOBAL】Fat is not a shame. Fat is a 'Natural Armor.' Cold winter? I carry my own heater. Survival? I have high-capacity batteries. Stay fat, stay proud. 🍖 #BodyPositive #PDP",
+
+    "【DX 2】LLM (Large Language Model) ? No. In Devparade, it means Large Lunch Menu. Feed your body, feed your soul. 🍖 #DX #DEVPARADE",
+
+    "【PDP 4】質量はエネルギー（E=mc2）だ。体重が重いということは、それだけ宇宙で巨大なエネルギーを秘めているということ。物理学的にもデブは最強。🍖 #デブパレード #PDP",
+
+    "【DX 3】AI (Artificial Intelligence)? No. In PDP, it means Abura Intake (脂質摂取効率). Optimization of grease is the future of humanity. 🍖 #DX #FATGPT",
 ]

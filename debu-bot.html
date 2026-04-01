@@ -685,6 +685,24 @@ const members = [
   { name: 'TAH', role: 'Dr.', weight: '120kg', icon: '🥁' }
 ];
 
+// ===== FAT BIBLE VERSES =====
+const fatBible = [
+  "第1章 第1節：汝、おかわりを恐れることなかれ。空腹こそが唯一の罪であり、満腹こそが究極の救済である。",
+  "第2章 第3節：隣人の皿を羨むなかれ。自らの皿を山盛りにせよ。山は高ければ高いほど、神（シェフ）に近い。",
+  "第3章 第5節：デブを笑う者は、自らの引力のなさを嘆いているに過ぎない。質量は愛である。",
+  "第5章 第1節：深夜のラーメンは、明日への祈りである。ニンニクは魔除けであり、背脂は聖水である。",
+  "第8章 第8節：服が縮んだのではない。お前の魂が、布という境界線を越えて膨張したのだ。"
+];
+
+// ===== PDP JUTSUS (NARUTO Style) =====
+const pdpJutsus = [
+  "ポジデブ秘伝：万有引力（グラビティ・アトラクション）",
+  "ポジデブ奥義：背脂千手観音",
+  "デリシャス変革：無限おかわり地獄",
+  "肉弾戦車・愛（アイアン・ミート・ラブ）",
+  "仙人モード：満腹大覚醒"
+];
+
 // ===== POSITIVE RESPONSES DATABASE =====
 const responses = {
   // キーワードベースのレスポンス
@@ -925,7 +943,34 @@ function showResult(text, member) {
   const resultText = document.getElementById('resultText');
   const resultMember = document.getElementById('resultMember');
 
-  resultText.textContent = text;
+  // DX Score & Rank Logic
+  const dxScore = Math.floor(Math.random() * 451) + 90; // 90kg to 540kg
+  let rank = "幕下デブ";
+  if (dxScore > 500) rank = "惑星級デブ（WORLD CLASS）";
+  else if (dxScore > 400) rank = "横綱デブ（GRAND CHAMPION）";
+  else if (dxScore > 300) rank = "大関デブ";
+  else if (dxScore > 200) rank = "エリートデブ";
+  
+  const bibleVerse = fatBible[Math.floor(Math.random() * fatBible.length)];
+  const jutsu = pdpJutsus[Math.floor(Math.random() * pdpJutsus.length)];
+
+  // Update Analysis Box (HUD style)
+  document.getElementById('evidenceBox').style.display = 'block';
+  document.getElementById('evidenceText').innerHTML = `
+    <div style="margin-bottom:10px; border-bottom:1px solid rgba(255,215,0,0.3); padding-bottom:5px;">
+      <strong>DX STATUS REPORT</strong><br>
+      RANK: <span style="color:#2ecc71;">${rank}</span><br>
+      WEIGHT EQUIV: <span style="color:#2ecc71;">${dxScore}kg</span><br>
+      GRAVITY: ★★★★★<br>
+      PRESENCE: ★★★★★
+    </div>
+    <div>
+      <strong>FAT BIBLE VERSE:</strong><br>
+      <em>"${bibleVerse}"</em>
+    </div>
+  `;
+
+  resultText.innerHTML = `${text}<br><br><span style="color:#ffd700; font-size:0.9rem;">✨ ${jutsu} ✨</span>`;
   resultMember.innerHTML = `${member.icon} <strong>${member.name}</strong>（${member.role} / ${member.weight}）がお届けしました`;
 
   resultBox.classList.remove('show');
