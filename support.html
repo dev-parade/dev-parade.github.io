@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUPPORT | WORLD FAMOUS Devparade Official Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #e63946;
+      --yellow: #ffd700;
+      --dark: #1a1a1a;
+      --darker: #111;
+      --white: #f1faee;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--darker);
+      color: var(--white);
+      font-family: 'Noto Sans JP', sans-serif;
+      overflow-x: hidden;
+    }
+    h1, h2, .oswald { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      background: linear-gradient(180deg, #333, var(--darker));
+      border-bottom: 3px solid var(--red);
+    }
+    .logo-font { font-size: 2.5rem; letter-spacing: 0.1em; color: var(--red); font-weight: 900; }
+    .logo-font span { color: #fff; }
+
+    .container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .intro p { font-size: 1.2rem; opacity: 0.8; line-height: 1.8; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #222;
+      border: 1px solid #333;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: var(--red);
+    }
+    .card h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--yellow); }
+    .card .price { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 1rem; }
+    .card .price span { font-size: 1rem; opacity: 0.6; }
+    .card p { font-size: 0.95rem; opacity: 0.7; margin-bottom: 2rem; min-height: 4em; }
+
+    /* Stripe Button Simulation */
+    .buy-btn {
+      display: inline-block;
+      width: 100%;
+      padding: 1.2rem;
+      background: var(--red);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 900;
+      border-radius: 50px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.1em;
+      transition: filter 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .buy-btn:hover {
+      filter: brightness(1.2);
+    }
+    .buy-btn:active {
+      transform: scale(0.98);
+    }
+
+    .secure-badge {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      opacity: 0.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 5rem;
+      text-align: center;
+      color: var(--red);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 4rem 2rem;
+      opacity: 0.5;
+      font-size: 0.8rem;
+    }
+
+    /* GIGA-DX Pulse Effect */
+    .card.premium::before {
+      content: "GIGA DX";
+      position: absolute;
+      top: 10px;
+      right: -30px;
+      background: var(--yellow);
+      color: #000;
+      padding: 5px 40px;
+      transform: rotate(45deg);
+      font-weight: 900;
+      font-size: 0.7rem;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-font">WORLD FAMOUS <span>Devparade</span></div>
+    <div style="font-size:0.8rem; letter-spacing:0.3em; margin-top:0.5rem; opacity:0.6;">OFFICIAL STORE & SUPPORT</div>
+  </header>
+
+  <div class="container">
+    <div class="intro">
+      <h2 class="oswald" style="font-size: 3rem; color: var(--red); margin-bottom: 0.5rem;">Support the引力</h2>
+      <p>Devparadeの活動を直接サポートし、世界の質量（愛）を増幅させましょう。<br>
+      すべての売上は、メンバーの「更なる肥沃な活動」と「次世代のDX（大盛り化）」に還元されます。</p>
+    </div>
+
+    <div class="grid">
+      <!-- 投げ銭（Donation） -->
+      <div class="card">
+        <h3>LITE SUPPORT</h3>
+        <p class="oswald">Fuel for Bass & Drums</p>
+        <div class="price">¥500 <span>/ one-time</span></div>
+        <p>「背脂増し」一杯分の愛をメンバーへ。感謝のメッセージが届きます。</p>
+        <!-- Stripe Payment Link Placeholder -->
+        <a href="#" class="buy-btn">BUY A BOWL (Support)</a>
+      </div>
+
+      <!-- FAT GPT プレミアム -->
+      <div class="card premium">
+        <h3>GIGA-DX REPORT</h3>
+        <p class="oswald">Ultimate PDP Oracle</p>
+        <div class="price">¥2,900 <span>/ digital content</span></div>
+        <p>FAT GPT 2.0による宇宙神レベルの詳細診断と、限定の「脂肪聖書」全文PDFを即時発行。</p>
+        <!-- Stripe Payment Link Placeholder -->
+        <a href="#" class="buy-btn">GET THE GIGA REPORT</a>
+      </div>
+
+      <!-- 会員制（Subscription） -->
+      <div class="card">
+        <h3>PDP ELITE CLUB</h3>
+        <p class="oswald">Monthly Membership</p>
+        <div class="price">¥3,000 <span>/ month</span></div>
+        <p>メンバー限定の「飯テロ生配信」や、次回の「痛風ホルダー」先行予約権を。月額30万の夢を共に。</p>
+        <!-- Stripe Payment Link Placeholder -->
+        <a href="#" class="buy-btn">JOIN THE ELITE</a>
+      </div>
+    </div>
+
+    <div class="secure-badge">
+      🔒 決済はStripeにより暗号化・保護されます。銀行情報は直接送信されません。
+    </div>
+
+    <a href="index.html" class="back-link">&larr; BACK TO OFFICIAL SITE</a>
+  </div>
+
+  <footer>
+    WORLD WIDE WEIGHT &copy; 2026 WORLD FAMOUS Devparade<br>
+    Built with Pure Love
+  </footer>
+
+</body>
+</html>
