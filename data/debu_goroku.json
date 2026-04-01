@@ -186,6 +186,16 @@
       "word": "GODS N' DEATH",
       "description": "神の恵み（満腹）か死神の罠（空腹）かを問う、究極の二択ファイトクラブ。迷ったら「おかわり」で解決。",
       "is_update": true
+    },
+    {
+      "word": "ギガ・マシマシ",
+      "description": "FAT GPTにおける最上級の注文指示。もはや食べ物ではなく、一つの『事象』として胃袋に受肉する。UPDATE",
+      "is_update": true
+    },
+    {
+      "word": "引力：測定不能",
+      "description": "体重が精神を凌駕し、周囲の全物質と幸運を強制的に引き寄せる究極の物理状態。惑星級を超えた宇宙神の領域。UPDATE",
+      "is_update": true
     }
   ],
   "sa": [
@@ -433,6 +443,11 @@
     {
       "word": "FAT BIBLE",
       "description": "脂肪聖書。この世の全てのデブが救われるための黄金の教典。「第1章：汝、おかわりを恐れることなかれ」UPDATE",
+      "is_update": true
+    },
+    {
+      "word": "脂肪十戒",
+      "description": "PDPにおける不変の掟。一、おかわりを拒むなかれ。二、脂を尊べ。三、自らを愛せ。四、引力は質量に比例す、等。全デブが暗唱すべき経典。UPDATE",
       "is_update": true
     }
   ],

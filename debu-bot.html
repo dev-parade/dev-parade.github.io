@@ -691,7 +691,8 @@ const fatBible = [
   "第2章 第3節：隣人の皿を羨むなかれ。自らの皿を山盛りにせよ。山は高ければ高いほど、神（シェフ）に近い。",
   "第3章 第5節：デブを笑う者は、自らの引力のなさを嘆いているに過ぎない。質量は愛である。",
   "第5章 第1節：深夜のラーメンは、明日への祈りである。ニンニクは魔除けであり、背脂は聖水である。",
-  "第8章 第8節：服が縮んだのではない。お前の魂が、布という境界線を越えて膨張したのだ。"
+  "第8章 第1節：服が縮んだのではない。お前の魂が、布という境界線を越えて膨張したのだ。",
+  "第10章 第10節：鏡を見て「太った」と嘆くな。「解像度が上がった」と喜べ。お前という存在の情報量が増えたのだ。"
 ];
 
 // ===== PDP JUTSUS (NARUTO Style) =====
@@ -946,7 +947,8 @@ function showResult(text, member) {
   // DX Score & Rank Logic
   const dxScore = Math.floor(Math.random() * 451) + 90; // 90kg to 540kg
   let rank = "幕下デブ";
-  if (dxScore > 500) rank = "惑星級デブ（WORLD CLASS）";
+  if (dxScore > 530) rank = "宇宙神デブ（Overload）";
+  else if (dxScore > 500) rank = "惑星級デブ（WORLD CLASS）";
   else if (dxScore > 400) rank = "横綱デブ（GRAND CHAMPION）";
   else if (dxScore > 300) rank = "大関デブ";
   else if (dxScore > 200) rank = "エリートデブ";
