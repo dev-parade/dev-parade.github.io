@@ -1,6 +1,6 @@
-# 🍖 DEV PARADE Bot Content Policy
+# 🍖 Devparade Bot Content Policy
 
-このプロジェクトでは、バンド「DEV PARADE」の自動投稿ボットを運用しています。
+このプロジェクトでは、バンド「Devparade」の自動投稿ボットを運用しています。
 AIアシスタント（エージェント）がコンテンツを追加・修正する際は、以下のルールを厳守してください。
 
 ## 🚫 ハルシネーション（嘘の情報）の禁止

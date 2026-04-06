@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 class FactChecker:
     """ファクトデータに基づくコンテンツ検証"""
 
-    def __init__(self, facts_path: str = "config/debuparade_facts.yaml"):
+    def __init__(self, facts_path: str = "config/Devparade_facts.yaml"):
         self.facts = {}
         self.member_names = []
         self.load_facts(facts_path)

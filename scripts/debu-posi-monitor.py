@@ -40,31 +40,31 @@ MEMBERS = [
 # ===== ポジデブ返信テンプレート =====
 RESPONSES = {
     "デブ": [
-        "デブ？ ありがとう！全員90kg超バンドDEV PARADEから言わせてもらうと、それは最高の褒め言葉🍖 #ポジデブ",
-        "「DEV」= Delightful Extreme Vitality。知らなかった？🍖 by DEV PARADE #ポジデブ",
+        "デブ？ ありがとう！全員90kg超バンドDevparadeから言わせてもらうと、それは最高の褒め言葉🍖 #ポジデブ",
+        "「DEV」= Delightful Extreme Vitality。知らなかった？🍖 by Devparade #ポジデブ",
         "デブは才能。俺たち全員90kg超、ソニーからメジャーデビューした。才能に体重は関係ない🍖 #ポジデブ",
         "デブをネガティブに捉えないで。俺たちバンド名にデブ入れて誇ってるから🍖 #ポジデブ",
-        "デブって呼ばれた？ おめでとう、DEV PARADEの入団資格満たしてるぞ（条件:90kg以上）🍖 #ポジデブ",
+        "デブって呼ばれた？ おめでとう、Devparadeの入団資格満たしてるぞ（条件:90kg以上）🍖 #ポジデブ",
     ],
     "太った": [
         "太った？ それは「成長した」って言うんだよ。細胞レベルで進化してる。おめでとう🎉🍖 #ポジデブ",
-        "体重が増えた = 存在感が増した。DEV PARADEが保証する🍖 #ポジデブ",
+        "体重が増えた = 存在感が増した。Devparadeが保証する🍖 #ポジデブ",
         "太った分だけ地球がお前を離したくないってこと。モテてるぜ、地球に🌍🍖 #ポジデブ",
         "体重増えた？ それは「影響力」のメーター。デカい奴はデカいことができる🍖 #ポジデブ",
     ],
     "痩せ": [
         "痩せる必要？ ないね。俺たち全員90kg超でステージに立ってる。痩せたら夢が軽くなる💪🍖 #ポジデブ",
         "「痩せたい」→「もっと愛されたい」に変換。大丈夫、そのままで最高🍖 #ポジデブ",
-        "痩せなくていい。むしろDEV PARADE入らない？条件は90kg以上🍖 #ポジデブ",
+        "痩せなくていい。むしろDevparade入らない？条件は90kg以上🍖 #ポジデブ",
         "ダイエットの語源は「生き方」。今の生き方、最高じゃん。変えなくていい🍖 #ポジデブ",
     ],
     "generic": [
         "大丈夫、お前は最高だ。全員90kg超のバンドが言ってるんだから間違いない🍖 #ポジデブ",
-        "デブは個性。個性は武器。武器は磨け🍖 by DEV PARADE #ポジデブ",
+        "デブは個性。個性は武器。武器は磨け🍖 by Devparade #ポジデブ",
         "この世に無駄な脂肪なんてない。全部お前という作品の一部だ🍖 #ポジデブ",
         "どんな悩みも、焼肉食ったら解決する。解決しなくても美味い。それでいい🍖 #ポジデブ",
-        "ありがとう！DEV PARADEはあなたを全力で肯定します🍖 #ポジデブ",
-        "リプありがとう！全員90kg超の愛であなたを包む🍖 by DEV PARADE #ポジデブ",
+        "ありがとう！Devparadeはあなたを全力で肯定します🍖 #ポジデブ",
+        "リプありがとう！全員90kg超の愛であなたを包む🍖 by Devparade #ポジデブ",
     ],
 }
 
@@ -386,7 +386,7 @@ def generate_issue(tweets, sent_count):
             lines.append(f"---")
             lines.append(f"")
 
-    lines.append("*Powered by DEV PARADE ポジデブBot 🍖*")
+    lines.append("*Powered by Devparade ポジデブBot 🍖*")
 
     with open("monitor_issue.md", "w") as f:
         f.write("\n".join(lines))
@@ -406,7 +406,7 @@ GitHub Secretsに以下を設定してください:
 - `X_ACCESS_TOKEN` / `X_ACCESS_SECRET`
 
 ---
-*Powered by DEV PARADE ポジデブBot 🍖*
+*Powered by Devparade ポジデブBot 🍖*
 """
     with open("monitor_issue.md", "w") as f:
         f.write(sample)

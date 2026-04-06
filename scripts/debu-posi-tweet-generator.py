@@ -88,7 +88,7 @@ DAILY_TWEETS_BASE = [
 
 軽い夢なんか持ったことない。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「デカい」は英語で"Big"。
 "Big"は「偉大な」って意味もある。
@@ -96,7 +96,7 @@ DAILY_TWEETS_BASE = [
 つまりデブ＝偉大。
 はい、証明終了。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""1kg太るたびに、
 俺は1kg分の人生を楽しんだ。
@@ -104,7 +104,7 @@ DAILY_TWEETS_BASE = [
 90kg超えたってことは、
 90kg分の幸福の証拠。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""鏡を見て「かっこいい」と思えるかどうかは
 体重じゃなく生き様で決まる。
@@ -112,19 +112,19 @@ DAILY_TWEETS_BASE = [
 俺は90kg超。
 そして、俺はかっこいい。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""「太ってるのにステージ立つの？」
 
 太ってるから立つんだよ。
 この存在感、痩せたら出せねえぞ。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     f"""スーツが似合わないんじゃない。
 スーツが俺に追いついてないだけ。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""腹が出てる？
 これは腹筋の上に
@@ -132,7 +132,7 @@ DAILY_TWEETS_BASE = [
 
 防御力が高いとも言う。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""BMIの「B」は
 たぶん「Boss」の略。
@@ -140,7 +140,7 @@ DAILY_TWEETS_BASE = [
 確認はしてない。
 でも俺のBMI、ボスの風格ある。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""最新AI『FAT GPTwo』がついに稼働。
 
@@ -151,7 +151,7 @@ T: Transformer
 
 ネガティブな発言を
 脂肪と愛に変換する
-DEV PARADE独自の次世代エンジン。🍖
+Devparade独自の次世代エンジン。🍖
 
 #FATGPTwo #ポジデブBot""",
 
@@ -163,7 +163,7 @@ DEV PARADE独自の次世代エンジン。🍖
 ポジティブなマインドと、
 確かな存在感（脂肪）だ。🍖
 
-#FATGPTwo #DEVPARADE""",
+#FATGPTwo #Devparade""",
 
     # ===== 🎤 自虐→痛快反転系 =====
     f"""面接で「体力に自信は？」って聞かれた。
@@ -171,14 +171,14 @@ DEV PARADE独自の次世代エンジン。🍖
 毎日この体重で生きてるんだぞ。
 誰より体力あるわ。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""満員電車で押されても動かない。
 
 90kg超のメリットNo.1は
 物理的に「ブレない男」になれること。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""椅子に座ると軋む。
 
@@ -187,14 +187,14 @@ DEV PARADE独自の次世代エンジン。🍖
 
 鍛えろ、椅子。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""靴紐を結ぶ時、息が止まる。
 
 これはフリーダイビングの訓練。
 デブは日常的にアスリート。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""試着室で「これもうワンサイズ上ありますか」
 
@@ -204,14 +204,14 @@ DEV PARADE独自の次世代エンジン。🍖
 でも俺は笑えた。
 それがポジデブ。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""体重計「エラー」
 
 いや、壊れたのはお前の方だろ。
 俺は正常だ。絶好調だ。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     # ===== 🌍 かっこいいデブ / 偉人引用系 =====
     f"""チャーチルは太っていた。
@@ -224,9 +224,9 @@ Notorious B.I.G.は太っていた。
 史上最高のラッパーと呼ばれた。
 
 デブが世界を動かす。
-DEV PARADEもそっち側。🍖
+Devparadeもそっち側。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""相撲取りは何百年もの間、
 体の大きさを「強さ」として誇ってきた。
@@ -236,7 +236,7 @@ DEV PARADEもそっち側。🍖
 
 俺たちは原点回帰してるだけ。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""「痩せたらモテる」
 
@@ -249,7 +249,7 @@ Action Bronsonも
 モテるのは自信がある奴だ。
 体重じゃない。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""映画の中のデブは
 いつも「いじられ役」か「お笑い担当」。
@@ -260,7 +260,7 @@ Action Bronsonも
 
 キャスティングは俺たちで変える。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     # ===== 🍖 食のライフスタイル系 =====
     f"""深夜2時。冷蔵庫が俺を呼んでる。
@@ -268,14 +268,14 @@ Action Bronsonも
 これを「誘惑」と呼ぶ人がいるが、
 俺は「運命の出会い」と呼ぶ。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""「最後のひとくち」は嘘つきが使う言葉。
 
 正直に「まだ食う」と言え。
 その方がかっこいい。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""焼肉を前にしたデブの集中力。
 
@@ -285,7 +285,7 @@ Action Bronsonも
 応用する気はないけど。
 今は肉に集中させろ。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""5人で焼肉屋に行くと、
 店主の目が輝く。
@@ -295,7 +295,7 @@ Action Bronsonも
 
 感謝しろ、経済。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「食べたら太る」
 
@@ -306,7 +306,7 @@ Action Bronsonも
 お前の体、ちゃんと機能してる。
 おめでとう。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     # ===== 🤘 バンドストーリー系 =====
     f"""2008年、ソニーのオフィスで
@@ -319,7 +319,7 @@ Action Bronsonも
 軽いバンドには出せない重厚感。🍖
 
 {SITE_URL}
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""NARUTOのエンディング「バッチコイ!!!」
 
@@ -330,7 +330,7 @@ Action Bronsonも
 だからこそ世界で覚えられてる。🍖
 
 {SITE_URL}
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     f"""2011年。
 メンバーがダイエットに成功して解散。
@@ -342,7 +342,7 @@ Action Bronsonも
 
 バンド史上、最も美しい復活劇。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""HEY!HEY!HEY!で松本人志に
 「お前ら全員デカいな」って言われた。
@@ -352,7 +352,7 @@ Action Bronsonも
 
 これ、履歴書に書ける。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     f"""SUMMER SONIC 2009。
 ステージの床が軋んだ。
@@ -361,18 +361,18 @@ Action Bronsonも
 でもバンドの音はもっとデカかった。
 
 重さで勝ち、音でも勝つ。
-それがDEV PARADE。🍖
+それがDevparade。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
-    f"""DEV PARADE = Def Leppardのパロディ。
+    f"""Devparade = Def Leppardのパロディ。
 
 Def Leppardは「Heavy Metal」。
-DEV PARADEは「Heavy Metabo」。
+Devparadeは「Heavy Metabo」。
 
 本家より重い。物理的に。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     # ===== 💎 哲学・メッセージ系 =====
     f"""「痩せたら人生変わる」
@@ -381,9 +381,9 @@ DEV PARADEは「Heavy Metabo」。
 
 その方がかっこいい。
 その方がロック。
-その方が、DEV PARADE。🍖
+その方が、Devparade。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""体型で人を判断する世界がおかしい。
 体型で人を判断する目がおかしい。
@@ -395,7 +395,7 @@ NARUTO歌った。
 
 やれることやってから判断しろ。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""ダイエットの語源は
 ギリシャ語の「diaita」＝「生き方」。
@@ -406,7 +406,7 @@ NARUTO歌った。
 俺の生き方: 食って歌って生きる。
 完璧なダイエット。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""自分の体を好きになれない人へ。
 
@@ -419,7 +419,7 @@ NARUTO歌った。
 
 体を変えるな。考え方を変えろ。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""「太ってるのに自信あるね」
 って言われた。
@@ -430,7 +430,7 @@ NARUTO歌った。
 この切り返し、使っていいよ。
 著作権フリー。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     # ===== 📊 データ・リスト系（バズりやすい形式） =====
     f"""デブが得する場面TOP5
@@ -441,7 +441,7 @@ NARUTO歌った。
 4. サウナで一番汗かける
 5. 「最近痩せた？」で無限に喜べる
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""💪 重量級ミュージシャン名鑑
 
@@ -449,13 +449,13 @@ NARUTO歌った。
 🎸 B.B. King — Blues界の王
 🎹 Barry White — 低音の帝王
 🎤 Big Pun — 最強のリリシスト
-🎸 DEV PARADE — 全員90kg超
+🎸 Devparade — 全員90kg超
 
 重い音楽は、重い奴が作る。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
-    f"""DEV PARADEの経済効果
+    f"""Devparadeの経済効果
 
 🍖 焼肉屋 → 売上200%
 🍖 スポーツジム → 売上0%
@@ -464,7 +464,7 @@ NARUTO歌った。
 
 社会貢献してる。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     # ===== 🌏 海外向け / English =====
     f"""Band rule: You MUST weigh over 90kg to join.
@@ -475,19 +475,19 @@ So the band broke up.
 15 years later, everyone gained it back.
 Band reunited.
 
-This is a true story. This is DEV PARADE. 🍖
+This is a true story. This is Devparade. 🍖
 
 {SITE_URL}
-#DEVPARADE #BodyPositive""",
+#Devparade #BodyPositive""",
 
     f"""Biggie was big. He became a legend.
 Big Pun was big. He became a legend.
 Action Bronson is big. He's a legend.
 
-DEV PARADE? All 5 members over 90kg.
+Devparade? All 5 members over 90kg.
 We're writing our own legend. 🍖
 
-#DEVPARADE #BodyPositive""",
+#Devparade #BodyPositive""",
 
     f"""Your weight doesn't define your talent.
 Your body doesn't limit your dreams.
@@ -498,7 +498,7 @@ Major label deal with Sony.
 NARUTO ending theme.
 Proof. 🍖
 
-#DEVPARADE #BodyPositive""",
+#Devparade #BodyPositive""",
 
     # ===== 🔥 議論・バイラル狙い =====
     f"""正直に言う。
@@ -513,7 +513,7 @@ Proof. 🍖
 管理してるものが違うだけだ。
 俺たちは音楽を管理してる。🍖
 
-#DEVPARADE #ポジデブBot""",
+#Devparade #ポジデブBot""",
 
     f"""日本で一番体重が重いバンドは
 たぶん俺たち。
@@ -525,7 +525,7 @@ Proof. 🍖
 「デブで良かった」と思ってるバンドは
 間違いなく俺たち。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「太ってるのにバンドやってるの？」
 
@@ -540,10 +540,10 @@ Proof. 🍖
 関係あるものにした。
 ややこしいけど、最高だろ。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     # ===== 🌐 DEVの二重性ネタ =====
-    f"""DEV PARADEの"DEV"、
+    f"""Devparadeの"DEV"、
 
 🇯🇵 日本語 → デブ（FAT）
 🇺🇸 英語 → Developer（開発者）
@@ -553,9 +553,9 @@ Proof. 🍖
 
 開発するのは、デブの新しい価値観。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
-    f"""英語圏の人が"DEV PARADE"を見ると
+    f"""英語圏の人が"Devparade"を見ると
 「開発者たちのパレード」だと思うらしい。
 
 実際にはメンバー全員90kg超の
@@ -566,12 +566,12 @@ Proof. 🍖
 
 俺たちが生み出すのは音楽と脂肪。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""DEV = Developer（開発者）
 DEV = デブ（90kg超）
 
-つまり DEV PARADE は
+つまり Devparade は
 「開発者のパレード」であり
 「デブのパレード」でもある。
 
@@ -579,7 +579,7 @@ DEV = デブ（90kg超）
 焼肉屋でも通じる。
 最強のバンド名。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""IT業界で"dev"って言ったら開発者。
 日本で"デブ"って言ったら俺たち。
@@ -590,11 +590,11 @@ DEV = デブ（90kg超）
 俺たちは歴史を書く。
 あと脂肪も書く（体に）。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""Fun fact:
 
-"DEV PARADE" in English sounds like
+"Devparade" in English sounds like
 "A parade of developers/creators."
 
 In Japanese, it sounds like
@@ -604,7 +604,7 @@ Both are true.
 We create music. We are fat.
 Proudly both. 🍖
 
-#DEVPARADE #BodyPositive""",
+#Devparade #BodyPositive""",
 
     # ===== 💬 参加型・エンゲージメント系 =====
     f"""【投票】
@@ -618,12 +618,12 @@ Proudly both. 🍖
 
 リプで教えて🍖
 
-#DEVPARADE #ポジデブBot""",
+#Devparade #ポジデブBot""",
 
     f"""お前の今日の晩飯を
 リプで教えてくれ。
 
-DEV PARADE名義で
+Devparade名義で
 全力で「最高」って肯定する。
 
 コンビニ弁当でもカップ麺でも
@@ -631,7 +631,7 @@ DEV PARADE名義で
 
 食ってる時点で最高。🍖
 
-#DEVPARADE #ポジデブBot""",
+#Devparade #ポジデブBot""",
 
     f"""いいねした人、
 全員「かっこいいデブ」認定します。
@@ -641,10 +641,10 @@ DEV PARADE名義で
 
 体型じゃなく生き様。🍖
 
-#DEVPARADE #ポジデブBot""",
+#Devparade #ポジデブBot""",
 
     f"""RTした人に
-DEV PARADEメンバーが
+Devparadeメンバーが
 ランダムで1人ポジデブメッセージ送ります。
 
 嘘です。手が回りません。
@@ -652,7 +652,7 @@ DEV PARADEメンバーが
 
 全員90kg超の愛を受け取れ。🍖
 
-#DEVPARADE #ポジデブBot #拡散希望""",
+#Devparade #ポジデブBot #拡散希望""",
 
     # ===== 🎭 シュール / 不条理系（バズ狙い） =====
     f"""デブあるある:
@@ -665,7 +665,7 @@ DEV PARADEメンバーが
 全ての物質が俺を求めてる。
 モテ期、到来。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""今日のスケジュール:
 
@@ -679,7 +679,7 @@ DEV PARADEメンバーが
 
 完璧な1日。隙がない。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
     f"""痩せてる人にしかできないこと:
 ・狭い隙間を通れる
 
@@ -688,11 +688,11 @@ DEV PARADEメンバーが
 ・ハグが最強
 ・存在感がある  
 ・食レポに説得力
-・NARUTOのED歌える（※DEV PARADEに限る）
+・NARUTOのED歌える（※Devparadeに限る）
 
 勝ってる。圧倒的に。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     # ===== 💘 恋愛 / モテ系 =====
     f"""「デブはモテない」
@@ -708,7 +708,7 @@ DEV PARADEメンバーが
 
 もう意味わかんないけど、モテてる。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""デブの彼氏/旦那がいる人、
 聞いたことあるでしょ。
@@ -718,7 +718,7 @@ DEV PARADEメンバーが
 それ、最高の愛の言葉だからな。
 俺たちは人間暖房。エコ。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""デブのハグって知ってる？
 
@@ -730,7 +730,7 @@ DEV PARADEメンバーが
 ハグの世界大会があったら
 俺たちが優勝する自信ある。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     # ===== 🏢 ビジネス / 成功哲学系 =====
     f"""成功者にデブは多い。
@@ -745,7 +745,7 @@ DEV PARADEメンバーが
 
 脳のリソースが本業に全振り。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""会社で「存在感がない」と悩んでる人、
 
@@ -757,7 +757,7 @@ DEV PARADEメンバーが
 
 これ、最短のキャリアアップ術。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""名刺交換で覚えてもらえないって？
 
@@ -767,7 +767,7 @@ DEV PARADEメンバーが
 ビジネスの基本は「印象に残ること」。
 俺たちは名刺を渡す前に勝ってる。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     # ===== 🕐 時間帯特化（早朝/深夜） =====
     f"""朝7時にこのツイートを見てるデブへ。
@@ -779,7 +779,7 @@ DEV PARADEメンバーが
 今日もすでに3倍頑張ってる。
 おはよう。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""深夜にスマホ見てるデブへ。
 
@@ -789,9 +789,9 @@ DEV PARADEメンバーが
 明日の朝後悔するかもしれないけど、
 今夜の幸福は本物だ。
 
-DEV PARADEが深夜の空腹を全力肯定。🍖
+Devparadeが深夜の空腹を全力肯定。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""午前3時のラーメンは
 背徳感があるほど美味い。
@@ -801,7 +801,7 @@ DEV PARADEが深夜の空腹を全力肯定。🍖
 
 この理論に反論できる奴いる？🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     # ===== 🔄 反論 / 切り返し系 =====
     f"""「痩せた方がいいよ」
@@ -810,7 +810,7 @@ DEV PARADEが深夜の空腹を全力肯定。🍖
 
 使っていいよ。無料。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「よく食べるね〜」
 
@@ -823,7 +823,7 @@ DEV PARADEが深夜の空腹を全力肯定。🍖
 全部ポジティブに返せ。
 それがデブの知性。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""「そんなに食べて大丈夫？」
 
@@ -836,7 +836,7 @@ DEV PARADEが深夜の空腹を全力肯定。🍖
 心配してくれてありがとう。
 でも俺は大丈夫。絶好調。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「デブは自分に甘い」
 
@@ -849,7 +849,7 @@ DEV PARADEが深夜の空腹を全力肯定。🍖
 自分に嘘をつかない生き方、
 それを甘いとは言わない。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     # ===== 👤 メンバーエピソード系 =====
     f"""ハンサム判治（Vo.）の名言:
@@ -862,7 +862,7 @@ DEV PARADEが深夜の空腹を全力肯定。🍖
 矛盾してるようで全く矛盾してない。
 かっこいいは見た目じゃない。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""COYASS（MC）は歯科医師で歯学博士。
 
@@ -871,7 +871,7 @@ COYASS:「歯は細いから大丈夫です」
 
 この返し、医学部では教えてくれない。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""ugazin（Gt.）の太い指で
 繊細なギターソロを弾く。
@@ -881,7 +881,7 @@ COYASS:「歯は細いから大丈夫です」
 相性が悪いはずなのに最高の音が出る。
 人生もそういうもん。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""TAH（Dr.）のバスドラムは
 一度踏んだら元の形に戻らない。
@@ -891,7 +891,7 @@ COYASS:「歯は細いから大丈夫です」
 
 俺たちは「ヘヴィメタボ」と呼ぶ。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""ぺー（Ba.）は2026年加入の新メンバー。
 
@@ -903,7 +903,7 @@ COYASS:「歯は細いから大丈夫です」
 実力は後から確認した。
 順番おかしいけど、正しい。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     # ===== 🌸🎆 季節ネタ拡充 =====
     f"""春のデブ:
@@ -914,7 +914,7 @@ COYASS:「歯は細いから大丈夫です」
 
 春はデブの季節。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""夏のデブ:
 
@@ -924,7 +924,7 @@ COYASS:「歯は細いから大丈夫です」
 でもプールに入った時の浮力は最強。
 俺たちは沈まない。物理的にも精神的にも。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""秋のデブ:
 
@@ -934,7 +934,7 @@ COYASS:「歯は細いから大丈夫です」
 
 堂々と食え。秋だから。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""冬のデブ:
 
@@ -944,47 +944,47 @@ COYASS:「歯は細いから大丈夫です」
 暖房費も節約。
 エコな体型、デブ。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     # ===== 🎯 ワンライナー追加（キレ重視） =====
     f"""重力は俺を愛してる。
 毎日離さないでくれる。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""体重は秘密。
 でも才能は公開中。🍖
 
 {SITE_URL}
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""ベルトの穴を増やすのは
 「成長」って呼ぶんだぞ。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""エレベーター、定員7名。
 俺たちが乗ると定員4名。
 
 特別扱い。VIP。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「最近どう？」
 
 横にデカい。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""体脂肪率は測らない。
 夢の達成率だけ測る。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""腹筋は割れてない。
 でも常識は割ってきた。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「一日一食にしてる」って言う人いるけど、
 俺は一食を一日かけて食べてる。
@@ -992,7 +992,7 @@ COYASS:「歯は細いから大丈夫です」
 アプローチが違うだけ。
 結果は同じ。…ではない。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     # ===== 🧠 知識 / トリビア系 =====
     f"""マリリン・モンローは
@@ -1005,7 +1005,7 @@ COYASS:「歯は細いから大丈夫です」
 
 自分を基準にしろ。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""力士の体脂肪率は実は23%前後。
 見た目ほど脂肪じゃない。
@@ -1016,7 +1016,7 @@ COYASS:「歯は細いから大丈夫です」
 俺たちも…たぶん…そう…。
 （確認はしてない）🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""赤ちゃんはみんなぽっちゃり。
 人間は太った状態で生まれてくる。
@@ -1027,7 +1027,7 @@ COYASS:「歯は細いから大丈夫です」
 痩せてる方が「カスタム」。
 俺たちはデフォルト。安定。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     # ===== 🎵 音楽 × デブ =====
     f"""ライブハウスに入った瞬間、
@@ -1044,7 +1044,7 @@ COYASS:「歯は細いから大丈夫です」
 
 その瞬間のために俺たちは生きてる。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     f"""「バッチコイ!!!」って叫ぶ時、
 腹から声が出る。
@@ -1055,19 +1055,19 @@ COYASS:「歯は細いから大丈夫です」
 デブは楽器。
 体全体が楽器。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     f"""楽器の重さランキング:
 
 ギター: 約4kg
 ベース: 約5kg
 ドラムセット: 約30kg
-DEV PARADEメンバー: 90kg超
+Devparadeメンバー: 90kg超
 
 メンバーが一番重い。
 でもメンバーが一番いい音出す。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     # ===== 🤝 ボディポジティブ / メッセージ =====
     f"""太ってる人も、
@@ -1080,7 +1080,7 @@ DEV PARADEメンバー: 90kg超
 「生きてるだけでエネルギー消費量が多い」
 ので、ちょっとだけ余分に偉い。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""ボディポジティブって言葉が
 流行る前から、
@@ -1091,7 +1091,7 @@ DEV PARADEメンバー: 90kg超
 トレンドじゃない。
 ライフスタイルだ。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""誰かに「太ってるね」と言われたら、
 こう思え。
@@ -1101,7 +1101,7 @@ DEV PARADEメンバー: 90kg超
 見られてる時点で勝ち。
 存在感の証明。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     # ===== 🔥 追加ワンライナー =====
     f"""全員が痩せた世界より、
@@ -1110,7 +1110,7 @@ DEV PARADEメンバー: 90kg超
 
 俺は後者を選ぶ。🍖
 
-#DEVPARADE #ポジデブBot""",
+#Devparade #ポジデブBot""",
 
     f"""ジムに行く暇があったら
 ライブに来い。
@@ -1120,7 +1120,7 @@ DEV PARADEメンバー: 90kg超
 
 …痩せたくないけど。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     f"""「第一印象は3秒で決まる」
 
@@ -1129,7 +1129,7 @@ DEV PARADEメンバー: 90kg超
 
 スピード勝負でも勝ってる。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""飛行機のシートベルトが
 ギリギリ閉まった時の達成感。
@@ -1137,28 +1137,28 @@ DEV PARADEメンバー: 90kg超
 これを知らない人は
 人生の半分損してる。🍖
 
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 
     f"""Google検索:
 「デブ メリット」
 
 検索結果:
-DEV PARADE公式サイト
+Devparade公式サイト
 
 全ての答えはここにある。🍖
 
 {SITE_URL}
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""俺たちの合言葉:
 
 食え。歌え。太れ。
 そして、愛されろ。
 
-DEV PARADE。🍖
+Devparade。🍖
 
 {SITE_URL}
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     # ===== 🎶 歌詞ネタ / バンドファクト系 =====
     f"""冬なのに半袖。
@@ -1171,11 +1171,11 @@ DEV PARADE。🍖
 90kg超の体は常時発熱中。
 俺たちにとって冬は「やや涼しい夏」。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「夏はまだ終わらない」
 
-DEV PARADEの体温的には
+Devparadeの体温的には
 12月でもまだ夏。
 2月でもまだ夏。
 
@@ -1183,7 +1183,7 @@ DEV PARADEの体温的には
 俺たちに秋冬はない。
 あるのは夏と、もっと夏だけ。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""1月。雪が降ってる。
 
@@ -1200,9 +1200,9 @@ TAH: 半袖
 
 嘘。暑い。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
-    f"""冬のDEV PARADE装備:
+    f"""冬のDevparade装備:
 
 一般人: ダウンジャケット+マフラー+手袋
 俺たち: Tシャツ1枚
@@ -1212,9 +1212,9 @@ TAH: 半袖
 「寒くないの？」
 「暑い」
 
-季節感を超越した存在、DEV PARADE。🍖
+季節感を超越した存在、Devparade。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""結成時のメンバー合計体重: 約570kg。
 
@@ -1223,7 +1223,7 @@ TAH: 半袖
 軽自動車より重い。
 バンドごと走れる。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""TAH（Dr.）の2008年時点の体重: 146kg。
 
@@ -1235,7 +1235,7 @@ TAH: 半袖
 どっちにしろ、
 あの音は146kgじゃないと出ない。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""12月の渋谷。
 みんなコートを着てる。
@@ -1249,24 +1249,24 @@ TAH: 半袖
 冬なのに半ズボン。
 冬なのにサンダル。
 
-これがDEV PARADEの冬。🍖
+これがDevparadeの冬。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     f"""衣替えの季節。
 
 一般人:「そろそろ長袖かな」
-DEV PARADE:「まだ半袖でいける」
+Devparade:「まだ半袖でいける」
 
 一般人:「もうコートだよね」
-DEV PARADE:「まだ半袖でいける」
+Devparade:「まだ半袖でいける」
 
 一般人:「雪降ってるけど」
-DEV PARADE:「まだ半袖でいける」
+Devparade:「まだ半袖でいける」
 
 夏は終わらない。俺たちの中では。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""ライブのMCで
 COYASSが言った名言:
@@ -1278,9 +1278,9 @@ COYASSが言った名言:
 
 物理的にも比喩的にも正しい。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
-    f"""DEV PARADEの夏の過ごし方:
+    f"""Devparadeの夏の過ごし方:
 
 暑い→いつもと変わらない
 汗かく→いつもと変わらない  
@@ -1289,9 +1289,9 @@ COYASSが言った名言:
 俺たちにとって夏は平常運転。
 むしろ世界が俺たちに追いついた季節。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
     # ===== 🎤 楽曲パンチライン系（バッチコイ!!! / GODS N' DEATH / ME★TA★BO） =====
-    f"""DEV PARADEの歌詞:
+    f"""Devparadeの歌詞:
 
 「全ての武器をお箸にするぜ」
 
@@ -1300,9 +1300,9 @@ COYASSが言った名言:
 
 世界平和は食卓から始まる。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
-    f"""DEV PARADEの名言:
+    f"""Devparadeの名言:
 
 「お寿司はデザート」
 
@@ -1312,102 +1312,102 @@ COYASSが言った名言:
 寿司はデザート。
 これは公式見解。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     f"""「おにぎりくれる奴、だいたい友達」
 
-— DEV PARADE「バッチコイ!!!」
+— Devparade「バッチコイ!!!」
 
 これ以上シンプルで
 これ以上正確な
 友情の定義を知らない。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     f"""どんなにハングリーでも
 どんなにアングリーでも
 
 ドンブリ食ってダンシング！
 
-これがDEV PARADEの人生哲学。
+これがDevparadeの人生哲学。
 悩んだら食え。食ったら踊れ。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     f"""「牛丼でドンクライ
 スパゲッチュでゲッチュー
 ロースはお野菜
 カレーライスは飲みきり」
 
-— DEV PARADE「バッチコイ!!!」
+— Devparade「バッチコイ!!!」
 
 全ての食を肯定する歌詞。
 NARUTOのEDでこれ流れてた。
 すごい時代。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     f"""「キミの涙の理由(ワケ)、
 きっとお腹が空いているだけ」
 
-— DEV PARADE「GODS N' DEATH」
+— Devparade「GODS N' DEATH」
 
 泣いてる人がいたら
 まず飯を食わせろ。
 
 これが医学より確実な処方箋。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「カレーを飲ませろ」
 
-— DEV PARADE「GODS N' DEATH」
+— Devparade「GODS N' DEATH」
 
 カレーは食べるものじゃない。
 飲むもの。
 
 この事実を世界に広めたい。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「メシを食わせろ、欲望のまま。
 神の恵みか？死神の罠？」
 
-— DEV PARADE「GODS N' DEATH」
+— Devparade「GODS N' DEATH」
 
 食欲は神と死神の間にある。
 でも俺たちは迷わず食う側。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「腹がへっては戦は出来ん、
 なんて嘘。
 これが怒りの原因」
 
-— DEV PARADE「GODS N' DEATH」
+— Devparade「GODS N' DEATH」
 
 空腹は怒りの元。
 つまり食えば世界は平和になる。
 ノーベル平和賞ください。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「脂肪に見えるの？
 これは貫禄」
 
-— DEV PARADE「ME★TA★BO」
+— Devparade「ME★TA★BO」
 
 これ以上の切り返しが
 この世にあるだろうか。
 
 無い。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「君を包み込む愛の弾力。
 優しさを目いっぱい詰めたさ」
 
-— DEV PARADE「ME★TA★BO」
+— Devparade「ME★TA★BO」
 
 脂肪じゃない。
 愛の弾力。
@@ -1416,36 +1416,36 @@ NARUTOのEDでこれ流れてた。
 太ってる人をハグすると
 わかる。これ、本当。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「自慢じゃないが、俺は肥満さ」
 
-— DEV PARADE「ME★TA★BO」
+— Devparade「ME★TA★BO」
 
 この1行で全てが伝わる。
 誇りと開き直りと
 ユーモアが完璧に同居してる。
 
-これがDEV PARADEのスピリット。🍖
+これがDevparadeのスピリット。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「人は肉まんだろう？」
 
-— DEV PARADE「ME★TA★BO」
+— Devparade「ME★TA★BO」
 
 哲学。
 
 ソクラテスも言わなかった。
 デカルトも言わなかった。
-DEV PARADEが言った。🍖
+Devparadeが言った。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""EVERYBODY FAT ME
 EVERYBODY FAT YOU
 
-— DEV PARADE「ME★TA★BO」
+— Devparade「ME★TA★BO」
 
 みんな太ってる。
 みんな太っていい。
@@ -1453,26 +1453,26 @@ EVERYBODY FAT YOU
 世界一シンプルな
 ボディポジティブ宣言。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「何が何でも
 あーでもこーでも
 諦めるな」
 
-— DEV PARADE「バッチコイ!!!」
+— Devparade「バッチコイ!!!」
 
 デブが言うと説得力が違う。
 だって俺たち、
 ダイエットは諦めたけど
 夢は諦めなかった。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     # ===== 🎤 楽曲パンチライン系（うっちゃりFUNK / ダブルベッド / タチアガレ / 夏の終わりに / パルフェ） =====
     f"""「No Meat! No Life!
 おなかにつまった夢と希望と愛」
 
-— DEV PARADE「うっちゃりFUNK」
+— Devparade「うっちゃりFUNK」
 
 俺たちの腹は
 脂肪じゃない。
@@ -1480,24 +1480,24 @@ EVERYBODY FAT YOU
 
 CT撮っても映らないけど。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「お太り様ですか？
 ある意味サイズ的にお二人様分」
 
-— DEV PARADE「うっちゃりFUNK」
+— Devparade「うっちゃりFUNK」
 
 レストランで1人で予約して
 2人分の席をキープする男。
 
-それがDEV PARADE。🍖
+それがDevparade。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「満たされたお腹は
 心も満たされ I'm So FAT」
 
-— DEV PARADE「うっちゃりFUNK」
+— Devparade「うっちゃりFUNK」
 
 FAT = 満たされた。
 最高の自己肯定。
@@ -1506,23 +1506,23 @@ FAT = 満たされた。
 心も満たされる。
 真理。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「学校じゃ教えてくれない
 １００点より上の取り方」
 
-— DEV PARADE「うっちゃりFUNK」
+— Devparade「うっちゃりFUNK」
 
 100点の取り方は学校で教わる。
 100kgの超え方は
-DEV PARADEが教える。🍖
+Devparadeが教える。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「母1人子肥り
 かあさん、ありGETS YOU」
 
-— DEV PARADE「うっちゃりFUNK」
+— Devparade「うっちゃりFUNK」
 
 母の愛で育ち、
 母の飯で太った。
@@ -1530,12 +1530,12 @@ DEV PARADEが教える。🍖
 全ての太ったお前は
 母親の愛の結晶。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「キミが隣に眠らないから
 ボクは体をふくらませた」
 
-— DEV PARADE「ダブルベッド」
+— Devparade「ダブルベッド」
 
 寂しさで食べて太った。
 つまり太ってる人は
@@ -1543,26 +1543,26 @@ DEV PARADEが教える。🍖
 
 異論は認めない。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「ダブルベッドなのに
 一人でいっぱいなのさ」
 
-— DEV PARADE「ダブルベッド」
+— Devparade「ダブルベッド」
 
 切ない。
 けど笑える。
 けど切ない。
 
 このバランスが
-DEV PARADEの真骨頂。🍖
+Devparadeの真骨頂。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「君がいなくて俺はふくらんだ。
 君への想いがまたふくらんだ」
 
-— DEV PARADE「ダブルベッド」
+— Devparade「ダブルベッド」
 
 体も想いも
 ふくらんだ。
@@ -1570,59 +1570,59 @@ DEV PARADEの真骨頂。🍖
 これ、ラブソングの歴史で
 前例がない切なさ。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「痩せているとか太ってるとか
 肌の色とか関係ないさ」
 
-— DEV PARADE「タチアガレ」
+— Devparade「タチアガレ」
 
 体重90kg超の男5人が
 これを歌うから説得力がある。
 
 言葉じゃなく存在で語る。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「君の弱さ、他人の個性、
 受け入れるのが真の強さだってさ」
 
-— DEV PARADE「タチアガレ」
+— Devparade「タチアガレ」
 
 デブを受け入れた俺たちは
 真の強さを手に入れた。
 
 タチアガレ。コブシ挙げて。🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     f"""「憧れのシルエット、
 俺は比較的丸くて。
 心も丸くなった今なら伝えれる」
 
-— DEV PARADE「夏の終わりに」
+— Devparade「夏の終わりに」
 
 体型が丸い。
 心も丸い。
 全部丸い。
 それでいい。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「インスタグラムより100キログラム
 TIKTOKよりビーフとポーク」
 
-— DEV PARADE「パルフェ」
+— Devparade「パルフェ」
 
 このパンチライン以上の
 パンチラインを
 俺はまだ知らない。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「AIより愛。マニュアルなしさ」
 
-— DEV PARADE「パルフェ」
+— Devparade「パルフェ」
 
 2026年、AIの時代に
 デブが歌う「AIより愛」。
@@ -1630,12 +1630,12 @@ TIKTOKよりビーフとポーク」
 重い。深い。太い。
 全部褒め言葉。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「デブは甘え？ バカめ。
 おもいっきり甘えていいんだぜ」
 
-— DEV PARADE「パルフェ」
+— Devparade「パルフェ」
 
 甘えろ。
 甘いもの食え。
@@ -1644,23 +1644,23 @@ TIKTOKよりビーフとポーク」
 甘えることを
 恥じるな。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「最高さ、震える脂肪細胞が。
 内臓が喜ぶ魅力は異常さ」
 
-— DEV PARADE「パルフェ」
+— Devparade「パルフェ」
 
 脂肪細胞が震える曲を
 作れるバンドは世界に
-DEV PARADEだけ。🍖
+Devparadeだけ。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     # ===== 🎤 楽曲パンチライン系（100CAN DIVE / 万年FAT / HAPPY！乱デブー / メシ食わせろ / 自転車） =====
     f"""「6パックから1パック。逆ライザップ」
 
-— DEV PARADE「100CAN DIVE」
+— Devparade「100CAN DIVE」
 
 世の中ライザップで痩せる人ばかり。
 俺たちは逆を行く。
@@ -1668,11 +1668,11 @@ DEV PARADEだけ。🍖
 トレンドに逆らう勇気。
 これがロック。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「ポジティブな肥満師」
 
-— DEV PARADE「100CAN DIVE」
+— Devparade「100CAN DIVE」
 
 肥満師。
 師って付いてる。
@@ -1680,56 +1680,56 @@ DEV PARADEだけ。🍖
 
 弟子も募集中。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「尿酸値、高いけど超ダンディ」
 
-— DEV PARADE「100CAN DIVE」
+— Devparade「100CAN DIVE」
 
 健康診断の数値は赤字。
 ダンディズムは黒字。
 
 トータルでプラス。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「あきらかに負け戦だとしても
 友よ闘え、明日の為に」
 
-— DEV PARADE「100CAN DIVE」
+— Devparade「100CAN DIVE」
 
 体重計との戦いは毎日負け戦。
 でも俺たちは明日も闘う。
 
 100CAN DIVE！🍖
 
-#DEVPARADE #バッチコイ""",
+#Devparade #バッチコイ""",
 
     f"""「肥満は文化」
 
-— DEV PARADE「何年経っても万年FAT」
+— Devparade「何年経っても万年FAT」
 
 この4文字に全てが詰まってる。
 
 文化遺産に登録してくれ。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「まだ食べたい。まだ飲みたい。
 もう眠たい。」
 
-— DEV PARADE「何年経っても万年FAT」
+— Devparade「何年経っても万年FAT」
 
 人間の三大欲求を
 最もシンプルに表現した歌詞。
 
 ノーベル文学賞候補。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「食っては悔いて、悔いては食って」
 
-— DEV PARADE「何年経っても万年FAT」
+— Devparade「何年経っても万年FAT」
 
 人類の永遠のループ。
 でも俺たちは
@@ -1737,56 +1737,56 @@ DEV PARADEだけ。🍖
 
 食って、食って、食う。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「照らすミラーボール、
 俺、体型がミートボール」
 
-— DEV PARADE「HAPPY！乱デブー」
+— Devparade「HAPPY！乱デブー」
 
 ミラーボールとミートボール。
 韻がやばい。
 体型もやばい。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「食べれないほどアイニージュー」
 
-— DEV PARADE「HAPPY！乱デブー」
+— Devparade「HAPPY！乱デブー」
 
 「食べれないほど」って
-DEV PARADEが言うと
+Devparadeが言うと
 相当な愛の深さ。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「生きる為に食べてなくて、
 食べる為に生きてる」
 
-— DEV PARADE「メシ食わせろ」
+— Devparade「メシ食わせろ」
 
 人生の目的が明確な男たち。
 
 食べる為に生きる。
 この潔さ。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「メシを喰わせろ。腹が減ったぞ。
 メシを喰わせろ。痩せちまうだろ」
 
-— DEV PARADE「メシ食わせろ」
+— Devparade「メシ食わせろ」
 
 「痩せちまうだろ」って
 脅し文句が他のバンドと
 方向性違いすぎて最高。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「LUUPですら100キロ制限体重。
 食ったら乗るな」
 
-— DEV PARADE「自転車」
+— Devparade「自転車」
 
 電動キックボードすら
 乗れない体重。
@@ -1794,12 +1794,12 @@ DEV PARADEが言うと
 でも俺たちには
 音楽がある。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 
     f"""「自重が自由うばう地球。
 万有引力発見、ニュートン」
 
-— DEV PARADE「自転車」
+— Devparade「自転車」
 
 ニュートンを恨んでる
 90kg超のバンド。
@@ -1807,12 +1807,12 @@ DEV PARADEが言うと
 引力なかったら
 もっと自由だった。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「夜に肥えて行くのさ
 ラーメンとか夜食で」
 
-— DEV PARADE「自転車」
+— Devparade「自転車」
 
 夜は太る時間。
 でも夜のラーメンは
@@ -1821,26 +1821,26 @@ DEV PARADEが言うと
 美味さとカロリーは比例する。
 これ物理法則。🍖
 
-#DEVPARADE""",
+#Devparade""",
 
     f"""「サドル、ケツ、空気ぬけ
 パンクしやすい。体重による残念」
 
-— DEV PARADE「自転車」
+— Devparade「自転車」
 
 自転車のパンクの原因:
 
 普通の人 → 釘を踏んだ
-DEV PARADE → 体重
+Devparade → 体重
 
 そういうバンド。🍖
 
-#DEVPARADE #デブパレード""",
+#Devparade #デブパレード""",
 ]
 LAUNCH_TWEETS = [
     f"""「デブ」って言われて傷ついた全ての人へ。
 
-俺たちDEV PARADE、メンバー全員90kg以上。
+俺たちDevparade、メンバー全員90kg以上。
 バンド名にデブ入れてる。
 しかもメジャーデビューした。
 
@@ -1849,7 +1849,7 @@ LAUNCH_TWEETS = [
 そんな俺たちが作った「ポジデブBot」🍖
 
 {BOT_URL}
-#ポジデブBot #DEVPARADE""",
+#ポジデブBot #Devparade""",
 ]
 
 COLLAB_TWEETS = [
@@ -2007,7 +2007,7 @@ def score_tweet(text):
     if numbered >= 3:
         score += 6
 
-    # --- DEV PARADE固有の強みを活かしてるか ---
+    # --- Devparade固有の強みを活かしてるか ---
     if "NARUTO" in text or "バッチコイ" in text:
         score += 5    # 認知度の高いキーワード
     if "90kg" in text or "全員90" in text:
@@ -2229,7 +2229,7 @@ def main():
 {"✅ 自動投稿完了！ 直接リンクで表示を確認してください: " + tweet_link if auto_posted else "### 👇 ワンクリックで投稿 👇"}
 
 ---
-🍖 Smart PosiDev Tweet by DEV PARADE
+🍖 Smart PosiDev Tweet by Devparade
 """
 
     with open("tweet_issue.md", "w") as f:

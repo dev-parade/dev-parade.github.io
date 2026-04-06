@@ -29,7 +29,7 @@ PROMO_TWEETS = {
 
 SNS上の全ての「デブ」をポジティブに変換するBot、作りました。
 
-全員90kg超のバンド DEV PARADEが、
+全員90kg超のバンド Devparadeが、
 全てのネガティブなデブ発言を
 全力で肯定します。
 
@@ -40,7 +40,7 @@ SNS上の全ての「デブ」をポジティブに変換するBot、作りま�
 
         f"""「デブ」って言われて傷ついた全ての人へ。
 
-俺たちDEV PARADE、メンバー全員90kg以上。
+俺たちDevparade、メンバー全員90kg以上。
 バンド名にデブ入れてる。
 しかもメジャーデビューした。
 
@@ -74,7 +74,7 @@ A.
 
         f"""【定期】
 
-DEV PARADEのメンバー
+Devparadeのメンバー
 
 🎤 ハンサム判治（Vo./Leader）
 🎙️ COYASS（MC）
@@ -103,14 +103,14 @@ DEV PARADEのメンバー
 「この世に無駄な脂肪はない。
 全部、お前という作品の一部だ。」
 
-— DEV PARADE（全員90kg超）🍖
+— Devparade（全員90kg超）🍖
 
 {BOT_URL}
 #ポジデブBot #ポジデブ""",
 
         f"""体重と幸福度は比例する。
 
-（DEV PARADE調べ）
+（Devparade調べ）
 
 source: 俺たち全員90kg超で幸せ🍖
 
@@ -144,7 +144,7 @@ source: 俺たち全員90kg超で幸せ🍖
 ポジデブBotが全力ポジティブに変換します。
 
 入力: ネガティブな体型の悩み
-出力: DEV PARADEメンバーからの全力肯定
+出力: Devparadeメンバーからの全力肯定
 
 やってみて👇🍖
 {BOT_URL}
@@ -160,7 +160,7 @@ source: 俺たち全員90kg超で幸せ🍖
 
 全部わかる。全部経験した。
 でも全部ネタになる。
-それがDEV PARADEのスピリット🍖
+それがDevparadeのスピリット🍖
 
 #ポジデブBot #DEVPARADE""",
 
@@ -210,7 +210,7 @@ DM or リプライで！🍖
 
 # ===== リプライ用テンプレート（バズりそうなツイートに反応） =====
 VIRAL_REPLIES = [
-    "デブの話題が出たので来ました。全員90kg超バンドのDEV PARADEです。デブは才能。🍖 #ポジデブBot",
+    "デブの話題が出たので来ました。全員90kg超バンドのDevparadeです。デブは才能。🍖 #ポジデブBot",
     "デブをネガティブに語るスレッドに割り込む全員90kg超バンドです。デブは最高。🍖 #ポジデブBot",
 ]
 
@@ -341,7 +341,7 @@ SNSの「デブ」を全部ポジティブに変換する
 ```
 【ポジデブBot 始動🍖】
 
-DEV PARADEが、SNS上の全ての「デブ」「太った」「痩せろ」を
+Devparadeが、SNS上の全ての「デブ」「太った」「痩せろ」を
 ポジティブに変換するBotを作りました！
 
 全員90kg超のバンドだからこそ言える。
@@ -354,7 +354,7 @@ DEV PARADEが、SNS上の全ての「デブ」「太った」「痩せろ」を
 ```
 
 ---
-🍖 Powered by DEV PARADE Marketing
+🍖 Powered by Devparade Marketing
 """
 
     with open("marketing_log.md", "w") as f:

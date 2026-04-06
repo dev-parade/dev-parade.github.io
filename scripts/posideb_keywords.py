@@ -2,7 +2,7 @@
 PosiDev Keywords - デブにまつわるキーワード100個+ & ポジデブ変換辞典
 日本語 + 英語（世界規模対応）
 
-DEV PARADE流のユーモアとポジティブさで変換。
+Devparade流のユーモアとポジティブさで変換。
 """
 
 # ===== 検索用キーワード（Google検索 / メンション検知用） =====
@@ -23,7 +23,7 @@ KEYWORDS_JA = {
         "痩せろという奴は、お前の雄大なスケールを恐れているだけだ。PDP（ポジデブ哲学）で踏み潰せ🍖 #PDP",
     ],
     "でぶ": [
-        "でぶは愛称。DEV PARADEはバンド名にデブ入れて誇ってます🍖 #ポジデブ",
+        "でぶは愛称。Devparadeはバンド名にデブ入れて誇ってます🍖 #ポジデブ",
     ],
     "太った": [
         "太った？ それ「成長した」の同義語。細胞レベルで進化してる🍖 #ポジデブ",
@@ -33,7 +33,7 @@ KEYWORDS_JA = {
         "太る＝パワーアップ。RPGで言えばレベルアップだ🍖 #ポジデブ",
     ],
     "太り": [
-        "太りは成長の証。メンバー全員90kg超バンドDEV PARADEが保証する🍖 #ポジデブ",
+        "太りは成長の証。メンバー全員90kg超バンドDevparadeが保証する🍖 #ポジデブ",
     ],
     "ふとった": [
         "ふとった？ 存在感が増したってこと。ステージ映えするぜ🍖 #ポジデブ",
@@ -52,7 +52,7 @@ KEYWORDS_JA = {
         "おデブ様と呼びなさい。敬称をつけるのがマナー🍖 #ポジデブ",
     ],
     "巨漢": [
-        "巨漢は存在感の塊。DEV PARADEのugazinは巨漢ギタリストで繊細なメロディを紡ぐ男🍖 #ポジデブ",
+        "巨漢は存在感の塊。Devparadeのugazinは巨漢ギタリストで繊細なメロディを紡ぐ男🍖 #ポジデブ",
     ],
     "巨体": [
         "巨体は力の象徴。相撲取りもプロレスラーもみんな巨体で偉大🍖 #ポジデブ",
@@ -64,13 +64,13 @@ KEYWORDS_JA = {
     # ----- SNSネガティブ表現 -----
     "痩せろ": [
         "痩せる必要？ ないね。俺たち全員90kg超でステージに立ってる💪🍖 #ポジデブ",
-        "痩せろ？ お断りだ。DEV PARADEは90kg以上限定🍖 #ポジデブ",
+        "痩せろ？ お断りだ。Devparadeは90kg以上限定🍖 #ポジデブ",
     ],
     "やせろ": [
         "やせろなんて古い価値観。ポジデブが新時代🍖 #ポジデブ",
     ],
     "痩せなきゃ": [
-        "痩せなくていい。むしろDEV PARADE入らない？条件は90kg以上🍖 #ポジデブ",
+        "痩せなくていい。むしろDevparade入らない？条件は90kg以上🍖 #ポジデブ",
     ],
     "痩せたい": [
         "「痩せたい」→「もっと愛されたい」に変換。大丈夫、そのままで最高🍖 #ポジデブ",
@@ -96,7 +96,7 @@ KEYWORDS_JA = {
         "ダイエットの語源は「生き方」。今の生き方、最高じゃん？🍖 #ポジデブ",
     ],
     "糖質制限": [
-        "糖質制限より愛情無制限。DEV PARADEが保証する🍖 #ポジデブ",
+        "糖質制限より愛情無制限。Devparadeが保証する🍖 #ポジデブ",
     ],
     "食べ過ぎ": [
         "食べ過ぎじゃない、幸せ過ぎだ。最高の状態🍖 #ポジデブ",
@@ -105,13 +105,13 @@ KEYWORDS_JA = {
         "カロリーは幸せの単位。高カロリー＝高幸福度🍖 #ポジデブ",
     ],
     "体重": [
-        "体重は数字。お前の価値じゃない。DEV PARADEが保証する🍖 #ポジデブ",
+        "体重は数字。お前の価値じゃない。Devparadeが保証する🍖 #ポジデブ",
     ],
     "体重計": [
         "体重計に支配されるな。数字より心の充実🍖 #ポジデブ",
     ],
     "リバウンド": [
-        "リバウンドじゃない、カムバックだ。DEV PARADEも15年ぶりにカムバックした🍖 #ポジデブ",
+        "リバウンドじゃない、カムバックだ。Devparadeも15年ぶりにカムバックした🍖 #ポジデブ",
         "リバウンド万歳。戻りたがってる体が愛おしいぜ。DX判定してみろ → https://devparade.jp/debu-bot.html 🍖",
     ],
     "飯テロ": [
@@ -144,7 +144,7 @@ KEYWORDS_JA = {
 
     # ----- 体型コンプレックス -----
     "体型": [
-        "体型は個性。DEV PARADEはメンバー全員90kg以上で誇りに思ってる🍖 #ポジデブ",
+        "体型は個性。Devparadeはメンバー全員90kg以上で誇りに思ってる🍖 #ポジデブ",
     ],
     "二重あご": [
         "二重あご＝顔にクッション装備。安全性が高い🍖 #ポジデブ",
@@ -162,7 +162,7 @@ KEYWORDS_JA = {
         "お腹は幸せの貯金箱。たっぷり貯まってるね🍖 #ポジデブ",
     ],
     "脂肪": [
-        "脂肪は努力の結晶。DEV PARADEの公式見解です🍖 #ポジデブ",
+        "脂肪は努力の結晶。Devparadeの公式見解です🍖 #ポジデブ",
     ],
     "体脂肪": [
         "体脂肪率より幸福度を測ろう。そっちの方が大事🍖 #ポジデブ",
@@ -177,24 +177,24 @@ KEYWORDS_JA = {
         "中年太りは人生経験の蓄積。深みが違う🍖 #ポジデブ",
     ],
     "コンプレックス": [
-        "コンプレックスは武器に変わる。DEV PARADEがその証明🍖 #ポジデブ",
+        "コンプレックスは武器に変わる。Devparadeがその証明🍖 #ポジデブ",
     ],
 
-    # ----- DEV PARADE語録・ポジデブ用語 -----
+    # ----- Devparade語録・ポジデブ用語 -----
     "100kg": [
-        "100kgはエリート。DEV PARADEの入団資格（90kg以上）クリア🍖 #ポジデブ",
+        "100kgはエリート。Devparadeの入団資格（90kg以上）クリア🍖 #ポジデブ",
     ],
     "100キロ": [
         "100キロは大台じゃない、金字塔だ🍖 #ポジデブ",
     ],
     "90kg": [
-        "90kg以上はDEV PARADE入団資格あり。仲間だ🍖 #ポジデブ",
+        "90kg以上はDevparade入団資格あり。仲間だ🍖 #ポジデブ",
     ],
     "三桁": [
-        "体重三桁は選ばれし者。DEV PARADEの入団資格は90kg以上🍖 #ポジデブ",
+        "体重三桁は選ばれし者。Devparadeの入団資格は90kg以上🍖 #ポジデブ",
     ],
     "痛風": [
-        "痛風はグルメの勲章。DEV PARADEにも痛風ホルダー多数🍖 #ポジデブ",
+        "痛風はグルメの勲章。Devparadeにも痛風ホルダー多数🍖 #ポジデブ",
     ],
     "XL": [
         "XLは「eXtra Love」の略。愛が溢れてるサイズ🍖 #ポジデブ",
@@ -214,7 +214,7 @@ KEYWORDS_JA = {
 
     # ----- 感情・状況 -----
     "傷ついた": [
-        "傷ついたならメンバー全員90kg超の愛で包んでやる。DEV PARADEはお前の味方🍖 #ポジデブ",
+        "傷ついたならメンバー全員90kg超の愛で包んでやる。Devparadeはお前の味方🍖 #ポジデブ",
     ],
     "辛い": [
         "辛い時こそポジデブ。焼肉食って元気出そう🍖 #ポジデブ",
@@ -232,7 +232,7 @@ KEYWORDS_JA = {
         "食べちゃった？ 正解。お前は今日も生き延びた。おめでとう🍖 #ポジデブ",
     ],
     "夜食": [
-        "深夜の夜食は罪じゃない。ご褒美。DEV PARADEが許可する🍖 #ポジデブ",
+        "深夜の夜食は罪じゃない。ご褒美。Devparadeが許可する🍖 #ポジデブ",
     ],
     "ストレス食い": [
         "ストレス食いは自己防衛。賢い体の反応だ。責めるな🍖 #ポジデブ",
@@ -240,40 +240,40 @@ KEYWORDS_JA = {
 
     # ----- 痩せすぎ心配系（痩せた人にもポジデブ） -----
     "痩せた": [
-        "痩せた？ 心配してるぞ。ちゃんと食ってるか？ 焼肉おごるから連絡くれ🍖 by DEV PARADE #ポジデブ",
-        "痩せたって聞いて飛んできた。DEV PARADEが全力で肉を届けたい🍖 #ポジデブ",
+        "痩せた？ 心配してるぞ。ちゃんと食ってるか？ 焼肉おごるから連絡くれ🍖 by Devparade #ポジデブ",
+        "痩せたって聞いて飛んできた。Devparadeが全力で肉を届けたい🍖 #ポジデブ",
     ],
     "痩せすぎ": [
-        "痩せすぎは心配。体は大事にしてくれ。一緒に焼肉行こう🍖 by DEV PARADE #ポジデブ",
+        "痩せすぎは心配。体は大事にしてくれ。一緒に焼肉行こう🍖 by Devparade #ポジデブ",
         "痩せすぎるな。お前が元気でいることが一番大事🍖 #ポジデブ",
     ],
     "やせた": [
-        "やせた？ 無理してないか？ 健康が第一。DEV PARADEが心配してるぞ🍖 #ポジデブ",
+        "やせた？ 無理してないか？ 健康が第一。Devparadeが心配してるぞ🍖 #ポジデブ",
     ],
     "ガリガリ": [
         "ガリガリも心配になる。ちゃんと食べて元気でいてくれ。肉送るぞ🍖 #ポジデブ",
         "ガリガリだろうがデブだろうが、お前は最高。でも食べてくれ🍖 #ポジデブ",
     ],
     "がりがり": [
-        "がりがりはDEV PARADE的に心配。栄養摂ってるか？ 体大事にしろ🍖 #ポジデブ",
+        "がりがりはDevparade的に心配。栄養摂ってるか？ 体大事にしろ🍖 #ポジデブ",
     ],
     "食べてない": [
-        "食べてない？ それは心配だ。体が資本。まず食え。話はそれからだ🍖 by DEV PARADE #ポジデブ",
+        "食べてない？ それは心配だ。体が資本。まず食え。話はそれからだ🍖 by Devparade #ポジデブ",
     ],
     "食べれない": [
         "食べれない時は無理しなくていい。でもいつでも一緒に食べに行くぞ🍖 #ポジデブ",
     ],
     "拒食": [
-        "辛いな。一人で抱え込まないで。DEV PARADEはメンバー全員90kg超の愛であなたの味方🍖 #ポジデブ",
+        "辛いな。一人で抱え込まないで。Devparadeはメンバー全員90kg超の愛であなたの味方🍖 #ポジデブ",
     ],
     "過食": [
-        "辛い時は食で心を満たすこともある。自分を責めないで🍖 by DEV PARADE #ポジデブ",
+        "辛い時は食で心を満たすこともある。自分を責めないで🍖 by Devparade #ポジデブ",
     ],
     "摂食障害": [
-        "一人で戦わなくていい。専門家の力も借りて。DEV PARADEはいつでもあなたの味方🍖 #ポジデブ",
+        "一人で戦わなくていい。専門家の力も借りて。Devparadeはいつでもあなたの味方🍖 #ポジデブ",
     ],
     "骨と皮": [
-        "体は大事にしてくれ。健康が全て。焼肉で栄養つけよう🍖 by DEV PARADE #ポジデブ",
+        "体は大事にしてくれ。健康が全て。焼肉で栄養つけよう🍖 by Devparade #ポジデブ",
     ],
     "体重減った": [
         "体重減った？ 意図的じゃないなら心配だ。体調どう？ 健康第一🍖 #ポジデブ",
@@ -312,8 +312,8 @@ KEYWORDS_JA = {
 # ===== 英語キーワード（世界規模対応） =====
 KEYWORDS_EN = {
     "fat": [
-        "Fat? That's just more of you to love! メンバー全員90kg超 band DEV PARADE approves 🍖 #BodyPositive",
-        "Fat is not a flaw. It's a feature. DEV PARADE, メンバー全員90kg超 of proof 🍖 #PosiDev",
+        "Fat? That's just more of you to love! メンバー全員90kg超 band Devparade approves 🍖 #BodyPositive",
+        "Fat is not a flaw. It's a feature. Devparade, メンバー全員90kg超 of proof 🍖 #PosiDev",
     ],
     "overweight": [
         "Overweight? Over-awesome is more like it 🍖 #BodyPositive #DEVPARADE",
@@ -325,16 +325,16 @@ KEYWORDS_EN = {
         "Chubby = cuddly = lovable. Science. 🍖 #BodyPositive #DEVPARADE",
     ],
     "plus size": [
-        "Plus size = plus personality = plus love. DEV PARADE approves 🍖 #BodyPositive",
+        "Plus size = plus personality = plus love. Devparade approves 🍖 #BodyPositive",
     ],
     "big": [
-        "Big is beautiful. Big is powerful. Big is DEV PARADE 🍖 #BodyPositive",
+        "Big is beautiful. Big is powerful. Big is Devparade 🍖 #BodyPositive",
     ],
     "thicc": [
         "Thicc is a compliment and we're here for it 🍖 #BodyPositive #DEVPARADE",
     ],
     "chunky": [
-        "Chunky? More like funky! DEV PARADE style 🍖 #BodyPositive",
+        "Chunky? More like funky! Devparade style 🍖 #BodyPositive",
     ],
     "lose weight": [
         "Lose weight? Why lose anything? Gain confidence instead 🍖 #BodyPositive #DEVPARADE",
@@ -343,13 +343,13 @@ KEYWORDS_EN = {
         "Diet comes from Greek 'diaita' meaning 'way of life'. Your life? Already great 🍖 #PosiDev",
     ],
     "body shame": [
-        "Body shaming stops here. DEV PARADE, メンバー全員90kg超 of pure love 🍖 #BodyPositive",
+        "Body shaming stops here. Devparade, メンバー全員90kg超 of pure love 🍖 #BodyPositive",
     ],
     "body shaming": [
         "No body shaming allowed. Every body is worthy. メンバー全員90kg超 band guarantee 🍖 #BodyPositive",
     ],
     "fat shaming": [
-        "Fat shaming is the real ugly thing. Not bodies. DEV PARADE stands with you 🍖 #BodyPositive",
+        "Fat shaming is the real ugly thing. Not bodies. Devparade stands with you 🍖 #BodyPositive",
     ],
     "too fat": [
         "Too fat? Too awesome. There's no such thing as too much you 🍖 #BodyPositive",
@@ -367,7 +367,7 @@ KEYWORDS_EN = {
         "Weight gain = existence gain. More of you in the world is a good thing 🍖 #PosiDev",
     ],
     "belly fat": [
-        "Belly fat? That's where dreams are stored. Ask DEV PARADE's メンバー全員90kg超 of dreams 🍖 #PosiDev",
+        "Belly fat? That's where dreams are stored. Ask Devparade's メンバー全員90kg超 of dreams 🍖 #PosiDev",
     ],
     "junk food": [
         "There's no junk food. Only joy food 🍖 #BodyPositive #DEVPARADE",
@@ -403,10 +403,10 @@ KEYWORDS_EN = {
         "Thunder thighs? You bring the thunder. Powerful 🍖 #BodyPositive",
     ],
     "body positive": [
-        "Body positive! DEV PARADE supports you. メンバー全員90kg超 of love 🍖 #BodyPositive #DEVPARADE",
+        "Body positive! Devparade supports you. メンバー全員90kg超 of love 🍖 #BodyPositive #DEVPARADE",
     ],
     "self love": [
-        "Self love is the best love. DEV PARADE approves this message 🍖 #BodyPositive",
+        "Self love is the best love. Devparade approves this message 🍖 #BodyPositive",
     ],
     "eat too much": [
         "Ate too much? Nah, you lived too much. And that's beautiful 🍖 #BodyPositive",
@@ -424,22 +424,22 @@ KEYWORDS_EN = {
         "The best workout? Laughing. Burns calories and builds happiness 🍖 #BodyPositive",
     ],
     "skinny": [
-        "Skinny isn't the goal. Happy is. DEV PARADE at メンバー全員90kg超 is proof 🍖 #BodyPositive",
+        "Skinny isn't the goal. Happy is. Devparade at メンバー全員90kg超 is proof 🍖 #BodyPositive",
     ],
     "slim": [
         "Slim isn't better, just different. All sizes are valid 🍖 #BodyPositive #DEVPARADE",
     ],
     "size zero": [
-        "Size zero? Zero fun. Go big or go home. DEV PARADE went BIG 🍖 #BodyPositive",
+        "Size zero? Zero fun. Go big or go home. Devparade went BIG 🍖 #BodyPositive",
     ],
     "too skinny": [
-        "Too skinny? Take care of yourself. Health comes first. DEV PARADE cares 🍖 #BodyPositive",
+        "Too skinny? Take care of yourself. Health comes first. Devparade cares 🍖 #BodyPositive",
     ],
     "underweight": [
         "Underweight? Please eat well and take care. Your health matters most 🍖 #BodyPositive",
     ],
     "anorexia": [
-        "You're not alone. Please reach out for help. DEV PARADE sends メンバー全員90kg超 of love 🍖 #BodyPositive",
+        "You're not alone. Please reach out for help. Devparade sends メンバー全員90kg超 of love 🍖 #BodyPositive",
     ],
     "eating disorder": [
         "Eating disorders are real and valid. Please seek help. We support you 🍖 #BodyPositive",
@@ -510,7 +510,7 @@ def select_response(text):
     # デフォルト
     defaults = [
         "大丈夫、お前は最高だ。全員90kg超のバンドが言ってるから間違いない🍖 #ポジデブ",
-        "Every body is a good body. DEV PARADE, メンバー全員90kg超 of proof 🍖 #BodyPositive",
+        "Every body is a good body. Devparade, メンバー全員90kg超 of proof 🍖 #BodyPositive",
         "この世に無駄な脂肪はない。全部お前という作品の一部だ🍖 #ポジデブ",
         "You are beautiful exactly as you are 🍖 #BodyPositive #DEVPARADE",
         "どんな悩みも、焼肉食ったら解決する。解決しなくても美味い🍖 #ポジデブ",

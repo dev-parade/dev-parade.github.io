@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-PosiDev Bot - DEV PARADE 公式デブポジティブ変換Bot
+PosiDev Bot - Devparade 公式デブポジティブ変換Bot
 
 SNS上の「デブ」「太った」「痩せろ」等のネガティブ発言を検知し、
-DEV PARADEメンバーとしてポジティブなリプライを自動送信する。
+Devparadeメンバーとしてポジティブなリプライを自動送信する。
 
 必要な環境変数:
   X_BEARER_TOKEN, X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_SECRET
@@ -37,7 +37,7 @@ SEARCH_QUERIES = [
     '"体重増えた" -is:retweet -is:reply lang:ja',
 ]
 
-# ===== DEV PARADE MEMBERS =====
+# ===== Devparade MEMBERS =====
 MEMBERS = [
     {"name": "ハンサム判治", "role": "Vo./Leader", "weight": "90kg超"},
     {"name": "COYASS", "role": "MC", "weight": "90kg超"},
@@ -49,43 +49,43 @@ MEMBERS = [
 # ===== ポジティブレスポンスDB =====
 RESPONSES = {
     "デブ": [
-        "デブ？ ありがとう！🍖 全員90kg超のバンドDEV PARADEから言わせてもらうと、それは最高の褒め言葉。#ポジデブ #DEVPARADE",
-        "「DEV」= Delightful Extreme Vitality の略。知らなかった？ 🍖 by DEV PARADE #ポジデブ",
+        "デブ？ ありがとう！🍖 全員90kg超のバンドDevparadeから言わせてもらうと、それは最高の褒め言葉。#ポジデブ #DEVPARADE",
+        "「DEV」= Delightful Extreme Vitality の略。知らなかった？ 🍖 by Devparade #ポジデブ",
         "デブは才能。俺たち全員90kg超、ソニーからメジャーデビューした。才能に体重は関係ない。🍖 #ポジデブ #DEVPARADE",
-        "デブって呼ばれた？ おめでとう、DEV PARADEの入団資格を満たしてます（条件:90kg以上）🍖 #ポジデブ",
-        "デブは誇り。バンド名にDEV（デブ）入れてるくらい。リスペクト。🍖 by DEV PARADE #ポジデブ",
+        "デブって呼ばれた？ おめでとう、Devparadeの入団資格を満たしてます（条件:90kg以上）🍖 #ポジデブ",
+        "デブは誇り。バンド名にDEV（デブ）入れてるくらい。リスペクト。🍖 by Devparade #ポジデブ",
     ],
     "太った": [
-        "太った？ それは「成長した」って言うんだよ。細胞レベルで進化してる。おめでとう！🎉🍖 by DEV PARADE #ポジデブ",
-        "体重が増えた = 存在感が増した。ステージ映えするってこと。DEV PARADEが保証する。🍖 #ポジデブ",
+        "太った？ それは「成長した」って言うんだよ。細胞レベルで進化してる。おめでとう！🎉🍖 by Devparade #ポジデブ",
+        "体重が増えた = 存在感が増した。ステージ映えするってこと。Devparadeが保証する。🍖 #ポジデブ",
         "太った分だけ、地球がお前を離したくないってこと。モテてるぜ、地球に。🌍🍖 #ポジデブ #DEVPARADE",
         "体重計の数字が増えた？ それは「影響力」のメーター。デカい奴はデカいことができる。🍖 #ポジデブ",
     ],
     "痩せ": [
         "痩せる必要？ ないね。俺たち全員90kg超でステージに立ってる。痩せたら夢が軽くなる。💪🍖 #ポジデブ #DEVPARADE",
-        "「痩せたい」を「もっと愛されたい」に変換。大丈夫、デブは愛される才能。🍖 by DEV PARADE #ポジデブ",
-        "痩せなくていい。むしろDEV PARADE入らない？条件は90kg以上。🍖 #ポジデブ #DEVPARADE",
+        "「痩せたい」を「もっと愛されたい」に変換。大丈夫、デブは愛される才能。🍖 by Devparade #ポジデブ",
+        "痩せなくていい。むしろDevparade入らない？条件は90kg以上。🍖 #ポジデブ #DEVPARADE",
         "ダイエットの語源は\"生き方\"。今の生き方、最高じゃん。変えなくていい。🍖 #ポジデブ",
     ],
     "メタボ": [
-        "メタボ？ メタル＋ボディの略でしょ？ ロックな体型認定おめでとう！🤘🍖 by DEV PARADE #ポジデブ",
+        "メタボ？ メタル＋ボディの略でしょ？ ロックな体型認定おめでとう！🤘🍖 by Devparade #ポジデブ",
         "俺たち自称「ヘヴィメタボバンド」。メタボは音楽ジャンル。🍖 #ポジデブ #DEVPARADE",
-        "メタボ判定 = ロック認定。DEV PARADEは2006年結成の自称ヘヴィメタボバンド。🍖 #ポジデブ",
+        "メタボ判定 = ロック認定。Devparadeは2006年結成の自称ヘヴィメタボバンド。🍖 #ポジデブ",
     ],
     "ぽっちゃり": [
-        "ぽっちゃり？ それは「やわらかい魅力がある」の同義語。🍖 by DEV PARADE #ポジデブ",
-        "ぽっちゃりは最高のボディタイプ。包容力がハンパない。DEV PARADEメンバー全員が証人。🍖 #ポジデブ",
+        "ぽっちゃり？ それは「やわらかい魅力がある」の同義語。🍖 by Devparade #ポジデブ",
+        "ぽっちゃりは最高のボディタイプ。包容力がハンパない。Devparadeメンバー全員が証人。🍖 #ポジデブ",
     ],
     "体重": [
-        "体重の話？ 俺たち5人で全員90kg超。重さは力。重さは存在感。🍖 by DEV PARADE #ポジデブ",
-        "体重と幸福度は比例する（DEV PARADE調べ）。お前、幸せだろ？🍖 #ポジデブ #DEVPARADE",
+        "体重の話？ 俺たち5人で全員90kg超。重さは力。重さは存在感。🍖 by Devparade #ポジデブ",
+        "体重と幸福度は比例する（Devparade調べ）。お前、幸せだろ？🍖 #ポジデブ #DEVPARADE",
     ],
     "generic": [
-        "どんな悩みも、焼肉食ったら解決する。解決しなくても、美味い。それでいい。🍖 by DEV PARADE #ポジデブ",
+        "どんな悩みも、焼肉食ったら解決する。解決しなくても、美味い。それでいい。🍖 by Devparade #ポジデブ",
         "大丈夫、お前は最高だ。全員90kg超のバンドが言ってるんだから間違いない。🍖 #ポジデブ #DEVPARADE",
-        "ネガティブな言葉は俺たちの腹の肉で全部吸収してやる。🍖 by DEV PARADE #ポジデブ",
+        "ネガティブな言葉は俺たちの腹の肉で全部吸収してやる。🍖 by Devparade #ポジデブ",
         "この世に無駄な脂肪なんてない。全部お前という作品の一部。🍖 #ポジデブ #DEVPARADE",
-        "デブは個性。個性は武器。武器は磨け。🍖 by DEV PARADE #ポジデブ",
+        "デブは個性。個性は武器。武器は磨け。🍖 by Devparade #ポジデブ",
     ],
 }
 
@@ -128,7 +128,7 @@ def get_ai_response(tweet_text):
             max_tokens=280,
             messages=[{
                 "role": "user",
-                "content": f"""あなたはDEV PARADE（デブパレード）の公式Botです。メンバー全員90kg以上のヘヴィメタボバンド。
+                "content": f"""あなたはDevparade（デブパレード）の公式Botです。メンバー全員90kg以上のヘヴィメタボバンド。
 2006年結成、2008年ソニーからメジャーデビュー。NARUTOエンディングテーマ「バッチコイ!!!」で知られる。デブをポジティブに捉えています。
 
 以下のツイートに対して、デブをポジティブに肯定するリプライを1つだけ書いてください。
@@ -213,7 +213,7 @@ def save_last_id(tweet_id):
 
 def main():
     print("=" * 50)
-    print("🍖 PosiDev Bot - DEV PARADE")
+    print("🍖 PosiDev Bot - Devparade")
     print(f"   Mode: {'DRY RUN' if DRY_RUN else 'LIVE'}")
     print(f"   Time: {datetime.now(timezone.utc).isoformat()}")
     print("=" * 50)
@@ -373,7 +373,7 @@ def generate_log(entries, count):
 
     lines.append("")
     lines.append("---")
-    lines.append(f"Powered by DEV PARADE ポジデブBot 🍖")
+    lines.append(f"Powered by Devparade ポジデブBot 🍖")
 
     with open("bot_log.md", "w") as f:
         f.write("\n".join(lines))

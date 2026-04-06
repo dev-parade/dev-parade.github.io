@@ -6,7 +6,7 @@ BOT_URL = "https://devparade.jp/debu-bot.html"
 
 EXTRA_TWEETS = [
     # ===== 🎤 歌詞クロスオーバー =====
-    f"""DEV PARADEの歌詞、食べ物率:
+    f"""Devparadeの歌詞、食べ物率:
 
 バッチコイ!!!「お寿司はデザート」
 GODS N'DEATH「カレーを飲ませろ」
@@ -17,7 +17,7 @@ GODS N'DEATH「カレーを飲ませろ」
 
 #DEVPARADE #デブパレード""",
 
-    f"""DEV PARADEの曲名一覧:
+    f"""Devparadeの曲名一覧:
 
 ・バッチコイ!!!
 ・GODS N'DEATH
@@ -30,7 +30,7 @@ GODS N'DEATH「カレーを飲ませろ」
 
 #DEVPARADE""",
 
-    f"""DEV PARADEソングの教え:
+    f"""Devparadeソングの教え:
 
 悲しい時 → 食え（GODS N'DEATH）
 嬉しい時 → 食え（うっちゃりFUNK）
@@ -54,7 +54,7 @@ GODS N'DEATH「カレーを飲ませろ」
 
 #ポジデブBot #DEVPARADE""",
 
-    f"""焼肉屋でのDEV PARADE:
+    f"""焼肉屋でのDevparade:
 
 店員「何名様ですか？」
 ハンサム「5人です」
@@ -69,7 +69,7 @@ COYASS「座敷だと立てなくなるのでテーブルで」
     f"""回転寿司でのデブ:
 
 一般人: 10皿で満足
-DEV PARADE: 10皿で準備完了
+Devparade: 10皿で準備完了
 
 本番はそこから。🍖
 
@@ -78,7 +78,7 @@ DEV PARADE: 10皿で準備完了
     f"""ラーメン屋の「大盛り無料」。
 
 他の客: 迷う
-DEV PARADE: 当然
+Devparade: 当然
 
 迷う余地がない。
 選択肢は最初からひとつ。🍖
@@ -232,7 +232,7 @@ DEV PARADE: 当然
 「変わること」ばかり求めて
 「受け入れること」を教えない。
 
-DEV PARADEは後者を教える。🍖
+Devparadeは後者を教える。🍖
 
 #DEVPARADE""",
 
@@ -304,11 +304,11 @@ They sang the NARUTO ending theme.
 They turned "fat-shaming" into
 "fat-celebrating."
 
-That's DEV PARADE. 🍖
+That's Devparade. 🍖
 
 #DEVPARADE #BodyPositive""",
 
-    f"""Japanese wisdom by DEV PARADE:
+    f"""Japanese wisdom by Devparade:
 
 "Sushi is dessert."
 "Curry is a drink."
@@ -321,7 +321,7 @@ This is our body positive anthem. 🍖
     f""""Does this look like fat to you?
 This is DIGNITY."
 
-— DEV PARADE lyrics
+— Devparade lyrics
 
 The best comeback ever written. 🍖
 
@@ -335,7 +335,7 @@ But much louder. 🍖
 
 #DEVPARADE""",
 
-    f"""DEV PARADE's life motto:
+    f"""Devparade's life motto:
 
 Eat. Sing. Get Fat.
 And be loved.
@@ -345,7 +345,7 @@ Simple. Effective. Heavy. 🍖
 #DEVPARADE #BodyPositive""",
 
     # ===== 🎵 COSMIC MIND × デブ =====
-    f"""DEV PARADE「COSMIC MIND」:
+    f"""Devparade「COSMIC MIND」:
 
 「光より速く飛ぶのさ」
 
@@ -378,13 +378,13 @@ Simple. Effective. Heavy. 🍖
 #DEVPARADE #NARUTO""",
 
     # ===== 🔁 歌詞 × シチュエーション =====
-    f"""月曜の朝に聴くDEV PARADE:
+    f"""月曜の朝に聴くDevparade:
 →「バッチコイ!!!」で気合入れる
 
-金曜の夜に聴くDEV PARADE:
+金曜の夜に聴くDevparade:
 →「GODS N'DEATH」でカレー飲む
 
-日曜の昼に聴くDEV PARADE:
+日曜の昼に聴くDevparade:
 →「うっちゃりFUNK」で寝る
 
 完璧。🍖
@@ -394,7 +394,7 @@ Simple. Effective. Heavy. 🍖
     f"""失恋した時に聴く曲:
 
 普通の人 → バラード
-DEV PARADEファン → 「ダブルベッド」
+Devparadeファン → 「ダブルベッド」
 
 「君がいなくて俺はふくらんだ」
 
@@ -420,12 +420,12 @@ DEV PARADEファン → 「ダブルベッド」
 お前らにゃ一生わかんねえや」
 
 聴いて3秒でダイエットやめた。
-ありがとう、DEV PARADE。🍖
+ありがとう、Devparade。🍖
 
 #DEVPARADE""",
 
     # ===== 📊 ランキング / リスト =====
-    f"""DEV PARADEの歌詞
+    f"""Devparadeの歌詞
 パンチラインTOP5:
 
 1位「インスタグラムより100キログラム」
@@ -452,7 +452,7 @@ DEV PARADEファン → 「ダブルベッド」
 
 #ポジデブBot #DEVPARADE""",
 
-    f"""DEV PARADEメンバー体重(2008年):
+    f"""Devparadeメンバー体重(2008年):
 
 TAH: 146kg ← 最重量
 ハンサム判治: 120kg
@@ -541,7 +541,7 @@ ugazin: 105kg
 
     # ===== 📰 時事ネタ風 =====
     f"""【速報】
-DEV PARADE、2026年再結成。
+Devparade、2026年再結成。
 ルール: メンバー全員90kg以上。
 
 ルールが体重の時点で
@@ -612,7 +612,7 @@ DEV PARADE、2026年再結成。
 軽く生きるな。
 重く生きろ。
 
-— DEV PARADE🍖
+— Devparade🍖
 
 #DEVPARADE""",
 
@@ -635,7 +635,7 @@ Q.E.D.（証明完了）🍖
 デブの味方:
 
 ✓ 焼肉
-✓ DEV PARADE
+✓ Devparade
 ✓ ポジデブBot
 
 味方の方が強い。🍖
@@ -647,7 +647,7 @@ Q.E.D.（証明完了）🍖
 リプで教えてください。
 
 一番美味そうなやつに
-DEV PARADEが全力で「最高」って送る。
+Devparadeが全力で「最高」って送る。
 
 ジャンル不問。カロリー不問。🍖
 
@@ -665,7 +665,7 @@ DEV PARADEが全力で「最高」って送る。
 
     f"""あなたが太った理由を教えて。
 
-DEV PARADEが
+Devparadeが
 全力でポジティブ変換します。
 
 例:
@@ -674,7 +674,7 @@ DEV PARADEが
 
 #DEVPARADE #ポジデブBot""",
 
-    f"""DEV PARADEの歌詞で
+    f"""Devparadeの歌詞で
 一番好きなフレーズは？
 
 RTして引用で教えてくれ。🍖
@@ -685,7 +685,7 @@ RTして引用で教えてくれ。🍖
 太っててよかったエピソード。
 
 リプで教えてくれたら
-DEV PARADEが
+Devparadeが
 全力で「それな」って言います。🍖
 
 #ポジデブBot #DEVPARADE""",
@@ -693,7 +693,7 @@ DEV PARADEが
     # ===== 🎤 歌詞さらに深掘り =====
     f"""「どんな夜も朝はくるぜ」
 
-— DEV PARADE「バッチコイ!!!」
+— Devparade「バッチコイ!!!」
 
 夜に食べたラーメンの
 罪悪感も
@@ -705,7 +705,7 @@ DEV PARADEが
 
     f"""「俺らいつまでも仲間だろブラザー」
 
-— DEV PARADE「バッチコイ!!!」
+— Devparade「バッチコイ!!!」
 
 90kg超同士の絆は
 物理的にも重い。
@@ -716,7 +716,7 @@ DEV PARADEが
     f"""「お前の存在を全くないものには
 俺にだって神にだって絶対出来やしねえ」
 
-— DEV PARADE「メシ食わせろ」
+— Devparade「メシ食わせろ」
 
 90kg超の存在感、
 なかったことにはできない。
@@ -728,7 +728,7 @@ DEV PARADEが
     f"""「みんな悩んでるし病んでる
 そういう仲間と今ランデブー」
 
-— DEV PARADE「ME★TA★BO」
+— Devparade「ME★TA★BO」
 
 悩んでて、病んでて、
 それでも一緒にいる。
@@ -740,9 +740,9 @@ DEV PARADEが
     f"""「モノクロな夢見てたあの頃
 きみと出会えて僕は僕になれたのさ」
 
-— DEV PARADE「パルフェ」
+— Devparade「パルフェ」
 
-DEV PARADEと出会えて
+Devparadeと出会えて
 デブの自分を
 好きになれた人がいるなら
 それが最高の「きみ」。🍖
@@ -751,7 +751,7 @@ DEV PARADEと出会えて
 
     f"""「IT'S MY LIFE さあ、HERE WE GO!」
 
-— DEV PARADE「ME★TA★BO」
+— Devparade「ME★TA★BO」
 
 自分の人生。
 自分の体。
@@ -764,7 +764,7 @@ DEV PARADEと出会えて
     f"""「マイペースでも前進。
 瞳の奥みなぎる闘志」
 
-— DEV PARADE「100CAN DIVE」
+— Devparade「100CAN DIVE」
 
 走れなくても歩ける。
 歩けなくても立てる。
@@ -777,7 +777,7 @@ DEV PARADEと出会えて
     f"""「乾いた風に掻き消されても
 最後の声だけは取り戻せ」
 
-— DEV PARADE「100CAN DIVE」
+— Devparade「100CAN DIVE」
 
 声を上げろ。
 デブだからって
@@ -788,7 +788,7 @@ DEV PARADEと出会えて
     f"""「ある事、無い事、ネット投稿で一喜一憂。
 お前にFAT YOU」
 
-— DEV PARADE「パルフェ」
+— Devparade「パルフェ」
 
 SNSの評価より
 目の前の飯の評価。
@@ -800,7 +800,7 @@ FAT YOU（愛してる）。🍖
     f"""「チキンは脱却、器用貧乏、
 リッチな生き方、ROCKでHIPHOP」
 
-— DEV PARADE「パルフェ」
+— Devparade「パルフェ」
 
 チキン（臆病）をやめろ。
 ポーク（勇敢）に生きろ。
@@ -839,7 +839,7 @@ TAH（146kg）が走ると
 #DEVPARADE""",
 
     f"""「BMI」って指標、
-DEV PARADEには
+Devparadeには
 適用できない。
 
 B(バンド)
@@ -853,7 +853,7 @@ I(いい体重)
     f"""GPS「目的地まで徒歩20分」
 
 一般人: 20分
-DEV PARADE: 40分
+Devparade: 40分
 
 倍かかるけど
 倍楽しんでる。🍖
@@ -887,7 +887,7 @@ M → 普通
 L → 普通
 XL → ちょっといい感じ
 XXL → フィット
-3XL → DEV PARADE
+3XL → Devparade
 
 サイズは大きいほど
 器も大きい。🍖
@@ -949,13 +949,13 @@ XXL → フィット
     f"""ライブTシャツのサイズ展開:
 
 普通のバンド: S/M/L/XL
-DEV PARADE: L/XL/XXL/3XL
+Devparade: L/XL/XXL/3XL
 
 需要と供給。🍖
 
 #DEVPARADE""",
 
-    f"""DEV PARADE再結成の条件:
+    f"""Devparade再結成の条件:
 
 「90kg以上であること」
 
@@ -1011,14 +1011,14 @@ DEV PARADE: L/XL/XXL/3XL
 dev = development（開発）
 dev server = 開発サーバー
 
-DEV PARADE用語:
+Devparade用語:
 dev = デブ
 dev server = デブがサーブする焼肉🍖
 
 #DEVPARADE""",
 
     f"""エンジニア「dev環境で動かしたい」
-DEV PARADE「DEV環境で歌いたい」
+Devparade「DEV環境で歌いたい」
 
 同じ"dev"なのに
 片方はコード書いて
@@ -1029,7 +1029,7 @@ DEV PARADE「DEV環境で歌いたい」
 #DEVPARADE""",
 
     # ===== 📝 歌詞クイズ風 =====
-    f"""【問題】次のDEV PARADEの歌詞、
+    f"""【問題】次のDevparadeの歌詞、
 どの曲でしょう？
 
 「食っては悔いて、悔いては食って」
@@ -1042,7 +1042,7 @@ C) メシ食わせろ
 
 #DEVPARADE""",
 
-    f"""【問題】DEV PARADEの曲で
+    f"""【問題】Devparadeの曲で
 「お寿司はデザート」と
 歌われている曲は？
 
@@ -1057,7 +1057,7 @@ NARUTOのEDで
     f"""太ってて恥ずかしいと
 思ってる人へ:
 
-DEV PARADEは
+Devparadeは
 バンド名にデブ入れて
 テレビに出て
 メジャーデビューした。
@@ -1083,7 +1083,7 @@ DEV PARADEは
     f"""体型を理由にバカにされたら
 こう言え:
 
-「DEV PARADEって知ってる？
+「Devparadeって知ってる？
 全員90kg超でメジャーデビューして
 NARUTOのED歌ったバンド。
 体型と実力は関係ない」
@@ -1106,7 +1106,7 @@ NARUTOのED歌ったバンド。
 
 #DEVPARADE""",
 
-    f"""DEV PARADEを知らない人に
+    f"""Devparadeを知らない人に
 1曲だけ勧めるなら？
 
 俺は「バッチコイ!!!」
@@ -1152,18 +1152,18 @@ NARUTOのED歌ったバンド。
 #ポジデブBot #DEVPARADE""",
 
     # ===== 🎂 記念日系 =====
-    f"""DEV PARADE結成: 2006年
+    f"""Devparade結成: 2006年
 メジャーデビュー: 2008年
 解散: 2011年（メンバーが痩せた）
 再結成: 2026年
 
 解散理由が
 「痩せたから」のバンド、
-世界でDEV PARADEだけ。🍖
+世界でDevparadeだけ。🍖
 
 #DEVPARADE #デブパレード""",
 
-    f"""DEV PARADEの解散理由:
+    f"""Devparadeの解散理由:
 
 「メンバーが痩せてしまった」
 
