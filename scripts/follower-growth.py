@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-DEV PARADE X Follower Growth Engine
+Devparade X Follower Growth Engine
 フォロワー増加マーケティング自動化
 
 戦略:
@@ -193,7 +193,7 @@ def generate_growth_report(stats, tweet_analysis, liked_count, log):
     diff_str = f"+{diff}" if diff >= 0 else str(diff)
 
     lines = [
-        f"## 📈 DEV PARADE X Growth Report",
+        f"## 📈 Devparade X Growth Report",
         "",
         f"**日時:** {now.strftime('%Y-%m-%d %H:%M JST')}",
         "",
@@ -247,7 +247,7 @@ def generate_growth_report(stats, tweet_analysis, liked_count, log):
         "5. **スレッド投稿** → 滞在時間UPでアルゴリズム優遇",
         "",
         "---",
-        "*DEV PARADE Growth Engine 🍖*",
+        "*Devparade Growth Engine 🍖*",
     ])
 
     with open("growth_report.md", "w") as f:
@@ -261,7 +261,7 @@ def main():
     now = datetime.now(jst)
 
     print("=" * 50)
-    print(f"📈 DEV PARADE X Growth Engine")
+    print(f"📈 Devparade X Growth Engine")
     print(f"   {now.strftime('%Y-%m-%d %H:%M JST')}")
     print("=" * 50)
 

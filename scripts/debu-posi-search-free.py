@@ -384,7 +384,7 @@ def generate_report(results, sent_count, time_label, now):
             lines.append("---")
             lines.append("")
 
-    lines.append("*Powered by DEV PARADE ポジデブBot 🍖*")
+    lines.append("*Powered by Devparade ポジデブBot 🍖*")
 
     with open("search_report.md", "w") as f:
         f.write("\n".join(lines))

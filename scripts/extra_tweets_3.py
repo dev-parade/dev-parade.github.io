@@ -28,7 +28,7 @@ EXTRA_TWEETS_3 = [
 
     # ========== 🎵 歌詞 × ポジデブ拡張 ==========
 
-    "「デブ」と呼ばれたら→一般人「傷つく」DEV PARADE「最高の褒め言葉」。この温度差が唯一無二。🍖 #DEVPARADE",
+    "「デブ」と呼ばれたら→一般人「傷つく」Devparade「最高の褒め言葉」。この温度差が唯一無二。🍖 #DEVPARADE",
 
     "「味覚が優秀」🍖 #DEVPARADE",
 
@@ -38,29 +38,29 @@ EXTRA_TWEETS_3 = [
 
     # ========== 🔁 語録 × ポジデブ拡張 ==========
 
-    "DEV PARADEが教えてくれたこと:デブは才能。90kg以上でソニーからメジャーデビューできる。🍖 #DEVPARADE #ポジデブBot",
+    "Devparadeが教えてくれたこと:デブは才能。90kg以上でソニーからメジャーデビューできる。🍖 #DEVPARADE #ポジデブBot",
 
-    "「デブ」=DEV=Delightful Extreme Vitality。正式名称です。DEV PARADE公式見解。🍖 #DEVPARADE",
+    "「デブ」=DEV=Delightful Extreme Vitality。正式名称です。Devparade公式見解。🍖 #DEVPARADE",
 
-    "太った？それ「成長した」の同義語。DEV PARADEが保証する。🍖 #ポジデブBot #DEVPARADE",
+    "太った？それ「成長した」の同義語。Devparadeが保証する。🍖 #ポジデブBot #DEVPARADE",
 
-    "メタボ＝メタル＋ボディ。ロックな体型認定おめでとう。自称「ヘヴィメタボバンド」DEV PARADE。🍖 #DEVPARADE",
+    "メタボ＝メタル＋ボディ。ロックな体型認定おめでとう。自称「ヘヴィメタボバンド」Devparade。🍖 #DEVPARADE",
 
-    "痩せろ？お断りだ。DEV PARADEは90kg以上限定。痩せたら入れない。🍖 #ポジデブBot #DEVPARADE",
+    "痩せろ？お断りだ。Devparadeは90kg以上限定。痩せたら入れない。🍖 #ポジデブBot #DEVPARADE",
 
-    "リバウンドじゃない、カムバックだ。DEV PARADEも15年ぶりにカムバックした。🍖 #DEVPARADE",
+    "リバウンドじゃない、カムバックだ。Devparadeも15年ぶりにカムバックした。🍖 #DEVPARADE",
 
     "贅肉は「贅沢な肉」と書く。つまりプレミアム。🍖 #DEVPARADE",
 
     "XLは「eXtra Love」の略。愛が溢れてるサイズ。XXLなら愛が2倍。🍖 #DEVPARADE",
 
-    "服が入らないんじゃない。服がお前に追いついてないだけ。DEV PARADE公式見解。🍖 #ポジデブBot #DEVPARADE",
+    "服が入らないんじゃない。服がお前に追いついてないだけ。Devparade公式見解。🍖 #ポジデブBot #DEVPARADE",
 
-    "カロリーは幸せの単位。高カロリー＝高幸福度。これがDEV PARADE数学。🍖 #DEVPARADE",
+    "カロリーは幸せの単位。高カロリー＝高幸福度。これがDevparade数学。🍖 #DEVPARADE",
 
     "食べたら太る？食べなかったら死ぬ。生きてる証拠を太ると呼ぶな。🍖 #ポジデブBot #DEVPARADE",
 
-    "体脂肪率より幸福度を測ろう。そっちの方が大事。DEV PARADEが保証する。🍖 #DEVPARADE",
+    "体脂肪率より幸福度を測ろう。そっちの方が大事。Devparadeが保証する。🍖 #DEVPARADE",
 
     # ========== 🔥 新世代・世界的・PDP戦略 (Viral PDP Strategy) ==========
 
