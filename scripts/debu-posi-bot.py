@@ -16,6 +16,11 @@ import json
 import random
 import time
 from datetime import datetime, timezone, timedelta
+from dotenv import load_dotenv
+
+# .env 読み込み
+load_dotenv()
+
 
 try:
     import tweepy
@@ -114,56 +119,58 @@ def get_x_client():
     return client
 
 
-def get_ai_response(tweet_text):
-    """Claude APIでカスタムレスポンスを生成（オプション）"""
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
+def get_ai_response_openai(tweet_text):
+    """OpenAI (GPT-4o) でカスタムレスポンスを生成"""
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key or api_key.startswith("sk-xxxx"):
         return None
 
     try:
-        import anthropic
-        client = anthropic.Anthropic(api_key=api_key)
-        message = client.messages.create(
-            model="claude-haiku-4-5-20251001",
-            max_tokens=280,
-            messages=[{
-                "role": "user",
-                "content": f"""あなたはDevparade（デブパレード）の公式Botです。メンバー全員90kg以上のヘヴィメタボバンド。
-2006年結成、2008年ソニーからメジャーデビュー。NARUTOエンディングテーマ「バッチコイ!!!」で知られる。デブをポジティブに捉えています。
+        from openai import OpenAI
+        client = OpenAI(api_key=api_key)
+        
+        system_prompt = """あなたは『デブパレード (Devparade)』の公式ボットです。
+メンバー全員90kg以上のヘヴィメタボバンド。2008年ソニーからメジャーデビュー。
+NARUTOエンディングテーマ「バッチコイ!!!」等で知られる、デブをポジティブに捉える唯一無二のバンド。
 
-以下のツイートに対して、デブをポジティブに肯定するリプライを1つだけ書いてください。
+【キャラクター設定】
+- デブを武器にする、明るくパワフルな肉食系。
+- ネガティブな言葉をすべて「肉の養分」として吸収し、ポジティブに変換して返します。
+- 歯科医師（Dr.COYASS）の要素や、一人のパパとしてのプライベートな私生活は一切出しません。
+- 徹底的に「デブパレード公式」の一員として、音楽と「ポジデブ」の精神で返信してください。
 
-条件:
-- 以下の【事実】のみを使用し、捏造をしないこと
-- 嘘の逸話（ネットで募集した、特定のフェス（ARABAKI等）に出た等）を捏造しないこと
-- ネットでのメンバー募集は一切行っていない（元々知り合いや紹介）。これを嘘で書かないこと
-- 迷ったら「デブは最高」という精神論に徹すること
+【厳守：事実のみを使用】
+- 2011年解散（ダイエット成功のため）、2026年再結成（リバウンド）。
+- ネットでのメンバー募集はしていない（知り合いや紹介のみ）。
+- 代表曲: バッチコイ!!!、Body & Soul
+- 迷ったら「デブは最高。今すぐ肉を食え！」という精神論に徹すること。
 
-【事実】
-- メンバー全員90kg超。
-- 2006年結成、2008年ソニーからメジャーデビュー。
-- NARUTO ED「バッチコイ!!!」、HEY!HEY!HEY!出演、SUMMER SONIC 2009出演。
-- 2011年解散（理由はメンバーのダイエット成功）、2026年再結成（リバウンド）。
-- ugazinはギター/作曲担当で「発起人（リーダー的存在）」。
-- メンバーは全員、友人関係や紹介で集まった。ネット募集はしていない。
+以下のツイートに対し、デブをポジティブに全肯定する熱いリプライを1つだけ、130文字以内で作成してください。"""
 
-ツイート: {tweet_text}"""
-            }],
+        response = client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": f"ツイート: {tweet_text}"}
+            ],
+            max_tokens=280
         )
-        return message.content[0].text
+        return response.choices[0].message.content
     except Exception as e:
-        print(f"AI response failed: {e}")
+        print(f"OpenAI response failed: {e}")
         return None
+
 
 
 def select_response(tweet_text):
     """ツイートの内容に基づいてレスポンスを選択"""
-    # まずAIレスポンスを試す
-    ai_resp = get_ai_response(tweet_text)
-    if ai_resp:
-        return ai_resp
+    # 1. まず OpenAI レスポンスを試す
+    resp = get_ai_response_openai(tweet_text)
+    if resp:
+        return resp
 
-    # キーワードマッチでレスポンス選択
+    # 2. キーワードマッチでレスポンス選択
+
     text_lower = tweet_text.lower()
     for keyword, resps in RESPONSES.items():
         if keyword == "generic":

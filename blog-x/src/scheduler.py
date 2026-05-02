@@ -70,7 +70,18 @@ class PostScheduler:
                     kwargs={
                         "schedule_name": name,
                         "category": self._resolve_category(sched),
-                        "template": sched.get("template", "note_main")
+                        "template": sched.get("template", "note_main"),
+                        "role": sched.get("role")
+                    }
+                )
+            elif platform == "monitor":
+                self.scheduler.add_job(
+                    self._execute_monitor_job,
+                    trigger=trigger,
+                    id=name,
+                    name=sched.get("description", name),
+                    kwargs={
+                        "schedule_name": name
                     }
                 )
             else:
@@ -82,7 +93,8 @@ class PostScheduler:
                     kwargs={
                         "schedule_name": name,
                         "category": sched.get("category", "daily_doc"),
-                        "template": sched.get("template", "tweet")
+                        "template": sched.get("template", "tweet"),
+                        "role": sched.get("role")
                     }
                 )
 
@@ -95,7 +107,8 @@ class PostScheduler:
             return sched["category_rotation"].get(today, "daily_doc")
         return sched.get("category", "daily_doc")
 
-    async def _execute_note_job(self, schedule_name: str, category: str, template: str):
+    async def _execute_note_job(self, schedule_name: str, category: str, template: str, role: str = None):
+
         """Note投稿ジョブの実行"""
         logger.info(f"🚀 Executing Note job: {schedule_name} (category: {category})")
 
@@ -107,8 +120,11 @@ class PostScheduler:
             # 2. コンテンツ生成
             article = self.generator.generate_note_article(
                 category=category,
-                input_data=input_data
+                input_data=input_data,
+                role=role
             )
+
+
             if not article:
                 logger.error(f"❌ Content generation failed for {schedule_name}")
                 return
@@ -167,13 +183,19 @@ class PostScheduler:
         except Exception as e:
             logger.error(f"❌ Note job error: {e}", exc_info=True)
 
-    async def _execute_x_job(self, schedule_name: str, category: str, template: str):
+    async def _execute_x_job(self, schedule_name: str, category: str, template: str, role: str = None):
+
         """X投稿ジョブの実行"""
         logger.info(f"🚀 Executing X job: {schedule_name} (category: {category})")
 
         try:
             # 1. コンテンツ生成
-            post = self.generator.generate_x_post(category=category)
+            post = self.generator.generate_x_post(
+                category=category,
+                role=role
+            )
+
+
             if not post:
                 logger.error(f"❌ X content generation failed for {schedule_name}")
                 return
@@ -201,17 +223,59 @@ class PostScheduler:
 
             # 5. 投稿結果を記録
             if result:
+                # DBに記録
                 self.repo.create_post(
                     content_id=content.id,
                     platform="x",
                     scheduled_at=datetime.utcnow()
                 )
+                # JSON履歴にも記録（重複検知用）
+                if "hash" in post:
+                    self.generator.mark_as_posted(post["hash"])
+                
                 logger.info(f"✅ X post published: {result['url']}")
             else:
                 logger.error(f"❌ X posting failed")
 
         except Exception as e:
             logger.error(f"❌ X job error: {e}", exc_info=True)
+
+    async def _execute_monitor_job(self, schedule_name: str):
+        """SNS監視 & 自動返信ジョブの実行"""
+        logger.info(f"📡 Executing Monitor job: {schedule_name}")
+
+        try:
+            # 旧スクリプトのロジックを実行
+            # (実際には blog-x 内に整理されたロジックとして移管するのが望ましいが、一旦既存スクリプトを呼び出す)
+            import subprocess
+            script_path = Path(__file__).parent.parent.parent / "scripts/debu-posi-search-free.py"
+            
+            if not script_path.exists():
+                logger.error(f"❌ Monitor script not found: {script_path}")
+                return
+
+            if self.dry_run:
+                logger.info(f"🏃 [DRY RUN] Would run monitor script: {script_path}")
+                return
+
+            process = await asyncio.create_subprocess_exec(
+                "python3", str(script_path),
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE
+            )
+            stdout, stderr = await process.communicate()
+
+            if process.returncode == 0:
+                logger.info(f"✅ Monitor job completed successfully")
+                if stdout:
+                    logger.debug(f"Monitor output: {stdout.decode()}")
+            else:
+                logger.error(f"❌ Monitor job failed with exit code {process.returncode}")
+                if stderr:
+                    logger.error(f"Monitor error: {stderr.decode()}")
+
+        except Exception as e:
+            logger.error(f"❌ Monitor job error: {e}", exc_info=True)
 
     def start(self):
         """スケジューラを開始"""

@@ -11,7 +11,14 @@ import json
 import random
 import hashlib
 import urllib.parse
+import requests
 from datetime import datetime, timezone, timedelta
+
+from dotenv import load_dotenv
+
+# .env 読み込み
+load_dotenv()
+
 
 # =================================================================
 # 📢 BOT CONTENT POLICY (ハルシネーション防止策)
@@ -28,6 +35,7 @@ except ImportError:
     tweepy = None
 
 CAMPAIGN = os.environ.get("CAMPAIGN", "scheduled")
+DRY_RUN = os.environ.get("DRY_RUN", "false").lower() == "true"
 
 # X API Credentials
 API_KEY = os.environ.get("X_API_KEY")
@@ -2035,8 +2043,11 @@ def score_tweet(text):
     return min(100, max(0, score))
 
 
-def select_smart_tweet():
-    """スマート選択：上位20%の未投稿ツイートから選ぶ"""
+
+
+
+def select_diverse_tweet():
+    """多様な選択：未投稿の中からスコアを考慮しつつランダムに選ぶ（上位固定を避ける）"""
     data = load_posted()
     posted_hashes = set(data.get("posted", []))
 
@@ -2060,26 +2071,21 @@ def select_smart_tweet():
         for t in unposted:
             t["posted"] = False
 
-    # スコア降順ソート
+    # スコアが高いものほど選ばれやすくするが、上位20%に固定しない（ルーレット選択に近い形）
+    # スコアの自乗で重み付けしてランダム性を確保
     unposted.sort(key=lambda x: x["score"], reverse=True)
-
-    # 上位20%から選択（最低5個は確保）
-    top_count = max(5, len(unposted) // 5)
-    top_tweets = unposted[:top_count]
-
-    # 上位グループからランダム選択
-    selected = random.choice(top_tweets)
+    
+    # 完全に同じものが続くのを避けるため、上位15個程度からランダムに選ぶ
+    # (または unposted の 30% 程度の広い範囲から選ぶ)
+    pool_size = max(10, len(unposted) // 3)
+    pool = unposted[:pool_size]
+    selected = random.choice(pool)
 
     # スコア分布の表示
-    all_scores = [t["score"] for t in scored]
-    top_scores = [t["score"] for t in top_tweets]
-    print(f"\n📊 ツイートスコアリング:")
+    print(f"\n📊 ツイートスコアリング（多様性優先）:")
     print(f"   全{len(scored)}種 | 投稿済み: {len(posted_hashes)} | 未投稿: {len(unposted)}")
-    print(f"   スコア範囲: {min(all_scores)}〜{max(all_scores)} (平均: {sum(all_scores)//len(all_scores)})")
-    print(f"   上位20% ({top_count}種): スコア{min(top_scores)}〜{max(top_scores)}")
     print(f"   ✅ 選択: スコア{selected['score']} | ハッシュ: {selected['hash']}")
-    print(f"   サイクル: {data.get('cycle', 1)}")
-
+    
     return selected
 
 
@@ -2128,7 +2134,90 @@ def auto_post(tweet_text):
         return None
 
 
+def generate_ai_tweet(campaign="scheduled"):
+    """OpenAI (GPT-4o) でポジデブツイートを生成"""
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key or api_key.startswith("sk-xxxx"):
+        return None
+
+    try:
+        from openai import OpenAI
+        client = OpenAI(api_key=api_key)
+        
+        # テーマをランダムに選んでバリエーションを増やす
+        themes = [
+            "デブであることの誇り", "肉を食べる幸福感", "存在感のすごさ", 
+            "冬の暖かさ（人間暖房）", "ハグの心地よさと安心感", "90kg超の体力とパワー",
+            "メジャーデビューの実績と自信", "NARUTOのED担当という事実", "デブは才能という考え方",
+            "ダイエットへのアンチテーゼ", "服のサイズが大きくてもオシャレ", "食べ放題での活躍",
+            "経済（外食産業）への貢献", "自己肯定感の大切さ", "重い音楽は重い奴が作るという哲学"
+        ]
+        selected_theme = random.choice(themes)
+
+        system_prompt = f"""あなたは『デブパレード (Devparade)』の公式メッセージ・ジェネレーターです。
+全員90kg以上のヘヴィメタボバンドとして、デブであることを肯定し、世の中を元気に、そして肉を愛するメッセージを発信します。
+
+【今回のテーマ】
+{selected_theme} について熱く語ってください。
+
+【ミッション】
+- デブであることの「誇り」「幸福感」「パワー」を1つだけ熱く語ってください。
+- 歯科医師ネタ、パパとしての育児ネタ、私生活の話題は【厳禁】です。
+- リズム感のある、ポジティブ全開なパンチラインを繰り出してください。
+- 捏造（フェス出演歴の捏造、ネット募集の話など）は厳禁です。
+
+【投稿スタイル例】
+- 「体重が増えたんじゃない、存在感が増したんだ。🍖」
+- 「今日は焼肉。炭水化物は心のガソリンだ。🍖」
+- 「90kg以下は全員ジュニア。デカくなって帰ってこい！🍖」
+
+130文字以内で、最後は🍖（肉の絵文字）とハッシュタグ #Devparade #ポジデブ を必ず付けてください。"""
+
+        response = client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": f"最高のポジデブツイートを生成して。"}
+            ],
+            max_tokens=200,
+            temperature=0.9 # 多様性を出すため高めに設定
+        )
+        return response.choices[0].message.content.strip().strip('"').strip("'")
+    except Exception as e:
+        print(f"AI generation failed: {e}")
+        return None
+
+
+def facebook_post(text):
+    """Facebook ページ (Meta Graph API) に投稿"""
+    page_id = os.environ.get("FB_PAGE_ID")
+    access_token = os.environ.get("FB_PAGE_ACCESS_TOKEN")
+    
+    if not page_id or not access_token:
+        print("⚠️ Facebook credentials missing. Skipping FB post.")
+        return False
+
+    try:
+        url = f"https://graph.facebook.com/v19.0/{page_id}/feed"
+        payload = {
+            "message": text,
+            "access_token": access_token
+        }
+        resp = requests.post(url, data=payload)
+        if resp.status_code == 200:
+            print("✅ Facebook post success!")
+            return True
+        else:
+            print(f"❌ Facebook post failed: {resp.text}")
+            return False
+    except Exception as e:
+        print(f"❌ Facebook post error: {e}")
+        return False
+
+
 def is_hallucination_suspected(text):
+
+
     """
     ハルシネーション（嘘の逸話）の疑いがあるツイートを検知するガードレール。
     特にバンドの結成経緯や歴史に関する具体的な主張をチェック。
@@ -2149,13 +2238,37 @@ def is_hallucination_suspected(text):
 
 def main():
     # ツイート選択
+    tweet_text = None
+    selected = None
+
     if CAMPAIGN == "scheduled":
-        selected = select_smart_tweet()
-        tweet_text = selected["text"]
+        # 1. 優先的に AI 生成を試す（重複チェック付き）
+        data = load_posted()
+        posted_hashes = set(data.get("posted", []))
+        
+        for attempt in range(3):
+            ai_tweet = generate_ai_tweet(CAMPAIGN)
+            if ai_tweet:
+                h = tweet_hash(ai_tweet)
+                if h not in posted_hashes:
+                    tweet_text = ai_tweet
+                    selected = {"text": tweet_text, "hash": h, "score": 100}
+                    print(f"🚀 Generated via AI (GPT-4o) - Attempt {attempt+1}")
+                    break
+                else:
+                    print(f"🔁 AI tweet duplicated (hash: {h}), retrying...")
+            else:
+                break
+        
+        # AIが失敗したか、3回とも重複した場合はテンプレートから選択
+        if not tweet_text:
+            selected = select_diverse_tweet()
+            tweet_text = selected["text"]
     else:
         tweets = TWEETS.get(CAMPAIGN, DAILY_TWEETS)
         tweet_text = random.choice(tweets)
         selected = {"text": tweet_text, "hash": tweet_hash(tweet_text), "score": 0}
+
 
     # ハルシネーションチェック（全キャンペーン対象に移動）
     if is_hallucination_suspected(tweet_text):
@@ -2163,7 +2276,7 @@ def main():
         if CAMPAIGN == "scheduled":
             # 別のツイートを再選択（最大5回）
             for _ in range(5):
-                selected = select_smart_tweet()
+                selected = select_diverse_tweet()
                 tweet_text = selected["text"]
                 if not is_hallucination_suspected(tweet_text):
                     break
@@ -2189,10 +2302,15 @@ def main():
     tweet_id = auto_post(tweet_text)
     auto_posted = tweet_id is not None
 
+    # Facebook 投稿 (追加)
+    if not DRY_RUN:
+        facebook_post(tweet_text)
+
     # 投稿済みマーク
     if auto_posted:
         mark_as_posted(selected)
         print("📝 投稿履歴を更新しました")
+
 
     # Intent URL
     intent_url = "https://twitter.com/intent/tweet?text=" + urllib.parse.quote(tweet_text)

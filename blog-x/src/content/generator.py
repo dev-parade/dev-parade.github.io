@@ -9,23 +9,17 @@ import logging
 from pathlib import Path
 from datetime import datetime
 from typing import Optional
+import requests
+import json
+import re
+import hashlib
+
+
 
 logger = logging.getLogger(__name__)
 
-# COYASS ペルソナ システムプロンプト
-COYASS_SYSTEM_PROMPT = """あなたはCOYASS（Dr.COYASS / 小安正洋）として記事を書きます。
-
-【プロフィール】
-- 中目黒コヤス歯科 院長
-- 歯学博士（美容歯科学）、昭和大学歯学部兼任講師、東京医科歯科大学非常勤講師
-- ポリリン酸研究のエキスパート（柴肇一教授に師事、10年以上の実績）
-- 日本歯科審美学会認定医
-- ラッパー: MIC BANDITZ(avex), デブパレード(Sony)で2度のメジャーデビュー
-- 現在: E.P.O（元SOUL'd OUT Bro.Hiと結成）、洪水、Malignant Co.で活動
-- 打首獄門同好会とのコラボで日本武道館ステージ経験
-- 2児の父
-- 栄養療法（オーソモレキュラー医学）にも精通
-
+# COYASS 共通ガイドライン
+COYASS_BASE_GUIDELINES = """
 【文体ガイドライン】
 1. 専門性と親しみやすさの融合：歯科の専門知識を噛み砕いて伝える
 2. ラッパー的なリズム感：要所にパンチラインを入れる
@@ -38,8 +32,9 @@ COYASS_SYSTEM_PROMPT = """あなたはCOYASS（Dr.COYASS / 小安正洋）とし
 - AIが書いたとわかるような定型表現（「いかがでしたでしょうか」等）
 - 過度に丁寧な敬語（タメ口と敬語を自然にミックス）
 - 根拠のない治療効果の断言
-- 他の歯科医院の批判
+- 他の歯科医院的の批判
 """
+
 
 
 class ContentGenerator:
@@ -49,15 +44,19 @@ class ContentGenerator:
         self.config = config
         self.ai_config = config.get("ai", {})
         self.persona = config.get("persona", {})
-        self.templates_dir = Path("config/content_templates")
+        self.templates_dir = Path(__file__).parent.parent.parent / "config/content_templates"
+        self.history_file = Path(__file__).parent.parent.parent.parent / "data/posted_tweets.json"
         self._setup_ai_clients()
 
     def _setup_ai_clients(self):
         """AI クライアントの初期化"""
         self.openai_client = None
         self.gemini_model = None
+        self.anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
+        if self.anthropic_api_key and not self.anthropic_api_key.startswith("sk-xxxx"):
+            logger.info("✅ Anthropic (Claude) API Key found in environment")
 
-        # OpenAI
+
         api_key = os.getenv("OPENAI_API_KEY")
         if api_key and api_key != "sk-xxxxxxxxxxxxxxxxxxxx":
             try:
@@ -88,8 +87,11 @@ class ContentGenerator:
         return ""
 
     def generate_note_article(self, category: str, topic: str = None,
-                               input_data: str = None) -> dict:
+                               input_data: str = None, role: str = None) -> dict:
         """Note用の長文記事を生成する"""
+        role = role or self._get_best_role(category)
+        system_prompt = self._get_system_prompt(role)
+        
         template = self._load_template(category)
         length_config = self.config.get("note", {}).get("article_length", {})
         min_len = length_config.get("min", 2000)
@@ -98,7 +100,7 @@ class ContentGenerator:
         user_prompt = self._build_note_prompt(category, topic, input_data, min_len, max_len, template)
 
         result = self._call_ai(
-            system_prompt=COYASS_SYSTEM_PROMPT,
+            system_prompt=system_prompt,
             user_prompt=user_prompt,
             max_tokens=self.ai_config.get("openai", {}).get("max_tokens", 4000)
         )
@@ -106,11 +108,12 @@ class ContentGenerator:
         if result:
             # タイトルと本文を分離
             title, body = self._parse_article(result["text"])
-            hashtags = self._generate_hashtags(category)
+            hashtags = self._generate_hashtags(category, role=role)
             return {
                 "title": title,
                 "body": body,
                 "category": category,
+                "role": role,
                 "hashtags": hashtags,
                 "word_count": len(body),
                 "ai_provider": result["provider"],
@@ -119,9 +122,21 @@ class ContentGenerator:
         return None
 
     def generate_x_post(self, category: str, topic: str = None,
-                         input_data: str = None, note_article: str = None) -> dict:
+                         input_data: str = None, note_article: str = None, role: str = None) -> dict:
         """X (Twitter) 用の短文投稿を生成する"""
+        role = role or self._get_best_role(category)
+        system_prompt = self._get_system_prompt(role)
         max_chars = self.config.get("x", {}).get("max_chars", 280)
+
+        template = self._load_template(category)
+        
+        # デブパレードのファクトデータを読み込み（posidevカテゴリ用）
+        facts = ""
+        if category == "posidev":
+            facts_path = Path("config/Devparade_facts.yaml")
+            if facts_path.exists():
+                with open(facts_path, "r", encoding="utf-8") as f:
+                    facts = f.read()
 
         if note_article:
             user_prompt = f"""以下のnote記事を元に、X（Twitter）用の投稿を1つ作成してください。
@@ -133,7 +148,7 @@ class ContentGenerator:
 - {max_chars}文字以内（ハッシュタグ含む）
 - 記事への興味を引く内容
 - note記事へのリンクを貼ることを前提に
-- COYASSらしい口調で
+- 現在の役割（{role}）にふさわしい口調で
 """
         else:
             user_prompt = f"""X（Twitter）用の投稿を1つ作成してください。
@@ -141,32 +156,99 @@ class ContentGenerator:
 【カテゴリ】{category}
 【トピック】{topic or "今日の話題を自由に"}
 {f"【参考情報】{input_data}" if input_data else ""}
+{f"【デブパレード公認データ】\n{facts}" if facts else ""}
+{f"【テンプレート・指示】\n{template}" if template else ""}
 
 【条件】
 - {max_chars}文字以内（ハッシュタグ含む）
-- COYASSらしい口調で
+- 現在の役割（{role}）にふさわしい口調で
 - 読んだ人が「いいね」したくなる内容
+- AIっぽさを排除し、熱い「ポジデブ」スピリットで
+- 歯科医師ネタ、パパネタは【厳禁】
 """
 
-        result = self._call_ai(
-            system_prompt=COYASS_SYSTEM_PROMPT,
-            user_prompt=user_prompt,
-            max_tokens=500
-        )
+        max_attempts = 3
+        for attempt in range(max_attempts):
+            result = self._call_ai(
+                system_prompt=system_prompt,
+                user_prompt=user_prompt,
+                max_tokens=500
+            )
 
-        if result:
-            text = result["text"].strip().strip('"').strip("'")
-            hashtags = self._generate_hashtags(category, for_x=True)
-            # ハッシュタグを付加（文字数制限内で）
-            if len(text) + len(hashtags) + 2 <= max_chars:
-                text = f"{text}\n\n{hashtags}"
-            return {
-                "text": text[:max_chars],
-                "category": category,
-                "ai_provider": result["provider"],
-                "ai_model": result["model"]
-            }
+            if result:
+                text = result["text"].strip().strip('"').strip("'")
+                
+                # --- 本文の徹底お掃除 ---
+                # 1. AIが本文中に勝手に入れたハッシュタグをすべて削除（システム側で付与するため）
+                text = re.sub(r'#\S+', '', text).strip()
+                
+                # 2. X APIで問題になりやすい特殊記号（★）を置換
+                text = text.replace("★", "-")
+                
+                # 3. 連続する改行を1つに整理
+                text = re.sub(r'\n{3,}', '\n\n', text)
+                # ---------------------
+
+                hashtags = self._generate_hashtags(category, for_x=True, role=role)
+                # ハッシュタグを付加（文字数制限内で）
+                if len(text) + len(hashtags) + 2 <= max_chars:
+                    full_text = f"{text}\n\n{hashtags}"
+                else:
+                    full_text = text[:max_chars]
+
+                # ガードレールチェック
+                if self._is_hallucination_suspected(full_text):
+                    logger.warning(f"⚠️ Hallucination suspected (attempt {attempt+1}), retrying...")
+                    continue
+                
+                if self._is_duplicate(full_text):
+                    logger.warning(f"🔁 Duplicate content detected (attempt {attempt+1}), retrying...")
+                    continue
+
+                return {
+                    "text": full_text[:max_chars],
+                    "category": category,
+                    "role": role,
+                    "ai_provider": result["provider"],
+                    "ai_model": result["model"],
+                    "hash": self._calculate_hash(full_text)
+                }
+        
+        logger.error(f"❌ Failed to generate unique/safe content after {max_attempts} attempts.")
         return None
+
+    def _get_system_prompt(self, role: str) -> str:
+        """ロールに基づいたシステムプロンプトを取得"""
+        roles = self.persona.get("roles", {})
+        role_info = roles.get(role, roles.get("personal", {}))
+        
+        prompt = f"""あなたはCOYASS（{self.persona.get('real_name', '小安正洋')}）として活動します。
+現在の役割は【{role_info.get('title', '個人')}】です。
+
+【フォーカス】
+{role_info.get('focus', '日常の気づき')}
+
+【トーン】
+{role_info.get('tone', '自然体')}
+
+{COYASS_BASE_GUIDELINES}
+"""
+        return prompt
+
+    def _get_best_role(self, category: str) -> str:
+        """カテゴリから最適なロールを推測"""
+        category_map = {
+            "dental_tips": "doctor",
+            "industry": "doctor",
+            "music_review": "artist",
+            "posidev": "artist",
+            "career": "personal",
+            "food_health": "personal",
+            "parenting": "personal",
+            "daily_doc": "personal"
+        }
+        return category_map.get(category, "personal")
+
 
     def _build_note_prompt(self, category: str, topic: str, input_data: str,
                             min_len: int, max_len: int, template: str) -> str:
@@ -238,6 +320,34 @@ COYASSが実際にキーボードを叩いて書いているように、生き�
                     "model": model_name
                 }
 
+            elif provider == "anthropic" and self.anthropic_api_key:
+                model_name = self.ai_config.get("anthropic", {}).get("model", "claude-3-5-sonnet-20240620")
+                headers = {
+                    "x-api-key": self.anthropic_api_key,
+                    "anthropic-version": "2023-06-01",
+                    "content-type": "application/json"
+                }
+                data = {
+                    "model": model_name,
+                    "max_tokens": max_tokens,
+                    "system": system_prompt,
+                    "messages": [
+                        {"role": "user", "content": user_prompt}
+                    ]
+                }
+                resp = requests.post("https://api.anthropic.com/v1/messages", headers=headers, json=data)
+                if resp.status_code == 200:
+                    result_json = resp.json()
+                    return {
+                        "text": result_json["content"][0]["text"],
+                        "provider": "anthropic",
+                        "model": model_name
+                    }
+                else:
+                    logger.error(f"Anthropic API error: {resp.status_code} - {resp.text}")
+
+
+
         except Exception as e:
             logger.error(f"AI call failed ({provider}): {e}")
         return None
@@ -249,25 +359,84 @@ COYASSが実際にキーボードを叩いて書いているように、生き�
         body = "\n".join(lines[1:]).strip() if len(lines) > 1 else raw_text
         return title, body
 
-    def _generate_hashtags(self, category: str, for_x: bool = False) -> str:
-        """カテゴリに応じたハッシュタグを生成"""
-        tags_config = self.persona.get("hashtags", {})
-        tags = list(tags_config.get("always", []))
+    def _generate_hashtags(self, category: str, for_x: bool = False, role: str = None) -> str:
+        """カテゴリとロールに応じたハッシュタグを生成"""
+        role = role or self._get_best_role(category)
+        roles = self.persona.get("roles", {})
+        tags = list(roles.get(role, {}).get("hashtags", []))
 
-        category_map = {
-            "dental_tips": "dental",
-            "music_review": "music",
-            "food_health": "lifestyle",
-            "career": "lifestyle",
-            "parenting": "lifestyle",
-            "industry": "dental",
-            "daily_doc": "lifestyle"
-        }
-        extra_key = category_map.get(category, "lifestyle")
-        tags.extend(tags_config.get(extra_key, []))
+        # ハッシュタグのクリーンアップ（★などの特殊記号を置換）
+        cleaned_tags = []
+        for tag in tags:
+            # X APIで問題になりやすい特殊記号を置換
+            cleaned = tag.replace("★", "-")
+            cleaned_tags.append(cleaned)
 
         if for_x:
-            # X用は3-4個に絞る
-            tags = tags[:4]
+            # X用は最大3個に絞る
+            cleaned_tags = cleaned_tags[:3]
 
-        return " ".join(tags)
+        return " ".join(cleaned_tags)
+
+    def _calculate_hash(self, text: str) -> str:
+        """ツイートのハッシュ値を計算（重複検知用）"""
+        # 空白と一部の記号を除去して正規化
+        normalized = re.sub(r'\s+', '', text.strip())
+        normalized = re.sub(r'[!！?？.。🍖#＃]', '', normalized)
+        return hashlib.md5(normalized.encode()).hexdigest()[:12]
+
+    def _is_hallucination_suspected(self, text: str) -> bool:
+        """ハルシネーション（嘘の逸話）の疑いがあるツイートを検知"""
+        suspicious_keywords = [
+            "ネットで募集", "インターネットで募集", "結成理由", "結成当初", 
+            "アラバキ", "ARABAKI", "出演決定", "応募した", "募集した",
+            "解散理由", "入団テスト", "逸話", "事実まとめ",
+            "弟子募集中", "メンバー募集", "新メンバー"
+        ]
+        for kw in suspicious_keywords:
+            if kw in text:
+                return True
+        return False
+
+    def _is_duplicate(self, text: str) -> bool:
+        """過去の投稿と重複しているかチェック"""
+        if not self.history_file.exists():
+            return False
+            
+        try:
+            with open(self.history_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                posted_hashes = set(data.get("posted", []))
+                return self._calculate_hash(text) in posted_hashes
+        except Exception as e:
+            logger.error(f"Error checking history: {e}")
+            return False
+
+    def mark_as_posted(self, tweet_hash: str):
+        """ツイートを投稿済みとしてマーク（履歴ファイルに保存）"""
+        if not self.history_file.exists():
+            data = {"posted": [], "scores": {}, "cycle": 1}
+        else:
+            try:
+                with open(self.history_file, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+            except Exception as e:
+                logger.error(f"Error loading history for marking: {e}")
+                data = {"posted": [], "scores": {}, "cycle": 1}
+
+        if tweet_hash not in data.get("posted", []):
+            data.setdefault("posted", []).append(tweet_hash)
+            
+            # 追加のメタデータ記録
+            data.setdefault("scores", {})[tweet_hash] = {
+                "score": 100, # 新規生成分は100点として扱う
+                "posted_at": datetime.now().isoformat()
+            }
+
+            try:
+                os.makedirs(self.history_file.parent, exist_ok=True)
+                with open(self.history_file, "w", encoding="utf-8") as f:
+                    json.dump(data, f, ensure_ascii=False, indent=2)
+                logger.info(f"📝 Marked as posted (hash: {tweet_hash})")
+            except Exception as e:
+                logger.error(f"Error saving history: {e}")

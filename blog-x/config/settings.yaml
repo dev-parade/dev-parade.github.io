@@ -6,11 +6,11 @@ app:
   name: "COYASS Auto-Posting System"
   version: "1.0.0"
   timezone: "Asia/Tokyo"
-  dry_run: true  # true = 投稿せずにログのみ
+  dry_run: false  # true = 投稿せずにログのみ
 
 ai:
-  primary_provider: "openai"  # "openai" or "gemini"
-  fallback_provider: "gemini"
+  primary_provider: "openai"  # OpenAI を使用
+  fallback_provider: "anthropic"
   openai:
     model: "gpt-4o"
     max_tokens: 4000
@@ -19,23 +19,34 @@ ai:
     model: "gemini-2.0-flash"
     max_tokens: 4000
     temperature: 0.8
+  anthropic:
+    model: "claude-3-5-sonnet-20240620"
+    max_tokens: 4000
+    temperature: 0.8
+
 
 persona:
   name: "COYASS"
   real_name: "小安正洋"
   title: "歯科医師 / ラッパー / 2児の父"
   clinic: "中目黒コヤス歯科"
-  tone:
-    - "専門性と親しみやすさの融合"
-    - "ラッパー的なリズム感と比喩表現"
-    - "実体験ベースのリアルさ"
-    - "読者への呼びかけと巻き込み力"
-    - "ポジティブだけど現実的"
-  hashtags:
-    always: ["#COYASS", "#中目黒コヤス歯科"]
-    dental: ["#予防歯科", "#美容歯科", "#歯科医師の日常", "#ホワイトニング"]
-    music: ["#HipHop", "#音楽レビュー", "#デブパレード", "#EPO"]
-    lifestyle: ["#中目黒", "#二刀流", "#パパの日常"]
+  roles:
+    doctor:
+      title: "中目黒コヤス歯科 院長 / 歯学博士"
+      focus: "歯科知識、口内健康、美容歯科、予防歯科"
+      tone: "専門的かつ親しみやすい、信頼感のあるアドバイス"
+      hashtags: ["#中目黒コヤス歯科", "#予防歯科", "#美容歯科", "#歯科医師の日常"]
+    artist:
+      title: "ラッパー / 音楽家"
+      focus: "HipHop、音楽制作、E.P.O、デブパレード、ライブ、音楽レビュー"
+      tone: "熱量のある、クリエイティブ、リズム感のある口調"
+      hashtags: ["#Devparade", "#デブパレード", "#ポジデブ"]
+    personal:
+      title: "一人の人間 / パパ"
+      focus: "家族、育児、日々の気づき、キャリア、ランチ"
+      tone: "素直、エモーショナル、リアルな日常"
+      hashtags: ["#COYASS", "#パパの日常", "#中目黒"]
+
 
 note:
   base_url: "https://note.com"
