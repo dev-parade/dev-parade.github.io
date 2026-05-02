@@ -22,34 +22,42 @@ class XPublisher:
         self.thread_max = self.config.get("thread_max_tweets", 5)
         self.retry_attempts = self.config.get("retry_attempts", 3)
         self.client = None
+        self.username = "x"  # デフォルトのユーザー名
 
     def initialize(self):
         """tweepy クライアントの初期化"""
         try:
             import tweepy
 
+            # 環境変数の読み込み（複数の候補に対応）
+            api_key = os.getenv("X_API_KEY") or os.getenv("API_KEY")
+            api_secret = os.getenv("X_API_SECRET") or os.getenv("API_SECRET")
+            access_token = os.getenv("X_ACCESS_TOKEN") or os.getenv("ACCESS_TOKEN")
+            access_secret = os.getenv("X_ACCESS_TOKEN_SECRET") or os.getenv("X_ACCESS_SECRET") or os.getenv("ACCESS_SECRET")
+            bearer_token = os.getenv("X_BEARER_TOKEN")
+
             # API v2 Client (投稿用)
             self.client = tweepy.Client(
-                consumer_key=os.getenv("X_API_KEY"),
-                consumer_secret=os.getenv("X_API_SECRET"),
-                access_token=os.getenv("X_ACCESS_TOKEN"),
-                access_token_secret=os.getenv("X_ACCESS_TOKEN_SECRET"),
-                bearer_token=os.getenv("X_BEARER_TOKEN")
+                consumer_key=api_key,
+                consumer_secret=api_secret,
+                access_token=access_token,
+                access_token_secret=access_secret
             )
 
             # API v1.1 (画像アップロード用)
             auth = tweepy.OAuth1UserHandler(
-                os.getenv("X_API_KEY"),
-                os.getenv("X_API_SECRET"),
-                os.getenv("X_ACCESS_TOKEN"),
-                os.getenv("X_ACCESS_TOKEN_SECRET")
+                api_key,
+                api_secret,
+                access_token,
+                access_secret
             )
             self.api_v1 = tweepy.API(auth)
 
             # 認証テスト
             me = self.client.get_me()
             if me.data:
-                logger.info(f"✅ X API authenticated as @{me.data.username}")
+                self.username = me.data.username
+                logger.info(f"✅ X API authenticated as @{self.username}")
             return True
 
         except Exception as e:
@@ -69,6 +77,9 @@ class XPublisher:
                     media_ids = [media.media_id]
                     logger.info(f"📸 Image uploaded: {image_path}")
 
+                # テキストのサニタイズ（最終チェック）
+                text = text.replace("★", "-")
+
                 # テキストの文字数チェック
                 if len(text) > self.max_chars:
                     logger.warning(f"⚠️ Tweet truncated: {len(text)} -> {self.max_chars} chars")
@@ -81,14 +92,14 @@ class XPublisher:
                 if reply_to_id:
                     kwargs["in_reply_to_tweet_id"] = reply_to_id
 
-                response = self.client.create_tweet(**kwargs)
+                response = self.client.create_tweet(user_auth=True, **kwargs)
 
                 if response.data:
                     tweet_id = response.data["id"]
                     logger.info(f"✅ Tweet posted: {tweet_id}")
                     return {
                         "tweet_id": tweet_id,
-                        "url": f"https://x.com/COYASS/status/{tweet_id}",
+                        "url": f"https://x.com/{self.username}/status/{tweet_id}",
                         "published_at": datetime.utcnow().isoformat()
                     }
 

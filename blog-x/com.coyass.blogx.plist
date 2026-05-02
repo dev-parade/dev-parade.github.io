@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.coyass.blogx.scheduler</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/coyass/kaihatsu/dev-parade-site/blog-x/venv/bin/python3</string>
+        <string>/Users/coyass/kaihatsu/dev-parade-site/blog-x/src/main.py</string>
+        <string>run</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/coyass/kaihatsu/dev-parade-site/blog-x</string>
+    <key>StandardOutPath</key>
+    <string>/Users/coyass/kaihatsu/dev-parade-site/blog-x/logs/scheduler.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/coyass/kaihatsu/dev-parade-site/blog-x/logs/scheduler_error.log</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+</dict>
+</plist>

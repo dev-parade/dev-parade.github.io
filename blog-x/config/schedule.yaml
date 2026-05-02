@@ -4,55 +4,76 @@
 
 schedules:
   # --- X (Twitter) 投稿スケジュール ---
-  x_morning:
+
+  x_morning_posi:
     platform: "x"
-    cron: "0 7 * * *"  # 毎日 07:00
-    category: "daily_doc"
-    description: "おはようツイート・今日の予定"
-    template: "morning_tweet"
+    cron: "0 7 * * *"   # 毎日 07:00
+    description: "おはようツイート（ポジデブ）"
+    category: "posidev"
+    role: "artist"
+    template: "tweet"
+
+  x_early_posi:
+    platform: "x"
+    cron: "0 10 * * *"  # 毎日 10:00
+    description: "午前の活力（ポジデブ）"
+    category: "posidev"
+    role: "artist"
+    template: "tweet"
 
   x_lunch:
     platform: "x"
     cron: "0 12 * * *"  # 毎日 12:00
-    category: "food_health"
     description: "ランチ投稿 / 歯の豆知識"
-    template: "lunch_tweet"
+    category: "dental_tips"
+    role: "doctor"
+    template: "tweet"
+
+  x_snack_posi:
+    platform: "x"
+    cron: "0 15 * * *"  # 毎日 15:00
+    description: "おやつタイムの誘惑（ポジデブ）"
+    category: "posidev"
+    role: "artist"
+    template: "tweet"
 
   x_evening:
     platform: "x"
     cron: "0 18 * * *"  # 毎日 18:00
-    category: "music_review"
     description: "診療後の気づき / 音楽レビュー"
-    template: "evening_tweet"
+    category: "music_review"
+    role: "artist"
+    template: "tweet"
 
-  x_night:
+  x_dinner_posi:
+    platform: "x"
+    cron: "0 19 * * *"  # 毎日 19:00
+    description: "夕食前のエンジン（ポジデブ）"
+    category: "posidev"
+    role: "artist"
+    template: "tweet"
+
+  x_night_posi:
     platform: "x"
     cron: "0 21 * * *"  # 毎日 21:00
-    category: "career"
-    description: "夜の振り返り"
-    template: "night_tweet"
+    description: "夜の振り返り（ポジデブ）"
+    category: "posidev"
+    role: "artist"
+    template: "tweet"
 
-  # --- Note 投稿スケジュール ---
-  note_main:
-    platform: "note"
-    cron: "0 6 * * *"   # 毎日 06:00
-    description: "メイン記事（長文・深掘り系）"
-    category_rotation:
-      monday: "dental_tips"
-      tuesday: "music_review"
-      wednesday: "food_health"
-      thursday: "career"
-      friday: "dental_tips"
-      saturday: "daily_doc"
-      sunday: "parenting"
-    template: "note_main"
+  x_midnight_posi:
+    platform: "x"
+    cron: "0 0 * * *"   # 毎日 24:00 (00:00)
+    description: "禁断の夜食（ポジデブ）"
+    category: "posidev"
+    role: "artist"
+    template: "tweet"
 
-  note_sub:
-    platform: "note"
-    cron: "0 20 * * *"  # 毎日 20:00
-    description: "サブ記事（日記系・軽い読み物）"
-    category: "daily_doc"
-    template: "note_daily"
+  x_monitor:
+    platform: "monitor"
+    cron: "30 8,12,21 * * *"  # 毎日3回（各定時投稿の30分後）
+    description: "SNS監視 & ポジデブ自動返信"
+
 
 # カテゴリの優先順位（ネタ切れ時のフォールバック）
 category_priority:

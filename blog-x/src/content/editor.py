@@ -104,6 +104,7 @@ class ContentEditor:
             "food_health": "\n\n---\n\n🍽️ 食べることは生きること、そして歯はその入り口。\n大事にしような！ 💪",
             "career": "\n\n---\n\n💪 歯科医もラッパーも、どっちも本気でやるから面白い。\n人生は一度きり、全力で行こうぜ。 🔥",
             "parenting": "\n\n---\n\n👨‍👧‍👦 子供たちの笑顔が、俺の最高のモチベーション。\nパパ頑張るぜ！ 🌟",
+            "posidev": "\n\n---\n\n🍖 デブは才能。脂肪は努力の結晶。\nDevparadeの「バッチコイ!!!」聴いて元気出してくれよな！ 🤘",
             "daily_doc": "\n\n---\n\n🔥 今日も全力で生きた。明日もよろしく。\nCOYASS 🤘",
         }
         footer = footers.get(category, "\n\n---\n\n🔥 COYASS 🤘")

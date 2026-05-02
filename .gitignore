@@ -1,6 +1,7 @@
 # Secrets
 .env
 *.env
+X_ACCOUNT_INFO.md
 
 # Python
 __pycache__/
