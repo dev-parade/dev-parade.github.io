@@ -33,6 +33,8 @@ DRY_RUN = os.environ.get("DRY_RUN", "false").lower() == "true"
 LAST_ID_FILE = "last_tweet_id.txt"
 MAX_REPLIES_PER_RUN = 10  # 1回の実行で最大10件リプライ
 SEARCH_QUERIES = [
+    '"デブパレード" -is:retweet -is:reply lang:ja',
+    '"Devparade" -is:retweet -is:reply lang:ja',
     '"デブ" -is:retweet -is:reply lang:ja',
     '"太った" -is:retweet -is:reply lang:ja',
     '"痩せなきゃ" -is:retweet -is:reply lang:ja',
@@ -91,6 +93,13 @@ RESPONSES = {
         "ネガティブな言葉は俺たちの腹の肉で全部吸収してやる。🍖 by Devparade #ポジデブ",
         "この世に無駄な脂肪なんてない。全部お前という作品の一部。🍖 #ポジデブ #DEVPARADE",
         "デブは個性。個性は武器。武器は磨け。🍖 by Devparade #ポジデブ",
+    ],
+    "devparade": [
+        "話題にしてくれてありがとう！メンバー全員90kg超のバンド、Devparadeです🍖 一緒にポジデブ広めよう！ #Devparade",
+        "Devparadeに言及ありがとう！肉と音楽を愛する俺たちの曲もぜひ聴いてみて！🍖 #Devparade",
+        "呼んだ？全員90kgオーバーの伝説のヘヴィメタボバンド Devparadeが参上！🥩 #Devparade #ポジデブ",
+        "デブパレードについて書いてくれて感謝！これからも俺たちの「重い」サウンドをよろしく🍖 #Devparade",
+        "見つけてくれてありがとう！Devparadeは全てのデブを全力で肯定するバンドです。バッチコイ！💪🍖 #Devparade",
     ],
 }
 
@@ -172,8 +181,13 @@ def select_response(tweet_text):
     # 2. キーワードマッチでレスポンス選択
 
     text_lower = tweet_text.lower()
+    
+    for kw in ["devparade", "デブパレード", "でぶぱれーど"]:
+        if kw in text_lower:
+            return random.choice(RESPONSES["devparade"])
+
     for keyword, resps in RESPONSES.items():
-        if keyword == "generic":
+        if keyword in ["generic", "devparade"]:
             continue
         if keyword in text_lower:
             return random.choice(resps)

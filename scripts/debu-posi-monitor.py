@@ -66,10 +66,19 @@ RESPONSES = {
         "ありがとう！Devparadeはあなたを全力で肯定します🍖 #ポジデブ",
         "リプありがとう！全員90kg超の愛であなたを包む🍖 by Devparade #ポジデブ",
     ],
+    "devparade": [
+        "話題にしてくれてありがとう！メンバー全員90kg超のバンド、Devparadeです🍖 一緒にポジデブ広めよう！ #Devparade",
+        "Devparadeに言及ありがとう！肉と音楽を愛する俺たちの曲もぜひ聴いてみて！🍖 #Devparade",
+        "呼んだ？全員90kgオーバーの伝説のヘヴィメタボバンド Devparadeが参上！🥩 #Devparade #ポジデブ",
+        "デブパレードについて書いてくれて感謝！これからも俺たちの「重い」サウンドをよろしく🍖 #Devparade",
+        "見つけてくれてありがとう！Devparadeは全てのデブを全力で肯定するバンドです。バッチコイ！💪🍖 #Devparade",
+    ],
 }
 
 # 検索クエリ（Basic以上で使用）
 SEARCH_QUERIES = [
+    '"デブパレード" -is:retweet lang:ja',
+    '"Devparade" -is:retweet lang:ja',
     '"デブ" (辛い OR 悲しい OR 嫌 OR 傷つ OR つらい OR 泣) -is:retweet lang:ja',
     '"太った" (最悪 OR やばい OR ショック OR 泣 OR 嫌) -is:retweet lang:ja',
     '"痩せなきゃ" -is:retweet lang:ja',
@@ -80,6 +89,10 @@ SEARCH_QUERIES = [
 
 def select_response(tweet_text):
     """ツイートの内容に基づいてレスポンスを選択"""
+    tweet_text_lower = tweet_text.lower()
+    for kw in ["デブパレード", "devparade", "でぶぱれーど"]:
+        if kw in tweet_text_lower:
+            return random.choice(RESPONSES["devparade"])
     for kw in ["デブ", "でぶ"]:
         if kw in tweet_text:
             return random.choice(RESPONSES["デブ"])
