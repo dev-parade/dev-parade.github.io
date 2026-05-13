@@ -1250,6 +1250,63 @@
       transform: scale(1.05);
     }
 
+  
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .gallery-thumb {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+      filter: grayscale(30%);
+      border-radius: 4px;
+    }
+    .gallery-thumb:hover {
+      transform: scale(1.05);
+      filter: grayscale(0%);
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(227, 30, 36, 0.4);
+    }
+    #lightbox {
+      display: none;
+      position: fixed;
+      z-index: 3000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    #lightbox img {
+      max-width: 95%;
+      max-height: 95%;
+      object-fit: contain;
+      animation: zoomIn 0.3s ease;
+    }
+    @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .view-more-btn {
+      display: block;
+      margin: 2rem auto;
+      padding: 0.8rem 2.5rem;
+      background: var(--red);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      transition: 0.3s;
+    }
+    .view-more-btn:hover { background: var(--white); color: var(--red); }
+    
   </style>
 </head>
 
@@ -1868,161 +1925,222 @@
   <section id="gallery">
     <h2 class="section-title reveal">LIVE <span>GALLERY</span></h2>
     <p class="section-sub reveal">2026.05.09 14degrees Japan @ 代々木第二体育館</p>
-    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:0.5rem; margin-bottom: 0.5rem;" class="reveal">
-      <!-- ユーザーがダウンロードした画像(yoyogi_1.jpg 等)をここに配置 -->
-      <img src="assets/yoyogi_1.jpg" alt="Devparade at 代々木第二体育館 1" onerror="this.src='https://placehold.co/600x400/222/555?text=Yoyogi+Photo+1'" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/yoyogi_2.jpg" alt="Devparade at 代々木第二体育館 2" onerror="this.src='https://placehold.co/600x400/222/555?text=Yoyogi+Photo+2'" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/yoyogi_3.jpg" alt="Devparade at 代々木第二体育館 3" onerror="this.src='https://placehold.co/600x400/222/555?text=Yoyogi+Photo+3'" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/yoyogi_4.jpg" alt="Devparade at 代々木第二体育館 4" onerror="this.src='https://placehold.co/600x400/222/555?text=Yoyogi+Photo+4'" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4701.JPG" alt="Devparade at 代々木第二体育館 5" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4702.JPG" alt="Devparade at 代々木第二体育館 6" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4703.JPG" alt="Devparade at 代々木第二体育館 7" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4704.JPG" alt="Devparade at 代々木第二体育館 8" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4705.JPG" alt="Devparade at 代々木第二体育館 9" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4706.JPG" alt="Devparade at 代々木第二体育館 10" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4707.JPG" alt="Devparade at 代々木第二体育館 11" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4708.JPG" alt="Devparade at 代々木第二体育館 12" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4709.JPG" alt="Devparade at 代々木第二体育館 13" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4710.JPG" alt="Devparade at 代々木第二体育館 14" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4711.JPG" alt="Devparade at 代々木第二体育館 15" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4712.JPG" alt="Devparade at 代々木第二体育館 16" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4713.JPG" alt="Devparade at 代々木第二体育館 17" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4714.JPG" alt="Devparade at 代々木第二体育館 18" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4715.JPG" alt="Devparade at 代々木第二体育館 19" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4716.JPG" alt="Devparade at 代々木第二体育館 20" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4717.JPG" alt="Devparade at 代々木第二体育館 21" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4718.JPG" alt="Devparade at 代々木第二体育館 22" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4719.JPG" alt="Devparade at 代々木第二体育館 23" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4720.JPG" alt="Devparade at 代々木第二体育館 24" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4721.JPG" alt="Devparade at 代々木第二体育館 25" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4722.JPG" alt="Devparade at 代々木第二体育館 26" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4723.JPG" alt="Devparade at 代々木第二体育館 27" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4724.JPG" alt="Devparade at 代々木第二体育館 28" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4725.JPG" alt="Devparade at 代々木第二体育館 29" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4726.JPG" alt="Devparade at 代々木第二体育館 30" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4727.JPG" alt="Devparade at 代々木第二体育館 31" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4728.JPG" alt="Devparade at 代々木第二体育館 32" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4729.JPG" alt="Devparade at 代々木第二体育館 33" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4730.JPG" alt="Devparade at 代々木第二体育館 34" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4731.JPG" alt="Devparade at 代々木第二体育館 35" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4732.JPG" alt="Devparade at 代々木第二体育館 36" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4733.JPG" alt="Devparade at 代々木第二体育館 37" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4734.JPG" alt="Devparade at 代々木第二体育館 38" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4735.JPG" alt="Devparade at 代々木第二体育館 39" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4736.JPG" alt="Devparade at 代々木第二体育館 40" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4737.JPG" alt="Devparade at 代々木第二体育館 41" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4738.JPG" alt="Devparade at 代々木第二体育館 42" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4739.JPG" alt="Devparade at 代々木第二体育館 43" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4740.JPG" alt="Devparade at 代々木第二体育館 44" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4741.JPG" alt="Devparade at 代々木第二体育館 45" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4742.JPG" alt="Devparade at 代々木第二体育館 46" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4743.JPG" alt="Devparade at 代々木第二体育館 47" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4744.JPG" alt="Devparade at 代々木第二体育館 48" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4745.JPG" alt="Devparade at 代々木第二体育館 49" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4746.JPG" alt="Devparade at 代々木第二体育館 50" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4747.JPG" alt="Devparade at 代々木第二体育館 51" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4748.JPG" alt="Devparade at 代々木第二体育館 52" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4749.JPG" alt="Devparade at 代々木第二体育館 53" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4750.JPG" alt="Devparade at 代々木第二体育館 54" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4751.JPG" alt="Devparade at 代々木第二体育館 55" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4752.JPG" alt="Devparade at 代々木第二体育館 56" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4753.JPG" alt="Devparade at 代々木第二体育館 57" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4754.JPG" alt="Devparade at 代々木第二体育館 58" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4755.JPG" alt="Devparade at 代々木第二体育館 59" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4756.JPG" alt="Devparade at 代々木第二体育館 60" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4757.JPG" alt="Devparade at 代々木第二体育館 61" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4758.JPG" alt="Devparade at 代々木第二体育館 62" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4759.JPG" alt="Devparade at 代々木第二体育館 63" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4760.JPG" alt="Devparade at 代々木第二体育館 64" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4761.JPG" alt="Devparade at 代々木第二体育館 65" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4762.JPG" alt="Devparade at 代々木第二体育館 66" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4763.JPG" alt="Devparade at 代々木第二体育館 67" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4764.JPG" alt="Devparade at 代々木第二体育館 68" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4765.JPG" alt="Devparade at 代々木第二体育館 69" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4766.JPG" alt="Devparade at 代々木第二体育館 70" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4767.JPG" alt="Devparade at 代々木第二体育館 71" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4768.JPG" alt="Devparade at 代々木第二体育館 72" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4769.JPG" alt="Devparade at 代々木第二体育館 73" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4770.JPG" alt="Devparade at 代々木第二体育館 74" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4771.JPG" alt="Devparade at 代々木第二体育館 75" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4772.JPG" alt="Devparade at 代々木第二体育館 76" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4773.JPG" alt="Devparade at 代々木第二体育館 77" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4774.JPG" alt="Devparade at 代々木第二体育館 78" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4775.JPG" alt="Devparade at 代々木第二体育館 79" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4776.JPG" alt="Devparade at 代々木第二体育館 80" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4777.JPG" alt="Devparade at 代々木第二体育館 81" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4778.JPG" alt="Devparade at 代々木第二体育館 82" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4779.JPG" alt="Devparade at 代々木第二体育館 83" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4780.JPG" alt="Devparade at 代々木第二体育館 84" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4781.JPG" alt="Devparade at 代々木第二体育館 85" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4782.JPG" alt="Devparade at 代々木第二体育館 86" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4783.JPG" alt="Devparade at 代々木第二体育館 87" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4784.JPG" alt="Devparade at 代々木第二体育館 88" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4785.JPG" alt="Devparade at 代々木第二体育館 89" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4786.JPG" alt="Devparade at 代々木第二体育館 90" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4787.JPG" alt="Devparade at 代々木第二体育館 91" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4788.JPG" alt="Devparade at 代々木第二体育館 92" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4789.JPG" alt="Devparade at 代々木第二体育館 93" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4790.JPG" alt="Devparade at 代々木第二体育館 94" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4791.JPG" alt="Devparade at 代々木第二体育館 95" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4792.JPG" alt="Devparade at 代々木第二体育館 96" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4793.JPG" alt="Devparade at 代々木第二体育館 97" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4794.JPG" alt="Devparade at 代々木第二体育館 98" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4795.JPG" alt="Devparade at 代々木第二体育館 99" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4796.JPG" alt="Devparade at 代々木第二体育館 100" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4797.JPG" alt="Devparade at 代々木第二体育館 101" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4798.JPG" alt="Devparade at 代々木第二体育館 102" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4799.JPG" alt="Devparade at 代々木第二体育館 103" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4800.JPG" alt="Devparade at 代々木第二体育館 104" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4801.JPG" alt="Devparade at 代々木第二体育館 105" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4802.JPG" alt="Devparade at 代々木第二体育館 106" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4803.JPG" alt="Devparade at 代々木第二体育館 107" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4804.JPG" alt="Devparade at 代々木第二体育館 108" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4805.JPG" alt="Devparade at 代々木第二体育館 109" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4806.JPG" alt="Devparade at 代々木第二体育館 110" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4807.JPG" alt="Devparade at 代々木第二体育館 111" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4808.JPG" alt="Devparade at 代々木第二体育館 112" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4809.JPG" alt="Devparade at 代々木第二体育館 113" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4810.JPG" alt="Devparade at 代々木第二体育館 114" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4811.JPG" alt="Devparade at 代々木第二体育館 115" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4812.JPG" alt="Devparade at 代々木第二体育館 116" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4813.JPG" alt="Devparade at 代々木第二体育館 117" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/IMG_4814.JPG" alt="Devparade at 代々木第二体育館 118" loading="lazy" style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-    </div>
-    <div class="reveal" style="text-align: right; margin-bottom: 4rem;">
-      <p style="font-size: 0.8rem; color: var(--gray); font-family: 'Oswald', sans-serif;">
-        Photos by <a href="https://x.com/yuzunet_photo" target="_blank" style="color: var(--red); text-decoration: none;">YUZU PHOTO (@yuzunet_photo)</a>
-      </p>
-    </div>
-
-    <!-- ===== PHOTO GALLERY (CLUB QUE) ===== -->
-    <p class="section-sub reveal" style="margin-top: 2rem;">2026.02.06 復活ワンマン @ 下北沢 Club Que</p>
-    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:0.5rem;" class="reveal">
-      <img src="assets/live-action1.jpg" alt="Devparade Live"
-        style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;"
-        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/live-hanzi2.jpg" alt="ハンサム判治 Live"
-        style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;"
-        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/live-duo.jpg" alt="ハンサム判治 & COYASS"
-        style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;"
-        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/live-ugazin2.jpg" alt="ugazin Live"
-        style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;"
-        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/live-coyass2.jpg" alt="COYASS Live"
-        style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;"
-        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/live-front.jpg" alt="Devparade Live Front"
-        style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;"
-        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/live-stage2.jpg" alt="Devparade Stage"
-        style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;"
-        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-      <img src="assets/live-wide.jpg" alt="Devparade Wide"
-        style="width:100%; aspect-ratio:3/2; object-fit:cover; cursor:pointer; filter:grayscale(10%); transition:filter 0.3s;"
-        onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(10%)'">
-    </div>
+    <div id="gallery-grid-yoyogi" class="gallery-grid reveal">
+      <img src="assets/yoyogi_1.jpg" alt="Live Photo" class="gallery-thumb" loading="lazy" onclick="openLightbox(this.src)">
+      <img src="assets/yoyogi_2.jpg" alt="Live Photo" class="gallery-thumb" loading="lazy" onclick="openLightbox(this.src)">
+      <img src="assets/yoyogi_3.jpg" alt="Live Photo" class="gallery-thumb" loading="lazy" onclick="openLightbox(this.src)">
+      <img src="assets/yoyogi_4.jpg" alt="Live Photo" class="gallery-thumb" loading="lazy" onclick="openLightbox(this.src)">
+      <img src="assets/IMG_4701.JPG" alt="Live Photo" class="gallery-thumb" loading="lazy" onclick="openLightbox(this.src)">
+      <img src="assets/IMG_4702.JPG" alt="Live Photo" class="gallery-thumb" loading="lazy" onclick="openLightbox(this.src)">
+      <img src="assets/IMG_4703.JPG" alt="Live Photo" class="gallery-thumb" loading="lazy" onclick="openLightbox(this.src)">
+      <img src="assets/IMG_4704.JPG" alt="Live Photo" class="gallery-thumb" loading="lazy" onclick="openLightbox(this.src)">
+      <img src="assets/IMG_4705.JPG" alt="Live Photo" class="gallery-thumb" loading="lazy" onclick="openLightbox(this.src)">
+      <img src="assets/IMG_4706.JPG" alt="Live Photo" class="gallery-thumb" loading="lazy" onclick="openLightbox(this.src)">
+      <img src="assets/IMG_4707.JPG" alt="Live Photo" class="gallery-thumb" loading="lazy" onclick="openLightbox(this.src)">
+      <img src="assets/IMG_4708.JPG" alt="Live Photo" class="gallery-thumb" loading="lazy" onclick="openLightbox(this.src)">
+      <img src="assets/IMG_4709.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4710.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4711.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4712.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4713.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4714.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4715.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4716.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4717.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4718.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4719.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4720.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4721.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4722.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4723.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4724.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4725.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4726.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4727.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4728.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4729.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4730.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4731.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4732.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4733.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4734.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4735.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4736.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4737.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4738.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4739.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4740.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4741.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4742.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4743.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4744.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4745.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4746.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4747.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4748.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4749.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4750.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4751.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4752.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4753.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4754.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4755.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4756.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4757.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4758.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4759.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4760.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4761.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4762.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4763.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4764.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4765.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4766.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4767.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4768.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4769.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4770.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4771.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4772.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4773.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4774.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4775.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4776.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4777.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4778.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4779.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4780.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4781.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4782.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4783.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4784.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4785.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4786.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4787.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4788.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4789.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4790.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4791.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4792.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4793.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4794.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4795.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4796.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4797.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4798.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4799.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4800.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4801.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4802.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4803.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4804.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4805.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4806.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4807.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4808.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4809.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4810.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4811.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4812.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4813.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4814.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4815.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4816.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4817.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4818.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4819.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4820.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4821.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4822.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4823.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4824.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4825.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4826.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4827.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4828.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4829.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4830.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4831.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4832.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4833.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4834.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4835.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4836.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4837.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4838.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4839.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4840.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4841.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4842.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4843.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4844.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4845.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4846.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4847.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4848.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4849.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4850.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4851.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4852.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4853.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4854.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4855.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4856.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4857.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4858.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4859.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4860.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4861.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4862.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4863.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4864.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4865.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4866.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4867.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4868.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4869.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4870.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4871.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4872.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4873.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4874.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4875.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4876.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4877.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4878.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4879.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4880.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4881.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4882.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4883.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4884.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4885.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4886.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4887.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4888.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4889.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4890.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4891.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4892.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4893.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4894.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4895.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4896.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4897.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4898.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4899.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4900.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4901.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4902.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4903.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4904.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4905.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4906.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4907.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4908.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+      <img src="assets/IMG_4909.JPG" alt="Live Photo" class="gallery-thumb hidden-img" loading="lazy" onclick="openLightbox(this.src)" style="display:none;">
+</div>
+    <button class="view-more-btn" onclick="toggleGallery(this, 'gallery-grid-yoyogi')">VIEW MORE</button>
   </section>
 
   <!-- ===== GOODS ===== -->
@@ -2845,6 +2963,32 @@ if (savedLang) {
   const selector = document.querySelector('.lang-selector select');
   if (selector) selector.value = savedLang;
 }
-</script>\n</body>
+</script>\n
+    <!-- Lightbox Modal -->
+    <div id="lightbox" onclick="this.style.display='none'">
+      <img src="" alt="Full Size Photo">
+    </div>
+
+    <script>
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      lb.querySelector('img').src = src;
+      lb.style.display = 'flex';
+    }
+
+    function toggleGallery(btn, sectionId) {
+      const container = document.getElementById(sectionId);
+      const hiddenImages = container.querySelectorAll('.gallery-thumb.hidden-img');
+      const isHidden = hiddenImages[0].style.display === 'none';
+      
+      hiddenImages.forEach(img => {
+        img.style.display = isHidden ? 'block' : 'none';
+      });
+      
+      btn.textContent = isHidden ? 'SHOW LESS' : 'VIEW MORE';
+    }
+    </script>
+    
+</body>
 
 </html>
