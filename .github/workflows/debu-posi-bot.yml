@@ -28,7 +28,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install deps
-        run: pip install tweepy
+        run: pip install tweepy python-dotenv requests openai
 
       - name: Post daily tweet
         if: ${{ github.event.inputs.mode == 'tweet' || github.event.inputs.mode == 'both' }}

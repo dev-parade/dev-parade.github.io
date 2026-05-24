@@ -22,7 +22,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install deps
-        run: pip install tweepy
+        run: pip install tweepy python-dotenv requests openai
 
       - name: Run Growth Engine
         env:
