@@ -29,27 +29,26 @@ load_dotenv()
 # 3. 迷った場合は、公式HP (index.html) の内容を正とする。
 # =================================================================
 
+import asyncio
 try:
-    import tweepy
+    from twikit import Client as TwikitClient
 except ImportError:
-    tweepy = None
+    TwikitClient = None
 
 CAMPAIGN = os.environ.get("CAMPAIGN", "scheduled")
 DRY_RUN = os.environ.get("DRY_RUN", "false").lower() == "true"
 
-# X API Credentials
-API_KEY = os.environ.get("X_API_KEY")
-API_SECRET = os.environ.get("X_API_SECRET")
-ACCESS_TOKEN = os.environ.get("X_ACCESS_TOKEN")
-ACCESS_SECRET = os.environ.get("X_ACCESS_SECRET")
+# X Credentials (twikit)
+X_USERNAME = os.environ.get("X_USERNAME")
+X_EMAIL = os.environ.get("X_EMAIL")
+X_PASSWORD = os.environ.get("X_PASSWORD")
 
 # Check credentials and log missing ones
 def check_credentials():
     missing = []
-    if not API_KEY: missing.append("X_API_KEY")
-    if not API_SECRET: missing.append("X_API_SECRET")
-    if not ACCESS_TOKEN: missing.append("X_ACCESS_TOKEN")
-    if not ACCESS_SECRET: missing.append("X_ACCESS_SECRET")
+    if not X_USERNAME: missing.append("X_USERNAME")
+    if not X_EMAIL: missing.append("X_EMAIL")
+    if not X_PASSWORD: missing.append("X_PASSWORD")
     
     if missing:
         print(f"⚠️ [WARNING] Missing X API Credentials: {', '.join(missing)}")
@@ -2103,31 +2102,36 @@ def mark_as_posted(tweet_data):
 
 
 def auto_post(tweet_text):
-    """X APIで自動投稿"""
-    if not tweepy:
-        print("⚠️ [DEBUG] tweepy is not imported. Skipping auto-post.")
+    """X APIで自動投稿 (twikitを使用)"""
+    if not TwikitClient:
+        print("⚠️ [DEBUG] twikit is not imported. Skipping auto-post.")
         return None
-    if not all([API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_SECRET]):
+    if not all([X_USERNAME, X_EMAIL, X_PASSWORD]):
         missing = []
-        if not API_KEY: missing.append("API_KEY")
-        if not API_SECRET: missing.append("API_SECRET")
-        if not ACCESS_TOKEN: missing.append("ACCESS_TOKEN")
-        if not ACCESS_SECRET: missing.append("ACCESS_SECRET")
+        if not X_USERNAME: missing.append("X_USERNAME")
+        if not X_EMAIL: missing.append("X_EMAIL")
+        if not X_PASSWORD: missing.append("X_PASSWORD")
         print(f"⚠️ [DEBUG] Missing credentials in auto_post: {', '.join(missing)}")
         return None
-    try:
-        client = tweepy.Client(
-            consumer_key=API_KEY,
-            consumer_secret=API_SECRET,
-            access_token=ACCESS_TOKEN,
-            access_token_secret=ACCESS_SECRET,
+
+    async def _post():
+        client = TwikitClient('ja-JP')
+        print("🔄 Logging in to X via twikit...")
+        await client.login(
+            auth_info_1=X_USERNAME,
+            auth_info_2=X_EMAIL,
+            password=X_PASSWORD
         )
-        result = client.create_tweet(text=tweet_text)
-        tweet_id = result.data["id"]
-        print(f"✅ Auto-posted! Tweet ID: {tweet_id}")
+        print("🔄 Sending tweet...")
+        tweet = await client.create_tweet(text=tweet_text)
+        return tweet.id
+
+    try:
+        tweet_id = asyncio.run(_post())
+        print(f"✅ Auto-posted via twikit! Tweet ID: {tweet_id}")
         return tweet_id
     except Exception as e:
-        print(f"❌ Auto-post failed: {e}")
+        print(f"❌ Auto-post via twikit failed: {e}")
         # Fallback: generate intent URL for manual posting
         intent_url = f"https://twitter.com/intent/tweet?text={urllib.parse.quote(tweet_text)}"
         print(f"手動で投稿する場合は以下のURLをブラウザで開いてください: {intent_url}")
