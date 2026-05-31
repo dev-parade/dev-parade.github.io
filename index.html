@@ -1371,8 +1371,23 @@
     <div class="scroll-indicator"><span></span></div>
   </section>
 
+  <!-- ===== HAPPY RAN-DEBU BANNER (Auto-reveals on 6/29) ===== -->
+  <div id="new-hero-629" style="display: none;">
+    <div class="ucchari-banner" style="background: linear-gradient(135deg, #001a0d, #004d26); border-top: 4px solid #00ff88; border-bottom: 4px solid #00ff88; padding: 4rem 1.5rem; text-align: center; position: relative; overflow: hidden;">
+      <div style="position: absolute; top: -50px; right: -50px; font-size: 15rem; opacity: 0.05; font-family: 'Bebas Neue', sans-serif; color: #00ff88;">HAPPY</div>
+      <div style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
+        <div style="display: inline-block; background: #00ff88; color: #000; font-family: 'Oswald', sans-serif; font-weight: 700; padding: 0.5rem 1.5rem; font-size: 1.2rem; letter-spacing: 0.1em; transform: rotate(-2deg); margin-bottom: 1.5rem; box-shadow: 2px 2px 0px #fff;">復活第三弾シングル！</div>
+        <h2 style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: clamp(2.5rem, 5vw, 3.5rem); color: #fff; text-shadow: 0 4px 15px rgba(0,255,136,0.6); margin-bottom: 1rem; letter-spacing: 0.05em;">ハッピー乱デブー</h2>
+        <p style="font-size: 1.1rem; color: #ccc; line-height: 1.8; margin-bottom: 2rem;">デブパレード復活第3弾！<br>ハッピーでファットなニューアンセムを体感しな！</p>
+        <a href="https://link-map.jp/links/9ox_1HYZ" target="_blank" rel="noopener" style="display: inline-block; background: #00ff88; color: #000; text-decoration: none; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.3rem; padding: 1.2rem 3rem; border-radius: 50px; transition: all 0.3s; box-shadow: 0 10px 25px rgba(0,255,136,0.4); letter-spacing: 0.1em;" onmouseover="this.style.transform='scale(1.05) translateY(-3px)'; this.style.boxShadow='0 15px 35px rgba(0,255,136,0.6)'" onmouseout="this.style.transform='scale(1) translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,255,136,0.4)'">
+          🎵 今すぐ各配信ストアで聴く
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- ===== PARFAIT BANNER ===== -->
-  <div class="ucchari-banner" style="background: linear-gradient(135deg, #111, #330000); border-top: 4px solid var(--red); border-bottom: 4px solid var(--red); padding: 4rem 1.5rem; text-align: center; position: relative; overflow: hidden;">
+  <div id="old-hero-parfait" class="ucchari-banner" style="background: linear-gradient(135deg, #111, #330000); border-top: 4px solid var(--red); border-bottom: 4px solid var(--red); padding: 4rem 1.5rem; text-align: center; position: relative; overflow: hidden;">
     <div style="position: absolute; top: -50px; right: -50px; font-size: 15rem; opacity: 0.03; font-family: 'Bebas Neue', sans-serif;">PARFAIT</div>
     <div style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
       <div style="display: inline-block; background: #ffb6c1; color: #000; font-family: 'Oswald', sans-serif; font-weight: 700; padding: 0.5rem 1.5rem; font-size: 1.2rem; letter-spacing: 0.1em; transform: rotate(-2deg); margin-bottom: 1.5rem; box-shadow: 2px 2px 0px var(--red);">復活第二弾シングル！</div>
@@ -3162,9 +3177,18 @@ if (savedLang) {
     (function() {
       const releaseDate = new Date('2026-06-29T00:00:00+09:00');
       if (new Date() >= releaseDate) {
+        // Unhide the discography card
         const newSingle = document.getElementById('new-single-629');
         if (newSingle) {
           newSingle.style.display = 'block';
+        }
+        
+        // Swap the hero banners
+        const newHero = document.getElementById('new-hero-629');
+        const oldHero = document.getElementById('old-hero-parfait');
+        if (newHero && oldHero) {
+          newHero.style.display = 'block';
+          oldHero.style.display = 'none';
         }
       }
     })();
