@@ -1,0 +1,8 @@
+moviepy==1.0.3
+beautifulsoup4==4.12.3
+openai-whisper
+torch
+torchaudio
+Pillow
+numpy
+yt-dlp
