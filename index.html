@@ -1760,6 +1760,20 @@
 
     <div class="disco-grid">
 
+      <!-- Digital Single: Happy Ran-Debu (Auto-reveals on 6/29) -->
+      <div id="new-single-629" class="disco-card reveal" style="border-color: #00ff88; border-width: 2px; display: none;">
+        <div class="year" style="color: #00ff88;">2026.06.29 &mdash; Digital Single</div>
+        <h3 style="color: #fff;">ハッピー乱デブー</h3>
+        <div class="label" style="color: var(--gray);">PosiDev Records</div>
+        <div class="tieup" style="background: rgba(0, 255, 136, 0.1); border-color: #00ff88; color: #00ff88;">
+          デブパレード復活第3弾シングル！
+        </div>
+        <div class="tracks">
+          1. ハッピー乱デブー &mdash; 
+          <a href="https://link-map.jp/links/9ox_1HYZ" target="_blank" rel="noopener" style="color:#00ff88; font-weight: bold;">▶ 今すぐ聴く</a><br>
+        </div>
+      </div>
+
       <!-- Digital Single: Parfait -->
       <div class="disco-card reveal" style="border-color: #ffb6c1; border-width: 2px;">
         <div class="year" style="color: #ffb6c1;">2026.05.29 &mdash; Digital Single</div>
@@ -3143,6 +3157,17 @@ if (savedLang) {
       
       btn.textContent = isHidden ? 'SHOW LESS' : 'VIEW MORE';
     }
+    
+    // Auto-reveal the 6/29 single if the current date is past 2026-06-29 JST
+    (function() {
+      const releaseDate = new Date('2026-06-29T00:00:00+09:00');
+      if (new Date() >= releaseDate) {
+        const newSingle = document.getElementById('new-single-629');
+        if (newSingle) {
+          newSingle.style.display = 'block';
+        }
+      }
+    })();
     </script>
     
 </body>
