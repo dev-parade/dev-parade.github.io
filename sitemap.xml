@@ -16,10 +16,4 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://devparade.jp/en/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://devparade.jp/"/>
   </url>
-  <url>
-    <loc>https://devparade.jp/live.html</loc>
-    <lastmod>2026-11-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
 </urlset>
