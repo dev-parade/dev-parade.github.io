@@ -1335,7 +1335,7 @@
   <nav>
     <div class="nav-inner">
       <img src="assets/logo.png" alt="WORLD FAMOUS Devparade" class="nav-logo">
-      <div class="lang-selector" style="margin-left: 1rem; margin-right: 1rem; display: flex; gap: 0.5rem;"><select onchange="setLanguage(this.value)" style="background: #000; color: #fff; border: 1px solid #d32f2f; padding: 2px 5px; font-size: 0.75rem; border-radius: 4px; cursor: pointer;"><option value="ja">JP</option><option value="en">EN</option><option value="es">ES</option><option value="cn">CN</option></select></div><ul id="navMenu">
+      <div class="lang-selector" style="margin-left: 1rem; margin-right: 1rem; display: flex; gap: 0.5rem;"><select onchange="changeLang(this.value)" style="background: #000; color: #fff; border: 1px solid #d32f2f; padding: 2px 5px; font-size: 0.75rem; border-radius: 4px; cursor: pointer;"><option value="ja">JP</option><option value="en">EN</option><option value="es">ES</option><option value="cn">CN</option></select></div><ul id="navMenu">
         <li><a href="#about" data-i18n="nav-about">About</a></li>
         <li><a href="#members" data-i18n="nav-members">Members</a></li>
         <li><a href="#goroku" data-i18n="nav-goroku">DEV 語録 <span style="font-size:0.6rem; opacity:0.6;">(Quotes)</span></a></li>
@@ -1346,7 +1346,6 @@
         <li><a href="#history" data-i18n="nav-history">History</a></li>
         <li><a href="#gallery" data-i18n="nav-gallery">Gallery</a></li>
         <li><a href="#goods" data-i18n="nav-goods">Goods</a></li>
-        <li><a href="#global" style="color:var(--red); font-weight:bold;">WORLD 🌍</a></li>
         <li><a href="#news" data-i18n="nav-news">News</a></li>
         <li><a href="#links" data-i18n="nav-links">Links</a></li>
         <li><a href="support.html" style="color:var(--yellow); font-weight:bold;">FAN CLUB</a></li>
@@ -1422,33 +1421,7 @@
   </div>
 
   <!-- ===== GLOBAL MESSAGE ===== -->
-  <section id="global" style="background: linear-gradient(135deg, #000 0%, #1a0000 100%); border-top: 1px solid #333; border-bottom: 1px solid #333; padding: 5rem 1rem;">
-    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-      <h2 style="font-family:'Oswald', sans-serif; font-size: 3rem; font-weight: 700; color: var(--red); letter-spacing: 0.1em; text-transform: uppercase;" class="reveal">Message for <span style="color:#fff;">World Fans</span></h2>
-      <p style="font-family:'Oswald', sans-serif; font-size: 1.2rem; color: var(--gray); margin-bottom: 3rem;" class="reveal">MESSAGE TO ALL "NARUTO" FANS & OVERWEIGHT WARRIORS WORLDWIDE</p>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; text-align: left;">
-        <div class="reveal" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--red);">
-          <h3 style="color:#fff; margin-bottom: 1rem; font-size: 1.4rem;">To NARUTO Fans</h3>
-          <p style="color: #ccc; line-height: 1.8; font-size: 0.95rem;">
-            "Bacchikoi!!!" became a global anthem through NARUTO: Shippuden. We've seen your covers and comments from all over the world. Thank you for keeping our fire burning for 15 years. We're back, and we invite you to join our "Heavy Metabo" revolution once again!
-          </p>
-        </div>
-        <div class="reveal" style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--yellow);">
-          <h3 style="color:#fff; margin-bottom: 1rem; font-size: 1.4rem;">Posi-Dev Philosophy</h3>
-          <p style="color: #ccc; line-height: 1.8; font-size: 0.95rem;">
-            We don't just eat; we celebrate life. In an age of strict beauty standards, we stand for the joy of being yourself, no matter your size. Our music is a tribute to everyone who loves food, music, and being positive. Let's grow together—metabolically and spiritually!
-          </p>
-        </div>
-      </div>
-
-      <div style="margin-top: 4rem;" class="reveal">
-          <a href="#live" style="display: inline-block; padding: 1rem 3rem; background: var(--red); color: #fff; text-decoration: none; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.2rem; border-radius: 50px; transition: transform 0.3s, background 0.3s; box-shadow: 0 10px 30px rgba(227, 30, 36, 0.3);" onmouseover="this.style.transform='scale(1.05)'; this.style.background='#ff3036'" onmouseout="this.style.transform='scale(1)'; this.style.background='var(--red)'">
-            JOIN THE GLOBAL PARADE &rarr;
-          </a>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- ===== ABOUT ===== -->
   <section id="about">
@@ -1656,12 +1629,7 @@
             NARUTO -ナルト- 疾風伝 ED THEME</div>
           <div style="font-weight:900; margin-top:0.2rem;">バッチコイ!!!</div>
           <div style="font-size:0.8rem; color:var(--gray);">2nd Single (2009) &mdash; Official Music Video</div>
-          <a href="https://open.spotify.com/intl-ja/artist/5D8hajVfwrC1C83bwvdP5q" target="_blank" rel="noopener" style="display:inline-block; padding:0.5rem 1.5rem; background:#1DB954; color:#fff;
-        text-decoration:none; font-family:'Oswald',sans-serif; font-size:0.8rem; letter-spacing:0.1em; border-radius:4px; margin-top:1rem; transition:opacity 0.2s; display:inline-flex; align-items:center; gap:8px;"
-        onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
-        <svg style="width: 16px; height: 16px; fill: white;" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.503 17.306c-.216.353-.679.467-1.032.25-2.855-1.745-6.448-2.139-10.682-1.171-.403.092-.81-.159-.903-.562-.092-.403.159-.81.562-.903 4.636-1.06 8.599-.607 11.805 1.353.353.216.467.679.25 1.033zm1.472-3.26c-.271.439-.844.582-1.282.311-3.27-2.01-8.256-2.593-12.122-1.417-.492.149-1.011-.131-1.161-.623-.15-.492.13-1.012.622-1.162 4.417-1.34 9.907-.696 13.633 1.597.439.271.583.844.31 1.284zm.126-3.415C15.195 8.232 8.749 8.019 5 9.157c-.58.176-1.192-.156-1.367-.736-.176-.58.156-1.192.736-1.367 4.298-1.305 11.419-1.053 16.03 2.193.522.317.69 1.002.373 1.524-.317.521-1.002.691-1.524.375z"/></svg>
-        Spotify
-      </a>
+          
         </div>
       </div>
       <div>
@@ -1777,7 +1745,7 @@
           結成20年目にして初のフルアルバム！徳間ジャパンコミュニケーションズより全国リリース。新曲「自転車」「メシを喰わせろ!」に加え、ライブ定番曲・過去曲の再録版を収録。
         </p>
         <p style="color: var(--gray); font-size: 0.8rem; margin-bottom: 0.8rem;">
-          収録曲： 100 CAN DIVE / 自転車 / パルフェ / うっちゃりファンク / 何年経っても万年FAT / お前らにゃ一生分かんねえや / 夏の終わりに / ハッピー乱デブー / ダブルベッド / メシを喰わせろ! / タチアガレ
+          収録曲： 100 CAN DIVE / 自転車 / パルフェ / うっちゃりファンク / 何年経っても万年FATお前らにゃ一生分かんねえや / 夏の終わりに / ハッピー乱デブー / ダブルベッド / メシを喰わせろ! / タチアガレ
         </p>
         <div>
           <a href="https://www.amazon.co.jp/dp/B0H34QSXKW" target="_blank" rel="noopener" class="btn btn-red" style="font-size: 0.8rem; padding: 6px 15px;">Amazonで見る</a>
@@ -3068,6 +3036,11 @@ function setLanguage(lang) {
     }
   });
   localStorage.setItem('devLanguage', lang);
+}
+
+function changeLang(lang) {
+  if (lang === 'en') { localStorage.setItem('devLanguage', 'en'); location.href = '/en/'; }
+  else { setLanguage(lang); }
 }
 
 // Check saved language
