@@ -233,22 +233,26 @@
       display: inline-block;
       margin-top: 2rem;
       padding: 0.8rem 2.5rem;
-      background: var(--red);
-      color: #fff;
+      background: transparent;
+      color: var(--red);
       font-family: 'Oswald', sans-serif;
       font-size: 1.1rem;
       letter-spacing: 0.15em;
       text-decoration: none;
       text-transform: uppercase;
-      border: 2px solid transparent;
+      border: 2px solid var(--red);
       transition: all 0.3s;
     }
 
     .hero-reunion:hover {
-      background: transparent;
+      background: var(--red);
       border-color: var(--red);
-      color: var(--red);
+      color: #fff;
     }
+    .hero-btn-spotify { border-color: #1DB954; color: #1DB954; }
+    .hero-btn-spotify:hover { background: #1DB954; border-color: #1DB954; color: #fff; }
+    .hero-btn-apple { border-color: #FA243C; color: #FA243C; }
+    .hero-btn-apple:hover { background: #FA243C; border-color: #FA243C; color: #fff; }
 
     .scroll-indicator {
       position: absolute;
@@ -1062,12 +1066,21 @@
     }
 
 /* 各SNSボタンのカラー設定 */
-    .share-bar .share-btn { border-radius: 999px; margin: 0 0.15rem; }
-    .share-bar .share-btn.x-btn { background: #000; color: #fff; box-shadow: inset 0 0 0 1px #444; }
-    .share-bar .share-btn.ig-btn { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
-    .share-bar .share-btn.fb-btn { background: #1877F2; color: #fff; }
-    .share-bar .share-btn.apple-btn { background: #FA243C; color: #fff; }
-    .share-bar .share-btn.copy-btn { background: #333; color: #fff; }
+    .share-bar .share-btn { border-radius: 999px; margin: 0 0.15rem; background: transparent; border: 2px solid #666; }
+    .share-bar .share-btn.x-btn { border-color: #e7e9ea; color: #e7e9ea; }
+    .share-bar .share-btn.x-btn:hover { background: #e7e9ea; color: #000; opacity: 1; }
+    .share-bar .share-btn.spot-btn { border-color: #1DB954; color: #1DB954; }
+    .share-bar .share-btn.spot-btn:hover { background: #1DB954; color: #fff; opacity: 1; }
+    .share-bar .share-btn.ig-btn { border-color: #E1306C; color: #E1306C; }
+    .share-bar .share-btn.ig-btn:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; opacity: 1; }
+    .share-bar .share-btn.fb-btn { border-color: #1877F2; color: #1877F2; }
+    .share-bar .share-btn.fb-btn:hover { background: #1877F2; color: #fff; opacity: 1; }
+    .share-bar .share-btn.apple-btn { border-color: #FA243C; color: #FA243C; }
+    .share-bar .share-btn.apple-btn:hover { background: #FA243C; color: #fff; opacity: 1; }
+    .share-bar .share-btn.mail-btn { border-color: #ff3838; color: #ff3838; }
+    .share-bar .share-btn.mail-btn:hover { background: var(--red); border-color: var(--red); color: #fff; opacity: 1; }
+    .share-bar .share-btn.copy-btn { border-color: #ffd700; color: #ffd700; }
+    .share-bar .share-btn.copy-btn:hover { background: #ffd700; color: #000; opacity: 1; }
     
     /* ===== VIRAL CATCHCOPY BANNER ===== */
     .viral-banner {
@@ -1359,12 +1372,12 @@
       <p class="hero-sub" data-i18n="hero-sub">全員90kg超 &mdash; The legendary Heavy Metabo band, back after 15 years</p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="#live" class="hero-reunion">LIVE INFO &rarr;</a>
-        <a href="https://open.spotify.com/intl-ja/artist/5D8hajVfwrC1C83bwvdP5q" target="_blank" rel="noopener" class="hero-reunion" style="background:#1DB954; border-color:#1DB954; display:flex; align-items:center; gap:8px;">
-          <svg style="width: 20px; height: 20px; fill: white;" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.503 17.306c-.216.353-.679.467-1.032.25-2.855-1.745-6.448-2.139-10.682-1.171-.403.092-.81-.159-.903-.562-.092-.403.159-.81.562-.903 4.636-1.06 8.599-.607 11.805 1.353.353.216.467.679.25 1.033zm1.472-3.26c-.271.439-.844.582-1.282.311-3.27-2.01-8.256-2.593-12.122-1.417-.492.149-1.011-.131-1.161-.623-.15-.492.13-1.012.622-1.162 4.417-1.34 9.907-.696 13.633 1.597.439.271.583.844.31 1.284zm.126-3.415C15.195 8.232 8.749 8.019 5 9.157c-.58.176-1.192-.156-1.367-.736-.176-.58.156-1.192.736-1.367 4.298-1.305 11.419-1.053 16.03 2.193.522.317.69 1.002.373 1.524-.317.521-1.002.691-1.524.375z"/></svg>
+        <a href="https://open.spotify.com/intl-ja/artist/5D8hajVfwrC1C83bwvdP5q" target="_blank" rel="noopener" class="hero-reunion hero-btn-spotify" style="display:flex; align-items:center; gap:8px;">
+          <svg style="width: 20px; height: 20px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.503 17.306c-.216.353-.679.467-1.032.25-2.855-1.745-6.448-2.139-10.682-1.171-.403.092-.81-.159-.903-.562-.092-.403.159-.81.562-.903 4.636-1.06 8.599-.607 11.805 1.353.353.216.467.679.25 1.033zm1.472-3.26c-.271.439-.844.582-1.282.311-3.27-2.01-8.256-2.593-12.122-1.417-.492.149-1.011-.131-1.161-.623-.15-.492.13-1.012.622-1.162 4.417-1.34 9.907-.696 13.633 1.597.439.271.583.844.31 1.284zm.126-3.415C15.195 8.232 8.749 8.019 5 9.157c-.58.176-1.192-.156-1.367-.736-.176-.58.156-1.192.736-1.367 4.298-1.305 11.419-1.053 16.03 2.193.522.317.69 1.002.373 1.524-.317.521-1.002.691-1.524.375z"/></svg>
           LISTEN ON SPOTIFY &rarr;
         </a>
-        <a href="https://music.apple.com/jp/artist/%E3%83%87%E3%83%96%E3%83%91%E3%83%AC%E3%83%89/304692523" target="_blank" rel="noopener" class="hero-reunion" style="background:#FA243C; border-color:#FA243C; display:flex; align-items:center; gap:8px;">
-          <svg style="width: 18px; height: 18px; fill: white;" viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <a href="https://music.apple.com/jp/artist/%E3%83%87%E3%83%96%E3%83%91%E3%83%AC%E3%83%89/304692523" target="_blank" rel="noopener" class="hero-reunion hero-btn-apple" style="display:flex; align-items:center; gap:8px;">
+          <svg style="width: 18px; height: 18px; fill: currentColor;" viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
           APPLE MUSIC &rarr;
         </a>
       </div>
@@ -2594,8 +2607,8 @@
     <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
     X
   </a>
-  <a class="share-btn spot-btn" href="https://open.spotify.com/intl-ja/artist/5D8hajVfwrC1C83bwvdP5q" target="_blank" rel="noopener" style="background:#1DB954;">
-    <svg viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.503 17.306c-.216.353-.679.467-1.032.25-2.855-1.745-6.448-2.139-10.682-1.171-.403.092-.81-.159-.903-.562-.092-.403.159-.81.562-.903 4.636-1.06 8.599-.607 11.805 1.353.353.216.467.679.25 1.033zm1.472-3.26c-.271.439-.844.582-1.282.311-3.27-2.01-8.256-2.593-12.122-1.417-.492.149-1.011-.131-1.161-.623-.15-.492.13-1.012.622-1.162 4.417-1.34 9.907-.696 13.633 1.597.439.271.583.844.31 1.284zm.126-3.415C15.195 8.232 8.749 8.019 5 9.157c-.58.176-1.192-.156-1.367-.736-.176-.58.156-1.192.736-1.367 4.298-1.305 11.419-1.053 16.03 2.193.522.317.69 1.002.373 1.524-.317.521-1.002.691-1.524.375z"/></svg>
+  <a class="share-btn spot-btn" href="https://open.spotify.com/intl-ja/artist/5D8hajVfwrC1C83bwvdP5q" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.503 17.306c-.216.353-.679.467-1.032.25-2.855-1.745-6.448-2.139-10.682-1.171-.403.092-.81-.159-.903-.562-.092-.403.159-.81.562-.903 4.636-1.06 8.599-.607 11.805 1.353.353.216.467.679.25 1.033zm1.472-3.26c-.271.439-.844.582-1.282.311-3.27-2.01-8.256-2.593-12.122-1.417-.492.149-1.011-.131-1.161-.623-.15-.492.13-1.012.622-1.162 4.417-1.34 9.907-.696 13.633 1.597.439.271.583.844.31 1.284zm.126-3.415C15.195 8.232 8.749 8.019 5 9.157c-.58.176-1.192-.156-1.367-.736-.176-.58.156-1.192.736-1.367 4.298-1.305 11.419-1.053 16.03 2.193.522.317.69 1.002.373 1.524-.317.521-1.002.691-1.524.375z"/></svg>
     SPOTIFY
   </a>
   <a class="share-btn apple-btn" href="https://music.apple.com/jp/artist/%E3%83%87%E3%83%96%E3%83%91%E3%83%BC%E3%83%89/304692523" target="_blank" rel="noopener">
@@ -2610,8 +2623,8 @@
     <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
     FB
   </a>
-  <a class="share-btn" href="mailto:836rec@gmail.com" style="background:var(--red); color:#fff;">
-    <svg viewBox="0 0 24 24" fill="#fff"><path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+  <a class="share-btn mail-btn" href="mailto:836rec@gmail.com">
+    <svg viewBox="0 0 24 24"><path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
     MAIL
   </a>
   <button class="share-btn copy-btn" id="copyURL">
