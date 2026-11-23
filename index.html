@@ -4,25 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WORLD FAMOUS Devparade | デブパレード 公式サイト - 15年ぶりの復活</title>
+  <title>デブパレード | Devparade 公式サイト</title>
   <link rel="canonical" href="https://devparade.jp/">
   <meta name="description"
-    content="メンバー全員90kg超のヘヴィメタボバンド Devparade（デブパレード）15年ぶりの復活！元DefSTAR Records、NARUTOエンディングテーマ「バッチコイ!!!」でお馴染み。">
+    content="メンバー全員90kg超のヘヴィメタボバンド『デブパレード』（Devparade）の公式サイト。NARUTO -ナルト- 疾風伝EDテーマ「バッチコイ!!!」でお馴染み。15年ぶりに復活し、初のフルアルバム『全ての武器をお箸に』をリリース。最新シングル『タチアガレ』配信中。ライブ情報・ディスコグラフィーを掲載。">
   <!-- OGP: Facebook / LINE -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="WORLD FAMOUS Devparade | 15年ぶり復活">
+  <meta property="og:title" content="デブパレード | Devparade 公式サイト">
   <meta property="og:description"
-    content="NARUTOエンディング「バッチコイ!!!」のデブパレードが15年ぶりに復活！メンバー全員90kg以上＆<span data-i18n="member-gout">痛風ホルダー</span>。2026.02.06 再結成ワンマン開催。">
+    content="NARUTOエンディング「バッチコイ!!!」のデブパレードが15年ぶりに復活！メンバー全員90kg以上＆痛風ホルダー。初のフルアルバム『全ての武器をお箸に』発売中。">
   <meta property="og:image" content="https://devparade.jp/assets/member-group.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://devparade.jp/">
-  <meta property="og:site_name" content="WORLD FAMOUS Devparade Official">
+  <meta property="og:site_name" content="デブパレード公式サイト">
   <meta property="og:locale" content="ja_JP">
   <!-- OGP: X (Twitter) Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Devparade | メンバー全員90kg超ヘヴィメタボバンド 15年ぶり復活">
-  <meta name="twitter:description" content="NARUTOエンディング「バッチコイ!!!」のデブパレードが15年ぶりに復活！メンバー全員90kg以上＆<span data-i18n="member-gout">痛風ホルダー</span>。">
+  <meta name="twitter:title" content="デブパレード | Devparade 公式サイト">
+  <meta name="twitter:description" content="NARUTOエンディング「バッチコイ!!!」のデブパレードが15年ぶりに復活！メンバー全員90kg以上＆痛風ホルダー。初のフルアルバム『全ての武器をお箸に』発売中。">
   <meta name="twitter:image" content="https://devparade.jp/assets/member-group.jpg">
   <meta name="twitter:site" content="@dev_parade">
   <!-- SEO -->
@@ -42,7 +42,7 @@
     "genre": ["Rock", "Heavy Metabo"],
     "foundingDate": "2006",
     "dissolutionDate": "2011",
-    "description": "メンバー全員90kg超のヘヴィメタボバンド。2008年DefSTAR Records（ソニー）からメジャーデビュー。NARUTOエンディングテーマ「バッチコイ!!!」。2026年2月6日、15年ぶりの再結成。",
+    "description": "メンバー全員90kg超のヘヴィメタボバンド。2008年DefSTAR Records（ソニー）からメジャーデビュー。NARUTOエンディングテーマ「バッチコイ!!!」。2026年2月6日、15年ぶりの再結成。同年8月19日、初のフルアルバム『全ての武器をお箸に』をリリース。",
     "member": [
       {"@type": "Person", "name": "ハンサム判治", "roleName": "Vocal / Leader"},
       {"@type": "Person", "name": "COYASS", "roleName": "MC"},
@@ -56,6 +56,7 @@
       "https://www.tiktok.com/@dev.parade",
       "https://www.facebook.com/DevParadeOfficial/",
       "https://open.spotify.com/intl-ja/artist/5D8hajVfwrC1C83bwvdP5q",
+      "https://music.apple.com/jp/artist/%E3%83%87%E3%83%96%E3%83%91%E3%83%BC%E3%83%89/304692523",
       "https://www.sonymusic.co.jp/artist/devparade/",
       "https://youtube.com/channel/UCS3Dn8BXf_OSP_h69qg_8Kg",
       "https://www.amazon.co.jp/music/player/artists/B001NZMB9W"
@@ -1060,10 +1061,12 @@
     }
 
 /* 各SNSボタンのカラー設定 */
-    .share-btn.x-btn { color: #fff; }
-    .share-btn.ig-btn { color: #E4405F; } /* Instagramピンク */
-    .share-btn.fb-btn { color: #1877F2; }
-    .share-btn.copy-btn { color: var(--yellow); }
+    .share-bar .share-btn { border-radius: 999px; margin: 0 0.15rem; }
+    .share-bar .share-btn.x-btn { background: #000; color: #fff; box-shadow: inset 0 0 0 1px #444; }
+    .share-bar .share-btn.ig-btn { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
+    .share-bar .share-btn.fb-btn { background: #1877F2; color: #fff; }
+    .share-bar .share-btn.apple-btn { background: #FA243C; color: #fff; }
+    .share-bar .share-btn.copy-btn { background: #333; color: #fff; }
     
     /* ===== VIRAL CATCHCOPY BANNER ===== */
     .viral-banner {
@@ -1371,6 +1374,19 @@
     <div class="scroll-indicator"><span></span></div>
   </section>
 
+  <!-- ===== TACHIAGARE BANNER ===== -->
+  <div class="ucchari-banner" style="background: linear-gradient(135deg, #1a0d00, #4d2600); border-top: 4px solid #ff8c1a; border-bottom: 4px solid #ff8c1a; padding: 4rem 1.5rem; text-align: center; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -50px; right: -50px; font-size: 15rem; opacity: 0.05; font-family: 'Bebas Neue', sans-serif; color: #ff8c1a;">STAND</div>
+    <div style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
+      <div style="display: inline-block; background: #ff8c1a; color: #000; font-family: 'Oswald', sans-serif; font-weight: 700; padding: 0.5rem 1.5rem; font-size: 1.2rem; letter-spacing: 0.1em; transform: rotate(-2deg); margin-bottom: 1.5rem; box-shadow: 2px 2px 0px #fff;">復活第五弾シングル！</div>
+      <h2 style="font-family: 'Noto Sans JP', sans-serif; font-weight: 900; font-size: clamp(2.5rem, 6vw, 4rem); color: #fff; text-shadow: 0 4px 15px rgba(255,140,26,0.6); margin-bottom: 1rem; letter-spacing: 0.05em;">タチアガレ</h2>
+      <p style="font-size: 1.1rem; color: #ccc; line-height: 1.8; margin-bottom: 2rem;">涙拭いて、勇気出してタチアガレ！<br>アルバム『全ての武器をお箸に』からのシングルカット、全ての人へ贈る応援歌。</p>
+      <a href="https://link-map.jp/links/1nTpWZFX" target="_blank" rel="noopener" style="display: inline-block; background: #ff8c1a; color: #000; text-decoration: none; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.3rem; padding: 1.2rem 3rem; border-radius: 50px; transition: all 0.3s; box-shadow: 0 10px 25px rgba(255,140,26,0.4); letter-spacing: 0.1em;" onmouseover="this.style.transform='scale(1.05) translateY(-3px)'; this.style.boxShadow='0 15px 35px rgba(255,140,26,0.6)'" onmouseout="this.style.transform='scale(1) translateY(0)'; this.style.boxShadow='0 10px 25px rgba(255,140,26,0.4)'">
+        🎵 今すぐ各配信ストアで聴く
+      </a>
+    </div>
+  </div>
+
   <!-- ===== HAPPY RAN-DEBU BANNER (Auto-reveals on 6/29) ===== -->
   <div id="new-hero-629" style="display: none;">
     <div class="ucchari-banner" style="background: linear-gradient(135deg, #001a0d, #004d26); border-top: 4px solid #00ff88; border-bottom: 4px solid #00ff88; padding: 4rem 1.5rem; text-align: center; position: relative; overflow: hidden;">
@@ -1404,7 +1420,7 @@
     <div class="reunion-year">2026</div>
     <h2>15年ぶりの奇跡の復活</h2>
     <p>2011年「メンバーが痩せてしまった」という理由で解散したDevparadeが、<br>
-      2026年2月6日、ついに再結成。初のフルアルバムも制作中。</p>
+      2026年2月6日、ついに再結成。初のフルアルバム『全ての武器をお箸に』もリリース。</p>
   </div>
 
   <!-- ===== VIRAL CATCHCOPY ===== -->
@@ -1733,6 +1749,50 @@
 
     <div class="disco-grid">
 
+      <!-- Digital Single: Tachiagare -->
+      <div class="disco-card reveal" style="border-color: #ff8c1a; border-width: 2px;">
+        <div class="year" style="color: #ff8c1a;">2026.10.29 &mdash; Digital Single</div>
+        <h3 style="color: #fff;">タチアガレ</h3>
+        <div class="label" style="color: var(--gray);">ハンサムレコーズ</div>
+        <div class="tieup" style="background: rgba(255, 140, 26, 0.1); border-color: #ff8c1a; color: #ff8c1a;">
+          デブパレード復活第5弾シングル！アルバム『全ての武器をお箸に』からのシングルカット
+        </div>
+        <div class="tracks">
+          1. タチアガレ &mdash;
+          <a href="https://link-map.jp/links/1nTpWZFX" target="_blank" rel="noopener" style="color:#ff8c1a; font-weight: bold;">▶ 今すぐ聴く</a><br>
+          作詞: ハンサム判治・COYASS / 作曲: ugazin・デブパレード
+        </div>
+      </div>
+
+      <!-- 1st Full Album -->
+      <div class="disco-new reveal">
+        <div class="year" style="color: var(--yellow);">2026.08.19 &mdash; 1st Full Album</div>
+        <h3>全ての武器をお箸に</h3>
+        <div class="coming" style="background: var(--red); color: #fff;">NOW ON SALE</div>
+        <p style="color: var(--gray); margin-top: 0.5rem; font-size: 0.9rem; margin-bottom: 0.5rem;">
+          結成20年目にして初のフルアルバム！徳間ジャパンコミュニケーションズより全国リリース。新曲「自転車」「メシを喰わせろ!」に加え、ライブ定番曲・過去曲の再録版を収録。
+        </p>
+        <p style="color: var(--gray); font-size: 0.8rem; margin-bottom: 0.8rem;">
+          収録曲： 100 CAN DIVE / 自転車 / パルフェ / うっちゃりファンク / 何年経っても万年FAT / お前らにゃ一生分かんねえや / 夏の終わりに / ハッピー乱デブー / ダブルベッド / メシを喰わせろ! / タチアガレ
+        </p>
+        <div>
+          <a href="https://www.amazon.co.jp/dp/B0H34QSXKW" target="_blank" rel="noopener" class="btn btn-red" style="font-size: 0.8rem; padding: 6px 15px;">Amazonで見る</a>
+        </div>
+      </div>
+
+      <!-- Digital Single: Natsu no Owari ni -->
+      <div class="disco-card reveal" style="border-color: #38bdf8; border-width: 2px;">
+        <div class="year" style="color: #38bdf8;">2026.07.29 &mdash; Digital Single</div>
+        <h3 style="color: #fff;">夏の終わりに</h3>
+        <div class="label" style="color: var(--gray);">PosiDev Records</div>
+        <div class="tieup" style="background: rgba(56, 189, 248, 0.1); border-color: #38bdf8; color: #38bdf8;">
+          デブパレード復活第4弾シングル！
+        </div>
+        <div class="tracks">
+          1. 夏の終わりに
+        </div>
+      </div>
+
       <!-- Digital Single: Happy Ran-Debu (Auto-reveals on 6/29) -->
       <div id="new-single-629" class="disco-card reveal" style="border-color: #00ff88; border-width: 2px; display: none;">
         <div class="year" style="color: #00ff88;">2026.06.29 &mdash; Digital Single</div>
@@ -1762,9 +1822,6 @@
         </div>
       </div>
 
-      <!-- NEW ALBUM -->
-      <div class="disco-new reveal">
-        <div class="year" style="color: var(--yellow);">2026.06.14 &mdash; 1st Full Album</div>
         <h3>全ての武器をお箸に</h3>
         <div class="coming">COMING SOON</div>
         <p style="color: var(--gray); margin-top: 0.5rem; font-size: 0.9rem; margin-bottom: 0.5rem;">
@@ -1874,7 +1931,7 @@
       <div style="max-width: 800px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6);">
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/47n0Pb60HOWTQifpvnNG8h?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
-      <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gray);">最新シングル「パルフェ」をSpotifyでチェック！</p>
+      <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gray);">最新シングル「タチアガレ」をSpotifyでチェック！</p>
     </div>
   </section>
 
@@ -1917,7 +1974,7 @@
       </div>
       <div class="timeline-item highlight reveal">
         <div class="timeline-year">2026.02.06</div>
-        <div class="timeline-text" data-i18n="history-2026-02">15年ぶりの再結成を正式発表！新メンバー"ぺー"を迎え、下北沢Club Queでワンマンライブ開催。初のフルアルバム制作中であることも発表。</div>
+        <div class="timeline-text" data-i18n="history-2026-02">15年ぶりの再結成を正式発表！新メンバー"ぺー"を迎え、下北沢Club Queでワンマンライブ開催。初のフルアルバム『全ての武器をお箸に』の制作も発表（2026年8月19日にリリース）。</div>
       </div>
       <div class="timeline-item highlight reveal">
         <div class="timeline-year">2026.05.09</div>
@@ -2483,11 +2540,11 @@
     <h2 class="section-title reveal"><span>LINKS</span></h2>
     <p class="section-sub reveal">関連リンク</p>
     <div class="links-grid">
-      <a href="https://link-map.jp/links/xXo18Mbu" target="_blank" rel="noopener" class="link-card reveal" style="border-color: #ffb6c1; border-width: 2px; background: linear-gradient(135deg, #111, #330000);">
-        <div class="link-icon" style="color: #ffb6c1;">🎵</div>
+      <a href="https://link-map.jp/links/1nTpWZFX" target="_blank" rel="noopener" class="link-card reveal" style="border-color: #ff8c1a; border-width: 2px; background: linear-gradient(135deg, #111, #331a00);">
+        <div class="link-icon" style="color: #ff8c1a;">🎵</div>
         <div>
-          <div class="link-label" style="color: #ffb6c1;">NEW SINGLE: パルフェ</div>
-          <div class="link-desc" style="color: #ccc;">各配信ストアでチェック！ (復活第二弾シングル)</div>
+          <div class="link-label" style="color: #ff8c1a;">NEW SINGLE: タチアガレ</div>
+          <div class="link-desc" style="color: #ccc;">各配信ストアでチェック！ (復活第五弾シングル)</div>
         </div>
       </a>
       <a href="https://open.spotify.com/intl-ja/artist/5D8hajVfwrC1C83bwvdP5q" target="_blank" rel="noopener" class="link-card" style="border-color: #1DB954; border-width: 2px;">
@@ -2638,6 +2695,10 @@
   <a class="share-btn spot-btn" href="https://open.spotify.com/intl-ja/artist/5D8hajVfwrC1C83bwvdP5q" target="_blank" rel="noopener" style="background:#1DB954;">
     <svg viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.503 17.306c-.216.353-.679.467-1.032.25-2.855-1.745-6.448-2.139-10.682-1.171-.403.092-.81-.159-.903-.562-.092-.403.159-.81.562-.903 4.636-1.06 8.599-.607 11.805 1.353.353.216.467.679.25 1.033zm1.472-3.26c-.271.439-.844.582-1.282.311-3.27-2.01-8.256-2.593-12.122-1.417-.492.149-1.011-.131-1.161-.623-.15-.492.13-1.012.622-1.162 4.417-1.34 9.907-.696 13.633 1.597.439.271.583.844.31 1.284zm.126-3.415C15.195 8.232 8.749 8.019 5 9.157c-.58.176-1.192-.156-1.367-.736-.176-.58.156-1.192.736-1.367 4.298-1.305 11.419-1.053 16.03 2.193.522.317.69 1.002.373 1.524-.317.521-1.002.691-1.524.375z"/></svg>
     SPOTIFY
+  </a>
+  <a class="share-btn apple-btn" href="https://music.apple.com/jp/artist/%E3%83%87%E3%83%96%E3%83%91%E3%83%BC%E3%83%89/304692523" target="_blank" rel="noopener">
+    <svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+    APPLE
   </a>
   <a class="share-btn ig-btn" href="https://www.instagram.com/dev.parade/" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -2910,7 +2971,7 @@ const translations = {
     "history-2009-03": "2ndシングル「バッチコイ!!!」発売。NARUTO -ナルト- 疾風伝 EDテーマに採用。",
     "history-2011-02": "解散。「メンバーが痩せてメタボを名乗れなくなった」「普通（サイズ）の男の子に戻ります」",
     "history-2025-11": "ugazin主催ライブ（下北沢Club Que）にシークレットアクトとして15年ぶりにステージへ。",
-    "history-2026-02": "15年ぶりの再結成を正式発表！新メンバー\"ぺー\"を迎え、下北沢Club Queでワンマンライブ開催。初のフルアルバム制作中であることも発表。",
+    "history-2026-02": "15年ぶりの再結成を正式発表！新メンバー\"ぺー\"を迎え、下北沢Club Queでワンマンライブ開催。初のフルアルバム『全ての武器をお箸に』の制作も発表（2026年8月19日にリリース）。",
     "history-2026-05": "国立代々木体育館でのグランドフェスティバル開催予定。"
   },
   "en": {
@@ -2968,7 +3029,7 @@ const translations = {
     "history-2009-03": "Released \"Bacchikoi!!!\". NARUTO Shippuden ED theme.",
     "history-2011-02": "Disbanded. \"Members lost weight and quit Metabo.\"",
     "history-2025-11": "Secret reunion stage at ugazin's live event after 15 years.",
-    "history-2026-02": "Official reunion! One-man live with Pe. 1st Album in progress.",
+    "history-2026-02": "Official reunion! One-man live with Pe. 1st full album announced (released Aug 19, 2026).",
     "history-2026-05": "Grand Festival at Yoyogi National Gymnasium."
   },
   "es": {
