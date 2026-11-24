@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /lyrics/
 
 Sitemap: https://devparade.jp/sitemap.xml
